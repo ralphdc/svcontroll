@@ -1,0 +1,57 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/edit/id/{$userinfo['userId']}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>用户名称：</label>
+				<input type="text" size="28" class="required alphanumeric textInput" name="" id="" value="{$userinfo['userName']}">
+			</p>
+			<p>
+				<label>上级用户：</label>
+				<input type="text" size="28" class="required textInput" name="" id="" value="{$userinfo['upUserId']}">
+			</p>
+			<p>
+				<label>用户类型：</label>
+				<select name="userType" id="userType" class="combox">
+				<option value="1" <eq name="userinfo['userType']" value="1">selected=selected</eq>>业务员</option>
+				<option value="2" <eq name="userinfo['userType']" value="2">selected=selected</eq>>普通用户</option>
+				<option value="3" <eq name="userinfo['userType']" value="3">selected=selected</eq>>财务经办</option>
+				<option value="4" <eq name="userinfo['userType']" value="4">selected=selected</eq>>财务审核</option>
+				<option value="5" <eq name="userinfo['userType']" value="5">selected=selected</eq>>代理商</option>
+				</select>
+				
+			</p>
+			<p>
+				<label>用户等级：</label>
+				<select name="" id="" class="combox">
+					<option value="1" <eq name="userinfo['userType']" value="1">selected=selected</eq> >一般用户</option>
+					<option value="2" <eq name="userinfo['userType']" value="2">selected=selected</eq> >系统管理员</option>
+					<option value="3" <eq name="userinfo['userType']" value="3">selected=selected</eq> >超级管理员</option>
+				</select>
+			</p>
+			<p>
+				<label>所属机构：</label>
+				<input type="text" size="28" class="required textInput" name="" id="" value="{$userinfo['upUserId']}"/>
+			</p>
+			<p>
+				<label>用户状态：</label>
+				<select name="userStatus" id="userStatus" class="combox">
+					<option value="1" <eq name="userinfo['userStatus']" value="1">selected=selected</eq> >启用</option>
+					<option value="0" <eq name="userinfo['userStatus']" value="0">selected=selected</eq> >停用</option>
+				</select>
+			</p>
+			<p>
+				<label>备注：</label>
+				<input type="text" name="" class="textInput" value="{$userinfo['remark']}"/>
+			</p>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+
+

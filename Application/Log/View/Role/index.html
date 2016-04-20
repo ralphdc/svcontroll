@@ -1,0 +1,301 @@
+
+<include file="Public:pagerForm" />
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="" method="post">
+		<div class="searchBar">
+			<table class="searchContent">
+				<tr>
+					<td><label>产品名称：</label>
+						<select name="productId" id="productId" class="combox">
+							<volist id="vo" name="products">
+								<option value="{$vo['id']}" <?php if($_COOKIE['productId'] == $vo['id'] ){ echo "selected=selected";} ?> > {$vo['productName']}</option>
+							</volist>
+						</select>
+					</td>
+					<td><label>角色名称：</label><input type="text" name="roleName" id="" class="textInput" value="{$_POST['roleName']}" /><input type="hidden" name="roleId" id="roleId" class="textInput" value="" /></td>	
+					<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<input type="hidden" name="pageNum" value="1" />
+		<input type="hidden" name="numPerPage" value="20" />
+	</form>
+</div>
+
+
+<div class="main_con">
+	<div class="main_side_list">
+		<div class="ui_plate_operate">
+			<a href="__URL__/add" target="dialog" mask="true" class="btn" height="400" width="500">添加</a>
+			<a href="__URL__/delete/id/{roleId}" target="ajaxTodo" title="你确定要删除吗？" warn="请选择用户" class="btn">删除</a>
+			<a href="__URL__/edit/id/{roleId}" target="dialog" mask="true" height="400" width="500"  warn="请选择用户" class="btn">修改</a>
+			<a href="__URL__/editjur/id/{roleId}" target="dialog" mask="true" height="600" width="900" warn="请选择用户" class="btn">编辑权限</a>
+		</div>
+		<div id="user_group_list">
+			<div class="tableList" layouth="116">
+				<table class="list" width="100%">
+					<thead>
+						<tr class="tr_odd">
+							<th width="10%" class="td_fr"></th>
+							<th width="30%" class="td_fr">角色编号</th>
+							<th width="60%" class="td_ls">角色名称</th>
+						</tr>
+					</thead>
+					<tbody>
+						<volist id="vo" name="role" >
+						<tr target="roleId" rel="{$vo['id']},{$vo['productId']}" >
+							<td class="td_fr"><input  type="radio" name="role" id="role" value="{$vo['id']}" ></td>	
+							<td class="td_fr">{$numStart + $i}</td>
+							<td class="td_ls">{$vo['roleName']}</td>
+							<input type="hidden" target="productId" rel="{$vo['productId']}" />
+						</tr>
+						</volist>
+						
+					</tbody>
+
+				</table>
+			</div>
+			<div class="panelBar">
+				<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="main_con_info tabs">
+		<div class="tabsHeader">
+			<div class="tabsHeaderContent">
+				<ul>
+					<li><a href="javascript:;"><span>权限</span></a></li>
+					<li><a href="javascript:;" onclick="showUsers();"><span>用户列表</span></a></li>
+					<li><a href="javascript:;"><span>用户组列表</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="tabsContent"  layouth="84">
+			<div class="ui_tab_bd">
+				<div class="ui_red_tip">权限说明：角色关联权限，权限分为菜单、动作、元素（列级数据）、工作流</div>
+				<div id="resourceOfRole">
+				<table class="ui_info_plate">
+					<tr>
+						<td class="plate_item" width="200">
+							<p class="ui_info_tit">所拥有的菜单</p>
+							<div class="ui_info_con" layouth="181">
+								<ul class="tree collapse treeFolder" id="menuOfRole">
+									
+									
+								</ul>
+							</div>
+						</td>
+						<td class="plate_item user_element" width="275">
+							<p class="ui_info_tit">所拥有的动作</p>
+							<div class="tableList bd_side" layouth="192">
+								<table class="list" width="100%">
+									<thead>
+										<tr>
+											<th>菜单名称</th>
+											<th>动作编号</th>
+											<th>动作名称</th>
+										</tr>
+									</thead>
+									<tbody>
+										
+									</tbody>
+								</table>
+							</div>
+							<div class="panelBar">
+								<!-- <div class="pages">
+									<span>共{$totalCount}条</span>
+								</div> -->
+								<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+							</div>
+						</td>
+						<td class="plate_item user_element" width="275">
+							<p class="ui_info_tit">所拥有的元素</p>
+							<div class="tableList bd_side" layouth="192">
+								<table class="list" width="100%">
+									<thead>
+										<tr>
+											<th>元素编号</th>
+											<th>权限类型</th>
+											<th>元素名称</th>
+										</tr>
+									</thead>
+									<tbody>
+										
+									</tbody>
+								</table>
+							</div>
+							<div class="panelBar">
+								<!-- <div class="pages">
+									<span>共{$totalCount}条</span>
+								</div> -->
+								<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+							</div>
+						</td>
+						<td class="plate_item" width="200">
+							<p class="ui_info_tit">所拥有的工作流</p>
+							<div class="ui_info_con" layouth="181">
+								<ul class="tree collapse">
+									<li>
+										<a href="javascript:;">用户管理</a>
+										<ul>
+											<li><a href="javascript:;">用户录入</a></li>
+											<li><a href="javascript:;">用户修改</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="javascript:;">角色管理</a>
+										<ul>
+											<li><a href="javascript:;">用户录入</a></li>
+											<li><a href="javascript:;">用户修改</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</table>
+				</div>
+			</div>
+			<div class="ui_tab_bd" >
+				<div class="pageHeader">
+					<form rel="pagerForm" onsubmit="return divSearch(this,'user_group_list');" action="" method="post">
+						<div class="searchBar">
+							<table class="searchContent">
+								<tr>
+									<td><label>用户名称：</label><input type="text" name="userName" id="userName" class="textInput" /></td>	
+									<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<input type="hidden" name="pageNum" value="1" />
+						<input type="hidden" name="numPerPage" value="20" />
+					</form>
+				</div>
+				<div id="showUsers">
+				<div class="tableList bd_side mlr10" layouth="176" >
+					<table class="list" width="100%">
+						<thead>
+							<tr class="tr_odd">
+								<th>用户编号</th>
+								<th>用户名称</th>
+								<th>上级用户</th>
+								<th>用户等级</th>
+								<th>用户类型</th>
+								<th>用户机构</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+				</div>
+				<div class="panelBar mlr10">
+					<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+				</div>
+				</div>
+			</div>
+			<div class="ui_tab_bd">
+				<div class="pageHeader">
+					<form rel="pagerForm" onsubmit="return divSearch(this,'user_group_list');" action="" method="post">
+						<div class="searchBar">
+							<table class="searchContent">
+								<tr>
+									<td><label>用户组编号：</label><input type="text" name="" id="" class="textInput" /></td>
+									<td><label>用户组名称：</label><input type="text" name="" id="" class="textInput" /></td>	
+									<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<input type="hidden" name="pageNum" value="1" />
+						<input type="hidden" name="numPerPage" value="20" />
+						<input type="hidden" name="orderField" value="termid" />
+						<input type="hidden" name="orderDirection" value="desc" />
+					</form>
+				</div>
+				<div class="tableList bd_side mlr10" layouth="176">
+					<table class="list" width="100%">
+						<thead>
+							<tr class="tr_odd">
+								<th>用户组编号</th>
+								<th>用户组名称</th>
+								<th>用户编号</th>
+								<th>用户名称</th>
+								<th>上级用户</th>
+								<th>用户等级</th>
+								<th>用户类型</th>
+								<th>所属机构</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>00001</td>
+								<td>sdfasdf</td>
+								<td>sdfasdf</td>
+								<td>sdfasdf</td>
+								<td>sdfasdf</td>
+								<td>sdfasdf</td>
+								<td>sdfasdf</td>
+								<td>sdfasdf</td>
+							</tr>
+							<tr>
+								<td>00001</td>
+								<td>sdfasdf</td>
+								<td>sdfasdf</td>
+								<td>sdfasdf</td>
+								<td>sdfasdf</td>
+								<td>sdfasdf</td>
+								<td>sdfasdf</td>
+								<td>sdfasdf</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="panelBar mlr10">
+					<!-- <div class="pages">
+						<span>共{$totalCount}条</span>
+					</div> -->
+					<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$("input[name='role']").click(function(){ 
+	var roleId = $(this).val();
+	//给隐藏的roleid赋值，后面查找用户的要用
+	$("#roleId").val(roleId);
+
+	showMenuActElement(roleId)
+	showUsers(roleId);
+});
+
+function showUsers(roleId){
+	var roleId = $("#roleId").val();
+	var $box = $("#showUsers");
+	$box.ajaxUrl({
+		type: "POST",
+		url: "__URL__/queryUserList",
+		data: 'roleId='+roleId,
+		callback: function() {
+			$box.find("[layoutH]").layoutH();
+		}
+	});
+}
+
+function showMenuActElement(roleId){
+	var $box = $("#resourceOfRole");
+	$box.ajaxUrl({
+		type: "POST",
+		url: "__URL__/queryRoleDetail",
+		data: 'roleId='+roleId,
+		callback: function() {
+			$box.find("[layoutH]").layoutH();
+		}
+	});
+}
+</script>

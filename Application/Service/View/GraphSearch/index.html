@@ -1,0 +1,75 @@
+
+<include file="Public:pagerFormLog" />
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return dwzSearch(this, 'dialog');;" action="__URL__" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+			<label>IP：</label>
+			<input type="text" value="{$_REQUEST['hostip']}" id="query" name="hostip" class="textInput">
+			</li>
+			<li>
+			<label>主机名：</label>
+			<input type="text" value="{$_REQUEST['hostname']}" id="query" name="hostname" class="textInput">
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+		<tr>
+			<th width="60">序号</th>
+			<th>IP</th>
+			<th>主机名</th>
+			<th>机柜</th>
+			<th>系统</th>
+			<th width="80">操作</th>
+		</tr>
+		</thead>
+		<tbody>
+			<volist id="vo" name="list">
+			<tr>
+				<td>
+				<?php 
+					$tag = ($currentPage-1)*$numPerPage + $i;
+				?>
+				<?php echo $tag; ?>
+				</td>
+				<td>{$vo.ip}</td>
+				<td>{$vo.hostName}</td>
+				<td>{$vo.cabinet}</td>
+				<td>{$vo.os}</td>
+				<td><a class="btnSelect" title="查找带回" href="javascript:$.bringBack({'nodeId':'<?php echo $vo['id']; ?>','nodeIp':'<?php echo $vo['ip']; ?>','nodeName':'<?php echo $vo['hostName']; ?>','callback':'xgdfindValue()'})">选择</a></td>
+			</tr>
+			</volist>
+		</tbody>
+	</table>
+		<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="dialogPageBreak({numPerPage:this.value})">
+				<?php
+					$numPerPageArr = array(20,50,100,200);
+					foreach($numPerPageArr as $val)
+					{
+						if($val == $numPerPage)
+							$selected = 'selected';
+						echo '<option value="'.$val.'" '.$selected.'>'.$val.'</option>';
+							$selected = '';
+					}
+				?>
+			</select>
+			<span>条，共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+</div>

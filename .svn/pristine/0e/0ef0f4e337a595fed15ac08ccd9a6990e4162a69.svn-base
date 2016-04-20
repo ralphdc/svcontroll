@@ -1,0 +1,21 @@
+<style type="text/css">
+	.service-show-detail{display:none; width:290px; padding:10px; border:1px #63b025 solid;}
+</style>
+<div class="pageContent">
+<table class="table" width="100%" layoutH="50">
+	<tr>
+		<td width="100">告警元素</td>
+		<td width="150">告警信息</td>
+		<td width="180">告警时间</td>
+		<td>备注</td>
+	</tr>
+	<volist id="vo" name="sinfo">
+	<tr>
+		<td>{$vo['element']}</td>
+		<td>{$vo['info']}</td>
+		<td>{$vo['time']}</td>
+		<td>{$vo['remark']}</td>
+	</tr>
+	</volist>
+</table>
+</div>

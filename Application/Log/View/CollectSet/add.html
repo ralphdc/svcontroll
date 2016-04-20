@@ -1,0 +1,30 @@
+<div class="pageContent">
+<form method="post" action="__URL__/add" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+		<p>
+			<label>服务名称：</label>
+			<input type="text" size="28" class="required textInput" name="name" id="name">
+		</p>
+		<p>
+			<label>日志路径：</label>
+			<input type="text" size="28" class="required textInput" name="dir" id="dir">
+		</p>
+		<p>
+			<label>类型：</label>
+			<input type="text" size="28" class="required textInput" name="type" id="type">
+		</p>
+		<p>
+			<label>采集时间间隔(秒)：</label>
+			<input type="text" size="28" class="required textInput" name="interval" id="interval" />
+		</p>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>
+
+

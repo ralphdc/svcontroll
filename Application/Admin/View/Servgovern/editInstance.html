@@ -1,0 +1,33 @@
+<div class="pageContent" style="width: 420px;">
+	<form method="post" action="__URL__/update/method/updateinstance" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>机器名称：</label>
+				<input type="text" size="28" maxlength="30" name="machineName" class="required textInput" value="{$list['machineName']}">
+				<input type="hidden" size="28" name="id" class="textInput" value="{$list['id']}">
+				<input type="hidden" size="28" name="serverTypeId" class="textInput" value="{$list['serverTypeId']}">
+				<input type="hidden" size="28" name="typeName" class="textInput" value="{$list['typeName']}">
+			</p>
+			<p>
+				<label>Appid：</label>
+				<input type="text" size="28" name="appId" class="required textInput" value="{$list['appId']}" disabled>
+			</p>
+			<p>
+				<label>部署模式：</label>
+				<select name="deployMode" disabled>
+					<eq name="list['deployMode']" value="singleProcess">
+					<option value="singleProcess">单进程部署</option>
+					<else/>
+					<option value="multiProcess">多进程部署</option>
+					</eq>
+				  </select>
+			</p>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">修改</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

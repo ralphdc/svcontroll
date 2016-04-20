@@ -1,0 +1,169 @@
+<?php
+/**
+ * 服务管服务和java通信公共数据接口类子类（运维成员管理）
+ * @author zengguangqiu
+ *
+ */
+class OperatmemberModel extends CommunicationModel {
+	var $method = array(
+			'index'=>'monitor.staff.search',
+			'add'=>'monitor.staff.create',
+			'update'=>'monitor.staff.update',
+			'delete'=>'monitor.staff.deletebatch',
+			'deleteall'=>'monitor.staff.deletebatch',
+			'getrow'=>'monitor.staff.get',
+			'createprivate'=>'monitor.staff.rights.create',
+			'copyprivate'=>'monitor.staff.rights.copy',
+			'getright'=>'monitor.staff.rights.get',
+			'getall' =>'monitor.staff.load',
+			
+	);
+	/**
+	 * 保存和更新操作重写父类的方法
+	 * @see CommunicationModel::postSave()
+	 */
+	function postSave($post,$get=null){
+		$result = '';
+		if($post['form_act']=='create'){
+			$post['key'] = $this->method['add'];
+			$post = $this->formatPost($post,$get);
+			$result =$this->request_by_other( $post);
+		}elseif($post['form_act']=='update'){
+			$post['key'] = $this->method['update'];
+			$post = $this->formatPost($post,$get);
+			$result = $this->request_by_other($post);
+		}
+		return json_decode($result,true);
+	}
+	/**
+	 * 保存和更新权限
+	 * @param array $post
+	 * @param array $get
+	 * @return array
+	 */
+	function postSavePrivate($post,$get=null){
+		$result = '';
+		if($post['form_act']=='create'){
+			$post['key'] = $this->method['createprivate'];
+			$post = $this->formatPost($post,$get);
+			$result =$this->request_by_other( $post);
+		}elseif($post['form_act']=='copy'){
+			$post['key'] = $this->method['copyprivate'];
+			$post = $this->formatPost($post,$get);
+			$result = $this->request_by_other($post);
+		}
+		return json_decode($result,true);
+	}
+	
+	
+	/**
+	 * 根据POST过来的数据提取查询条件查询记录条数
+	 * @param array $post
+	 * @return int
+	 */
+	function countByPost ($post, $get) {
+		if(empty($this->count)){
+		   $this->count = 0;
+		}
+		return $this->count;
+	}
+	
+	/**
+	 * 根据POST过来的数据提取查询条件查询记录
+	 * @param array $post
+	 * @return array
+	 */
+	function findByPost ($post, $get) {
+		if(!empty($post)){
+			foreach ($post as $key=>$valus){
+				$post[$key]=trim($valus," ");
+			}
+		}
+		$Num = $post['pageNum']!='' ? $post['pageNum'] : 1;
+		if ($post['numPerPage']!='') {
+			setcookie('numPerPage',$post['numPerPage']);
+			$numPer = $post['numPerPage'];
+		}
+		else {
+			$numPer = $_COOKIE['numPerPage']!=0 ?$_COOKIE['numPerPage'] : 20;
+		}
+		$limit1 = (intval($Num)-1)*intval($numPer);
+		$limit = array(intval($numPer),$limit1);
+		$post['key']=$this->method['index'];
+		$post['data']['name'] = $post['name'];
+		$post['data']['mobile'] = $post['mobile'];
+		$post['page']['pageNo']=intval($Num);
+		$post['page']['pageSize']=intval($numPer);
+		$post = $this->formatPost($post,$get);
+		$array = $this->request_by_other($post,$get);
+		$array = json_decode($array,true);
+		$result = $array['data'];
+		$this->count = $array['total'];
+		return $result;
+	}
+	/**
+	 * 根据ID获取一行记录
+	 * @param int $id
+	 */
+	function getRowInfo($id)
+	{
+		$post['id'] = $id;
+		$post['key']=$this->method['getrow'];
+		$post = $this->formatPost($post);
+		$array = $this->request_by_other($post);
+		$array = json_decode($array,true);
+		return $array['data'];
+	}
+	/**
+	 * 删除单个的接口
+	 * @param string $id
+	 */
+	function delete($id)
+	{
+		$post['key']=$this->method['delete'];
+		$post['ids'] = $id;
+		$post = $this->formatPost($post);
+		$array = $this->request_by_other($post);
+		$array = json_decode($array,true);
+		return $array;
+	}
+	/**
+	 * 删除多个的接口
+	 * @param string $ids
+	 */
+	function deleteAll($ids)
+	{
+		$post['key']=$this->method['deleteall'];
+		$post['ids'] = $ids;
+		$post = $this->formatPost($post);
+		$array = $this->request_by_other($post);
+		$array = json_decode($array,true);
+		return $array;
+	}
+	/**
+	 * 
+	 * 获取对应的选中的玩家的所有的权限
+	 * @param int $id
+	 */
+	function getAllrights($id)
+	{
+		$post['key']=$this->method['getright'];
+		$post['id'] = $id;
+		$post = $this->formatPost($post);
+		$array = $this->request_by_other($post);
+		$array = json_decode($array,true);
+		return $array['data'][0]['rights'];
+	}
+	/**
+	 * 获取所有的运维成员信息
+	 * @see CommunicationModel::getAll()
+	 */
+	function getAll($post, $get)
+	{
+		$post['key']=$this->method['getall'];
+		$post = $this->formatPost($post);
+		$array = $this->request_by_other($post);
+		$array = json_decode($array,true);
+		return $array['data'];
+	}
+}

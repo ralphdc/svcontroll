@@ -1,0 +1,15 @@
+<div class="accordion">
+	<div class="accordionHeader">
+		<h2><div class="side_menu_icon_3">邮件邮箱管理</div></h2>
+	</div>
+	
+	<div class="accordionContent">
+		<ul class="tree leftmenu treeFolder">
+			<li class="nonesub"><a class="tree_menu" href="__MODULE__/Contacts" target="navTab" rel="L101">◆商户通讯录</a></li>
+			<li class="nonesub"><a class="tree_menu" href="__MODULE__/Mailsend" target="navTab" rel="L102">◆写信</a></li>
+			<li class="nonesub"><a class="tree_menu" href="__MODULE__/Mailisused" target="navTab" rel="L103">◆已发邮件</a></li>
+			
+		</ul>
+	</div> 
+
+</div>

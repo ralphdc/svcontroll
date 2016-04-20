@@ -1,0 +1,551 @@
+[ 2016-03-21T19:11:02+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558662090
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.products.search","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:11:02","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:11:02+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558662090
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:11:02+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558662090
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"pdId":15874,"pdName":"scm","pdDemo":null,"pdIcon":"unlock.png"},{"pdId":16087,"pdName":"mq_msg","pdDemo":"ss","pdIcon":"56e92a64b7aa1.png"},{"pdId":16692,"pdName":"mpay","pdDemo":null,"pdIcon":"56e92a6bb5e92.jpg"},{"pdId":16707,"pdName":"Monitor_servcontrol","pdDemo":"tyu","pdIcon":"56e92a73d3e37.png"},{"pdId":16736,"pdName":"WEB","pdDemo":"rt","pdIcon":"sky2.jpg"},{"pdId":17440,"pdName":"mapy","pdDemo":"sxs","pdIcon":"56e92abd22e53.png"},{"pdId":17637,"pdName":"omp","pdDemo":null,"pdIcon":"weixin.png"},{"pdId":17781,"pdName":"logsrv-service","pdDemo":null,"pdIcon":"pengyouquan.png"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:11:02+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558662090
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.services.list ","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:11:02","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:11:02+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558662090
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:11:02+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558662090
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"pmsignlist","serviceFunction":"调单服务"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_icealarm","serviceFunction":"ice调用失败告警"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_groupweight1233","serviceFunction":"ice服务"},{"aliasProduct":"mq_msg","aliasProductId":"16087","serviceName":"MsgQueueReceiverStartUp","serviceFunction":"交易引擎服务"},{"aliasProduct":"mpay","aliasProductId":"16692","serviceName":"mpay_shjk","serviceFunction":"实时消息推送服务"},{"aliasProduct":"Monitor_servcontrol","aliasProductId":"16707","serviceName":"simulate_spos","serviceFunction":"监控数据服务"},{"aliasProduct":"WEB","aliasProductId":"16736","serviceName":"web-service","serviceFunction":"php"},{"aliasProduct":"mapy","aliasProductId":"17440","serviceName":"fund_mpay_client_provider","serviceFunction":"新总账UI"},{"aliasProduct":"omp","aliasProductId":"17637","serviceName":"omp-zookeeper","serviceFunction":"重命名test"},{"aliasProduct":"logsrv-service","aliasProductId":"17781","serviceName":"log_srv","serviceFunction":"日志服务平台"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:11:02+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558662090
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphlogicController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphlogicController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [2] Missing argument 1 for ProiconModel::queryServiceList(), called in E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php on line 347 and defined E:\www\Sermanage\Application\Service\Model\ProiconModel.class.php 第 160 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-21T19:11:02+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558662255
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.products.search","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:11:02","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:11:02+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558662255
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:11:02+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558662255
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[
+
+
+{"pdId":15874,"pdName":"scm","pdDemo":null,"pdIcon":"unlock.png"},
+{"pdId":16087,"pdName":"mq_msg","pdDemo":"ss","pdIcon":"56e92a64b7aa1.png"},
+{"pdId":16692,"pdName":"mpay","pdDemo":null,"pdIcon":"56e92a6bb5e92.jpg"},
+{"pdId":16707,"pdName":"Monitor_servcontrol","pdDemo":"tyu","pdIcon":"56e92a73d3e37.png"},
+{"pdId":16736,"pdName":"WEB","pdDemo":"rt","pdIcon":"sky2.jpg"},
+{"pdId":17440,"pdName":"mapy","pdDemo":"sxs","pdIcon":"56e92abd22e53.png"},
+{"pdId":17637,"pdName":"omp","pdDemo":null,"pdIcon":"weixin.png"},
+{"pdId":17781,"pdName":"logsrv-service","pdDemo":null,"pdIcon":"pengyouquan.png"}
+],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+
+
+
+[ 2016-03-21T19:11:02+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558662255
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.services.list ","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:11:02","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:11:02+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558662255
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:11:02+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558662255
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"pmsignlist","serviceFunction":"调单服务"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_icealarm","serviceFunction":"ice调用失败告警"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_groupweight1233","serviceFunction":"ice服务"},{"aliasProduct":"mq_msg","aliasProductId":"16087","serviceName":"MsgQueueReceiverStartUp","serviceFunction":"交易引擎服务"},{"aliasProduct":"mpay","aliasProductId":"16692","serviceName":"mpay_shjk","serviceFunction":"实时消息推送服务"},{"aliasProduct":"Monitor_servcontrol","aliasProductId":"16707","serviceName":"simulate_spos","serviceFunction":"监控数据服务"},{"aliasProduct":"WEB","aliasProductId":"16736","serviceName":"web-service","serviceFunction":"php"},{"aliasProduct":"mapy","aliasProductId":"17440","serviceName":"fund_mpay_client_provider","serviceFunction":"新总账UI"},{"aliasProduct":"omp","aliasProductId":"17637","serviceName":"omp-zookeeper","serviceFunction":"重命名test"},{"aliasProduct":"logsrv-service","aliasProductId":"17781","serviceName":"log_srv","serviceFunction":"日志服务平台"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:11:02+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558662255
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphlogicController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphlogicController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [2] Missing argument 1 for ProiconModel::queryServiceList(), called in E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php on line 347 and defined E:\www\Sermanage\Application\Service\Model\ProiconModel.class.php 第 160 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-21T19:13:14+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558794322
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.products.search","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:13:14","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:13:14+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558794322
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:13:14+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558794322
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"pdId":15874,"pdName":"scm","pdDemo":null,"pdIcon":"unlock.png"},{"pdId":16087,"pdName":"mq_msg","pdDemo":"ss","pdIcon":"56e92a64b7aa1.png"},{"pdId":16692,"pdName":"mpay","pdDemo":null,"pdIcon":"56e92a6bb5e92.jpg"},{"pdId":16707,"pdName":"Monitor_servcontrol","pdDemo":"tyu","pdIcon":"56e92a73d3e37.png"},{"pdId":16736,"pdName":"WEB","pdDemo":"rt","pdIcon":"sky2.jpg"},{"pdId":17440,"pdName":"mapy","pdDemo":"sxs","pdIcon":"56e92abd22e53.png"},{"pdId":17637,"pdName":"omp","pdDemo":null,"pdIcon":"weixin.png"},{"pdId":17781,"pdName":"logsrv-service","pdDemo":null,"pdIcon":"pengyouquan.png"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:13:14+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558794322
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.services.list ","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:13:14","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:13:14+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558794322
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:13:14+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558794322
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"pmsignlist","serviceFunction":"调单服务"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_icealarm","serviceFunction":"ice调用失败告警"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_groupweight1233","serviceFunction":"ice服务"},{"aliasProduct":"mq_msg","aliasProductId":"16087","serviceName":"MsgQueueReceiverStartUp","serviceFunction":"交易引擎服务"},{"aliasProduct":"mpay","aliasProductId":"16692","serviceName":"mpay_shjk","serviceFunction":"实时消息推送服务"},{"aliasProduct":"Monitor_servcontrol","aliasProductId":"16707","serviceName":"simulate_spos","serviceFunction":"监控数据服务"},{"aliasProduct":"WEB","aliasProductId":"16736","serviceName":"web-service","serviceFunction":"php"},{"aliasProduct":"mapy","aliasProductId":"17440","serviceName":"fund_mpay_client_provider","serviceFunction":"新总账UI"},{"aliasProduct":"omp","aliasProductId":"17637","serviceName":"omp-zookeeper","serviceFunction":"重命名test"},{"aliasProduct":"logsrv-service","aliasProductId":"17781","serviceName":"log_srv","serviceFunction":"日志服务平台"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:13:14+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558794322
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphlogicController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphlogicController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [2] Missing argument 1 for ProiconModel::queryServiceList(), called in E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php on line 347 and defined E:\www\Sermanage\Application\Service\Model\ProiconModel.class.php 第 160 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-21T19:13:14+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558794474
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.products.search","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:13:14","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:13:14+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558794474
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:13:14+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558794474
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"pdId":15874,"pdName":"scm","pdDemo":null,"pdIcon":"unlock.png"},{"pdId":16087,"pdName":"mq_msg","pdDemo":"ss","pdIcon":"56e92a64b7aa1.png"},{"pdId":16692,"pdName":"mpay","pdDemo":null,"pdIcon":"56e92a6bb5e92.jpg"},{"pdId":16707,"pdName":"Monitor_servcontrol","pdDemo":"tyu","pdIcon":"56e92a73d3e37.png"},{"pdId":16736,"pdName":"WEB","pdDemo":"rt","pdIcon":"sky2.jpg"},{"pdId":17440,"pdName":"mapy","pdDemo":"sxs","pdIcon":"56e92abd22e53.png"},{"pdId":17637,"pdName":"omp","pdDemo":null,"pdIcon":"weixin.png"},{"pdId":17781,"pdName":"logsrv-service","pdDemo":null,"pdIcon":"pengyouquan.png"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:13:14+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558794474
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.services.list ","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:13:14","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:13:14+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558794474
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:13:14+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558794474
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"pmsignlist","serviceFunction":"调单服务"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_icealarm","serviceFunction":"ice调用失败告警"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_groupweight1233","serviceFunction":"ice服务"},{"aliasProduct":"mq_msg","aliasProductId":"16087","serviceName":"MsgQueueReceiverStartUp","serviceFunction":"交易引擎服务"},{"aliasProduct":"mpay","aliasProductId":"16692","serviceName":"mpay_shjk","serviceFunction":"实时消息推送服务"},{"aliasProduct":"Monitor_servcontrol","aliasProductId":"16707","serviceName":"simulate_spos","serviceFunction":"监控数据服务"},{"aliasProduct":"WEB","aliasProductId":"16736","serviceName":"web-service","serviceFunction":"php"},{"aliasProduct":"mapy","aliasProductId":"17440","serviceName":"fund_mpay_client_provider","serviceFunction":"新总账UI"},{"aliasProduct":"omp","aliasProductId":"17637","serviceName":"omp-zookeeper","serviceFunction":"重命名test"},{"aliasProduct":"logsrv-service","aliasProductId":"17781","serviceName":"log_srv","serviceFunction":"日志服务平台"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:13:14+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458558794474
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2048] Declaration of GraphlogicController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphlogicController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [2] Missing argument 1 for ProiconModel::queryServiceList(), called in E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php on line 347 and defined E:\www\Sermanage\Application\Service\Model\ProiconModel.class.php 第 160 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-21T19:16:40+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559000819
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.products.search","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:16:40","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:16:40+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559000819
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:16:40+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559000819
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"pdId":15874,"pdName":"scm","pdDemo":null,"pdIcon":"unlock.png"},{"pdId":16087,"pdName":"mq_msg","pdDemo":"ss","pdIcon":"56e92a64b7aa1.png"},{"pdId":16692,"pdName":"mpay","pdDemo":null,"pdIcon":"56e92a6bb5e92.jpg"},{"pdId":16707,"pdName":"Monitor_servcontrol","pdDemo":"tyu","pdIcon":"56e92a73d3e37.png"},{"pdId":16736,"pdName":"WEB","pdDemo":"rt","pdIcon":"sky2.jpg"},{"pdId":17440,"pdName":"mapy","pdDemo":"sxs","pdIcon":"56e92abd22e53.png"},{"pdId":17637,"pdName":"omp","pdDemo":null,"pdIcon":"weixin.png"},{"pdId":17781,"pdName":"logsrv-service","pdDemo":null,"pdIcon":"pengyouquan.png"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:16:40+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559000819
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.services.list ","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:16:40","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:16:40+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559000819
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:16:40+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559000819
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"pmsignlist","serviceFunction":"调单服务"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_icealarm","serviceFunction":"ice调用失败告警"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_groupweight1233","serviceFunction":"ice服务"},{"aliasProduct":"mq_msg","aliasProductId":"16087","serviceName":"MsgQueueReceiverStartUp","serviceFunction":"交易引擎服务"},{"aliasProduct":"mpay","aliasProductId":"16692","serviceName":"mpay_shjk","serviceFunction":"实时消息推送服务"},{"aliasProduct":"Monitor_servcontrol","aliasProductId":"16707","serviceName":"simulate_spos","serviceFunction":"监控数据服务"},{"aliasProduct":"WEB","aliasProductId":"16736","serviceName":"web-service","serviceFunction":"php"},{"aliasProduct":"mapy","aliasProductId":"17440","serviceName":"fund_mpay_client_provider","serviceFunction":"新总账UI"},{"aliasProduct":"omp","aliasProductId":"17637","serviceName":"omp-zookeeper","serviceFunction":"重命名test"},{"aliasProduct":"logsrv-service","aliasProductId":"17781","serviceName":"log_srv","serviceFunction":"日志服务平台"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:16:40+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559000819
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [2048] Declaration of GraphlogicController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphlogicController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [2] Missing argument 1 for ProiconModel::queryServiceList(), called in E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php on line 347 and defined E:\www\Sermanage\Application\Service\Model\ProiconModel.class.php 第 160 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-21T19:16:40+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559000930
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.products.search","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:16:40","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:16:40+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559000930
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:16:41+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559000930
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"pdId":15874,"pdName":"scm","pdDemo":null,"pdIcon":"unlock.png"},{"pdId":16087,"pdName":"mq_msg","pdDemo":"ss","pdIcon":"56e92a64b7aa1.png"},{"pdId":16692,"pdName":"mpay","pdDemo":null,"pdIcon":"56e92a6bb5e92.jpg"},{"pdId":16707,"pdName":"Monitor_servcontrol","pdDemo":"tyu","pdIcon":"56e92a73d3e37.png"},{"pdId":16736,"pdName":"WEB","pdDemo":"rt","pdIcon":"sky2.jpg"},{"pdId":17440,"pdName":"mapy","pdDemo":"sxs","pdIcon":"56e92abd22e53.png"},{"pdId":17637,"pdName":"omp","pdDemo":null,"pdIcon":"weixin.png"},{"pdId":17781,"pdName":"logsrv-service","pdDemo":null,"pdIcon":"pengyouquan.png"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:16:41+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559000930
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.services.list ","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:16:41","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:16:41+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559000930
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:16:41+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559000930
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"pmsignlist","serviceFunction":"调单服务"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_icealarm","serviceFunction":"ice调用失败告警"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_groupweight1233","serviceFunction":"ice服务"},{"aliasProduct":"mq_msg","aliasProductId":"16087","serviceName":"MsgQueueReceiverStartUp","serviceFunction":"交易引擎服务"},{"aliasProduct":"mpay","aliasProductId":"16692","serviceName":"mpay_shjk","serviceFunction":"实时消息推送服务"},{"aliasProduct":"Monitor_servcontrol","aliasProductId":"16707","serviceName":"simulate_spos","serviceFunction":"监控数据服务"},{"aliasProduct":"WEB","aliasProductId":"16736","serviceName":"web-service","serviceFunction":"php"},{"aliasProduct":"mapy","aliasProductId":"17440","serviceName":"fund_mpay_client_provider","serviceFunction":"新总账UI"},{"aliasProduct":"omp","aliasProductId":"17637","serviceName":"omp-zookeeper","serviceFunction":"重命名test"},{"aliasProduct":"logsrv-service","aliasProductId":"17781","serviceName":"log_srv","serviceFunction":"日志服务平台"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:16:41+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559000930
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphlogicController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphlogicController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [2] Missing argument 1 for ProiconModel::queryServiceList(), called in E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php on line 347 and defined E:\www\Sermanage\Application\Service\Model\ProiconModel.class.php 第 160 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-21T19:27:42+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559662818
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.products.search","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:27:42","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:27:42+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559662818
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:27:42+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559662818
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"pdId":15874,"pdName":"scm","pdDemo":null,"pdIcon":"unlock.png"},{"pdId":16087,"pdName":"mq_msg","pdDemo":"ss","pdIcon":"56e92a64b7aa1.png"},{"pdId":16692,"pdName":"mpay","pdDemo":null,"pdIcon":"56e92a6bb5e92.jpg"},{"pdId":16707,"pdName":"Monitor_servcontrol","pdDemo":"tyu","pdIcon":"56e92a73d3e37.png"},{"pdId":16736,"pdName":"WEB","pdDemo":"rt","pdIcon":"sky2.jpg"},{"pdId":17440,"pdName":"mapy","pdDemo":"sxs","pdIcon":"56e92abd22e53.png"},{"pdId":17637,"pdName":"omp","pdDemo":null,"pdIcon":"weixin.png"},{"pdId":17781,"pdName":"logsrv-service","pdDemo":null,"pdIcon":"pengyouquan.png"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:27:42+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559662818
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.services.list ","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:27:42","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:27:42+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559662818
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:27:42+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559662818
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"pmsignlist","serviceFunction":"调单服务"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_icealarm","serviceFunction":"ice调用失败告警"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_groupweight1233","serviceFunction":"ice服务"},{"aliasProduct":"mq_msg","aliasProductId":"16087","serviceName":"MsgQueueReceiverStartUp","serviceFunction":"交易引擎服务"},{"aliasProduct":"mpay","aliasProductId":"16692","serviceName":"mpay_shjk","serviceFunction":"实时消息推送服务"},{"aliasProduct":"Monitor_servcontrol","aliasProductId":"16707","serviceName":"simulate_spos","serviceFunction":"监控数据服务"},{"aliasProduct":"WEB","aliasProductId":"16736","serviceName":"web-service","serviceFunction":"php"},{"aliasProduct":"mapy","aliasProductId":"17440","serviceName":"fund_mpay_client_provider","serviceFunction":"新总账UI"},{"aliasProduct":"omp","aliasProductId":"17637","serviceName":"omp-zookeeper","serviceFunction":"重命名test"},{"aliasProduct":"logsrv-service","aliasProductId":"17781","serviceName":"log_srv","serviceFunction":"日志服务平台"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:27:42+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559662818
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphlogicController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphlogicController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [2] Missing argument 1 for ProiconModel::queryServiceList(), called in E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php on line 347 and defined E:\www\Sermanage\Application\Service\Model\ProiconModel.class.php 第 160 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-21T19:27:43+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559662977
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.products.search","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:27:43","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:27:43+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559662977
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:27:43+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559662977
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"pdId":15874,"pdName":"scm","pdDemo":null,"pdIcon":"unlock.png"},{"pdId":16087,"pdName":"mq_msg","pdDemo":"ss","pdIcon":"56e92a64b7aa1.png"},{"pdId":16692,"pdName":"mpay","pdDemo":null,"pdIcon":"56e92a6bb5e92.jpg"},{"pdId":16707,"pdName":"Monitor_servcontrol","pdDemo":"tyu","pdIcon":"56e92a73d3e37.png"},{"pdId":16736,"pdName":"WEB","pdDemo":"rt","pdIcon":"sky2.jpg"},{"pdId":17440,"pdName":"mapy","pdDemo":"sxs","pdIcon":"56e92abd22e53.png"},{"pdId":17637,"pdName":"omp","pdDemo":null,"pdIcon":"weixin.png"},{"pdId":17781,"pdName":"logsrv-service","pdDemo":null,"pdIcon":"pengyouquan.png"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:27:43+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559662977
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.services.list ","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 19:27:43","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T19:27:43+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559662977
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T19:27:43+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559662977
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"pmsignlist","serviceFunction":"调单服务"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_icealarm","serviceFunction":"ice调用失败告警"},{"aliasProduct":"scm","aliasProductId":"15874","serviceName":"omp_groupweight1233","serviceFunction":"ice服务"},{"aliasProduct":"mq_msg","aliasProductId":"16087","serviceName":"MsgQueueReceiverStartUp","serviceFunction":"交易引擎服务"},{"aliasProduct":"mpay","aliasProductId":"16692","serviceName":"mpay_shjk","serviceFunction":"实时消息推送服务"},{"aliasProduct":"Monitor_servcontrol","aliasProductId":"16707","serviceName":"simulate_spos","serviceFunction":"监控数据服务"},{"aliasProduct":"WEB","aliasProductId":"16736","serviceName":"web-service","serviceFunction":"php"},{"aliasProduct":"mapy","aliasProductId":"17440","serviceName":"fund_mpay_client_provider","serviceFunction":"新总账UI"},{"aliasProduct":"omp","aliasProductId":"17637","serviceName":"omp-zookeeper","serviceFunction":"重命名test"},{"aliasProduct":"logsrv-service","aliasProductId":"17781","serviceName":"log_srv","serviceFunction":"日志服务平台"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T19:27:43+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/editNode?_=1458559662977
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphlogicController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphlogicController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [2] Missing argument 1 for ProiconModel::queryServiceList(), called in E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php on line 347 and defined E:\www\Sermanage\Application\Service\Model\ProiconModel.class.php 第 160 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-03-21T20:24:08+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/monitor?id=109&start=1&_=1458563048533
+ERR: ////////////////////////////// request_by_other post is {"id":"109","start":"1","_":"1458563048533","key":"topo.info.get","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 20:24:08","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T20:24:08+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/monitor?id=109&start=1&_=1458563048533
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T20:24:08+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/monitor?id=109&start=1&_=1458563048533
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoId":109,"topoName":"88569","nodes":6,"graph":"{\"node\":[{\"xgdid\":\"1457608636474\",\"text\":\"Node1457608636474\",\"px\":100,\"py\":100,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"255，255，255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"default\"},{\"xgdid\":\"MsgQueueReceiverStartUp\",\"text\":\"MsgQueueReceiverStartUp\",\"px\":644,\"py\":261,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"255，255，255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":true,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"default\",\"proName\":\"mq_msg\"},{\"xgdid\":\"1457608676510\",\"text\":\"Node1457608676510\",\"px\":266,\"py\":334,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"255，255，255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"default\"},{\"xgdid\":\"1457608676851\",\"text\":\"Node1457608676851\",\"px\":588,\"py\":61,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"255，255，255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"default\"},{\"xgdid\":\"1457608677147\",\"text\":\"Node1457608677147\",\"px\":1117,\"py\":292,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"255，255，255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"default\"},{\"xgdid\":\"1457608743261\",\"text\":\"Node1457608743261\",\"px\":884,\"py\":161,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"255，255，255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"default\"}],\"link\":[{\"text\":\"\",\"fromText\":\"MsgQueueReceiverStartUp\",\"toText\":\"Node1457608636474\",\"fromId\":\"MsgQueueReceiverStartUp\",\"toId\":\"1457608636474\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":\"1\",\"bundleGap\":\"1\",\"dcid\":1457608642486,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":\"5\",\"shadow\":false,\"dtype\":\"linking\",\"strokeColor\":\"255,255,0\",\"linkSetInfo\":{\"ltext\":\"\",\"ltype\":\"straight\",\"lwidth\":\"5\",\"larrowsize\":\"1\",\"lpattern\":\"default\",\"lbundlegap\":\"1\",\"loffset\":\"1\",\"lcolor\":\"255,255,0\"}},{\"text\":\"\",\"fromText\":\"Node1457608676851\",\"toText\":\"Node1457608677147\",\"fromId\":\"1457608676851\",\"toId\":\"1457608677147\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":\"6\",\"bundleGap\":\"1\",\"dcid\":1457608691888,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":\"8\",\"shadow\":false,\"dtype\":\"linking\",\"strokeColor\":\"255,255,0\",\"linkSetInfo\":{\"ltext\":\"\",\"ltype\":\"fold\",\"lwidth\":\"8\",\"larrowsize\":\"6\",\"lpattern\":\"dashedPattern\",\"lbundlegap\":\"1\",\"loffset\":\"1\",\"lcolor\":\"255,255,0\",\"lbundleOffset\":\"4\"}},{\"text\":\"888\",\"fromText\":\"Node1457608676510\",\"toText\":\"Node1457608743261\",\"fromId\":\"1457608676510\",\"toId\":\"1457608743261\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":\"5\",\"bundleGap\":\"1\",\"dcid\":1457608759185,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":\"5\",\"shadow\":false,\"dtype\":\"linking\",\"strokeColor\":\"255,255,0\",\"linkSetInfo\":{\"ltext\":\"888\",\"ltype\":\"curve\",\"lwidth\":\"5\",\"larrowsize\":\"5\",\"lpattern\":\"dashedPattern\",\"lbundlegap\":\"1\",\"loffset\":\"5\",\"lcolor\":\"255,255,0\"}}]}","data":"{\"MsgQueueReceiverStartUp\":{\"nodeName\":\"MsgQueueReceiverStartUp\",\"nodeType\":\"default\",\"proIcon\":\"56d6b85421f1d.png\",\"serviceDes\":\"交易引擎服务\",\"serviceName\":\"MsgQueueReceiverStartUp\",\"servicePro\":\"mq_msg\"}}","createDate":"2016-03-10 19:20:26.0","creator":"Admin","environment":5,"topoType":2},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T20:24:08+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/monitor?id=109&start=1&_=1458563048533
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphlogicController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphlogicController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: dtype E:\www\Sermanage\Runtime\Cache\Service\a1c7cc11638ca54e360c54ed28c8113c.php 第 65 行.
+NOTIC: [8] Undefined variable: dName E:\www\Sermanage\Runtime\Cache\Service\a1c7cc11638ca54e360c54ed28c8113c.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-03-21T20:24:13+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: volist E:\www\Sermanage\Runtime\Cache\Service\573a565d88655dd6d35e2fd9412a37b4.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.038000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-21T20:24:24+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic?_=1458563063527
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.listinfo.get","data":{"topoType":2,"submitor":"admin","envType":"5","environment":"5"},"page":{"pageNo":1,"pageSize":20},"ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 20:24:24","format":"json","envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T20:24:24+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic?_=1458563063527
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T20:24:24+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic?_=1458563063527
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"topoId":104,"topoName":"lg-0009","nodes":2,"createDate":"2016-03-09 15:06:26","environment":1,"topoType":2,"creator":"Admin"},{"topoId":107,"topoName":"service-link-test","nodes":2,"createDate":"2016-03-10 19:04:15","environment":5,"topoType":2,"creator":"Admin"},{"topoId":108,"topoName":"wed","nodes":2,"createDate":"2016-03-10 19:11:34","environment":5,"topoType":2,"creator":"Admin"},{"topoId":109,"topoName":"88569","nodes":6,"createDate":"2016-03-10 19:20:26","environment":5,"topoType":2,"creator":"Admin"},{"topoId":110,"topoName":"lg-test00-09","nodes":3,"createDate":"2016-03-11 09:54:12","environment":5,"topoType":2,"creator":"Admin"},{"topoId":118,"topoName":"678io","nodes":2,"createDate":"2016-03-16 14:09:59","environment":5,"topoType":2,"creator":"admin"},{"topoId":137,"topoName":"Jui-009-IOL-7","nodes":3,"createDate":"2016-03-21 17:30:47","environment":5,"topoType":2,"creator":"admin"}],"pageNo":1,"pageSize":20,"totalPage":1,"total":7}
+[ 2016-03-21T20:24:24+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic?_=1458563063527
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphlogicController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphlogicController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 35 行.
+NOTIC: [8] Undefined index: toponumPerPage E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 41 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Model\GraphlogicModel.class.php 第 79 行.
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Application\Service\Model\GraphlogicModel.class.php 第 80 行.
+NOTIC: [8] Undefined index: toponumPerPage E:\www\Sermanage\Application\Service\Model\GraphlogicModel.class.php 第 85 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Runtime\Cache\Service\0827d701ab6cd2ca21c3a20ef7cc22fe.php 第 6 行.
+NOTIC: [8] Undefined index: _order E:\www\Sermanage\Runtime\Cache\Service\0827d701ab6cd2ca21c3a20ef7cc22fe.php 第 8 行.
+NOTIC: [8] Undefined index: _sort E:\www\Sermanage\Runtime\Cache\Service\0827d701ab6cd2ca21c3a20ef7cc22fe.php 第 10 行.
+NOTIC: [8] Undefined variable: map E:\www\Sermanage\Runtime\Cache\Service\0827d701ab6cd2ca21c3a20ef7cc22fe.php 第 12 行.
+NOTIC: [8] Undefined index: data E:\www\Sermanage\Runtime\Cache\Service\0827d701ab6cd2ca21c3a20ef7cc22fe.php 第 24 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-21T20:24:25+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/monitor?id=137&start=1&_=1458563065545
+ERR: ////////////////////////////// request_by_other post is {"id":"137","start":"1","_":"1458563065545","key":"topo.info.get","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 20:24:25","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T20:24:25+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/monitor?id=137&start=1&_=1458563065545
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T20:24:25+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/monitor?id=137&start=1&_=1458563065545
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoId":137,"topoName":"Jui-009-IOL-7","nodes":3,"graph":"{\"node\":[{\"xgdid\":\"web-service3456_1458552553831\",\"text\":\"web-service3456\",\"px\":100,\"py\":100,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"255，255，255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"default\",\"sname\":\"web-service@php@WEB\",\"tpid\":\"\"},{\"xgdid\":\"simulate_spos_1458552545975\",\"text\":\"simulate_spos\",\"px\":389,\"py\":256,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"255，255，255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"default\",\"sname\":\"simulate_spos@监控数据服务@Monitor_servcontrol\",\"tpid\":\"\"},{\"xgdid\":\"110_1458552557289\",\"text\":\"lg-test00-09\",\"px\":746,\"py\":143,\"width\":107,\"height\":67,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"255，255，255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":true,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"childtp\",\"sname\":\"\",\"tpid\":110}],\"link\":[{\"text\":\"\",\"fromText\":\"simulate_spos\",\"toText\":\"lg-test00-09\",\"fromId\":\"simulate_spos_1458552545975\",\"toId\":\"110_1458552557289\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":15,\"bundleGap\":10,\"dcid\":1458552559551,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":3,\"shadow\":false,\"dtype\":\"linking\",\"strokeColor\":\"255,255,0\",\"linkSetInfo\":{\"ltype\":\"straight\",\"lwidth\":3,\"larrowsize\":15,\"lpattern\":\"default\",\"lbundlegap\":10,\"loffset\":3,\"lcolor\":\"255,255,0\",\"ltext\":\"\",\"lbundleOffset\":10}},{\"text\":\"\",\"fromText\":\"simulate_spos\",\"toText\":\"web-service3456\",\"fromId\":\"simulate_spos_1458552545975\",\"toId\":\"web-service3456_1458552553831\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":15,\"bundleGap\":10,\"dcid\":1458552561605,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":3,\"shadow\":false,\"dtype\":\"linking\",\"strokeColor\":\"255,255,0\",\"linkSetInfo\":{\"ltype\":\"straight\",\"lwidth\":3,\"larrowsize\":15,\"lpattern\":\"default\",\"lbundlegap\":10,\"loffset\":3,\"lcolor\":\"255,255,0\",\"ltext\":\"\",\"lbundleOffset\":10}},{\"text\":\"\",\"fromText\":\"web-service3456\",\"toText\":\"lg-test00-09\",\"fromId\":\"web-service3456_1458552553831\",\"toId\":\"110_1458552557289\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":15,\"bundleGap\":10,\"dcid\":1458552563527,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":3,\"shadow\":false,\"dtype\":\"linking\",\"strokeColor\":\"255,255,0\",\"linkSetInfo\":{\"ltype\":\"straight\",\"lwidth\":3,\"larrowsize\":15,\"lpattern\":\"default\",\"lbundlegap\":10,\"loffset\":3,\"lcolor\":\"255,255,0\",\"ltext\":\"\",\"lbundleOffset\":10}}]}","data":"--","createDate":"2016-03-21 17:30:47.0","creator":"admin","environment":5,"topoType":2},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T20:24:25+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/monitor?id=137&start=1&_=1458563065545
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphlogicController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphlogicController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [2] Invalid argument supplied for foreach() E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 229 行.
+NOTIC: [2] Redis::hMset() expects parameter 2 to be array, null given E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 232 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: dtype E:\www\Sermanage\Runtime\Cache\Service\a1c7cc11638ca54e360c54ed28c8113c.php 第 65 行.
+NOTIC: [8] Undefined variable: dName E:\www\Sermanage\Runtime\Cache\Service\a1c7cc11638ca54e360c54ed28c8113c.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-21T20:24:26+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"services":"web-service,simulate_spos","topoIds":"110","key":"topo.info.summary.logic","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 20:24:26","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T20:24:26+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T20:24:26+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoInfo":[{"topoId":110,"topoName":"lg-test00-09","nodes":3,"createDate":"2016-03-11 09:54:12.0","environment":5,"topoType":2,"creator":"Admin"}],"serviceInfo":[{"service":"web-service","warns":0},{"service":"simulate_spos","warns":0}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T20:24:26+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphlogicController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphlogicController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-21T20:24:28+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/edit/id/104?_=1458563068753
+ERR: ////////////////////////////// request_by_other post is {"id":"104","_":"1458563068753","key":"topo.info.get","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 20:24:28","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T20:24:28+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/edit/id/104?_=1458563068753
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T20:24:28+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/edit/id/104?_=1458563068753
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoId":104,"topoName":"lg-0009","nodes":2,"graph":"{\"node\":[{\"xgdid\":\"1457507181684\",\"text\":\"Node1457507181684\",\"px\":100,\"py\":100,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"255，255，255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"default\"},{\"xgdid\":\"omp_groupweight1233\",\"text\":\"omp_groupweight1233\",\"px\":424,\"py\":344,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"255，255，255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"default\",\"proName\":\"scm\"}],\"link\":[{\"text\":\"\",\"fromText\":\"omp_groupweight1233\",\"toText\":\"Node1457507181684\",\"fromId\":\"omp_groupweight1233\",\"toId\":\"1457507181684\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":15,\"bundleGap\":10,\"dcid\":1457507191283,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":3,\"shadow\":false,\"dtype\":\"linking\",\"strokeColor\":\"255,255,0\",\"linkSetInfo\":{\"ltype\":\"straight\",\"lwidth\":3,\"larrowsize\":15,\"lpattern\":\"default\",\"lbundlegap\":10,\"loffset\":3,\"lcolor\":\"255,255,0\",\"ltext\":\"\",\"lbundleOffset\":10}},{\"text\":\"qqqq\",\"fromText\":\"Node1457507181684\",\"toText\":\"omp_groupweight1233\",\"fromId\":\"1457507181684\",\"toId\":\"omp_groupweight1233\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":\"4\",\"bundleGap\":\"3\",\"dcid\":1457507217045,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":\"4\",\"shadow\":false,\"dtype\":\"linking\",\"strokeColor\":\"255,255,0\",\"linkSetInfo\":{\"ltype\":\"curve\",\"lwidth\":\"4\",\"larrowsize\":\"4\",\"lpattern\":\"dashedPattern\",\"lbundlegap\":\"3\",\"loffset\":\"4\",\"lcolor\":\"255,255,0\",\"ltext\":\"qqqq\",\"lbundleOffset\":10}}]}","data":"{\"omp_groupweight1233\":{\"nodeName\":\"omp_groupweight1233\",\"nodeType\":\"default\",\"proIcon\":\"56d83b1438578.png\",\"serviceDes\":\"ice服务\",\"serviceName\":\"omp_groupweight1233\",\"servicePro\":\"scm\"}}","createDate":"2016-03-09 15:06:26.0","creator":"Admin","environment":1,"topoType":2},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-21T20:24:29+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/edit/id/104?_=1458563068753
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.products.list","page":{"pageNo":1,"pageSize":20},"ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-21 20:24:29","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-21T20:24:29+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/edit/id/104?_=1458563068753
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-21T20:24:29+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/edit/id/104?_=1458563068753
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"pdId":15874,"pdName":"scm","pdDemo":null,"pdIcon":"unlock.png"},{"pdId":16087,"pdName":"mq_msg","pdDemo":"ss","pdIcon":"56e92a64b7aa1.png"},{"pdId":16692,"pdName":"mpay","pdDemo":null,"pdIcon":"56e92a6bb5e92.jpg"},{"pdId":16707,"pdName":"Monitor_servcontrol","pdDemo":"tyu","pdIcon":"56e92a73d3e37.png"},{"pdId":16736,"pdName":"WEB","pdDemo":"rt","pdIcon":"sky2.jpg"},{"pdId":17440,"pdName":"mapy","pdDemo":"sxs","pdIcon":"56e92abd22e53.png"},{"pdId":17637,"pdName":"omp","pdDemo":null,"pdIcon":"weixin.png"},{"pdId":17781,"pdName":"logsrv-service","pdDemo":null,"pdIcon":"pengyouquan.png"}],"pageNo":1,"pageSize":20,"totalPage":1,"total":8}
+[ 2016-03-21T20:24:29+08:00 ] 127.0.0.1 /index.php/Service/Graphlogic/edit/id/104?_=1458563068753
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphlogicController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphlogicController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [2] Missing argument 1 for ProiconModel::findByPost(), called in E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php on line 159 and defined E:\www\Sermanage\Application\Service\Model\ProiconModel.class.php 第 23 行.
+NOTIC: [2] Missing argument 2 for ProiconModel::findByPost(), called in E:\www\Sermanage\Application\Service\Controller\GraphlogicController.class.php on line 159 and defined E:\www\Sermanage\Application\Service\Model\ProiconModel.class.php 第 23 行.
+NOTIC: [8] Undefined variable: post E:\www\Sermanage\Application\Service\Model\ProiconModel.class.php 第 25 行.
+NOTIC: [8] Undefined variable: post E:\www\Sermanage\Application\Service\Model\ProiconModel.class.php 第 26 行.
+NOTIC: [8] Undefined variable: get E:\www\Sermanage\Application\Service\Model\ProiconModel.class.php 第 40 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined variable: get E:\www\Sermanage\Application\Service\Model\ProiconModel.class.php 第 41 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-21T20:24:37+08:00 ] 127.0.0.1 /index.php/Service/Index/img/cur/closedhand.cur
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+ERR: 非法操作:img
+

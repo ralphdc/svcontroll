@@ -1,0 +1,31 @@
+
+				<div class="tableList bd_side mlr10" layouth="176" >
+					<table class="list" width="100%">
+						<thead>
+							<tr class="tr_odd">
+								<th>用户编号</th>
+								<th>用户名称</th>
+								<th>上级用户</th>
+								<th>用户等级</th>
+								<th>用户类型</th>
+								<th>用户机构</th>
+							</tr>
+						</thead>
+						<tbody>
+							<volist id="item" name="userList" >
+							<tr>
+								<td>{$startNum + $i}</td>
+								<td>{$item['userName']}</td>
+								<td>{$item['upUserId']}</td>
+								<td>{$item['userStatus']}</td>
+								<td>{$item['userType']}</td>
+								<td>{$item['orgId']}</td>
+							</tr>
+							</volist>
+							
+						</tbody>
+					</table>
+				</div>
+				<div class="panelBar mlr10">
+					<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+				</div>

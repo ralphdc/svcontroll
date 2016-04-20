@@ -1,0 +1,37 @@
+<div class="pageContent">
+	<form method="post" action='/index.php/Service/Repertory/edit' class="pageForm required-validate" onsubmit="return validateCallback(this,deconfigEditAjaxDone)" novalidate="novalidate">
+		<input type="hidden" id="mwId" name="mwId" value="{$mwId}" />
+		<div class="pageFormContent" layouth="58">
+			<p>
+				<label>部署路径：</label>
+				<input type="text" size="40" class="required textInput" name="path" id="path" value="{$path}" />
+			</p>
+			<p>
+					<input type="hidden" value="{$defaultcfgid}" name="editmrconfig.id">
+					<label>配置文件：</label>
+					<input type="text" size="40" class="textInput" name="editmrconfig.name" id="" value="{$defaultcfg}" />
+					<a href="/index.php/Service/Repertory/select_info" rel="select_info_win" title="配置信息选择" mask="true" width="892" height="562" class="btnLook"  lookupgroup="editmrconfig">查找带回</a>
+			</p>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+<script>
+	function deconfigEditAjaxDone(json){
+		var name=$('#path').val();
+		if(name==''){
+			alert('路径不能为空');
+			return false;
+		}
+		DWZ.ajaxDone(json);
+		if(json.statusCode == '200')
+		{
+			$.pdialog.closeCurrent();
+		}
+	}
+</script>

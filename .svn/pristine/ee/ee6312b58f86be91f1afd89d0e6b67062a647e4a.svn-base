@@ -1,0 +1,312 @@
+<?php
+
+class DeviceInfoController extends CommonController {
+    var $navTab = 'D60629';
+    
+// 框架首页
+	public function index() {
+		C ( 'SHOW_RUN_TIME', false ); // 运行时间显示
+		C ( 'SHOW_PAGE_TRACE', false );
+		$pageNum =empty($_REQUEST['numPerPage']) ? C('PAGE_LISTROWS') : $_REQUEST['numPerPage'];
+		$this->assign ( 'numPerPage', $pageNum ); //每页显示多少条
+		$this->assign ( 'currentPage', !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1);
+		$deviceInfo = new DeviceInfoModel($_POST,$_GET);
+		$result = $deviceInfo->findByPost($_POST,$_GET);
+		$count = $deviceInfo->countByPost($_POST,$_GET);
+		$this->assign ( 'totalCount', $count );
+		$this->assign ( 'list', $result );
+		$this->assign ( 'map', array('hostname'=>'','ipv'=>'','environment'=>'','isVirtual'=>''));
+		$this->assign('environment',C('CONST_ENVIRONMENT'));
+		cookie('_currentUrl_', __SELF__);
+		
+		
+		$this->display();
+	}
+	
+    public function add(){
+		if($_POST){
+			$request = array();
+			foreach($_POST as $k =>$v){
+				$request[$k] = $v;
+	
+			}
+			
+			//组织要保存的数据
+			$post['data']['deviceNumber'] = I('post.deviceNumber','','trim,htmlspecialchars');
+			$post['data']['brand'] = I('post.brand','','trim,htmlspecialchars');
+			$post['data']['model'] = I('post.model','','trim,htmlspecialchars');
+			$post['data']['assetNumber'] = I('post.assetNumber','','trim,htmlspecialchars');
+			$post['data']['cpuinfo'] = I('post.cpuinfo','','trim,htmlspecialchars');
+			$post['data']['memoryinfo'] = I('post.memoryinfo','','trim,htmlspecialchars');
+			$post['data']['diskinfo'] = I('post.diskinfo','','trim,htmlspecialchars');
+			$post['data']['serviceNumber'] = I('post.serviceNumber','','trim,htmlspecialchars');
+			$post['data']['dutyman'] = I('post.dutyman','','trim,htmlspecialchars');
+			$post['data']['businessAddress'] = I('post.businessAddress','','trim,htmlspecialchars');
+			$post['data']['managementAddress'] = I('post.managementAddress','','trim,htmlspecialchars');
+			$post['data']['remark'] = I('post.remark','','trim,htmlspecialchars');
+			$post['data']['areaid'] = I('post.areaid','','trim,htmlspecialchars');
+			$post['data']['cabinetid'] = I('post.cabinetid','','trim,htmlspecialchars');
+			$post['form_act'] = 'create';
+			//调用java接口进行数据的操作
+			$deviceInfo = new DeviceInfoModel($_POST,$_GET);
+			$result = $deviceInfo->postSave($post);
+			
+			if(isset($result['errorCode']) && $result['errorCode']== 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+		//取出区域名称
+		$Areamanage = new AreamanageModel();
+		$allAreamanageInfo = $Areamanage->getAll();
+		$this->assign("AreamanageInfo",$allAreamanageInfo);
+		$this->display();
+	}
+	
+	function edit() {
+	    if($_POST){
+	        $request = array();
+	        foreach($_POST as $k =>$v){
+	            $request[$k] = $v;
+	
+	        }
+	        if(empty($_POST['prt_pdName']))
+	        {
+	            $_POST['prt_pdId'] = '';
+	        }
+	        //组织要保存的数据
+	    //组织要保存的数据
+	        $post['id'] = I('post.id','','intval');
+			$post['data']['deviceNumber'] = I('post.deviceNumber','','trim,htmlspecialchars');
+			$post['data']['brand'] = I('post.brand','','trim,htmlspecialchars');
+			$post['data']['model'] = I('post.model','','trim,htmlspecialchars');
+			$post['data']['assetNumber'] = I('post.assetNumber','','trim,htmlspecialchars');
+			$post['data']['cpuinfo'] = I('post.cpuinfo','','trim,htmlspecialchars');
+			$post['data']['memoryinfo'] = I('post.memoryinfo','','trim,htmlspecialchars');
+			$post['data']['diskinfo'] = I('post.diskinfo','','trim,htmlspecialchars');
+			$post['data']['serviceNumber'] = I('post.serviceNumber','','trim,htmlspecialchars');
+			$post['data']['dutyman'] = I('post.dutyman','','trim,htmlspecialchars');
+			$post['data']['businessAddress'] = I('post.businessAddress','','trim,htmlspecialchars');
+			$post['data']['managementAddress'] = I('post.managementAddress','','trim,htmlspecialchars');
+			$post['data']['remark'] = I('post.remark','','trim,htmlspecialchars');
+			$post['data']['areaid'] = I('post.areaid','','trim,htmlspecialchars');
+			$post['data']['cabinetid'] = I('post.cabinetid','','trim,htmlspecialchars');
+			$post['form_act'] = 'update';
+			//调用java接口进行数据的操作
+			$deviceInfo = new DeviceInfoModel($_POST,$_GET);
+			$result = $deviceInfo->postSave($post);
+			
+			if(isset($result['errorCode']) && $result['errorCode']== 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+	    }
+	    $id = $_REQUEST ['id'];
+	    $DeviceInfoModel = new DeviceInfoModel($_POST,$_GET);
+	    $vo = $DeviceInfoModel->getRowInfo($id);
+	    $this->assign('row', $vo);
+	    //取出区域名称
+	    $Areamanage = new AreamanageModel();
+	    $allAreamanageInfo = $Areamanage->getAll();
+	    
+	    //取出机柜信息；
+	    //$selecteCabite = $this->getTargetCabite($vo['areaid'],$vo['cabinetid']);
+	    $selecteCabite = $this->getTargetCabite($vo);
+	    $this->assign("AreamanageInfo",$allAreamanageInfo);
+	    $this->assign("CabitDom",$selecteCabite);
+	    $this->display();
+	}
+	
+	//获取机柜信息；
+	function getTargetCabite($voo)
+	{
+	    $option = '<option value="0">请选择机柜</option>';
+	    if($voo['areaid'] > 0){
+	        $post['areaid'] = $voo['areaid'];
+	        $Cabinet = new CabinetModel();
+	        $allinfo = $Cabinet->getAll($post);
+	        if(is_array($allinfo) && count($allinfo))
+	        {
+	            foreach ($allinfo as $key =>$val)
+	            {
+	                $selected = $val['id'] == $voo['cabinetid'] ? "selected='selected'" : '';
+	                $option .= '<option value="'.$val['id'].'" '.$selected.'>'.$val['name'].'</option>';
+	            }
+	        }
+	    }elseif ($voo['cabinetid'] > 0){
+	        $option .= '<option value="'.$voo['cabinetid'].'" selected="selected">'.$voo['cabinetname'].'</option>';
+	    }
+	    return $option;
+	}
+	
+	/**
+	 * 删除单个
+	 */
+	function delete()
+	{
+	    $id =$_GET['id'];
+	    $DeviceInfoModel = new DeviceInfoModel();
+	    $result = $DeviceInfoModel->delete($id);
+	    if(isset($result['errorCode']) && $result['errorCode'] == 0){
+	        $ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+	            "rel"=>"","forwardUrl"=>"");
+	        echo json_encode($ret);	return;
+	    }else{
+	        $msg = $result['errorMessage'];
+	        $ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+	            "rel"=>"","forwardUrl"=>"");
+	        echo json_encode($ret);	return;
+	    }
+	}
+	
+	/**
+	 * 批量删除
+	 * @see CommonController::foreverdelete()
+	 */
+	function foreverdelete()
+	{
+	    $ids =$_POST['ids'];
+	    $DeviceInfoModel = new DeviceInfoModel();
+	    $result = $DeviceInfoModel->deleteAll($ids);
+	    if(isset($result['errorCode']) && $result['errorCode'] == 0){
+	        $ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+	            "rel"=>"","forwardUrl"=>"");
+	        echo json_encode($ret);	return;
+	    }else{
+	        $msg = $result['errorMessage'];
+	        $ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+	            "rel"=>"","forwardUrl"=>"");
+	        echo json_encode($ret);	return;
+	    }
+	}
+	
+	function leading()
+	{
+	    if(I('post.act','','htmlspecialchars,trim') == 'upload'){
+	        $upload = new \Think\Upload();// 实例化上传类
+	        $upload->maxSize   =     31457280 ;// 设置附件上传大小
+	        $upload->exts      =     array('xls', 'xlsx','jpg','png');// 设置附件上传类型
+	        $upload->rootPath  =      './Uploads/'; // 设置附件上传根目录
+	        $upload->savePath  =      strval(date('Y-m-d')); // 设置附件上传（子）目录
+	        // 上传文件
+	        $info   =   $upload->upload();
+	        if(!$info) {// 上传错误提示错误信息
+	            $ret = array("statusCode"=>"0","message"=>$upload->getError(),"navTabId"=>'',//$this->navTab
+	            "rel"=>"","forwardUrl"=>"");
+	        echo json_encode($ret);	return;
+	        }else{// 上传成功 获取上传文件信息
+	            Think\Log::write("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\上传的文件是：".print_r($info,true));
+	            $url = 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER["SERVER_PORT"].'/Uploads/'.$info['Filedata']['savepath'].$info['Filedata']['savename'];
+	            Think\Log::write("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Thinkpath：".print_r(THINK_PATH ,true));
+	            Think\Log::write("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\发送的URL参数是：".print_r($url,true));
+	            
+	            $DeviceInfoModel = new DeviceInfoModel();
+	            $result = $DeviceInfoModel->sendUrl($url,$info['Filedata']['name']);
+	            
+	            if(isset($result['errorCode']) && $result['errorCode'] == 0){
+	                //删除文件；
+	                $path = substr(THINK_PATH,0,strpos(THINK_PATH,'ThinkPHP'));
+	                $file = $path.'Uploads/'.$info['Filedata']['savepath'].$info['Filedata']['savename'];
+	                Think\Log::write("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\删除的文件路径：".print_r($file,true));
+	                @unlink($file);
+	                $ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+	                    "rel"=>"","forwardUrl"=>"");
+	                echo json_encode($ret);	return;
+	            }else{
+	                $msg = $result['errorMessage'];
+	                $ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+	                    "rel"=>"","forwardUrl"=>"");
+	                echo json_encode($ret);	return;
+	            }
+	        }
+	    }
+	    $this->display();
+	}
+	
+	function uploadSee()
+	{
+	    C ( 'SHOW_RUN_TIME', false ); // 运行时间显示
+		C ( 'SHOW_PAGE_TRACE', false );
+		$pageNum =empty($_REQUEST['numPerPage']) ? C('PAGE_LISTROWS') : $_REQUEST['numPerPage'];
+		$this->assign ( 'numPerPage', $pageNum ); //每页显示多少条
+		$this->assign ( 'currentPage', !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1);
+		$deviceInfo = new DeviceInfoModel($_POST,$_GET);
+		$result = $deviceInfo->uploadSearch($_POST,$_GET);
+		$count = $deviceInfo->countByPost($_POST,$_GET);
+		$this->assign ( 'totalCount', $count );
+		$this->assign ( 'list', $result );
+		$this->assign ( 'map', array('hostname'=>'','ipv'=>'','environment'=>'','isVirtual'=>''));
+		$this->assign('environment',C('CONST_ENVIRONMENT'));
+		cookie('_currentUrl_', __SELF__);
+		
+		$this->assign('md','uploadSee');
+		$this->display();
+	}
+	
+	function uploadDelete()
+	{
+	    $id =I('get.id','','intval');
+	    $DeviceInfoModel = new DeviceInfoModel();
+	    $result = $DeviceInfoModel->upDelete($id);
+	    if(isset($result['errorCode']) && $result['errorCode'] == 0){
+	        $ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>'D60630',//$this->navTab
+	            "rel"=>"","forwardUrl"=>"");
+	        echo json_encode($ret);	return;
+	    }else{
+	        $msg = $result['errorMessage'];
+	        $ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+	            "rel"=>"","forwardUrl"=>"");
+	        echo json_encode($ret);	return;
+	    }
+	}
+	
+	function uploadDeleteAll()
+	{
+	    $ids =I('post.ids','');
+	    $DeviceInfoModel = new DeviceInfoModel();
+	    $result = $DeviceInfoModel->upDeleteAll($ids);
+	    if(isset($result['errorCode']) && $result['errorCode'] == 0){
+	        $ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>'D60630',//$this->navTab
+	            "rel"=>"","forwardUrl"=>"");
+	        echo json_encode($ret);	return;
+	    }else{
+	        $msg = $result['errorMessage'];
+	        $ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+	            "rel"=>"","forwardUrl"=>"");
+	        echo json_encode($ret);	return;
+	    }
+	}
+	
+	function getCabitelists()
+	{
+	    $areaid = $_POST['roomid'];
+	    $option = '<option value="0">请选择机柜</option>';
+	    if($areaid > 0)
+	    {
+	        $post['areaid'] = $areaid;
+	        $Cabinet = new CabinetModel();
+	        $allinfo = $Cabinet->getAll($post);
+	        if(is_array($allinfo) && count($allinfo))
+	        {
+	            foreach ($allinfo as $key =>$val)
+	            {
+	                $option .= '<option value="'.$val['id'].'">'.$val['name'].'</option>';
+	            }
+	        }
+	    }
+	    echo $option;
+	}
+	
+}

@@ -1,0 +1,22 @@
+<div class="config_detail">
+	<div class="tit"><?php echo $remark ?></div>
+
+	
+		<?php
+			for($i=0;$i<sizeof($result['content']);$i++)
+			{
+		?>
+		<div class="config_info_item">
+		
+			<div class="num"><?php echo $i+1?></div>		
+			<span class="pro">属性：</span>
+			<span class="val"><textarea readonly style="width: 119px; height: 17px;"><?php echo $result['content'][$i]['propertyKey']?></textarea></span>
+			<span class="pro ml30">值：</span>
+			<span class="val"><textarea readonly style="width: 645px; height: 17px;"><?php echo htmlentities($result['content'][$i]['propertyKeyValue'],ENT_COMPAT,'UTF-8')?></textarea></span>
+		
+		</div>
+		<?php
+			}
+		?>
+	
+</div>

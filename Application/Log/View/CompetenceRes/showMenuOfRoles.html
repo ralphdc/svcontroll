@@ -1,0 +1,30 @@
+<div class="tableList" layouth="201" >
+	<table class="list" width="100%">
+		<thead>
+			<tr>
+				<th>序号</th>
+				<th>角色名</th>
+				<th>角色编码</th>
+				<th>角色描述</th>
+				<th>创建时间</th>
+				<th>备注</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="role" id="vo">
+			<tr>
+				<td>{$i + $startNum}</td>
+				<td>{$vo['roleName']}</td>
+				<td>{$vo['roleCode']}</td>
+				<td>{$vo['roleDesc']}</td>
+				<td>{$vo['createTime']}</td>
+				<td>{$vo['remark']}</td>
+			</tr>
+			</volist>
+		</tbody>
+	</table>
+</div>
+<div class="panelBar">
+	<div class="pages"><span>共3条</span></div>
+	<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+</div>

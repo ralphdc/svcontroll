@@ -1,0 +1,93 @@
+<include file="Public:pagerFormLog" />
+<div class="pageHeader">
+	<form rel ="pagerForm" method="post"  onsubmit="return navTabSearch(this);" action="__URL__">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+				<label>时间（起）：</label>
+				<input type="text" value="<?php if($_REQUEST['start']) echo $_REQUEST['start'];else echo date('Y-m-d'); ?>" id="start" name="start" readonly="1" datefmt="yyyy-MM-dd" class="date textInput readonly">
+			</li>
+			<li>
+				<label>时间（终）：</label>
+				<input type="text" value="<?php if($_REQUEST['end']) echo $_REQUEST['end'];else echo date('Y-m-d'); ?>" id="end" name="end" readonly="1" datefmt="yyyy-MM-dd" class="date textInput readonly">
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+<div id="result"></div>
+<div class="pageContent">
+	<div class="panelBar" style="height:27px;">
+		<ul class="toolBar">
+			<li><a class="add" href="javascript:void(0)" onClick="Refresh(1)"><span>开始控制</span></a></li>
+			<li><a class="delete" href="javascript:void(0)" onClick="Refresh(2)" ><span>停止控制</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="120">
+		<thead>
+		<tr>
+			<th width="200">序号</th>
+			<th width="200">开始时间</th>
+			<th width="200">结束时间</th>
+			<th width="200">笔数</th>
+		</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr target="sid_user" rel="{$vo['srv']}">
+				<td>
+					<?php
+						$listnums = $numPerPage * ($currentPage-1) + $key+1;
+						echo $listnums;
+					?>
+				</td>
+				<td>{$vo['startTime']}</td>
+				<td>{$vo['endTime']}</td>
+				<td>{$vo['count']}</td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+</div>
+
+
+<script>
+
+	
+	function loadResult(){
+		$.pdialog.open("__URL__/getRedisInfo",'operate','操作结果',{'width':'700','height':'400','mask':true});
+	}
+	
+	function Refresh(i)
+	{
+		$.ajax({
+	    	cache : false,
+			type : 'post',
+			url : "__URL__/throwMqs",
+			global: false,
+			dataType : 'json',
+			data : {'_' : new Date().getTime(),isclose:i},
+			success : function(response){
+				//console.log("00000000000000000000");
+				DWZ.ajaxDone(response);
+				if(response.statusCode == 1){
+					setTimeout("loadResult()",1000);
+				}else{
+					alertMsg.error(response.message);
+				}
+				
+				
+			}
+	    });
+	}
+	
+	//关闭窗口时，触发；
+	_setoutTime = null;
+	var dig = $.pdialog.getCurrent();
+	if(!dig && _setoutTime) clearTimeout(_setoutTime);
+</script>

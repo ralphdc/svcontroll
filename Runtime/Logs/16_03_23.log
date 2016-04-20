@@ -1,0 +1,2228 @@
+[ 2016-03-23T21:59:13+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741553655
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: dName E:\www\Sermanage\Runtime\Cache\Service\b80e686529441192e7d31b3d7d4c7f2a.php 第 91 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T21:59:14+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 21:59:14","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T21:59:14+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T21:59:14+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T21:59:14+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T21:59:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 21:59:29","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T21:59:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T21:59:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T21:59:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T21:59:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741583319
+ERR: ////////////////////////////// request_by_other post is {"id":"168","start":"1","_":"1458741583319","key":"topo.info.get","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 21:59:43","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T21:59:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741583319
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T21:59:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741583319
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoId":168,"topoName":"lichaoqun","nodes":2,"graph":"{\"node\":[{\"xgdid\":\"17454_1458733049813\",\"text\":\"test2\",\"px\":369,\"py\":198,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"22,124,255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":true,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"17790\",\"serverid\":\"17454\"},{\"xgdid\":\"17453_1458732845325\",\"text\":\"test1\",\"px\":830,\"py\":346,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"22,124,255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"17750\",\"serverid\":\"17453\"}],\"link\":[{\"fromText\":\"test1\",\"toText\":\"test2\",\"fromId\":\"17453_1458732845325\",\"toId\":\"17454_1458733049813\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":15,\"bundleGap\":12,\"dcid\":1458732849315,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":3,\"shadow\":false,\"strokeColor\":\"255,255,0\"}],\"sg\":{}}","data":"{\"17453\":{\"deviceType\":\"路由器\",\"nodeGroup\":\"\",\"nodeType\":\"\",\"nodeid\":\"17453\",\"nodeip\":\"172.17.6.156\",\"nodename\":\"test1\"},\"17454\":{\"deviceType\":\"防火墙\",\"nodeGroup\":\"\",\"nodeType\":\"\",\"nodeid\":\"17454\",\"nodeip\":\"172.50.50.51\",\"nodename\":\"test2\"},\"ctp_150\":{\"id\":150,\"tname\":\"lg-test-001\"}}","createDate":"2016-03-23 19:36:50.0","creator":"admin","environment":5,"topoType":1},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T21:59:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741583319
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: dName E:\www\Sermanage\Runtime\Cache\Service\b80e686529441192e7d31b3d7d4c7f2a.php 第 91 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T21:59:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 21:59:44","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T21:59:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T21:59:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T21:59:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:02:07+08:00 ] 127.0.0.1 /index.php/Service/Graph/add?_=1458741727530
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.devicetype.list","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:02:07","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:02:07+08:00 ] 127.0.0.1 /index.php/Service/Graph/add?_=1458741727530
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:02:07+08:00 ] 127.0.0.1 /index.php/Service/Graph/add?_=1458741727530
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"deviceid":"17750","deviceName":"路由器","deviceDemo":null,"operator":"admin","iconurl":"other.png"},{"deviceid":"17779","deviceName":"服务器","deviceDemo":null,"operator":"admin","iconurl":"server.png"},{"deviceid":"17780","deviceName":"负载均衡","deviceDemo":null,"operator":"admin","iconurl":"transfer.png"},{"deviceid":"17790","deviceName":"防火墙","deviceDemo":"LLLL","operator":"admin","iconurl":"56ebaca3d1efb.png"},{"deviceid":"17791","deviceName":"反向代理","deviceDemo":null,"operator":"admin","iconurl":"56ebd21bc0d92.png"},{"deviceid":"17792","deviceName":"VPN","deviceDemo":null,"operator":"admin","iconurl":"56ebac6c5ef55.png"},{"deviceid":"17798","deviceName":"VM","deviceDemo":null,"operator":"Admin","iconurl":"56ebd21bc0d92.png"},{"deviceid":"17799","deviceName":"HardWare","deviceDemo":null,"operator":"Admin","iconurl":"56f1eee2ba5ac.png"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:02:07+08:00 ] 127.0.0.1 /index.php/Service/Graph/add?_=1458741727530
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.015599s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.015599s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:02:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/editNode?_=1458741730443
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.devicetype.list","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:02:10","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:02:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/editNode?_=1458741730443
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:02:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/editNode?_=1458741730443
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"deviceid":"17750","deviceName":"路由器","deviceDemo":null,"operator":"admin","iconurl":"other.png"},{"deviceid":"17779","deviceName":"服务器","deviceDemo":null,"operator":"admin","iconurl":"server.png"},{"deviceid":"17780","deviceName":"负载均衡","deviceDemo":null,"operator":"admin","iconurl":"transfer.png"},{"deviceid":"17790","deviceName":"防火墙","deviceDemo":"LLLL","operator":"admin","iconurl":"56ebaca3d1efb.png"},{"deviceid":"17791","deviceName":"反向代理","deviceDemo":null,"operator":"admin","iconurl":"56ebd21bc0d92.png"},{"deviceid":"17792","deviceName":"VPN","deviceDemo":null,"operator":"admin","iconurl":"56ebac6c5ef55.png"},{"deviceid":"17798","deviceName":"VM","deviceDemo":null,"operator":"Admin","iconurl":"56ebd21bc0d92.png"},{"deviceid":"17799","deviceName":"HardWare","deviceDemo":null,"operator":"Admin","iconurl":"56f1eee2ba5ac.png"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:02:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/editNode?_=1458741730443
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.products.search","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:02:10","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:02:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/editNode?_=1458741730443
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:02:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/editNode?_=1458741730443
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"pdId":15874,"pdName":"scm","pdDemo":null,"pdIcon":"56e92a6bb5e92.jpg"},{"pdId":16087,"pdName":"mq_msg","pdDemo":"ss","pdIcon":"56e92a64b7aa1.png"},{"pdId":16736,"pdName":"WEB","pdDemo":"rt","pdIcon":"sky2.jpg"},{"pdId":17440,"pdName":"mapy","pdDemo":"sxs","pdIcon":"56e92abd22e53.png"},{"pdId":17637,"pdName":"omp","pdDemo":null,"pdIcon":"weixin.png"},{"pdId":17781,"pdName":"logsrv-service","pdDemo":null,"pdIcon":"pengyouquan.png"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:02:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/editNode?_=1458741730443
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.server.list","data":{"iphost":"","submitor":"admin","envType":"5","environment":"5"},"page":{"pageNo":1,"pageSize":20},"ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:02:10","format":"json","envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:02:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/editNode?_=1458741730443
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:02:11+08:00 ] 127.0.0.1 /index.php/Service/Graph/editNode?_=1458741730443
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"id":17760,"ip":"172.17.3.86","hostName":"optserver.mpay.com2","room":null,"cabinet":null,"product":null,"os":null,"vm":1,"environment":"5","serverModel":null,"phyServerHostname":null,"deviceType":null,"deviceid":"17790"},{"id":17456,"ip":"172.50.50.53","hostName":"test4","room":null,"cabinet":null,"product":null,"os":null,"vm":2,"environment":"1","serverModel":null,"phyServerHostname":null,"deviceType":null,"deviceid":"17792"},{"id":17455,"ip":"172.50.50.52","hostName":"test3K","room":null,"cabinet":null,"product":null,"os":null,"vm":1,"environment":"1","serverModel":null,"phyServerHostname":null,"deviceType":null,"deviceid":"17750"},{"id":17460,"ip":"2.50.50.57","hostName":"test8-PKL","room":null,"cabinet":null,"product":null,"os":null,"vm":1,"environment":"1","serverModel":null,"phyServerHostname":null,"deviceType":null,"deviceid":"17750"},{"id":17457,"ip":"172.50.50.54","hostName":"test5","room":null,"cabinet":null,"product":null,"os":null,"vm":1,"environment":"1","serverModel":null,"phyServerHostname":null,"deviceType":null,"deviceid":"17792"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","room":null,"cabinet":null,"product":null,"os":null,"vm":1,"environment":"1","serverModel":null,"phyServerHostname":null,"deviceType":null,"deviceid":"17790"},{"id":17461,"ip":"172.50.50.58","hostName":"test9-OOP","room":null,"cabinet":null,"product":null,"os":null,"vm":1,"environment":"1","serverModel":null,"phyServerHostname":null,"deviceType":null,"deviceid":"17791"},{"id":17453,"ip":"172.17.6.156","hostName":"test1","room":null,"cabinet":null,"product":null,"os":null,"vm":1,"environment":"5","serverModel":null,"phyServerHostname":null,"deviceType":null,"deviceid":"17779"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:02:11+08:00 ] 127.0.0.1 /index.php/Service/Graph/editNode?_=1458741730443
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Model\GraphSearchModel.class.php 第 54 行.
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Application\Service\Model\GraphSearchModel.class.php 第 55 行.
+NOTIC: [8] Undefined index: jpnumPerPage E:\www\Sermanage\Application\Service\Model\GraphSearchModel.class.php 第 60 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:02:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741773919
+ERR: ////////////////////////////// request_by_other post is {"id":"168","start":"1","_":"1458741773919","key":"topo.info.get","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:02:54","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:02:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741773919
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:02:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741773919
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoId":168,"topoName":"lichaoqun","nodes":2,"graph":"{\"node\":[{\"xgdid\":\"17454_1458733049813\",\"text\":\"test2\",\"px\":369,\"py\":198,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"22,124,255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":true,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"17790\",\"serverid\":\"17454\"},{\"xgdid\":\"17453_1458732845325\",\"text\":\"test1\",\"px\":830,\"py\":346,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"22,124,255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"17750\",\"serverid\":\"17453\"}],\"link\":[{\"fromText\":\"test1\",\"toText\":\"test2\",\"fromId\":\"17453_1458732845325\",\"toId\":\"17454_1458733049813\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":15,\"bundleGap\":12,\"dcid\":1458732849315,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":3,\"shadow\":false,\"strokeColor\":\"255,255,0\"}],\"sg\":{}}","data":"{\"17453\":{\"deviceType\":\"路由器\",\"nodeGroup\":\"\",\"nodeType\":\"\",\"nodeid\":\"17453\",\"nodeip\":\"172.17.6.156\",\"nodename\":\"test1\"},\"17454\":{\"deviceType\":\"防火墙\",\"nodeGroup\":\"\",\"nodeType\":\"\",\"nodeid\":\"17454\",\"nodeip\":\"172.50.50.51\",\"nodename\":\"test2\"},\"ctp_150\":{\"id\":150,\"tname\":\"lg-test-001\"}}","createDate":"2016-03-23 19:36:50.0","creator":"admin","environment":5,"topoType":1},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:02:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741773919
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: dName E:\www\Sermanage\Runtime\Cache\Service\b80e686529441192e7d31b3d7d4c7f2a.php 第 91 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015599s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015599s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:02:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:02:54","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:02:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:02:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:02:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015599s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:03:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17454&_=1458741781506
+ERR: ////////////////////////////// request_by_other post is {"id":"17454","_":"1458741781506","key":"topo.server.get","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:03:01","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:03:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17454&_=1458741781506
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:03:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17454&_=1458741781506
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"id":17454,"ip":"172.50.50.51","hostName":"test2","room":"GDC","cabinet":"机柜2","product":null,"os":"win12","vm":1,"environment":"1","serverModel":"2","phyServerHostname":null,"deviceType":"防火墙","deviceid":"17790"},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:03:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17454&_=1458741781506
+ERR: ////////////////////////////// request_by_other post is {"ip":"172.50.50.51","key":"topo.node.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:03:01","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:03:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17454&_=1458741781506
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:03:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17454&_=1458741781506
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:03:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17454&_=1458741781506
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: tpid E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 540 行.
+NOTIC: [8] Undefined variable: get E:\www\Sermanage\Application\Service\Model\GraphSearchModel.class.php 第 104 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined variable: get E:\www\Sermanage\Application\Service\Model\GraphSearchModel.class.php 第 105 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:03:13+08:00 ] 127.0.0.1 /index.php/Service/Servermanage?_=1458741793551
+ERR: ////////////////////////////// request_by_other post is {"key":"asset.server.search","data":{"serverenv":null,"hostname":null,"ipv":null,"isVirtual":null,"submitor":"admin","envType":"5","environment":"5"},"page":{"pageNo":1,"pageSize":20},"ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:03:13","format":"json","envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:03:13+08:00 ] 127.0.0.1 /index.php/Service/Servermanage?_=1458741793551
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/asset
+[ 2016-03-23T22:03:13+08:00 ] 127.0.0.1 /index.php/Service/Servermanage?_=1458741793551
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"severid":"17453","ipv":"172.17.6.156","hostname":"test1","username":"root","password":"123456","stId":3596,"st_char":"2","arId":16212,"ar_name":"GDC","sysid":"3597","system":"linux2","product_ids":"15874","product_names":"scm","ips":null,"isVirtual":1,"physicalVirtualType":"物理机","virtualCorrespondPhysicalId":null,"physicalName":null,"cabinet_id":16213,"cabinetname":"机柜1","ar_char":null,"controlcard":"","environment":"5","serverdemo":"","serverenv":null,"systemFlag":"2","devicetypeid":"17779","deviceName":"服务器"},{"severid":"17454","ipv":"172.50.50.51","hostname":"test2","username":"root","password":"123456","stId":3596,"st_char":"2","arId":16212,"ar_name":"GDC","sysid":"17350","system":"win12","product_ids":null,"product_names":null,"ips":null,"isVirtual":1,"physicalVirtualType":"物理机","virtualCorrespondPhysicalId":null,"physicalName":null,"cabinet_id":16220,"cabinetname":"机柜2","ar_char":null,"controlcard":"","environment":"1","serverdemo":"","serverenv":null,"systemFlag":"2","devicetypeid":"17790","deviceName":"防火墙"},{"severid":"17455","ipv":"172.50.50.52","hostname":"test3K","username":"admin","password":"123456","stId":3596,"st_char":"2","arId":16212,"ar_name":"GDC","sysid":"17350","system":"win12","product_ids":null,"product_names":null,"ips":null,"isVirtual":1,"physicalVirtualType":"物理机","virtualCorrespondPhysicalId":null,"physicalName":null,"cabinet_id":16220,"cabinetname":"机柜2","ar_char":null,"controlcard":"","environment":"1","serverdemo":"","serverenv":null,"systemFlag":"2","devicetypeid":"17750","deviceName":"路由器"},{"severid":"17456","ipv":"172.50.50.53","hostname":"test4","username":"admin","password":"123456","stId":3596,"st_char":"2","arId":16212,"ar_name":"GDC","sysid":"17350","system":"win12","product_ids":null,"product_names":null,"ips":null,"isVirtual":2,"physicalVirtualType":"虚拟机","virtualCorrespondPhysicalId":17461,"physicalName":"test9-OOP","cabinet_id":16220,"cabinetname":"机柜2","ar_char":null,"controlcard":null,"environment":"1","serverdemo":"","serverenv":null,"systemFlag":"2","devicetypeid":"17792","deviceName":"VPN"},{"severid":"17457","ipv":"172.50.50.54","hostname":"test5","username":"admin","password":"123456","stId":3596,"st_char":"2","arId":16212,"ar_name":"GDC","sysid":"17350","system":"win12","product_ids":null,"product_names":null,"ips":null,"isVirtual":1,"physicalVirtualType":"物理机","virtualCorrespondPhysicalId":null,"physicalName":null,"cabinet_id":16213,"cabinetname":"机柜1","ar_char":null,"controlcard":"","environment":"1","serverdemo":"","serverenv":null,"systemFlag":"2","devicetypeid":"17792","deviceName":"VPN"},{"severid":"17460","ipv":"2.50.50.57","hostname":"test8-PKL","username":"admin","password":"123456","stId":3596,"st_char":"2","arId":16212,"ar_name":"GDC","sysid":"17350","system":"win12","product_ids":null,"product_names":null,"ips":null,"isVirtual":1,"physicalVirtualType":"物理机","virtualCorrespondPhysicalId":null,"physicalName":null,"cabinet_id":16213,"cabinetname":"机柜1","ar_char":null,"controlcard":"","environment":"1","serverdemo":"","serverenv":null,"systemFlag":"2","devicetypeid":"17750","deviceName":"路由器"},{"severid":"17461","ipv":"172.50.50.58","hostname":"test9-OOP","username":"admin","password":"123456","stId":3596,"st_char":"2","arId":16212,"ar_name":"GDC","sysid":"17350","system":"win12","product_ids":null,"product_names":null,"ips":null,"isVirtual":1,"physicalVirtualType":"物理机","virtualCorrespondPhysicalId":null,"physicalName":null,"cabinet_id":16213,"cabinetname":"机柜1","ar_char":null,"controlcard":"","environment":"1","serverdemo":"","serverenv":null,"systemFlag":"2","devicetypeid":"17791","deviceName":"反向代理"},{"severid":"17760","ipv":"172.17.3.86","hostname":"optserver.mpay.com2","username":"root","password":"55558888","stId":3596,"st_char":"2","arId":3579,"ar_name":"4","sysid":"17350","system":"win12","product_ids":"17637","product_names":"omp","ips":null,"isVirtual":1,"physicalVirtualType":"物理机","virtualCorrespondPhysicalId":null,"physicalName":null,"cabinet_id":100,"cabinetname":"机柜11","ar_char":null,"controlcard":"","environment":"5","serverdemo":"","serverenv":null,"systemFlag":"2","devicetypeid":"17790","deviceName":"防火墙"}],"pageNo":1,"pageSize":20,"totalPage":1,"total":8}
+[ 2016-03-23T22:03:13+08:00 ] 127.0.0.1 /index.php/Service/Servermanage?_=1458741793551
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.devicetype.list","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:03:13","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:03:13+08:00 ] 127.0.0.1 /index.php/Service/Servermanage?_=1458741793551
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:03:13+08:00 ] 127.0.0.1 /index.php/Service/Servermanage?_=1458741793551
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"deviceid":"17750","deviceName":"路由器","deviceDemo":null,"operator":"admin","iconurl":"other.png"},{"deviceid":"17779","deviceName":"服务器","deviceDemo":null,"operator":"admin","iconurl":"server.png"},{"deviceid":"17780","deviceName":"负载均衡","deviceDemo":null,"operator":"admin","iconurl":"transfer.png"},{"deviceid":"17790","deviceName":"防火墙","deviceDemo":"LLLL","operator":"admin","iconurl":"56ebaca3d1efb.png"},{"deviceid":"17791","deviceName":"反向代理","deviceDemo":null,"operator":"admin","iconurl":"56ebd21bc0d92.png"},{"deviceid":"17792","deviceName":"VPN","deviceDemo":null,"operator":"admin","iconurl":"56ebac6c5ef55.png"},{"deviceid":"17798","deviceName":"VM","deviceDemo":null,"operator":"Admin","iconurl":"56ebd21bc0d92.png"},{"deviceid":"17799","deviceName":"HardWare","deviceDemo":null,"operator":"Admin","iconurl":"56f1eee2ba5ac.png"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:03:14+08:00 ] 127.0.0.1 /index.php/Service/Servermanage?_=1458741793551
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of ServermanageController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\ServermanageController.class.php 第 7 行.
+NOTIC: [2048] Declaration of ServermanageController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\ServermanageController.class.php 第 7 行.
+NOTIC: [2048] Declaration of ServermanageController::foreverdelete() should be compatible with CommonController::foreverdelete($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\ServermanageController.class.php 第 7 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Model\ServermanageModel.class.php 第 55 行.
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Application\Service\Model\ServermanageModel.class.php 第 56 行.
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Application\Service\Model\ServermanageModel.class.php 第 61 行.
+NOTIC: [8] Undefined index: environment E:\www\Sermanage\Application\Service\Model\ServermanageModel.class.php 第 66 行.
+NOTIC: [8] Undefined index: hostname E:\www\Sermanage\Application\Service\Model\ServermanageModel.class.php 第 67 行.
+NOTIC: [8] Undefined index: ipv E:\www\Sermanage\Application\Service\Model\ServermanageModel.class.php 第 68 行.
+NOTIC: [8] Undefined index: isVirtual E:\www\Sermanage\Application\Service\Model\ServermanageModel.class.php 第 69 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 5 行.
+NOTIC: [8] Undefined index: _order E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 7 行.
+NOTIC: [8] Undefined index: _sort E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 9 行.
+NOTIC: [8] Undefined index: hostname E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 11 行.
+NOTIC: [8] Undefined index: ipv E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 11 行.
+NOTIC: [8] Undefined index: environment E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 11 行.
+NOTIC: [8] Undefined index: isVirtual E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 11 行.
+NOTIC: [8] Undefined index: hostname E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 23 行.
+NOTIC: [8] Undefined index: ipv E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 27 行.
+NOTIC: [8] Undefined index: environment E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 33 行.
+NOTIC: [8] Undefined index: environment E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 33 行.
+NOTIC: [8] Undefined index: environment E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 33 行.
+NOTIC: [8] Undefined index: environment E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 33 行.
+NOTIC: [8] Undefined index: environment E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 33 行.
+NOTIC: [8] Undefined index: isVirtual E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 41 行.
+NOTIC: [8] Undefined index: isVirtual E:\www\Sermanage\Runtime\Cache\Service\dc9bf00d22d61714560eefc7e56babb1.php 第 41 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046798s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046798s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:03:29+08:00 ] 127.0.0.1 /index.php/Service/Graph?_=1458741809255
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.listinfo.get","data":{"topoType":1,"submitor":"admin","envType":"5","environment":"5"},"page":{"pageNo":1,"pageSize":20},"ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:03:29","format":"json","envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:03:29+08:00 ] 127.0.0.1 /index.php/Service/Graph?_=1458741809255
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:03:29+08:00 ] 127.0.0.1 /index.php/Service/Graph?_=1458741809255
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"topoId":168,"topoName":"lichaoqun","nodes":2,"createDate":"2016-03-23 19:36:50","environment":5,"topoType":1,"creator":"admin"}],"pageNo":1,"pageSize":20,"totalPage":1,"total":1}
+[ 2016-03-23T22:03:29+08:00 ] 127.0.0.1 /index.php/Service/Graph?_=1458741809255
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 36 行.
+NOTIC: [8] Undefined index: toponumPerPage E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 42 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Model\GraphModel.class.php 第 78 行.
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Application\Service\Model\GraphModel.class.php 第 79 行.
+NOTIC: [8] Undefined index: toponumPerPage E:\www\Sermanage\Application\Service\Model\GraphModel.class.php 第 84 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Runtime\Cache\Service\e54f4f016c8e7486b8bed29129206742.php 第 6 行.
+NOTIC: [8] Undefined index: _order E:\www\Sermanage\Runtime\Cache\Service\e54f4f016c8e7486b8bed29129206742.php 第 8 行.
+NOTIC: [8] Undefined index: _sort E:\www\Sermanage\Runtime\Cache\Service\e54f4f016c8e7486b8bed29129206742.php 第 10 行.
+NOTIC: [8] Undefined variable: map E:\www\Sermanage\Runtime\Cache\Service\e54f4f016c8e7486b8bed29129206742.php 第 12 行.
+NOTIC: [8] Undefined index: data E:\www\Sermanage\Runtime\Cache\Service\e54f4f016c8e7486b8bed29129206742.php 第 24 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:03:34+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741813876
+ERR: ////////////////////////////// request_by_other post is {"id":"168","start":"1","_":"1458741813876","key":"topo.info.get","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:03:34","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:03:34+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741813876
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:03:34+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741813876
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoId":168,"topoName":"lichaoqun","nodes":2,"graph":"{\"node\":[{\"xgdid\":\"17454_1458733049813\",\"text\":\"test2\",\"px\":369,\"py\":198,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"22,124,255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":true,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"17790\",\"serverid\":\"17454\"},{\"xgdid\":\"17453_1458732845325\",\"text\":\"test1\",\"px\":830,\"py\":346,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"22,124,255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"17750\",\"serverid\":\"17453\"}],\"link\":[{\"fromText\":\"test1\",\"toText\":\"test2\",\"fromId\":\"17453_1458732845325\",\"toId\":\"17454_1458733049813\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":15,\"bundleGap\":12,\"dcid\":1458732849315,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":3,\"shadow\":false,\"strokeColor\":\"255,255,0\"}],\"sg\":{}}","data":"{\"17453\":{\"deviceType\":\"路由器\",\"nodeGroup\":\"\",\"nodeType\":\"\",\"nodeid\":\"17453\",\"nodeip\":\"172.17.6.156\",\"nodename\":\"test1\"},\"17454\":{\"deviceType\":\"防火墙\",\"nodeGroup\":\"\",\"nodeType\":\"\",\"nodeid\":\"17454\",\"nodeip\":\"172.50.50.51\",\"nodename\":\"test2\"},\"ctp_150\":{\"id\":150,\"tname\":\"lg-test-001\"}}","createDate":"2016-03-23 19:36:50.0","creator":"admin","environment":5,"topoType":1},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:03:34+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741813876
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: dName E:\www\Sermanage\Runtime\Cache\Service\b80e686529441192e7d31b3d7d4c7f2a.php 第 91 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:03:34+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:03:34","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:03:34+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:03:34+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:03:34+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:03:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741824448
+ERR: ////////////////////////////// request_by_other post is {"id":"168","start":"1","_":"1458741824448","key":"topo.info.get","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:03:44","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:03:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741824448
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:03:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741824448
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoId":168,"topoName":"lichaoqun","nodes":2,"graph":"{\"node\":[{\"xgdid\":\"17454_1458733049813\",\"text\":\"test2\",\"px\":369,\"py\":198,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"22,124,255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":true,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"17790\",\"serverid\":\"17454\"},{\"xgdid\":\"17453_1458732845325\",\"text\":\"test1\",\"px\":830,\"py\":346,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"22,124,255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"17750\",\"serverid\":\"17453\"}],\"link\":[{\"fromText\":\"test1\",\"toText\":\"test2\",\"fromId\":\"17453_1458732845325\",\"toId\":\"17454_1458733049813\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":15,\"bundleGap\":12,\"dcid\":1458732849315,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":3,\"shadow\":false,\"strokeColor\":\"255,255,0\"}],\"sg\":{}}","data":"{\"17453\":{\"deviceType\":\"路由器\",\"nodeGroup\":\"\",\"nodeType\":\"\",\"nodeid\":\"17453\",\"nodeip\":\"172.17.6.156\",\"nodename\":\"test1\"},\"17454\":{\"deviceType\":\"防火墙\",\"nodeGroup\":\"\",\"nodeType\":\"\",\"nodeid\":\"17454\",\"nodeip\":\"172.50.50.51\",\"nodename\":\"test2\"},\"ctp_150\":{\"id\":150,\"tname\":\"lg-test-001\"}}","createDate":"2016-03-23 19:36:50.0","creator":"admin","environment":5,"topoType":1},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:03:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741824448
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: dName E:\www\Sermanage\Runtime\Cache\Service\b80e686529441192e7d31b3d7d4c7f2a.php 第 91 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:03:45+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:03:45","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:03:45+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:03:45+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:03:45+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:04:06+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741846218
+ERR: ////////////////////////////// request_by_other post is {"id":"168","start":"1","_":"1458741846218","key":"topo.info.get","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:04:06","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:04:06+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741846218
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:04:06+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741846218
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoId":168,"topoName":"lichaoqun","nodes":2,"graph":"{\"node\":[{\"xgdid\":\"17454_1458733049813\",\"text\":\"test2\",\"px\":369,\"py\":198,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"22,124,255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":true,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"17790\",\"serverid\":\"17454\"},{\"xgdid\":\"17453_1458732845325\",\"text\":\"test1\",\"px\":830,\"py\":346,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"22,124,255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"17750\",\"serverid\":\"17453\"}],\"link\":[{\"fromText\":\"test1\",\"toText\":\"test2\",\"fromId\":\"17453_1458732845325\",\"toId\":\"17454_1458733049813\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":15,\"bundleGap\":12,\"dcid\":1458732849315,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":3,\"shadow\":false,\"strokeColor\":\"255,255,0\"}],\"sg\":{}}","data":"{\"17453\":{\"deviceType\":\"路由器\",\"nodeGroup\":\"\",\"nodeType\":\"\",\"nodeid\":\"17453\",\"nodeip\":\"172.17.6.156\",\"nodename\":\"test1\"},\"17454\":{\"deviceType\":\"防火墙\",\"nodeGroup\":\"\",\"nodeType\":\"\",\"nodeid\":\"17454\",\"nodeip\":\"172.50.50.51\",\"nodename\":\"test2\"},\"ctp_150\":{\"id\":150,\"tname\":\"lg-test-001\"}}","createDate":"2016-03-23 19:36:50.0","creator":"admin","environment":5,"topoType":1},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:04:06+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741846218
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: dName E:\www\Sermanage\Runtime\Cache\Service\b80e686529441192e7d31b3d7d4c7f2a.php 第 91 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:04:07+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:04:07","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:04:07+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:04:07+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:04:07+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:04:22+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:04:22","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:04:22+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:04:22+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:04:22+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:04:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741881068
+ERR: ////////////////////////////// request_by_other post is {"id":"168","start":"1","_":"1458741881068","key":"topo.info.get","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:04:41","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:04:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741881068
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:04:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741881068
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoId":168,"topoName":"lichaoqun","nodes":2,"graph":"{\"node\":[{\"xgdid\":\"17454_1458733049813\",\"text\":\"test2\",\"px\":369,\"py\":198,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"22,124,255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":true,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"17790\",\"serverid\":\"17454\"},{\"xgdid\":\"17453_1458732845325\",\"text\":\"test1\",\"px\":830,\"py\":346,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"22,124,255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"17750\",\"serverid\":\"17453\"}],\"link\":[{\"fromText\":\"test1\",\"toText\":\"test2\",\"fromId\":\"17453_1458732845325\",\"toId\":\"17454_1458733049813\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":15,\"bundleGap\":12,\"dcid\":1458732849315,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":3,\"shadow\":false,\"strokeColor\":\"255,255,0\"}],\"sg\":{}}","data":"{\"17453\":{\"deviceType\":\"路由器\",\"nodeGroup\":\"\",\"nodeType\":\"\",\"nodeid\":\"17453\",\"nodeip\":\"172.17.6.156\",\"nodename\":\"test1\"},\"17454\":{\"deviceType\":\"防火墙\",\"nodeGroup\":\"\",\"nodeType\":\"\",\"nodeid\":\"17454\",\"nodeip\":\"172.50.50.51\",\"nodename\":\"test2\"},\"ctp_150\":{\"id\":150,\"tname\":\"lg-test-001\"}}","createDate":"2016-03-23 19:36:50.0","creator":"admin","environment":5,"topoType":1},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:04:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitor?id=168&start=1&_=1458741881068
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.015599s ]
+NOTIC: [8] Undefined variable: dName E:\www\Sermanage\Runtime\Cache\Service\b80e686529441192e7d31b3d7d4c7f2a.php 第 91 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:04:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:04:41","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:04:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:04:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:04:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:04:56+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:04:56","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:04:56+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:04:57+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:04:57+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-23T22:05:12+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:05:12","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:05:12+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:05:12+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:05:12+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:05:27+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:05:27","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:05:27+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:05:27+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:05:27+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:05:42+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:05:42","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:05:42+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:05:42+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:05:42+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:05:57+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:05:57","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:05:57+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:05:57+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:05:57+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:06:12+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:06:12","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:06:12+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:06:12+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:06:12+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:06:27+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:06:27","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:06:27+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:06:27+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:06:27+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:06:42+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:06:42","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:06:42+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:06:42+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:06:42+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:06:57+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:06:57","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:06:57+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:06:58+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:06:58+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015599s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015599s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015599s ]
+
+[ 2016-03-23T22:07:13+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:07:13","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:07:13+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:07:13+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:07:13+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:07:28+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:07:28","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:07:28+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:07:28+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:07:28+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:07:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:07:43","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:07:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:07:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:07:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:07:58+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17454,17453","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:07:58","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:07:58+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:07:58+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17453,"ip":"172.17.6.156","hostName":"test1","vm":1,"environment":"5","deviceId":"17779","deviceName":"服务器","iconUrl":"server.png","warns":"2"},{"id":17454,"ip":"172.50.50.51","hostName":"test2","vm":1,"environment":"1","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:07:58+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 598 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:08:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/add?_=1458742081314
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.devicetype.list","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:08:01","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:08:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/add?_=1458742081314
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:08:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/add?_=1458742081314
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"deviceid":"17750","deviceName":"路由器","deviceDemo":null,"operator":"admin","iconurl":"other.png"},{"deviceid":"17779","deviceName":"服务器","deviceDemo":null,"operator":"admin","iconurl":"server.png"},{"deviceid":"17780","deviceName":"负载均衡","deviceDemo":null,"operator":"admin","iconurl":"transfer.png"},{"deviceid":"17790","deviceName":"防火墙","deviceDemo":"LLLL","operator":"admin","iconurl":"56ebaca3d1efb.png"},{"deviceid":"17791","deviceName":"反向代理","deviceDemo":null,"operator":"admin","iconurl":"56ebd21bc0d92.png"},{"deviceid":"17792","deviceName":"VPN","deviceDemo":null,"operator":"admin","iconurl":"56ebac6c5ef55.png"},{"deviceid":"17798","deviceName":"VM","deviceDemo":null,"operator":"Admin","iconurl":"56ebd21bc0d92.png"},{"deviceid":"17799","deviceName":"HardWare","deviceDemo":null,"operator":"Admin","iconurl":"56f1eee2ba5ac.png"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:08:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/add?_=1458742081314
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:08:09+08:00 ] 127.0.0.1 /index.php/Service/Graph/editChildTP?_=1458742088952
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.listinfo.get","data":{"topoType":1,"submitor":"admin","envType":"5","environment":"5"},"page":{"pageNo":1,"pageSize":20},"ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:08:09","format":"json","envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:08:09+08:00 ] 127.0.0.1 /index.php/Service/Graph/editChildTP?_=1458742088952
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:08:09+08:00 ] 127.0.0.1 /index.php/Service/Graph/editChildTP?_=1458742088952
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"topoId":168,"topoName":"lichaoqun","nodes":2,"createDate":"2016-03-23 19:36:50","environment":5,"topoType":1,"creator":"admin"}],"pageNo":1,"pageSize":20,"totalPage":1,"total":1}
+[ 2016-03-23T22:08:09+08:00 ] 127.0.0.1 /index.php/Service/Graph/editChildTP?_=1458742088952
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 351 行.
+NOTIC: [8] Undefined index: toponumPerPage E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 358 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Model\GraphModel.class.php 第 78 行.
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Application\Service\Model\GraphModel.class.php 第 79 行.
+NOTIC: [8] Undefined index: toponumPerPage E:\www\Sermanage\Application\Service\Model\GraphModel.class.php 第 84 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Runtime\Cache\Service\10347d584d353d6c8e05f881ea9022d6.php 第 6 行.
+NOTIC: [8] Undefined index: _order E:\www\Sermanage\Runtime\Cache\Service\10347d584d353d6c8e05f881ea9022d6.php 第 8 行.
+NOTIC: [8] Undefined index: _sort E:\www\Sermanage\Runtime\Cache\Service\10347d584d353d6c8e05f881ea9022d6.php 第 10 行.
+NOTIC: [8] Undefined variable: map E:\www\Sermanage\Runtime\Cache\Service\10347d584d353d6c8e05f881ea9022d6.php 第 12 行.
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Runtime\Cache\Service\10347d584d353d6c8e05f881ea9022d6.php 第 22 行.
+NOTIC: [8] Undefined index: _order E:\www\Sermanage\Runtime\Cache\Service\10347d584d353d6c8e05f881ea9022d6.php 第 24 行.
+NOTIC: [8] Undefined index: _sort E:\www\Sermanage\Runtime\Cache\Service\10347d584d353d6c8e05f881ea9022d6.php 第 26 行.
+NOTIC: [8] Undefined variable: map E:\www\Sermanage\Runtime\Cache\Service\10347d584d353d6c8e05f881ea9022d6.php 第 28 行.
+NOTIC: [8] Undefined index: data E:\www\Sermanage\Runtime\Cache\Service\10347d584d353d6c8e05f881ea9022d6.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:08:11+08:00 ] 127.0.0.1 /index.php/Service/Graph/saveChildTP/id/168
+ERR: ////////////////////////////// request_by_other post is {"id":168,"key":"topo.info.get","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:08:11","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:08:11+08:00 ] 127.0.0.1 /index.php/Service/Graph/saveChildTP/id/168
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:08:11+08:00 ] 127.0.0.1 /index.php/Service/Graph/saveChildTP/id/168
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoId":168,"topoName":"lichaoqun","nodes":2,"graph":"{\"node\":[{\"xgdid\":\"17454_1458733049813\",\"text\":\"test2\",\"px\":369,\"py\":198,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"22,124,255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":true,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"17790\",\"serverid\":\"17454\"},{\"xgdid\":\"17453_1458732845325\",\"text\":\"test1\",\"px\":830,\"py\":346,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"22,124,255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"17750\",\"serverid\":\"17453\"}],\"link\":[{\"fromText\":\"test1\",\"toText\":\"test2\",\"fromId\":\"17453_1458732845325\",\"toId\":\"17454_1458733049813\",\"width\":32,\"height\":32,\"alpha\":1,\"arrowsRadius\":15,\"bundleGap\":12,\"dcid\":1458732849315,\"dragable\":false,\"fillColor\":\"22,124,255\",\"font\":\"12px Consolas\",\"fontColor\":\"255,255,255\",\"lineJoin\":\"miter\",\"lineWidth\":3,\"shadow\":false,\"strokeColor\":\"255,255,0\"}],\"sg\":{}}","data":"{\"17453\":{\"deviceType\":\"路由器\",\"nodeGroup\":\"\",\"nodeType\":\"\",\"nodeid\":\"17453\",\"nodeip\":\"172.17.6.156\",\"nodename\":\"test1\"},\"17454\":{\"deviceType\":\"防火墙\",\"nodeGroup\":\"\",\"nodeType\":\"\",\"nodeid\":\"17454\",\"nodeip\":\"172.50.50.51\",\"nodename\":\"test2\"},\"ctp_150\":{\"id\":150,\"tname\":\"lg-test-001\"}}","createDate":"2016-03-23 19:36:50.0","creator":"admin","environment":5,"topoType":1},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:08:11+08:00 ] 127.0.0.1 /index.php/Service/Graph/saveChildTP/id/168
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:08:14+08:00 ] 127.0.0.1 /index.php/Service/Graph/graphSave?_=1458742094565
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: tpname E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 134 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: tpname E:\www\Sermanage\Runtime\Cache\Service\21b0cb5c49bb2d06e67b0ff78e4a864c.php 第 11 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:08:20+08:00 ] 127.0.0.1 /index.php/Service/Graph/graphSave
+ERR: ////////////////////////////// request_by_other post is {"data":{"graph":"{\"node\":[{\"xgdid\":\"1458742084272\",\"text\":\"Node1458742084272\",\"px\":100,\"py\":100,\"width\":60,\"height\":57,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"255\uff0c255\uff0c255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":false,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"default\",\"serverid\":0},{\"xgdid\":\"168_1458742091629\",\"text\":\"lichaoqun\",\"px\":480,\"py\":149,\"width\":107,\"height\":67,\"alpha\":1,\"borderRadius\":null,\"fillColor\":\"255\uff0c255\uff0c255\",\"fontColor\":\"255,255,255\",\"scaleX\":1,\"scaleY\":1,\"selected\":true,\"shadow\":false,\"visible\":true,\"zIndex\":3,\"dtype\":\"childtp\",\"serverid\":168}],\"link\":[],\"sg\":{\"stageDisplayLocation\":0,\"stageDisplayMode\":\"normal\"}}","nodes":"2","topoId":"","topoName":"lg-123","creator":"admin","data":{"ctp_168":{"id":168,"tname":"lichaoqun"}},"topoType":1,"submitor":"admin","envType":"5","environment":"5"},"ids":"168","serverInfo":"","key":"topo.info.create","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:08:20","format":"json","envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:08:20+08:00 ] 127.0.0.1 /index.php/Service/Graph/graphSave
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:08:20+08:00 ] 127.0.0.1 /index.php/Service/Graph/graphSave
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":"","pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:08:20+08:00 ] 127.0.0.1 /index.php/Service/Graph/graphSave
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:08:20+08:00 ] 127.0.0.1 /index.php/Service/Graph
+ERR: ////////////////////////////// request_by_other post is {"pageNum":"1","numPerPage":"","_order":"","_sort":"","data":{"topoName":"","topoType":1,"submitor":"admin","envType":"5","environment":"5"},"key":"topo.listinfo.get","page":{"pageNo":1,"pageSize":20},"ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:08:20","format":"json","envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:08:20+08:00 ] 127.0.0.1 /index.php/Service/Graph
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:08:20+08:00 ] 127.0.0.1 /index.php/Service/Graph
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"topoId":168,"topoName":"lichaoqun","nodes":2,"createDate":"2016-03-23 19:36:50","environment":5,"topoType":1,"creator":"admin"},{"topoId":169,"topoName":"lg-123","nodes":2,"createDate":"2016-03-23 22:07:33","environment":5,"topoType":1,"creator":"admin"}],"pageNo":1,"pageSize":20,"totalPage":1,"total":2}
+[ 2016-03-23T22:08:20+08:00 ] 127.0.0.1 /index.php/Service/Graph
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 36 行.
+NOTIC: [8] Undefined index: toponumPerPage E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 42 行.
+NOTIC: [8] Undefined index: toponumPerPage E:\www\Sermanage\Application\Service\Model\GraphModel.class.php 第 84 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: map E:\www\Sermanage\Runtime\Cache\Service\e54f4f016c8e7486b8bed29129206742.php 第 12 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015600s ]
+
+[ 2016-03-23T22:08:28+08:00 ] 127.0.0.1 /index.php/Service/Graph/graphDel/id/168
+ERR: ////////////////////////////// request_by_other post is {"id":"168","key":"topo.info.delete","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 22:08:28","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T22:08:28+08:00 ] 127.0.0.1 /index.php/Service/Graph/graphDel/id/168
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T22:08:28+08:00 ] 127.0.0.1 /index.php/Service/Graph/graphDel/id/168
+ERR: request_by_other file_get_contents data is{"errorCode":1,"errorMessage":"该拓扑图与其父拓扑图[lg-123]绑定了,请先解除关系再删除","data":"","pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T22:08:28+08:00 ] 127.0.0.1 /index.php/Service/Graph/graphDel/id/168
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:08:55+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+
+[ 2016-03-23T22:08:57+08:00 ] 127.0.0.1 /index.php/Service/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T22:28:59+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015599s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+
+[ 2016-03-23T22:29:01+08:00 ] 127.0.0.1 /index.php/Service/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T23:12:21+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+
+[ 2016-03-23T23:12:23+08:00 ] 127.0.0.1 /index.php/Service/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: \\\\\\\\\\\\\\\\输入的用户名和密码分别是：用户名：admin,密码：123456
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service url is http://172.17.3.97:8080/kms/login/ajaxsubmit.do
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service params is Array
+(
+    [name] => admin
+    [password] => 123456
+)
+
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service method is POST
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service request is POST /kms/login/ajaxsubmit.do?name=admin&password=123456 HTTP/1.1
+Host: 172.17.3.97
+Connection:close
+
+
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service response is HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=67766A7C7E3FC3433D6DAE26093F2AF6; Path=/kms/; HttpOnly
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 23 Mar 2016 15:13:29 GMT
+Connection: close
+
+5a
+{"JSESSIONID":"67766A7C7E3FC3433D6DAE26093F2AF6","STATE":0,"userName":"admin","OPERATE":3}
+0
+
+
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: \\\\\\\\\\\\\\\\登录信息返回的JSON：{"JSESSIONID":"67766A7C7E3FC3433D6DAE26093F2AF6","STATE":0,"userName":"admin","OPERATE":3}
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: \\\\\\\\\\\\\\\\登录信息解析后的结果是：Array
+(
+    [JSESSIONID] => 67766A7C7E3FC3433D6DAE26093F2AF6
+    [STATE] => 0
+    [userName] => admin
+    [OPERATE] => 3
+)
+
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: cookie E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 464 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service url is http://172.17.3.97:8080/kms/actiontree/myMenus.do
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service params is Array
+(
+    [domain] => SERVICE_MANAGE
+)
+
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service method is POST
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service request is POST /kms/actiontree/myMenus.do?domain=SERVICE_MANAGE HTTP/1.1
+Host: 172.17.3.97
+Cookie:JSESSIONID=67766A7C7E3FC3433D6DAE26093F2AF6
+Connection:close
+
+
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service response is HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 23 Mar 2016 15:13:29 GMT
+Connection: close
+
+1740
+[{"id":"2c948cfb51ebb03c0151ebb3ece6000a","name":"服务管制","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebb5bf60000f","name":"配置中心","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebb73feb0011","name":"配置","url":"Service/Configure","icon":"","children":[]},{"id":"2c948cfb51ebb03c0151ebb84a6c0013","name":"配置节点恢复","url":"Service/Retrive","icon":"","children":[]}]},{"id":"2c948cfb51ebb03c0151ebb8e4840014","name":"仓库中心","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebb9ea470016","name":"仓库中心","url":"Service/Repertory","icon":"","children":[]},{"id":"2c948cfb51ebb03c0151ebbaba760018","name":"批量处理","url":"Service/Batchprocess/index/from/2","icon":"","children":[]}]},{"id":"2c948cfb51ebb03c0151ebbb44c40019","name":"作业中心","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebbbfe1f001b","name":"作业调度","url":"Service/Scheduling","icon":"","children":[]}]},{"id":"2c948cfb51ebb03c0151ebbc7b5c001c","name":"转账通道","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebbd5347001e","name":"转账通道","url":"Service/Ukey","icon":"","children":[]}]}]},{"id":"2c948cfb51ebb03c0151ebb48c15000b","name":"监控管理","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec65a5fc000a","name":"服务监控中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec67723f000f","name":"服务监控","url":"Service/Sermonitor","icon":"","children":[]}]},{"id":"2c948cfb51ec5db00151ec65fbf8000b","name":"质量监控","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec68273b0011","name":"渠道切换","url":"Admin/Channel","icon":"","children":[]}]},{"id":"2c948cfb51ec5db00151ec665e33000c","name":"第三方工具中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec68aa560013","name":"下载管理","url":"Service/Download","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec8e100e0015","name":"Cacti连接","url":"http://10.128.133.212/cacti/","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec8e93310017","name":"Naigos连接","url":"http://10.128.133.213/nagios/","icon":"","children":[]}]},{"id":"2c948cfb51ec5db00151ec66a58f000d","name":"监控配置中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec8f67fc0019","name":"运维成员管理","url":"Service/Operatmember","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9042b1001b","name":"代理资源映射","url":"Service/Agentresource","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec90fa0d001d","name":"监控元素","url":"Service/Addmonelement","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec91f28e001f","name":"元素资源类型","url":"Service/Moniconfig","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec929fae0021","name":"历史查询","url":"Service/Historyquery","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9344b30023","name":"实时监控","url":"Service/Realmonitor","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec93fc8c0025","name":"渠道","url":"Service/Channelswitch","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec94aa210027","name":"监控过滤","url":"Service/Monitorfilter","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9640660029","name":"切换设置","url":"Admin/SysMonitor/showIp","icon":"","children":[]}]},{"id":"2c9183e1532c1050015372f511d30003","name":"拓扑镜像","url":null,"icon":"","children":[{"id":"2c9183e1532c1050015372f741e60005","name":"物理图管理","url":"Service/Graph","icon":"","children":[]},{"id":"2c9183e1532c1050015372f8083f0007","name":"逻辑图管理","url":"Service/Graphlogic","icon":"","children":[]},{"id":"2c9183e1532c1050015372f8af300009","name":"产品图标管理","url":"Service/Proicon","icon":"","children":[]}]}]},{"id":"2c948cfb51ebb03c0151ebb4c96f000c","name":"主机管理","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec975f99002b","name":"初始化机器","url":"Service/Deployment","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec97e9dd002d","name":"密码管理","url":"Service/passmanage","icon":"","children":[]}]},{"id":"2c948cfb51ebb03c0151ebb502c8000d","name":"资产管理","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec985607002e","name":"资源中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec993e620031","name":"机房管理","url":"Service/Areamanage","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec99d3710033","name":"机柜管理","url":"Service/Cabinet","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9a6dfb0035","name":"机器类型/型号管理","url":"Service/Mechinetype","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9b06fe0037","name":"操作系统","url":"Service/Operatesystem","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9b7d650039","name":"服务器管理","url":"Service/Servermanage","icon":"","children":[]},{"id":"2c9183e1532c105001537308eef90056","name":"设备类型","url":"Service/DeviceType","icon":"","children":[]}]},{"id":"2c948cfb51ec5db00151ec989f66002f","name":"非计算资源中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec9c2a49003b","name":"资产","url":"Service/DeviceInfo","icon":"","children":[]}]}]},{"id":"2c948cfb51ebb03c0151ebb549e1000e","name":"服务治理","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec9ccdd8003d","name":"设置T1T2系统","url":"Admin/SetSystem","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9da7f5003f","name":"服务治理","url":"http://172.17.4.203:8080/containerui/index.do","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9e37b10041","name":"流水质量监控","url":"Admin/SysMonitor","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9ea69e0043","name":"Ice权重","url":"Admin/IceWeight","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9f41b20045","name":"权重服务","url":"Admin/WeightService","icon":"","children":[]}]}]
+0
+
+
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: \\\\\\\\\\\\\\\\获取菜单解析后的结果是：Array
+(
+    [0] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb3ece6000a
+            [name] => 服务管制
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ebb03c0151ebb5bf60000f
+                            [name] => 配置中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebb73feb0011
+                                            [name] => 配置
+                                            [url] => Service/Configure
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebb84a6c0013
+                                            [name] => 配置节点恢复
+                                            [url] => Service/Retrive
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ebb03c0151ebb8e4840014
+                            [name] => 仓库中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebb9ea470016
+                                            [name] => 仓库中心
+                                            [url] => Service/Repertory
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebbaba760018
+                                            [name] => 批量处理
+                                            [url] => Service/Batchprocess/index/from/2
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [id] => 2c948cfb51ebb03c0151ebbb44c40019
+                            [name] => 作业中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebbbfe1f001b
+                                            [name] => 作业调度
+                                            [url] => Service/Scheduling
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [id] => 2c948cfb51ebb03c0151ebbc7b5c001c
+                            [name] => 转账通道
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebbd5347001e
+                                            [name] => 转账通道
+                                            [url] => Service/Ukey
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb48c15000b
+            [name] => 监控管理
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec65a5fc000a
+                            [name] => 服务监控中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec67723f000f
+                                            [name] => 服务监控
+                                            [url] => Service/Sermonitor
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec65fbf8000b
+                            [name] => 质量监控
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec68273b0011
+                                            [name] => 渠道切换
+                                            [url] => Admin/Channel
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec665e33000c
+                            [name] => 第三方工具中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec68aa560013
+                                            [name] => 下载管理
+                                            [url] => Service/Download
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec8e100e0015
+                                            [name] => Cacti连接
+                                            [url] => http://10.128.133.212/cacti/
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec8e93310017
+                                            [name] => Naigos连接
+                                            [url] => http://10.128.133.213/nagios/
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec66a58f000d
+                            [name] => 监控配置中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec8f67fc0019
+                                            [name] => 运维成员管理
+                                            [url] => Service/Operatmember
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9042b1001b
+                                            [name] => 代理资源映射
+                                            [url] => Service/Agentresource
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec90fa0d001d
+                                            [name] => 监控元素
+                                            [url] => Service/Addmonelement
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [3] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec91f28e001f
+                                            [name] => 元素资源类型
+                                            [url] => Service/Moniconfig
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [4] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec929fae0021
+                                            [name] => 历史查询
+                                            [url] => Service/Historyquery
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [5] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9344b30023
+                                            [name] => 实时监控
+                                            [url] => Service/Realmonitor
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [6] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec93fc8c0025
+                                            [name] => 渠道
+                                            [url] => Service/Channelswitch
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [7] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec94aa210027
+                                            [name] => 监控过滤
+                                            [url] => Service/Monitorfilter
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [8] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9640660029
+                                            [name] => 切换设置
+                                            [url] => Admin/SysMonitor/showIp
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [id] => 2c9183e1532c1050015372f511d30003
+                            [name] => 拓扑镜像
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c9183e1532c1050015372f741e60005
+                                            [name] => 物理图管理
+                                            [url] => Service/Graph
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c9183e1532c1050015372f8083f0007
+                                            [name] => 逻辑图管理
+                                            [url] => Service/Graphlogic
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [id] => 2c9183e1532c1050015372f8af300009
+                                            [name] => 产品图标管理
+                                            [url] => Service/Proicon
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb4c96f000c
+            [name] => 主机管理
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec975f99002b
+                            [name] => 初始化机器
+                            [url] => Service/Deployment
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec97e9dd002d
+                            [name] => 密码管理
+                            [url] => Service/passmanage
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [3] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb502c8000d
+            [name] => 资产管理
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec985607002e
+                            [name] => 资源中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec993e620031
+                                            [name] => 机房管理
+                                            [url] => Service/Areamanage
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec99d3710033
+                                            [name] => 机柜管理
+                                            [url] => Service/Cabinet
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9a6dfb0035
+                                            [name] => 机器类型/型号管理
+                                            [url] => Service/Mechinetype
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [3] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9b06fe0037
+                                            [name] => 操作系统
+                                            [url] => Service/Operatesystem
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [4] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9b7d650039
+                                            [name] => 服务器管理
+                                            [url] => Service/Servermanage
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [5] => Array
+                                        (
+                                            [id] => 2c9183e1532c105001537308eef90056
+                                            [name] => 设备类型
+                                            [url] => Service/DeviceType
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec989f66002f
+                            [name] => 非计算资源中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9c2a49003b
+                                            [name] => 资产
+                                            [url] => Service/DeviceInfo
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [4] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb549e1000e
+            [name] => 服务治理
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9ccdd8003d
+                            [name] => 设置T1T2系统
+                            [url] => Admin/SetSystem
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9da7f5003f
+                            [name] => 服务治理
+                            [url] => http://172.17.4.203:8080/containerui/index.do
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9e37b10041
+                            [name] => 流水质量监控
+                            [url] => Admin/SysMonitor
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9ea69e0043
+                            [name] => Ice权重
+                            [url] => Admin/IceWeight
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9f41b20045
+                            [name] => 权重服务
+                            [url] => Admin/WeightService
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+
+[ 2016-03-23T23:12:26+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+NOTIC: [8] Undefined index: ServiceLoginMenu E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 18 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: volist E:\www\Sermanage\Runtime\Cache\Service\573a565d88655dd6d35e2fd9412a37b4.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031199s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031199s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T23:12:30+08:00 ] 127.0.0.1 /index.php/Service/DeviceType?_=1458745950350
+ERR: ////////////////////////////// request_by_other post is {"key":"topo.devicetype.search","page":{"pageNo":1,"pageSize":20},"ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 23:12:30","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T23:12:30+08:00 ] 127.0.0.1 /index.php/Service/DeviceType?_=1458745950350
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T23:12:30+08:00 ] 127.0.0.1 /index.php/Service/DeviceType?_=1458745950350
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"deviceid":"17750","deviceName":"路由器","deviceDemo":null,"operator":"admin","iconurl":"other.png"},{"deviceid":"17779","deviceName":"服务器","deviceDemo":null,"operator":"admin","iconurl":"server.png"},{"deviceid":"17780","deviceName":"负载均衡","deviceDemo":null,"operator":"admin","iconurl":"transfer.png"},{"deviceid":"17790","deviceName":"防火墙","deviceDemo":"LLLL","operator":"admin","iconurl":"56ebaca3d1efb.png"},{"deviceid":"17791","deviceName":"反向代理","deviceDemo":null,"operator":"admin","iconurl":"56ebd21bc0d92.png"},{"deviceid":"17792","deviceName":"VPN","deviceDemo":null,"operator":"admin","iconurl":"56ebac6c5ef55.png"},{"deviceid":"17798","deviceName":"VM","deviceDemo":null,"operator":"Admin","iconurl":"56ebd21bc0d92.png"},{"deviceid":"17799","deviceName":"HardWare","deviceDemo":null,"operator":"Admin","iconurl":"56f1eee2ba5ac.png"}],"pageNo":1,"pageSize":20,"totalPage":1,"total":8}
+[ 2016-03-23T23:12:30+08:00 ] 127.0.0.1 /index.php/Service/DeviceType?_=1458745950350
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of DeviceTypeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\DeviceTypeController.class.php 第 3 行.
+NOTIC: [2048] Declaration of DeviceTypeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\DeviceTypeController.class.php 第 3 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Model\DeviceTypeModel.class.php 第 27 行.
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Application\Service\Model\DeviceTypeModel.class.php 第 28 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Runtime\Cache\Service\04a8832eb77587e5c0364bd8d7b1fc19.php 第 8 行.
+NOTIC: [8] Undefined index: _order E:\www\Sermanage\Runtime\Cache\Service\04a8832eb77587e5c0364bd8d7b1fc19.php 第 10 行.
+NOTIC: [8] Undefined index: _sort E:\www\Sermanage\Runtime\Cache\Service\04a8832eb77587e5c0364bd8d7b1fc19.php 第 12 行.
+NOTIC: [8] Undefined index: hostname E:\www\Sermanage\Runtime\Cache\Service\04a8832eb77587e5c0364bd8d7b1fc19.php 第 14 行.
+NOTIC: [8] Undefined index: ipv E:\www\Sermanage\Runtime\Cache\Service\04a8832eb77587e5c0364bd8d7b1fc19.php 第 14 行.
+NOTIC: [8] Undefined index: environment E:\www\Sermanage\Runtime\Cache\Service\04a8832eb77587e5c0364bd8d7b1fc19.php 第 14 行.
+NOTIC: [8] Undefined index: isVirtual E:\www\Sermanage\Runtime\Cache\Service\04a8832eb77587e5c0364bd8d7b1fc19.php 第 14 行.
+NOTIC: [8] Undefined index: data E:\www\Sermanage\Runtime\Cache\Service\04a8832eb77587e5c0364bd8d7b1fc19.php 第 26 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.062398s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.062398s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T23:12:32+08:00 ] 127.0.0.1 /index.php/Service/DeviceType/add?_=1458745952612
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of DeviceTypeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\DeviceTypeController.class.php 第 3 行.
+NOTIC: [2048] Declaration of DeviceTypeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\DeviceTypeController.class.php 第 3 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031199s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031199s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T23:12:36+08:00 ] 127.0.0.1 /index.php/Service/DeviceType/edit/id/17779?_=1458745956066
+ERR: ////////////////////////////// request_by_other post is {"id":"17779","_":"1458745956066","key":"topo.devicetype.get","ver":"v1.0","encoding":"utf-8","timestamp":"2016-03-23 23:12:36","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-03-23T23:12:36+08:00 ] 127.0.0.1 /index.php/Service/DeviceType/edit/id/17779?_=1458745956066
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-03-23T23:12:36+08:00 ] 127.0.0.1 /index.php/Service/DeviceType/edit/id/17779?_=1458745956066
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"deviceid":"17779","deviceName":"服务器","deviceDemo":null,"operator":"admin","iconurl":"server.png"},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-03-23T23:12:36+08:00 ] 127.0.0.1 /index.php/Service/DeviceType/edit/id/17779?_=1458745956066
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of DeviceTypeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\DeviceTypeController.class.php 第 3 行.
+NOTIC: [2048] Declaration of DeviceTypeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\DeviceTypeController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046799s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.046799s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T23:12:37+08:00 ] 127.0.0.1 /index.php/Service/DeviceType/icon/?_=1458745957612
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of DeviceTypeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\DeviceTypeController.class.php 第 3 行.
+NOTIC: [2048] Declaration of DeviceTypeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\DeviceTypeController.class.php 第 3 行.
+NOTIC: [8] Undefined offset: 1 E:\www\Sermanage\Application\Service\Controller\DeviceTypeController.class.php 第 163 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Runtime\Cache\Service\783b3160c7763d07183ef797df882a63.php 第 6 行.
+NOTIC: [8] Undefined index: _order E:\www\Sermanage\Runtime\Cache\Service\783b3160c7763d07183ef797df882a63.php 第 8 行.
+NOTIC: [8] Undefined index: _sort E:\www\Sermanage\Runtime\Cache\Service\783b3160c7763d07183ef797df882a63.php 第 10 行.
+NOTIC: [8] Undefined variable: map E:\www\Sermanage\Runtime\Cache\Service\783b3160c7763d07183ef797df882a63.php 第 12 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015600s ]
+
+[ 2016-03-23T23:12:38+08:00 ] 127.0.0.1 /index.php/Service/Index/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: volist E:\www\Sermanage\Runtime\Cache\Service\573a565d88655dd6d35e2fd9412a37b4.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T23:12:41+08:00 ] 127.0.0.1 /index.php/Service/DeviceType/icon
+ERR: \\\\\\\\\\\\\\\\上传的文件是：Array
+(
+    [name] => stock-photo-58821088.jpg
+    [type] => application/octet-stream
+    [size] => 102159
+    [key] => Filedata
+    [ext] => jpg
+    [md5] => 1892f6d9c4f90f641ebbb2031c9dcc8e
+    [sha1] => d89d93fe8e5ccf753a2661fb9047ca1f041f6790
+    [savename] => 56f2b2692bfa0.jpg
+    [savepath] => ./Images/jtopo/
+)
+
+上传时间是：2016-03-23 23:12:41
+[ 2016-03-23T23:12:41+08:00 ] 127.0.0.1 /index.php/Service/DeviceType/icon
+ERR: \\\\\\\\\\\\\\\et：Array
+(
+    [statusCode] => 1
+    [message] => 上传成功！
+    [navTabId] => 
+    [rel] => 
+    [forwardUrl] => 
+    [image] => 56f2b2692bfa0.jpg
+)
+
+上传时间是：2016-03-23 23:12:41
+[ 2016-03-23T23:12:41+08:00 ] 127.0.0.1 /index.php/Service/DeviceType/icon
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of DeviceTypeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\DeviceTypeController.class.php 第 3 行.
+NOTIC: [2048] Declaration of DeviceTypeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\DeviceTypeController.class.php 第 3 行.
+NOTIC: [8] A session had already been started - ignoring session_start() E:\www\Sermanage\Application\Service\Controller\CommonController.class.php 第 25 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given E:\www\Sermanage\ThinkPHP\Library\Think\Upload.class.php 第 166 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-03-23T23:12:41+08:00 ] 127.0.0.1 /index.php/Service/DeviceType/icon/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of DeviceTypeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\DeviceTypeController.class.php 第 3 行.
+NOTIC: [2048] Declaration of DeviceTypeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\DeviceTypeController.class.php 第 3 行.
+NOTIC: [8] Undefined offset: 1 E:\www\Sermanage\Application\Service\Controller\DeviceTypeController.class.php 第 163 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Runtime\Cache\Service\783b3160c7763d07183ef797df882a63.php 第 6 行.
+NOTIC: [8] Undefined index: _order E:\www\Sermanage\Runtime\Cache\Service\783b3160c7763d07183ef797df882a63.php 第 8 行.
+NOTIC: [8] Undefined index: _sort E:\www\Sermanage\Runtime\Cache\Service\783b3160c7763d07183ef797df882a63.php 第 10 行.
+NOTIC: [8] Undefined variable: map E:\www\Sermanage\Runtime\Cache\Service\783b3160c7763d07183ef797df882a63.php 第 12 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-03-23T23:12:42+08:00 ] 127.0.0.1 /index.php/Service/Index/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: authId E:\www\Sermanage\Runtime\Cache\Service\573a565d88655dd6d35e2fd9412a37b4.php 第 139 行.
+NOTIC: [8] Undefined variable: volist E:\www\Sermanage\Runtime\Cache\Service\573a565d88655dd6d35e2fd9412a37b4.php 第 148 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

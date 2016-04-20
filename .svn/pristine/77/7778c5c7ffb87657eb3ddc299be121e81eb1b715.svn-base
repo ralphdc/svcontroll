@@ -1,0 +1,24 @@
+<div class="tableList bd_side" layouth="301" >
+	<table class="list" width="100%">
+		<thead>
+			<tr>
+				<th>权限类型</th>
+				<th>权限名称</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist id="item" name="resource" >
+			<tr>
+				<td>{$item['resourceType']}</td>
+				<td>{$item['resourceName']}</td>
+			</tr>
+			</volist>
+		</tbody>
+	</table>
+</div>
+<div class="panelBar">
+	<div class="pages">
+		<span>共{$totalCount}条</span>
+	</div>
+	<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+</div>

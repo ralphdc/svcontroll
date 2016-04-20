@@ -1,0 +1,266 @@
+<link href="__PUBLIC__/dwz/themes/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/dwz/js/jquery.ztree.all-3.5.js" type="text/javascript"></script>
+
+<include file="Public:pagerFormLog" />
+
+<div layouth="0">
+	<div class="side_tree repertory_tree js_drag_width" style="border-top:none;width:160px;">
+		<ul id="repertory_tree" class="ztree" layouth="10"></ul>
+	</div>
+	<div id="repertory_content" layouth="0">
+		<div class="item_list_filter"  style="padding-left:20px">
+			<form class="pagerForm" action="/index.php/Service/Repertory/search" method="post" onsubmit="return divSearch(this, 'repertory_content');">
+				<span class="">服务：</span>
+				<input type="text" size="15" name="productname" id="" class="textInput" />			
+				<span class="">ip地址：</span>
+				<input type="text" size="15" name="servicename" id="" class="textInput" />
+				<span class="">状态：</span>
+				<select name="deploymentFlag" id="" class="">
+					<option value="" selected>全部</option>
+					<option value="2">已发布</option>
+					<option value="1">未发布</option>				
+				</select>
+				<span>时间（起）：</span>
+				<input maxDate="<?php echo date('Y-m-d'); ?>"  type="text" value="<?php if($_REQUEST['start']) echo $_REQUEST['start'];else echo date('Y-m-d'); ?>" id="start" name="start" readonly="1" datefmt="yyyy-MM-dd" class="date textInput readonly">
+				<span>时间（终）：</span>
+				<input maxDate="<?php echo date('Y-m-d'); ?>"  type="text" value="<?php if($_REQUEST['end']) echo $_REQUEST['end'];else echo date('Y-m-d'); ?>" id="end" name="end" readonly="1" datefmt="yyyy-MM-dd" class="date textInput readonly">
+				<input type="submit" value="查询" class="ui_btn_green" />
+			</form>
+		</div>
+		<div id="repertory_list">
+			<div class="tableList" layouth="90">
+				<table class="list tac" width="100%">
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>服务</th>
+							<th>IP地址</th>
+							<th>时间</th>
+							<th>状态</th>
+							<th>信息</th>
+						</tr>
+					</thead>
+					<tbody>
+					<volist id="vo" name="list">
+							<tr target="script_id" rel="{$vo['smId']}">
+								<td>
+									<?php
+										$listnums = $numPerPage * ($currentPage-1) + $key+1;
+										echo $listnums;
+									?>
+								</td>
+								<td>{$vo['servicename']}</td>
+								<td>
+									<?php echo $servicetype[ $vo['servicetype'] ] ?>
+								</td>
+								<td>{$vo['importtime']}</td>
+								<td <?php if($vo['deploymentFlag'] == 1){ echo 'style="color:red"';}
+								elseif($vo['deploymentFlag'] =='2' && ($vo['desployenv'] == '1' || $vo['desployenv'] == '4')){ echo 'style="color:green;"';} ?>>
+									<?php echo $deploymentFlagArr[$vo['deploymentFlag']] ?>
+								</td>
+								<td>{$vo['servicefunction']}</td>
+										
+							</tr>
+						</volist>				
+					</tbody>
+				</table>
+			</div>
+			<div class="panelBar">
+				<div class="pages">
+					<span>共{$totalCount}条</span>
+				</div>
+				<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<script type="text/javascript">
+var setting = {
+	view: {
+		dblClickExpand: false,
+		selectedMulti: false,
+		nameIsHTML:true
+	},
+	data: {
+		simpleData: {
+			enable: true
+		}
+	},
+	edit: {
+		enable: false,
+		showAddBtn: false,
+		showRemoveBtn: false,
+		showRenameBtn: false
+	},
+	callback: {
+		onRightClick: OnRightClick
+	}
+};
+
+var repertory_nodes=[
+	{$defaultTree}
+	];
+
+var repertory_tree;
+$(document).ready(function(){
+	$.fn.zTree.init($("#repertory_tree"), setting, repertory_nodes);
+	repertory_tree = $.fn.zTree.getZTreeObj("repertory_tree");
+	// updateType();
+	$('.repertory_tree a').attr('rel','repertory_content');
+	repertory_tree.expandAll(false);
+	var menode = repertory_tree.getNodeByTId('1');
+	//repertory_tree.selectNode(menode);
+	repertory_tree.expandNode(menode, true, null, null, false);
+	//$('.repertory_tree ul li a').attr('rel','repertory_content');
+	
+	$('.js_drag_width').each(function(){
+		if($('.mouse_area',this).length!=0){
+			return;
+		}
+		var area=$(this),
+			handle=$('<div class="mouse_area" style="position:absolute;top:0;right:0;width:5px;height:100%;cursor:e-resize;"></div>')
+		$(this).css('position','relative').append(handle);
+		var drag_move=false,
+			s_x,
+			s_w;
+		handle.mousedown(function(event){
+			drag_move=true;
+			s_x=event.pageX;
+			s_w=area.width();
+			$('body').bind('selectstart',function(){return false;}).addClass('unselect');
+		});
+		$(document).mousemove(function(event){
+			if(drag_move){
+				var e_x=event.pageX,
+					dist=e_x-s_x,
+					e_w=s_w+dist;
+				if(e_w<100){
+					e_w=100
+				}else if(e_w>800){
+					e_w=800;
+				}
+				console.log(e_w);
+				area.width(e_w+'px');
+			}
+		}).mouseup(function(){
+			drag_move=false;
+			$('body').unbind('selectstart').removeClass('unselect');
+		});
+	});
+});
+
+var config_tree_which=repertory_tree,
+	config_treeId_which='repertory_tree';
+function OnRightClick(event, treeId, treeNode) {
+	var tree_which=repertory_tree;
+	if (!treeNode && event.target.tagName.toLowerCase() != "button" && $(event.target).parents("a").length == 0) {
+		tree_which.cancelSelectedNode();
+		showRMenures("root", event.clientX, event.clientY,tree_which,treeId);
+	} else if (treeNode && !treeNode.noR) {
+		tree_which.selectNode(treeNode);
+		showRMenures("node", event.clientX, event.clientY,tree_which,treeId,treeNode);
+	}
+}
+
+function showRMenures(type, x, y,tree_which,treeId,treeNode){
+	var menu='<ul class="context_menu" style="left:'+(x+2)+'px;top:'+(y+2)+'px;">';
+	if(type=='root'){
+		
+	}else{
+		if(treeNode.level==2){
+			if('path' in treeNode){
+				menu+='<li class="m_edit">修改路径和配置</li>';
+			}
+		}
+	}
+	menu+='</ul>';
+	menu=$(menu);
+	$('body').append(menu);
+	$('body').bind("mousedown", onBodyMouseDown);
+	menu.contextmenu(function(e){
+		return false;
+	});
+	
+	$('.m_add',menu).click(function(){
+		if($(this).hasClass('disable')){
+			return false;
+		}
+		var nodes = repertory_tree.getSelectedNodes();
+		hideRMenu();
+		var node_name=treeNode.name.replace(/ \(.*\)/gi, "");
+		$.pdialog.open('/index.php/Service/Repertory/add?mwId='+nodes[0].id,'tree_edit_win',node_name+'添加路径和配置',{'width':'600','height':'300','mask':true});
+	});
+	$('.m_edit',menu).click(function(){
+		if($(this).hasClass('disable')){
+			return false;
+		}
+		var nodes = repertory_tree.getSelectedNodes();
+		hideRMenu();
+		var node_name=treeNode.name.replace(/ \(.*\)/gi, "");
+		$.pdialog.open('/index.php/Service/Repertory/edit?mwId='+nodes[0].id,'tree_edit_win',node_name+'修改路径和配置',{'width':'600','height':'300','mask':true});
+	});
+	
+}
+
+function hideRMenu() {
+	$('.context_menu').remove();
+	$("body").unbind("mousedown", onBodyMouseDown);
+}
+function onBodyMouseDown(event){
+	if (!$(event.target).is('.context_menu') && $(event.target).closest('.context_menu').length==0) {
+		$('.context_menu').remove();
+	}
+}
+
+function changeparentnums(nodes,tree_which){
+	var nodechild = nodes;
+	if(nodechild && nodechild.length > 0){
+		for (var i=0, l=nodechild.length; i<l; i++) {
+			var num = nodechild[i].children ? nodechild[i].children.length : 0;
+			if(num > 0){
+				if(nodechild[i].isParent){
+					nodechild[i].name = nodechild[i].name.replace(/ \(.*\)/gi, "") + " (<font color='red'>" + num + "</font>)";
+					tree_which.updateNode(nodechild[i]);
+					changeparentnums(nodechild[i].children,tree_which);
+				}
+			}
+		}
+	}
+}
+function updateType() {
+	changeparentnums(repertory_tree.getNodes(),repertory_tree);
+}
+
+//svn import
+$('#svnbtn').click(function(){
+	$.post('/index.php/Service/Repertory/importsvn'
+			,{svnurl:$("#svnurl").val()}
+			,function(data){
+				if(data.statusCode=='1'){
+					alertMsg.correct(data.message);
+					 if (data.navTabId) {
+				            navTab.reload(data.forwardUrl, {
+				                navTabId: data.navTabId
+				            });
+					 }
+					
+				}else{
+					alertMsg.error(data.message);
+				}
+			}
+			,"json"
+	)
+})
+
+function reloadTree(envval)
+{
+	navTab.reload('/index.php/Service/Repertory/index', {
+        navTabId: 'D60602',
+        data:{'desployenvp':envval},
+    });
+}
+
+</script>
+

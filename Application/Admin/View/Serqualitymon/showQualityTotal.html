@@ -1,0 +1,39 @@
+<div id="showQualityTotal">
+<div class="item_list_filter"  style="padding-left:20px">
+	<form class="pagerForm" action="__URL__/showQualityTotal" method="post" onsubmit="return divSearch(this,'showQualityTotal');">
+		<span class="">服务名：</span>
+		<input type="text" size="15" name="service" id="" class="textInput" value="{$_REQUEST['service']}"/>
+		<input type="hidden" size="15" name="productId" class="textInput" value="{$_REQUEST['productId']}" />		
+		<input type="submit" value="查询" class="ui_btn_green" />
+	</form>
+</div>
+<div id="Serquality_list">
+	<div class="tableList" layouth="90" style="overflow:auto;height:560px;" >
+		<table class="list tac" width="100%">
+			<thead>
+				<tr>
+					<th width="350">服务</th>
+					<th>错误数</th>
+				</tr>
+			</thead>
+			<tbody>
+			<volist id="vo" name="list">
+					<tr target="script_id" rel="{$vo['smId']}">
+						<td>
+							{$vo['service']}
+						</td>
+						<td>{$vo['num']}</td>
+						
+					</tr>
+				</volist>				
+			</tbody>
+		</table>
+	</div>
+	<div class="panelBar">
+		<div class="pages">
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+</div>
+</div>

@@ -1,0 +1,195 @@
+
+<include file="Public:pagerForm" />
+
+<div class="panelBar m10">
+	<ul class="toolBar">
+		<li><a href="javascript:;" class="add"  mask="true" rel="" title="添加机构" id="add"><span>添加机构</span></a></li>
+		<li class="line">line</li>
+		<!--li class=""><a href="__URL__/delete/id/{orgid}" class="delete" target="ajaxTodo" rel="ids" title="确定要删除节点吗？" posttype="string"><span>删除节点</span></a></li-->
+	</ul>
+</div>
+
+<table class="ui_info_plate">
+	<tr>
+		<td class="plate_item" width="230">
+			<div class="ui_info_con" layouth="92" id="initBanrchs">
+				<ul class="tree treeFolder collapse" id="Banrchs">
+					<volist id="orgs" name="orgs" >
+						<li><a  href="javascript:;" class="treenode" target="orgid"  rel="{$orgs['id']}" >{$orgs['orgName']}</a>
+						<notempty name="orgs['subOrgList']">
+						<ul>
+							<volist id="subItem" name="orgs['subOrgList']" >
+							<li ><a   class="treenode" href="javascript:;" target="id" rel="{$subItem['id']}" >{$subItem['orgName']}</a>
+								<notempty name="subItem['subOrgList']">
+								<ul>
+								<volist id="ssubItem" name="subItem['subOrgList']" >
+								<li  ><a   class="treenode" href="javascript:;" target="id"  rel="{$ssubItem['id']}" >{$ssubItem['orgName']}</a></li>
+								</volist>
+								</ul>
+								</notempty>
+							</li>
+							</volist>
+						</ul>
+						</notempty>
+						</li>
+					</volist>
+
+				</ul>
+			</div>
+		</td>
+		<td class="plate_item" width="230">
+			<form method="post" id="formorg" action="__URL__/operate" class="pageForm required-validate" onsubmit="return validateCallback(this,showBanrchs,'修改成功')" novalidate="novalidate">
+				<div class="bd1">
+					<div class="pageFormContent" layouth="127">
+						<h1>商户管理 &gt; 申请商户管理 &gt; 编辑/增加</h1>
+						<div class="divider"></div>
+						<p style="color:#ff0000">注：增加机构时，先选中目录节点，再点击左上角添加机构按钮 </p>
+						<p>
+							<label style="width:90px;">上级机构名称：</label>
+							<input type="text" value="" size="28" maxlength="15" class="textInput" name="upOrgName" id="">
+							<input type="hidden" value="" size="28"  class="textInput" name="upOrgId" id="">
+							<input type="hidden" value="0" size="28"  class="textInput" name="type" id="submittype">
+						</p>
+						<p>
+							<label style="width:90px;">分支机构名称：</label>
+							<input type="text" value="" size="28" maxlength="15" class="required textInput" name="orgName" id="">
+							<input type="hidden" value="" size="28"  class="textInput" name="id" id="">
+						</p>
+						<p>
+							<label style="width:90px;">机构编码：</label>
+							<input type="text" value="" size="28" maxlength="15" class="required textInput" name="orgCode" id="">
+						</p>
+						<p>
+							<label style="width:90px;">机构状态：</label>
+							<select name="orgStatus" id="" class="combox">
+								<option value="1">正常</option>
+								<option value="0">关闭</option>
+							</select>
+						</p>
+						<p>
+							<label style="width:90px;">机构类型：</label>
+							<select name="orgtype" id="orgtype" class="combox">
+								<option value="1">总部</option>
+								<option value="2">部门</option>
+								<option value="3">分公司</option>
+								<option value="4">办事处</option>
+								<option value="5">代理商</option>
+							</select>
+						</p>
+						<p>
+							<label style="width:90px;">备注信息：</label>
+							<textarea name="remark" class="editor textInput" cols="27" rows="3" maxlength="100"></textarea>
+						</p>
+					</div>
+					<div class="formBar" style="border:0 none">
+						<ul style="float:right">
+							<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="button_menu">修改</button></div></div></li>
+							<li><div class="buttonActive"><div class="buttonContent"><button type="button" id="addorg">新增</button></div></div></li>
+							<li><div class="buttonActive"><div class="buttonContent"><button type="button" id="delorg">删除</button></div></div></li>
+						</ul>
+					</div>
+				</div>
+			</form>
+		</td>
+	</tr>
+</table>
+<script type="text/javascript">
+
+
+$("#addorg").click(function (){
+	$("#submittype").val(2);
+	validateCallback($("#formorg"),showBanrchs,'新增成功');
+});
+
+$("#delorg").click(function (){
+	$("#submittype").val(1);
+	validateCallback($("#formorg"),showBanrchs,'删除成功');
+});
+
+$(".treenode").click(function (){
+	var orgid = this.rel;
+	getBanrchDetail(orgid);
+});
+
+
+function showBanrchs(){
+	$.ajax({
+	   type: "POST",
+	   url: "__URL__/getBanrchs",
+	   data: "productid=1",
+	   success: function(msg){
+			var data = eval("("+msg+")");
+			var length = data.length;
+			var html = "";
+			$("#Banrchs").empty();
+			for(var i=0;i<length;i++){
+				html += '<li><a href="javascript:;" class="treenode"  rel="'+data[i].id+'" rel2="'+data[i].orgtype+'" >'+data[i].orgName+'</a>';
+				var subItem = data[i].subOrgList;
+				if(subItem != ""){
+					var len2 = subItem.length;
+					html += '<ul>';
+					for(var j=0;j<len2;j++){
+						html += '<li ><a  class="treenode" href="javascript:;"  rel="'+subItem[j].id+'" rel2="'+subItem[j].orgtype+'" >'+subItem[j].orgName+'</a>';
+						var ssubItem = subItem[j].subOrgList;
+						if(ssubItem !=''){
+							var len3 = ssubItem.length;
+							html +='<ul>';
+							for(var p=0;p<len3;p++){
+								html += '<li ><a class="treenode" href="javascript:;"  rel="'+ssubItem[p].id+'" rel2="'+ssubItem[p].orgtype+'" >'+ssubItem[p].orgName+'</a></li>';
+							}
+							html += '</ul>';
+						}
+						html += '</li>';
+					}
+					html +='</ul>';
+				}
+				html +='</li>';
+				
+			}
+			
+			$("#Banrchs").html(html);
+			initUI($("#initBanrchs"));
+			
+			$(".treenode").click(function (){
+				var orgid = this.rel;
+				getBanrchDetail(orgid);
+			});
+			
+	   }
+	   })
+}
+
+function getBanrchDetail(orgid){
+	$.ajax({
+	   type: "POST",
+	   url: "__URL__/detail/id",
+	   data: "id="+orgid,
+	   success: function(msg){
+			var data = eval("("+msg+")");
+			//alert(msg);
+			if( data != null){
+				$(":input[name='upOrgName']").val(data.upOrgName);
+				$(":input[name='upOrgId']").val(data.upOrgId);
+				$(":input[name='orgName']").val(data.orgName);
+				$(":input[name='id']").val(data.id);
+				$(":input[name='menuUrl']").val(data.menuUrl);
+				$(":input[name='orgCode']").val(data.orgCode);
+				var orgStatus = data.orgStatus;
+				$('#orgStatus').val(orgStatus);
+				$('#orgStatus').siblings('a').attr('value',orgStatus).text($('#orgStatus option:selected').text());
+			}
+			
+	   }
+	});
+}
+
+
+$("#add").click(function (){
+	var upOrgName = $(".selected").find(".treenode").text();
+	var upOrgId = $(".selected").find(".treenode").attr("rel");
+	$(":input[name='upOrgName']").val(upOrgName);
+	$(":input[name='upOrgId']").val(upOrgId);
+	$(":input[name='orgName']").val("");
+
+});
+</script> 

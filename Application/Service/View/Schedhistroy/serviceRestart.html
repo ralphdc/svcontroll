@@ -1,0 +1,77 @@
+<div class="pageContent">
+	<form method="post" action='/index.php/Service/Servolumeswitch/restartShutdown?opmtype=6' class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58">
+		 <input type="hidden" name="ids" id="ids" value="" />
+			<p>
+				<label>服务名：</label>
+				<input type="text" size="28" class="required textInput" name="servicename" id="servicename" value="{$rowInfo['servicename']}" readonly />
+			</p>
+			<p>
+				<label>IP地址：</label>
+				<input type="text" size="28" class="required textInput" name="ipv" id="ipv" value="{$rowInfo['ipv']}" readonly />
+			</p>
+			<p>
+				<label>版本号：</label>
+				<input type="text" size="28" class="required textInput" name="version" id="version" value="{$rowInfo['version']}" readonly />
+			</p>
+			<p>
+				<label>部署路径：</label>
+				<input type="text" size="28" class="required textInput" name="path" id="path" value="{$rowInfo['path']}" readonly />
+			</p>
+			<p>
+				<label>进程号：</label>
+				<input type="text" size="28" class="required textInput" name="processnum" id="processnum" value="{$rowInfo['processnum']}" readonly />
+			</p>
+			<p>
+				<label>优雅退出：</label>
+					<select name="iselegant" id="iselegant" onchange="switchWay()">
+						<?php
+							$disStrs = '';
+								foreach($iselegant as $iskey=>$isval)
+								{
+									if($iskey == $rowInfo['iselegant'])
+										$selected = 'selected';
+									$disStrs .='<option value="'.$iskey.'" '.$selected.'>'.$isval.'</option>';
+									$selected = '';
+								}
+								echo $disStrs;
+							?>
+					</select>
+			</p>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+<script type="text/javascript">
+	function switchWay()
+	{
+		//var 
+		var datas = initData();
+		$("#ids").val(datas);
+		//console.log(datas);
+	}
+	
+	function initData()
+	{
+		var serviceName = $("#servicename").val();
+		var serviceVersion = $("#version").val();
+		var serviceIp = $("#ipv").val();
+		var servicePath = $("#path").val();
+		var serviceProcess = $("#processnum").val();
+		var serviceWay = $("#iselegant").val();
+		
+		var postData = serviceName + "|" + serviceVersion + "|" + serviceIp + "|" + servicePath + "|" + serviceProcess + "|" + serviceWay;
+		return postData;
+	}
+	
+	$(function(){
+		var data = initData();
+		$("#ids").val(data);		
+	})
+</script>

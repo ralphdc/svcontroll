@@ -1,0 +1,70 @@
+<div class="pageContent">
+	<div class="tabs" currentIndex="0" eventType="click">
+		<div class="tabsHeader">
+			<div class="tabsHeaderContent">
+				<ul>
+					<li><a href="javascript:;"><span>订阅服务提供者列表</span></a></li>
+					<li><a href="javascript:showPullServiceInfo();"><span>服务详情列表</span></a></li>
+					<input type="hidden" name="appId" id="appId" value="{$_REQUEST['appId']}"/>
+					<input type="hidden" name="bizType" id="bizType" value="{$_REQUEST['bizType']}"/>
+				</ul>
+			</div>
+		</div>
+		<div class="tabsContent" >
+			<div>
+				<div class="panelBar">
+					<ul class="toolBar">
+						<li><a id="deletesubscribe" href="__URL__/foreverdelete/method/deleteSubscibers/tradeMethod/deleteSubscibers/bizType/{$_REQUEST['bizType']}/appId/{$_REQUEST['appId']}/id/{$_REQUEST['id']}"  class="delete" mask="true" target="ajaxTodo" title="您确定要删除吗？" rel="deletesubscribe"><span>删除</span></a></li>
+					</ul>
+				</div>
+				<div  style="overflow:auto;height:490px;" >
+				<table class="list"  style="margin-top:0px;width:100%" >
+							<thead>
+							<tr>
+								<th width="25%">appId</th>
+								<th width="25%">IP</th>
+								<th width="25%">status</th>
+								<th width="25%">描述</th>
+							</tr>
+							</thead>
+							<tbody>
+							<volist id="vo" name="list">
+								<tr target="appId" rel="{$vo['appId']}">
+									<td>{$vo['appId']}</td>
+									<td>{$vo['serverIp']}</td>
+									<td>{$vo['status']}</td>
+									<td>{$vo['desc']}</td>
+								</tr>
+							</volist>
+							
+							</tbody>
+				</table>
+				</div>
+				<div class="panelBar">
+					<div class="pages">
+						<span>共{$totalCount}条</span>
+					</div>
+					<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+				</div>
+			
+			</div>
+			<div id="showPullServiceInfo">
+			<!------------标签2-------------------------->
+			
+			<!------------标签2完------------------------>
+			</div>
+		</div>
+
+	</div>
+	</div>
+<script type="text/javascript">
+function showPullServiceInfo(){
+	var bizType = $('#bizType').val();
+	var appId = $('#appId').val();
+	var url =  '__URL__/showPullServiceInfo/tradeMethod/getSubscriberProviders';
+	var data = "bizType="+bizType+"&appId="+appId;
+	$("#showPullServiceInfo").loadUrl(url,data,'');
+}
+
+</script>	
+		

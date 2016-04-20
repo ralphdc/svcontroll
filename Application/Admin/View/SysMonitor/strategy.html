@@ -1,0 +1,109 @@
+<table class="list tac " width="100%" layoutH="30">
+	<thead>
+		<tr>
+		<th >序号 </th>
+		<th >策略名称 </th>
+		<th >商户号 </th>
+		<th >终端号 </th>
+		<th >发卡行(多个用英文,隔开) </th>
+		<th >渠道ID </th>
+		<th >返回码(多个用英文,隔开) </th>
+		<th >不等于的返回码(多个用英文,隔开) </th>
+		<th >操作 </th>
+		</tr>
+	</thead>
+	<tbody class="head_search">
+	<volist id='vo' name='list'>
+		<tr>
+		<td>{$i}<input  type="hidden" name='strategyOrder'  value="{$i}" ></td>
+		<td><input  type="text" name='strategyName' readonly  value="{$vo['strategy_name']}"  ></td>
+		<td><input  type="text" name='merchantLid' readonly value="{$vo['merchantLid']}" ><input type="hidden" name='strId' value="{$vo['strId']}" ></td>
+		<td><input  type="text" name='termLid' readonly value="{$vo['termLid']}" ></td>
+		<td><input  type="text" name="issuebank" readonly value="{$vo['issuebank']}" title="{$vo['issuebank']}" ></td>
+		<td><input  type="text" name='channelId' readonly value="{$vo['channelId']}" ></td>
+		<td><input  type="text" name='returnCode' readonly value="{$vo['returnCode']}" ></td>
+		<td><input  type="text" name='rtncode_notinclude' readonly value="{$vo['rtncode_notinclude']}" ></td>
+		<td>
+			<a href="__URL__/delStrategy/id/{$vo['strId']}" target="ajaxTodo" title="你确定要删除吗？"  class="btn_search">删除</a>
+			<button type="submit" class="btn_search showStrategy">查看</button>
+		</td>
+		</tr>
+	</volist>
+	<tr>
+		<td></td>
+		<td><input  type="text" name='strategyName' value="" maxlength="15" ></td>
+		<td><input  type="text" name='merchantLid' value="" ></td>
+		<td><input  type="text" name='termLid' value="" ></td>
+		<td><input  type="text" name="issuebank"  value=""></td>
+		<td><input  type="text" name='channelId' value="" ></td>
+		<td><input  type="text" name='returnCode' value="" ></td>
+		<td><input  type="text" name='rtncode_notinclude' value="" ></td>
+		<td>
+			<button type="submit" class="btn_search saveStrategy">保存</button>
+		</td>
+	</tr>
+	</tbody>
+</table>
+<script type="text/javascript">
+
+$(".saveStrategy").click(function(){
+	var cav = $(this).parent().parent();
+	var strategyName = $("input[name='strategyName']",cav).val();
+	var merchantLid = $("input[name='merchantLid']",cav).val();
+	var termLid = $("input[name='termLid']",cav).val();
+	var issuebank = $("input[name='issuebank']",cav).val();
+	var channelId = $("input[name='channelId']",cav).val();
+	var returnCode = $("input[name='returnCode']",cav).val();
+	var rtncode_notinclude = $("input[name='rtncode_notinclude']",cav).val();
+
+	if(returnCode !=""&&rtncode_notinclude!=''){
+		alertMsg.error("返回码与不等于返回码不能同时都有值");
+        return false;
+	}
+	$.ajax({
+				type : 'post',
+				url : '__URL__/saveStrategy',
+				global: false,
+				dataType : 'json',
+				data : {'strategy_name':strategyName,'merchantLid':merchantLid,'termLid':termLid,'issuebank':issuebank,'channelId':channelId,'returnCode':returnCode,'rtncode_notinclude':rtncode_notinclude},
+				success : function(response){
+					StrategyAjaxDone(response);
+				}
+			});
+});
+
+$(".showStrategy").click(function(){
+	var cav = $(this).parent().parent();
+	var strategyName = $("input[name='strategyName']",cav).val();
+	var merchantLid = $("input[name='merchantLid']",cav).val();
+	var termLid = $("input[name='termLid']",cav).val();
+	var channelId = $("input[name='channelId']",cav).val();
+	var returnCode = $("input[name='returnCode']",cav).val();
+	var order = $("input[name='strategyOrder']",cav).val();
+	var issuebank = $("input[name='issuebank']",cav).val();
+	var rtncode_notinclude = $("input[name='rtncode_notinclude']",cav).val();
+	
+	navTab.openTab(order, '__URL__/showStrategy', {
+                title: strategyName,
+				data: {'merchantLid':merchantLid,'termLid':termLid,'channelId':channelId,'returnCode':returnCode,'name':order,'issuebank':issuebank,'rtncode_notinclude':rtncode_notinclude}
+				
+            }); 
+});
+
+function StrategyAjaxDone(json){
+    DWZ.ajaxDone(json);
+    if (json.statusCode == DWZ.statusCode.ok) {
+        if (json.navTabId) {
+            navTab.reloadFlag(json.navTabId);
+        } else {
+            var $pagerForm = $("#pagerForm", navTab.getCurrentPanel());
+            var args = $pagerForm.size() > 0 ? $pagerForm.serializeArray() : {}
+            navTabPageBreak(args, json.rel);
+        }
+    }
+}
+
+
+
+
+</script>

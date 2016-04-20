@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td { padding:0; margin:0; font-size:12px; line-height:100%; font-family:'Microsoft Yahei', sans-serif;}
+
+ul, ol { list-style:none;}
+img { border:0;}
+
+body { margin:0; text-align:center;  }
+
+#login { display:block; margin:0; text-align:left;}
+#login_header { display:block; width:980px; padding-top:40px; height:80px; margin:0 auto}
+.login_logo { float:left; margin-top:10px;}
+.login_info { float:left; margin-left:10px; line-height:80px; font-size:18px; color:#0088cc; font-weight: bold;}
+.login_headerContent { float:right; display:block; width:280px; height:80px; padding:0 40px; background:url(../img/login_header_bg.png) no-repeat top right;}
+.navList { display:block; overflow:hidden; height:20px; padding-left:28px;}
+.navList ul { float:left; display:block; overflow:hidden;}
+.navList li { float:left; display:block; margin-left:-1px; padding:0 10px; background:url(../img/login_list.png) no-repeat 0 5px;}
+.navList a { display:block; white-space:nowrap; line-height:21px; color:#000; text-decoration:none;}
+.navList a:hover { text-decoration:underline;}
+
+#login_content { height:402px; min-width:1000px; background:url(../img/login/login_bannerbg.jpg) center center no-repeat }
+.login_title { display:block; padding:25px 0 0 38px;}
+
+.loginForm { display:block; width:278px; height:389px; float:right; margin:8px 35px 0 0; background:url(../img/login/login_window.png) center center no-repeat}
+.loginForm p, .loginForm #p_img_noborder { width:212px; height:32px; margin:30px auto; position:relative; background:url(../img/login/input_bg.gif) repeat-x; border:1px solid #bfbebe; border-radius:4px;}
+.loginForm label { position:absolute; color:#c3c3c3; font-size:14px; top:5px; left:30px; line-height:20px; cursor:text}
+.loginForm input[type="text"], .loginForm input[type="password"] { position:absolute; width:168px; height:20px; left:5px; line-height:20px; font-weight:bold; font-family:'Microsoft Yahei', sans-serif; color:#616161; padding:6px 0; top:0;  margin:0; font-size:14px; border:0 none; background:none; outline:none; }
+
+.loginForm p.active { border-color:#5faa1e; background:#fff; box-shadow:0 0 5px #499516}
+
+.loginForm span { position:absolute; display:block; width:30px; height:30px; }
+#input_userid {  background:url(../img/login/input_title.png) 5px 6px no-repeat}
+#input_pwd {  background:url(../img/login/input_title.png) 5px -33px no-repeat}
+
+.loginForm #p_img_noborder { border:0 none; background:none}
+.loginForm #p_imgcode { width:100px; margin:0;}
+.loginForm .code { width:58px;}
+.loginForm #p_img_noborder img { position:absolute; left:110px; top:4px}
+.loginForm #code_change { position:absolute; top:10px; right:2px; text-decoration:none; color:#5faa1e}
+.loginForm #code_change:hover { text-decoration:underline}
+
+
+#login_button { display:block; width:212px; height:38px; border:0 none; background:url(../img/login/login_button.png); padding:0; margin:0 auto; cursor:pointer}
+#login_button:hover { background:url(../img/login/login_button.png) 0 -38px;}
+#login_button:active { background:url(../img/login/login_button.png) 0 -76px;}
+
+.login_banner { display:block; width:980px; height:402px; margin:0 auto;}
+#login_sysinfo { display:block; width:593px; height:320px; float:left; margin:47px 0 0 35px; background:url(../img/login/login_sysinfo.png) center top no-repeat; color:#fff; font-size:12px;}
+
+#scroll_info { width:480px; height:100px; margin:100px 0 0 80px; overflow:hidden}
+#scroll_info .scroll_info_item { width:480px; height:100px;}
+#scroll_info .sys_info_text { color:#fff; line-height:20px; text-shadow:0 1px 0 #368d02}
+#login_sysinfo ul {  margin:10px 0 0 20px; overflow:hidden }
+#login_sysinfo ul li { display:block; width:150px; float:left; line-height:20px; color:#ffe400;  text-shadow:0 1px 0 #368d02}
+#scroll_info h1 { font-weight:bold; font-size:20px; color:#ffe400; padding-bottom:10px; text-shadow:0 1px 0 #368d02}
+
+.sys_character { margin-top:30px; overflow:hidden; }
+.sys_character_item { float:right; margin-left:20px; background:url(../img/login/login_sysinfo.png) right bottom no-repeat; overflow:hidden}
+
+.sys_character_item .item_icon { padding:0; padding:10px 5px 10px 15px; height:60px; width:60px; color:#ffe400; text-shadow:0 1px 0 #368d02; font-size:24px; line-height:28px; position:relative; overflow:hidden}
+.sys_character_item .item_icon.icon1 { background:url(../img/login/icon.png) -60px -40px no-repeat}
+.sys_character_item .item_icon.icon2 { background:url(../img/login/icon.png) -60px -40px no-repeat}
+.sys_character_item .item_icon.icon3 { background:url(../img/login/icon.png) -60px -40px no-repeat}
+.sys_character_item span { position:absolute; left:80px; top:10px; color:#fff; white-space:nowrap; line-height:20px; text-shadow:0 1px 0 #368d02}
+
+.helpList { float:right; width:200px;}
+.helpList li { display:block; padding-left:10px; background:url(../img/login_list.png) no-repeat 0 -40px;}
+.helpList a { line-height:21px; color:#333; text-decoration:none; }
+.helpList a:hover { text-decoration:underline;}
+
+.login_inner { display:block; width:560px; padding:30px 20px 0 20px;}
+.login_inner p { margin:10px 0; line-height:150%; font-size:14px; color:#666;}
+
+#login_footer { clear:both; display:block; margin-bottom:20px; padding:10px; border-top:solid 1px #e2e5e8; color:#666; text-align:center;}
+
+.login_error { position:absolute; right:1px; top:-20px; }
+.login_error_msg { background:#616161 url(../img/login/login_error.png) 4px center no-repeat; color:#fff; padding:6px 4px 6px 22px; font-size:12px; border-radius:3px}
+.login_error_b { position:absolute; right:8px; border-style: solid; border-color: #616161 #fff #fff #fff; border-width:5px 5px 0 5px; width: 0; height:0;}

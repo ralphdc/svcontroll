@@ -1,0 +1,33 @@
+<include file="Public:pagerForm" />
+<div class="pageHeader">
+	<form rel ="pagerForm" method="post"  onsubmit="return navTabSearch(this);" action="__URL__">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+				<label>时间（起）：</label>
+				<input maxDate="<?php echo date('Y-m-d'); ?>" type="text" value="{$_REQUEST['startTime']}" id="startTime" name="startTime" readonly="1" datefmt="yyyy-MM-dd" class="date textInput readonly">
+			</li>
+			<li>
+				<label>时间（终）：</label>
+				<input maxDate="<?php echo date('Y-m-d'); ?>" type="text" value="{$_REQUEST['endTime']}" id="endTime" name="endTime" readonly="1" datefmt="yyyy-MM-dd" class="date textInput readonly">
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+
+<div class="pageContent">
+	<if condition="($showdata eq 1) ">
+	<iframe width="1000px" height="440px" frameborder="0" marginwidth="0" marginheight="0" src="index.php?s=/Log/AlarmDateStat/showDateStatics" name="frame" id="frame">
+	</iframe>
+	<else />
+		暂无数据
+	</if>
+</div>
+

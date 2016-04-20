@@ -1,0 +1,79 @@
+<div class="pageContent">
+<form method="post" action="__URL__/copyprivate" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+		<input type="hidden" name="id" id="id" value="{$staffId}" />
+		<p style="width:260px">复制运维人员：{$fromname}的权限TO：<select name="toId" style="float:right;width:50px">
+		<?php 
+			foreach ($arrOperator as $key =>$val){
+				if($key == $staffId)
+				continue;
+		?>
+			<option value="{$key}">{$val}</option>
+		<?php }?>
+		</select> 
+		</p>
+		<table class="table" targetType="dialog" layoutH="112" width="100%">
+		<thead>
+			<tr>
+				<th width="30"><input type="checkbox" class="checkboxCtrl" group="orgId[]" /></th>
+				<th width="60">序号</th>
+				<th width="60">元素ID</th>
+				<th width="260">元素</th>
+				<th>通知方式</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr target="sid_user" rel="{$vo['id']}">
+				<?php 
+
+						$checked = '';
+						if(isset($elemon_rights[$vo['id']]) && count($elemon_rights[$vo['id']]))
+						{
+							$checked = 'checked="checked"';
+						}
+						 
+				?>
+				<td class="center" style="width: 43px;"><div><input type="checkbox" value="{$vo['id']}" name="orgId[]" {$checked} ></div></td>
+				<td>{++$key}</td>
+				<td>{$vo['id']}</td>
+				<td>{$vo['elemName']}</td>
+				<?php
+					$we_checked = "";
+					$email_checked = "";
+					$msg_checked = "";
+					if(isset($rights[$vo['id']])){
+
+						if(intval($rights[$vo['id']][0]) == 1){
+							$we_checked = "checked='checked'";
+						}
+
+						if(intval($rights[$vo['id']][1]) == 1){
+							$email_checked = "checked='checked'";
+						}
+
+						if(intval($rights[$vo['id']][2]) == 1){
+							$msg_checked = "checked='checked'";
+						}
+					}
+				?>
+				<td>
+				 <input type="checkbox" value="wechat" name="noticetype[{$vo['id']}][wechat]" <?php echo $we_checked;?>  />微信 
+				 <input type="checkbox" value="email" name="noticetype[{$vo['id']}][email]"  <?php echo $email_checked;?> />邮件 
+			 	 <input type="checkbox" value="msg" name="noticetype[{$vo['id']}][msg]"  <?php echo $msg_checked;?> />短消息 
+				  
+				</td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>

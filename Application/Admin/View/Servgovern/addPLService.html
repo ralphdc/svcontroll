@@ -1,0 +1,158 @@
+<div class="pageContent" style="width: 420px;">
+	<form method="post" action="__URL__/insertPLService/method/addprovide/tradeMethod/addExposeService" class="pageForm required-validate" onsubmit="return validateCallbacknew(this)" >
+		<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label style="width:100px">业务类型：</label>
+				<span style="position:absolute;border:1pt solid #c1c1c1;overflow:hidden;width:188px;height:19px;clip:rect(-1px 190px 190px 170px);"> 
+				<select name="tmpbizType" id="tmpbizType" style="width:190px;height:20px;margin:-2px;" 
+				onChange="javascript:document.getElementById('ccbb').value=document.getElementById('tmpbizType').options[document.getElementById('tmpbizType').selectedIndex].text;setprovideName();"> 
+				<!--下面的option的样式是为了使字体为灰色，只是视觉问题，看起来像是注释一样--> 
+				<option value="" rel=""  >请输入</option> 
+				<volist name="list" id="vo" >
+				<option value="{$vo['id']}" rel="{$vo['appId']}">{$vo['bizType']}</option> 
+				</volist>
+				</select> 
+				</span> 
+				<span style="position:absolute;border-top:1pt solid #c1c1c1;border-left:1pt solid #c1c1c1;border-bottom:1pt solid #c1c1c1;width:170px;height:19px;"> 
+				<input type="text" name="bizType" id="ccbb" maxlength="50" value="请输入"  style="width:170px;height:15px;border:0pt;"> 
+				</span> 
+			</p>
+			<p>
+				<label style="width:100px">服务名称：</label>
+				<input type="text" size="28" name="provideName" id="provideName" class="textInput"  readonly="readonly">
+				<input type="hidden" size="28" name="serverInstanceId" id="serverInstanceId" class="textInput" value="{$_REQUEST['serverInstanceId']}">
+				<input type="hidden" size="28" name="appId"  id="appId" class="textInput" value="{$_REQUEST['appId']}">
+			</p>									 
+			<p>
+				<label style="width:100px">负载均衡类型：</label>
+				<select name="loadBalanceType" id="loadBalanceType"  >  
+					<option  value='random'>权重随机</option>   
+					<option  value='roundRobin'>权重轮询</option>  
+					 
+				</select>  
+				
+			</p>
+			<p>
+				<label style="width:100px">协议类型：</label>
+				<select name="protocolType" id="protocolType"  >  
+					<option  value='mq'>MQ</option>  
+					<option  value='netty'>NETTY</option>  
+					<option  value='ice'>ICE</option>  
+					<option  value='dummy'>DUMMY</option>  
+				</select> 
+			</p>
+			<div style="border:solid 1px #006600;position:absolute; margin-top:140px;height:215px;">
+			<p>路由:</p>
+			<p>
+				<label>节点类型：</label>
+				<select name="nodeType" id="" class="combox">
+					<option value="dynamic">动态</option>
+					<option value="dummy">虚拟</option>
+					
+				</select>
+			</p>
+			<p>
+				<label>匹配条件：</label>
+				<select name="routeCondition" id="" class="combox">
+					<option value="match">匹配</option>
+					<option value="misMatch">不匹配</option>
+				</select>
+			</p>
+			<p>
+				<label>关系：</label>
+				<select name="routeReleation" id="" class="combox">
+					<option value="or">或者</option>
+					<option value="and">并且</option>
+				</select>
+			</p>
+			<p style="width:100%;height:70px;">
+				<label>路由规则：</label>
+				<textarea name="routeRule"  id="routeRule" maxlength="500"  cols="30" rows="4"></textarea><span style="color:#666666" >填写规则：route1:123,456;route2:789</span>
+			</p>
+			</div>
+			<div style="border:solid 1px #006600;position:absolute; margin-top:380px;height:150px;">
+			<p>权重:</p>
+			<p style="width:100%;height:70px;">
+				<label>扩展条件：</label>
+				<textarea name="expandCondition" cols="30" maxlength="500" rows="4" id="expandCondition"></textarea><span style="color:#666666" >填写规则：queueName:123;weight:100</span>
+			</p>
+			</div>
+			
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="addPLServicebutton">添加</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+<script language="javascript">  
+   function setprovideName() 
+    { 
+		var provideName = $("#tmpbizType").find("option:selected").text();
+		provideName = provideName.replace(/(^\s+)|(\s+$)/g,"");//去掉前后空格
+		var appid = $("#appId").val();//$("#tmpbizType").find("option:selected").attr('rel');
+		provideName = appid +"_"+  provideName;
+		$("#provideName").val(provideName);
+        
+    }  
+	
+	$("#ccbb").blur(function () {
+		var provideName = $(this).val();
+		var appId = $("#appId").val();//{$_REQUEST['appId']};//$("#tmpbizType").find("option:selected").attr('rel');
+		//alert(appId);return;
+		provideName = provideName.replace(/(^\s+)|(\s+$)/g,"");//去掉前后空格
+		provideName = appId +"_"+  provideName;
+		$("#provideName").val(provideName); 
+	} );
+
+	$("#ccbb").focus(function(){
+		if($(this).val() == '请输入'){
+			$(this).val('');
+		}
+	});
+	
+
+	
+	function validateCallbacknew(form) {
+		
+		var $form = $(form);
+		if (!$form.valid()) {
+			return false;
+		}
+		var _submitFn = function() {
+			$.ajax({
+				type: form.method || 'POST',
+				url: $form.attr("action"),
+				data: $form.serializeArray(),
+				dataType: "json",
+				cache: false,
+				success: navTableAjaxDone,
+				error: DWZ.ajaxError
+			});
+		}
+		
+		_submitFn();
+		
+		return false;
+	}
+	
+function navTableAjaxDone(json){
+
+	//DWZ.ajaxDone(json);
+     if (json.statusCode == DWZ.statusCode.error) {
+           alertMsg.error(json.message);return false;
+        }
+	var appId = $("#appId").val();
+	var id = $("#serverInstanceId").val();
+	var url =  '__URL__/serviceList/appId/'+appId+'/serverInstanceId/'+id+ '/method/getprovide';
+	$("#showSubscribeRef").loadUrl(url);
+	if (json.statusCode == DWZ.statusCode.ok) {
+		  DWZ.ajaxDone(json);
+          $.pdialog.closeCurrent();
+    }
+	return false;
+	
+}
+</script>

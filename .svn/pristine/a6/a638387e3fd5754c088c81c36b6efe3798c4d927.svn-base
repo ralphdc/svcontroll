@@ -1,0 +1,259 @@
+<include file="Public:pagerForm" />
+
+<div class="pageHeader">
+	<div class="searchBar">
+		<label>产品名称：</label>
+		<select name="product" id="product" class="combox" >
+			<volist id="vo" name="products">
+				<option value="{$vo['id']}" <?php if($_COOKIE['productId'] == $vo['id'] ){ echo "selected=selected";} ?> >{$vo['productName']}</option>
+			</volist>
+		</select>
+	</div>
+</div>
+
+<div class="panelBar m10 mt5">
+	<ul class="toolBar">
+		<li><a href="javascript:;" class="add" mask="true" rel="" title="添加菜单" id="add"><span>添加子菜单</span></a></li>
+		<!--li class="line">line</li>
+		<li class=""><a href="__URL__/delete/id/{id}" class="delete" target="ajaxTodo" rel="ids" title="确定要删除菜单吗？" warn="请选择菜单" posttype="string"><span>删除菜单</span></a></li-->
+		<!--li class="line">line</li>
+		<li><a href="__URL__/export/id/{id}" class="icon" target="dialog" mask="true" rel="" title="导出菜单数据" warn="请选择菜单" width="600" height="400"><span>导出菜单数据</span></a></li-->
+	</ul>
+</div>
+
+<table class="ui_info_plate">
+	<tr>
+		<td class="plate_item" width="230">
+			<div class="ui_info_con" layouth="123" id = 'initmenu'>
+				<ul class="tree treeFolder collapse" id="menusOfProduct">
+					<volist id="item" name="menu" >
+						<li><a href="javascript:;" class="treenode"  rel="{$item['id']}" rel2="{$item['menuType']}" >{$item['menuName']}</a>
+						<notempty name="item['subMenuList']">
+						<ul>
+							<volist id="subItem" name="item['subMenuList']" >
+							<li ><a   class="treenode" href="javascript:;"  rel="{$subItem['id']}" rel2="{$subItem['menuType']}" >{$subItem['menuName']}</a>
+								<notempty name="subItem['subMenuList']">
+								<ul>
+								<volist id="ssubItem" name="subItem['subMenuList']" >
+								<li  ><a   class="treenode" href="javascript:;"   rel="{$ssubItem['id']}" rel2="{$ssubItem['menuType']}" >{$ssubItem['menuName']}</a></li>
+								</volist>
+								</ul>
+								</notempty>
+							</li>
+							</volist>
+						</ul>
+						</notempty>
+						</li>
+					</volist>
+
+				</ul>
+				
+				<!--ul class="tree treeFolder collapse" id = "testtree">
+					<volist id="item" name="menu" >
+						<li><a   href="javascript:;" class="treenode" target="id"  rel="{$item['id']}" rel2="{$item['menuType']}" >{$item['menuName']}</a>
+						<notempty name="item['subMenuList']">
+						<ul>
+							<volist id="subItem" name="item['subMenuList']" >
+							<li ><a class="treenode" href="javascript:;" target="id" rel="{$subItem['id']}" rel2="{$subItem['menuType']}" >{$subItem['menuName']}</a>
+								<notempty name="subItem['subMenuList']">
+								<ul>
+								<volist id="ssubItem" name="subItem['subMenuList']" >
+								<li  ><a   class="treenode" href="javascript:;" target="id"  rel="{$ssubItem['id']}" rel2="{$ssubItem['menuType']}" >{$ssubItem['menuName']}</a></li>
+								</volist>
+								</ul>
+								</notempty>
+							</li>
+							</volist>
+						</ul>
+						</notempty>
+						</li>
+					</volist>
+
+				</ul-->
+			</div>
+		</td>
+		<td class="plate_item" width="500">
+			<form id="formmenu" method="post" action="__URL__/operate" class="pageForm required-validate" onsubmit="return validateCallback(this,showMenus,'修改成功');" novalidate="novalidate">
+				<div class="bd1">
+					<div class="pageFormContent" layouth="158">
+						<p style="color:#ff0000">注：增加菜单时，先选中目录节点，再点击左上角添加菜单按钮 </p>
+						<p>
+							<label style="width:90px;">父菜单名称：</label>
+							<input type="text" value="" size="28"  class=" textInput" name="upMenuName" id="" />
+							<input type="hidden" value="0" size="28"  class=" textInput" name="upMenuId" id="upMenuId" />
+							<input type="hidden" value="{$products[0]['id']}" size="28"  class="textInput" name="productId" id="currentproductId" />
+							<input type="hidden" value="0" size="28"  class=" textInput" name="type" id="operatetype"/>
+						</p>
+						<p>
+							<label style="width:90px;">菜单名称：</label>
+							<input type="text" value="" size="28" maxlength="15" class="required textInput" name="menuName" id="menuName" />
+							<input type="hidden" value="" size="28"  class=" textInput" name="id" id="id" />
+						</p>
+						<p>
+							<label style="width:90px;">URL：</label>
+							<input type="text" value="" size="28" maxlength="15" class="required textInput" name="menuUrl" id="menuUrl" />
+						</p>
+						<p>
+							<label style="width:90px;">排序号：</label>
+							<input type="text" value="" size="28" maxlength="15" class="required textInput" name="showOrder" id="showOrder" />
+						</p>
+						<p>
+							<label style="width:90px;">跳转地址：</label>
+							<input type="text" value="" size="28" maxlength="15" class="required textInput" name="toAddr" id="toAddr" />
+						</p>
+						<p>
+							<label style="width:90px;">菜单类型：</label>
+							<select name="menuType" id="menuType" class="combox">
+								<option value="1">菜单</option>
+								<option value="0">目录</option>
+							</select>
+						</p>
+						<p>
+							<label style="width:90px;">状态：</label>
+							<select name="menuStatus" id="menuStatus" class="combox">
+								<option value="1">正常</option>
+								<option value="-1">关闭</option>
+							</select>
+						</p>
+						<p>
+							<label style="width:90px;">备注信息：</label>
+							<textarea name="remark" class="editor textInput" cols="27" rows="3" maxlength="100"> </textarea>
+						</p>
+					</div>
+					<div class="formBar" style="border:0 none">
+						<ul style="float:right">
+							<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="button_menu">修改</button></div></div></li>
+							<li><div class="buttonActive"><div class="buttonContent"><button type="button" id="addmenu">增加</button></div></div></li>
+							<li><div class="buttonActive"><div class="buttonContent"><button type="button" id="delmenu">删除</button></div></div></li>
+						</ul>
+					</div>
+				</div>
+			</form>
+		</td>
+	</tr>
+</table>
+
+<script type="text/javascript">
+$(".treenode").click(function (){
+	var menuid = this.rel;
+	getMenuDetail(menuid);
+	//console.log(menuid);
+	//alert(menuid);
+});
+
+$("#addmenu").click(function (){
+	$("#operatetype").val(2);
+	validateCallback($("#formmenu"),showMenus,'新增成功');
+});
+
+
+$("#delmenu").click(function (){
+	$("#operatetype").val(1);
+	validateCallback($("#formmenu"),showMenus,'删除成功');
+});
+
+
+function showMenus(){
+	var  productid = $("#product").val();
+	$("#currentproductId").val(productid);
+	//console.log(productid);
+	$.ajax({
+	   type: "POST",
+	   url: "__URL__/getMenus",
+	   data: "productid="+productid,
+	   success: function(msg){
+			var data = eval("("+msg+")");
+			var length = data.length;
+			var html = "";
+			$("#menusOfProduct").empty();
+			for(var i=0;i<length;i++){
+				html += '<li><a href="javascript:;" class="treenode"  rel="'+data[i].id+'" rel2="'+data[i].menuType+'" >'+data[i].menuName+'</a>';
+				var subItem = data[i].subMenuList;
+				if(subItem != ""){
+					var len2 = subItem.length;
+					html += '<ul>';
+					for(var j=0;j<len2;j++){
+						html += '<li ><a  class="treenode" href="javascript:;"  rel="'+subItem[j].id+'" rel2="'+subItem[j].menuType+'" >'+subItem[j].menuName+'</a>';
+						var ssubItem = subItem[j].subMenuList;
+						if(ssubItem !=''){
+							var len3 = ssubItem.length;
+							html +='<ul>';
+							for(var p=0;p<len3;p++){
+								html += '<li ><a class="treenode" href="javascript:;"  rel="'+ssubItem[p].id+'" rel2="'+ssubItem[p].menuType+'" >'+ssubItem[p].menuName+'</a></li>';
+							}
+							html += '</ul>';
+						}
+						html += '</li>';
+					}
+					html +='</ul>';
+				}
+				html +='</li>';
+				
+			}
+			
+			$("#menusOfProduct").html(html);
+			initUI($("#initmenu"));
+			
+			$(".treenode").click(function (){
+				var menuid = this.rel;
+				getMenuDetail(menuid);
+			});
+			
+	   }
+	   
+	   })
+}
+$("#product").change(function(){
+	showMenus();
+	
+});
+
+
+function getMenuDetail(menuid){
+	$.ajax({
+	   type: "POST",
+	   url: "__URL__/detail/id",
+	   data: "id="+menuid,
+	   success: function(msg){
+			var data = eval("("+msg+")");
+			if( data != null){
+				$(":input[name='upMenuName']").val(data.upMenuName);
+				$(":input[name='upMenuId']").val(data.upMenuId);
+				$(":input[name='menuName']").val(data.menuName);
+				$(":input[name='id']").val(data.id);
+				$(":input[name='menuUrl']").val(data.menuUrl);
+				$(":input[name='showOrder']").val(data.showOrder);
+				$(":input[name='toAddr']").val(data.toAddr);
+				$(":input[name='remark']").val(data.remark);
+				var menuType = data.menuType;
+				$('#menuType').val(menuType);
+				$('#menuType').siblings('a').attr('value',menuType).text($('#menuType option:selected').text());
+ 
+			}
+			
+	   }
+	});
+}
+$("#add").click(function (){
+	var MenuType = $(".selected").find(".treenode").attr("rel2");
+	if(MenuType == 1){
+		alertMsg.confirm("请选择目录");
+		return;
+	}
+	var upMenuName = $(".selected").find(".treenode").text();
+	var upMenuId = $(".selected").find(".treenode").attr("rel");
+	if(upMenuId == undefined){
+		upMenuId = 0;
+	}
+	if(upMenuName == undefined){
+		upMenuName = '';
+	}
+
+	$(":input[name='upMenuName']").val(upMenuName);
+	$(":input[name='upMenuId']").val(upMenuId);
+	$(":input[name='menuName']").val("");
+
+});
+
+
+</script> 

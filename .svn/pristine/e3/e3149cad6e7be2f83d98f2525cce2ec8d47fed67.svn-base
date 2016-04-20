@@ -1,0 +1,179 @@
+<link href="__PUBLIC__/dwz/themes/css/jtopo.css?v2.3" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/dwz/js/jtopo-0.4.8-debug.js?v2.3" type="text/javascript"></script>
+<script src="__PUBLIC__/dwz/js/jpmonitor.js?v2.3" type="text/javascript"></script>
+<div class="container_box" id="container_box">
+	<div>
+		<p style="display:block; padding:10px;">拓扑浏览轨迹&nbsp;[点击切换]：
+		<?php foreach($trace as $t): ?>
+			&nbsp;>>&nbsp;
+			<a style="text-decoration:underline" href="#" onclick="dialogReload('/index.php/Service/Graph/monitor?id=<?php echo $t[0]; ?>','monitorTP');"><?php echo $t[1]; ?></a>
+		<?php endforeach ?>
+		</p>
+	</div>
+	<?php if(count($trace) > 1):?>
+	<?php
+		$last = $trace[count($trace)-2];
+		$lastid = $last[0];
+	 ?>
+	 <div class="formBar">
+		<ul style="text-align:left">
+			<li><div class="buttonActive"><div class="buttonContent"><button onclick="dialogReload('/index.php/Service/Graph/monitor?id=<?php echo $lastid; ?>','monitorTP');">返回</button></div></div></li>
+		</ul>
+	</div>
+	<?php endif; ?>
+	<div id="toolContent">
+		<div class="panelBar" style="height:33px;">
+			<ul class="toolBar">
+				<li><a  href="javascript:void(0)" class="fullscreen" onclick="runScreen()"><span>全屏</span></a></li>  
+				<li class="line">line</li>
+			</ul>
+		</div>
+	</div>
+	<div id="stageSc">
+		<canvas width="1500" height="800" id="canvas"></canvas>	
+	</div>
+</div>
+<div id="leftMenue">
+ 	
+</div>
+<input type="hidden" class="currentActionName" value="monitor" />
+<input type="hidden" name="TpId" class="TpId"  value="{$tpid}" />
+
+
+<script type="text/javascript">
+var stage 		= 	null;
+var scene 		= 	null;
+var node		=	null;
+var newX		=	100;
+var newY		=	100;
+
+//设置屏幕模式；
+var stageModeDefault 		=   'normal';
+var stageModeMove 			=   'drag';
+var stageModeSelect 		=   'select';
+var stageModeEdit			=   'edit';
+
+
+//新建节点的宽、高；
+var nodeWidth	=	60;
+var nodeHeight	=	57;	
+var nodeColor	=	'255，255，255';
+var nodeImage	=	'/Public/Images/jtopo/node2.png';
+var nodeType	=   'normal';
+
+
+//提示文字的坐标；
+var msgX		=	10;
+var msgY		=	10;
+//提示文字的颜色；
+var msgColor	=	'251,242,9';
+var msgFont		=	'14px bold';
+//定义创建节点初始化坐标；
+var beginNode		=	null;
+var endNode			=	null;
+
+
+//  设置背景图片；
+var jpImages = {
+	'normal'	:	'/Public/Images/jtopo/node2.png',
+	'server'	:	'/Public/Images/jtopo/server.png',
+	'firewall'	:	'/Public/Images/jtopo/firewall.png',
+	'router'	:	'/Public/Images/jtopo/router.png',
+	'transfer'	:	'/Public/Images/jtopo/transfer.png',
+	'desktop'	:	'/Public/Images/jtopo/other.png',
+	'web'		:	'/Public/Images/jtopo/other.png',
+	'virtual'	:	'/Public/Images/jtopo/other.png',
+	'balance'	:	'/Public/Images/jtopo/other.png',
+	'other'		:	'/Public/Images/jtopo/other.png',
+}
+
+var jticons = {$dtype}
+
+
+//创建连线参数；
+lk_line_Width 		= 	3;
+lk_bundleGap 		= 	20;
+lk_textOffsetY 		= 	3;
+lk_arrowsRadius 	= 	15;
+lk_strokeColor		=	'255,255,0';
+
+var MonitorPeriod = 15000;
+
+$("#stageSc").height(600);
+
+//创建存储对象；
+var JPStore = 	null;
+//新建节点信息初始化；
+if(window.localStorage){
+	JPStore	=	window.localStorage;
+}else{
+	$("#container_box").prepend("<h1>您的浏览器不支持HTML5,请更换！</h1>");
+}
+
+
+var canvas = $("#canvas")[0];
+stage = new JTopo.Stage(canvas);
+
+scene 	= new JTopo.Scene(stage);
+scene.background='/Public/Images/jtopo/enterdesk.png';
+
+stage.mode = 'normal';
+
+stage.addEventListener("click", function(e){
+	if($(".lmenue").length >0){
+		$(".lmenue").remove();
+	}
+});
+
+/* stage.addEventListener("mousemove", function(e){
+	//console.log(e.target);
+}); */
+
+/* 连线--右键菜单处理 */	
+$("#linkmenu a").click(function(){
+	
+	$("#linkmenu").hide();
+
+})
+
+$("#nodeEditMenu a").click(function(){
+	
+	$("#nodeEditMenu").hide();
+
+})
+
+
+$(function(){
+	xgdEditShow({$topo});
+	monitorNodeInfo();
+	// monitorNodeInfo();
+	// 如果是子拓扑连接，需要清除父拓扑定时任务；
+	// 同一个dialog,只能存在一个定时任务；
+	// 2016-02-26
+	if(intervals.length > 0){
+		var inteval_Index;
+		for(inteval_Index=0; inteval_Index<intervals.length; inteval_Index++ ){
+			window.clearInterval(intervals[inteval_Index]);
+		}
+	}
+	
+	var monitor_window = null;
+	if(!monitor_window){
+		  intervals_c = window.setInterval("monitorNodeInfo()",MonitorPeriod);
+		  intervals.push(intervals_c);
+	}
+	//console.log();
+	var dialog = $.pdialog.getCurrent();
+	dialog.find("a.close").click(function(event) {
+		//window.clearInterval(intervals[0]);
+		if(intervals.length > 0){
+			var inteval_Index;
+			for(inteval_Index=0; inteval_Index<intervals.length; inteval_Index++ ){
+				window.clearInterval(intervals[inteval_Index]);
+			}
+		}
+	});
+	//$("#taskbar").hide();
+})
+</script>
+

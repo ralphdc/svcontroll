@@ -1,0 +1,289 @@
+<?php
+/**
+ * 服务管制--监控配置管理-- 运维成员管理
+ * @author zengguangqiu
+ *
+ */
+//定义权限
+define('MESSAGE', 1<< 0);    // 把短信的通知方式放在最右边
+define('EMAIL', 1<<1);    // 可邮件的通知方式向左移一位
+define('other', 1<<2);   // 可通知的方式向左移两位（后续可以不断的增加）
+
+class OperatmemberController extends CommonController {
+	var $navTab = 'D60606';
+	
+// 框架首页
+	public function index() {
+		C ( 'SHOW_RUN_TIME', false ); // 运行时间显示
+		C ( 'SHOW_PAGE_TRACE', false );
+		$pageNum =empty($_REQUEST['numPerPage']) ? C('PAGE_LISTROWS') : $_REQUEST['numPerPage'];
+		$this->assign ( 'numPerPage', $pageNum ); //每页显示多少条
+		$this->assign ( 'currentPage', !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1);
+		$Operatmember = new OperatmemberModel($_POST,$_GET);
+		$result = $Operatmember->findByPost($_POST,$_GET);
+		$count = $Operatmember->countByPost($_POST,$_GET);
+		$this->assign ( 'totalCount', $count );
+		$this->assign ( 'list', $result );
+		//dump($result);
+		$this->assign ( 'map', array('name'=>'','mobile'=>'') );
+		cookie('_currentUrl_', __SELF__);
+		$this->display();
+	}
+	
+	public function add(){
+		if($_POST){
+			$request = array();
+			foreach($_POST as $k =>$v){
+				$request[$k] = $v;
+	
+			}
+			//组织要保存的数据
+			$post['data']['staffName'] = trim($_POST['staffName']);
+			$post['data']['staffAccount'] = trim($_POST['staffAccount']);
+			$post['data']['staffPhoneNo'] = trim($_POST['staffPhoneNo']);
+			$post['data']['staffEmail'] = trim($_POST['staffEmail']);
+			$post['data']['microBlogId'] = trim($_POST['microBlogId']);
+			$post['data']['wechatId'] = trim($_POST['wechatId']);
+			$post['form_act'] = 'create';
+			//调用java接口进行数据的操作
+			$Operatmember = new OperatmemberModel($_POST,$_GET);
+			$result = $Operatmember->postSave($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+		$this->display();
+	}
+	
+	function edit() {
+		if($_POST){
+			$request = array();
+			foreach($_POST as $k =>$v){
+				$request[$k] = $v;
+		
+			}
+			//组织要保存的数据
+			$post['data']['staffId'] = intval($_POST['id']);
+			$post['data']['staffName'] = trim($_POST['staffName']);
+			$post['data']['staffAccount'] = trim($_POST['staffAccount']);
+			$post['data']['staffPhoneNo'] = trim($_POST['staffPhoneNo']);
+			$post['data']['staffEmail'] = trim($_POST['staffEmail']);
+			$post['data']['microBlogId'] = trim($_POST['microBlogId']);
+			$post['data']['wechatId'] = trim($_POST['wechatId']);
+			$post['form_act'] = 'update';
+			//调用java接口进行数据的操作
+			$Operatmember = new OperatmemberModel($_POST,$_GET);
+			$result = $Operatmember->postSave($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+		$id = $_REQUEST ['id'];
+		$Operatmember = new OperatmemberModel($_POST,$_GET);
+		$vo = $Operatmember->getRowInfo($id);
+		$this->assign('row', $vo);
+		$this->display();
+	}
+	
+	/**
+	 * 删除
+	 * @see CommonController::foreverdelete()
+	 */
+	function foreverdelete()
+	{
+		$ids =$_POST['ids'];
+		$Operatmember = new OperatmemberModel();
+		$result = $Operatmember->deleteAll($ids);
+		if($result['errorCode'] == 0){
+			$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}else{
+			$msg = $result['errorMessage'];
+			$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}
+	}
+	/**
+	 * 删除单个
+	 */
+	function delete()
+	{
+		$id =$_GET['id'];
+		$Operatmember = new OperatmemberModel();
+		$result = $Operatmember->delete($id);
+		if($result['errorCode'] == 0){
+			$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}else{
+			$msg = $result['errorMessage'];
+			$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}
+	}
+	
+	//分配权限
+	function setprivate()
+	{
+		if($_POST){
+			//获取前端传递过来的参数组合成相关的后台的数据
+			$elementArr = $_POST['orgId'];
+			$noticeTypeArr = $_POST['noticetype'];
+			$tempRight = array();
+			if(is_array($elementArr) && count($elementArr))
+			{
+				foreach ($elementArr as $elekey=>$eleval)
+				{
+					$type = '';
+					$tempnoticeArr = $noticeTypeArr[$eleval];
+					$tempStr = implode(',', $tempnoticeArr);
+					if($tempStr == '1')
+					{
+						$type = MESSAGE;
+					}elseif($tempStr == '2')
+					{
+						$type = EMAIL;
+					}elseif($tempStr == '1,2')
+					{
+						$type = MESSAGE | EMAIL;
+					}
+
+					$tempRight[$elekey]['elemId']= $eleval;
+					$tempRight[$elekey]['type']= $type;
+					
+				}
+			}
+			//组织要保存的数据
+			$post['data']['toId'] = $_POST['id'];
+			$post['data']['rights'] =$tempRight;
+			$post['form_act'] = 'create';
+			//调用java接口进行数据的操作
+			$Operatmember = new OperatmemberModel($_POST,$_GET);
+			$result = $Operatmember->postSavePrivate($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+		//获取出所有的元素
+		$Addmonelement = new AddmonelementModel();
+		$allElementArr = $Addmonelement->getAll();
+		$this->assign('list',$allElementArr);
+		//dump($allElementArr);
+		//获取出当前选择的运维账号有的权限
+		$staffId = $_GET['staffId'];
+		$Operatmember= new OperatmemberModel();
+		$rights = $Operatmember->getAllrights($staffId);
+		//拆分权限为数组
+		if(is_array($rights) && count($rights))
+		{
+			$tempRightsArr = array();
+			foreach ($rights as $key =>$val)
+			{
+				$rightInt = intval($val['type']);
+				if($rightInt & MESSAGE)
+				{
+					$tempRightsArr[$val['elemId']][] = 1;
+				}
+				if($rightInt & EMAIL)
+				{
+					$tempRightsArr[$val['elemId']][] = 2;
+				}
+			}
+		}
+		$this->assign('rights',$tempRightsArr);
+		$this->assign('staffId',$staffId);
+		$this->display();
+	}
+	
+	//复制权限
+	function copyprivate()
+	{
+		if($_POST){
+			//获取前端传递过来的参数组合成相关的后台的数据
+			//组织要保存的数据
+			$post['data']['fromId'] = $_POST['id'];
+			$post['data']['toId'] = $_POST['toId'];
+			$post['form_act'] = 'copy';
+			//调用java接口进行数据的操作
+			$Operatmember = new OperatmemberModel($_POST,$_GET);
+			$result = $Operatmember->postSavePrivate($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+		//获取出所有的元素
+		$Addmonelement = new AddmonelementModel();
+		$allElementArr = $Addmonelement->getAll();
+		$this->assign('list',$allElementArr);
+		//dump($allElementArr);
+		//获取出当前选择的运维账号有的权限
+		$staffId = $_GET['staffId'];
+		$Operatmember= new OperatmemberModel();
+		$rowStaffInfo = $Operatmember->getRowInfo($staffId);
+		$rights = $Operatmember->getAllrights($staffId);
+		//拆分权限为数组
+		if(is_array($rights) && count($rights))
+		{
+			$tempRightsArr = array();
+			foreach ($rights as $key =>$val)
+			{
+				$rightInt = intval($val['type']);
+				if($rightInt & MESSAGE)
+				{
+					$tempRightsArr[$val['elemId']][] = 1;
+				}
+				if($rightInt & EMAIL)
+				{
+					$tempRightsArr[$val['elemId']][] = 2;
+				}
+			}
+		}
+		//取出所有的运维人员的账号数组
+		$info = $Operatmember->getAll();
+		if(is_array($info) && count($info))
+		{
+			foreach ($info as $ikey=>$ival)
+			{
+				$operateArr[$ival['staffId']] = $ival['staffName'];
+			}
+		}
+		$this->assign('arrOperator',$operateArr);
+		$this->assign('rights',$tempRightsArr);
+		$this->assign('staffId',$staffId);
+		$this->assign('fromname',$rowStaffInfo['staffName']);
+		$this->display();
+	}
+	
+	
+}

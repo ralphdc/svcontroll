@@ -1,0 +1,41 @@
+/* print */
+.PrintArea {
+	margin:0;
+	font-size:12px;
+}
+.PrintArea table {
+	margin:0 auto;
+	border-collapse:collapse;
+	border:0 none;
+	margin-top:-1px;
+}
+.PrintArea table td {
+	font-size:14px;
+	padding:5px 3px;
+	line-height:18px;
+	border:1px solid #000;
+	word-break:break-all;
+	word-wrap:break-word;
+	white-space:normal;
+}
+.PrintArea table td.title {
+	text-align:center;
+	padding-bottom:5px;
+	font-size:18px;
+	color:#000;
+	font-weight:bold;
+	border:0 none;
+}
+.PrintArea table td.label {
+	text-align:center;
+	background:#e9eaeb;
+}
+.PrintArea table td span {
+	font-size:14px;
+}
+.PrintArea table td.remark {
+	padding:5px;
+	font-size:12px;
+	line-height:18px;
+	text-align:left;
+} 

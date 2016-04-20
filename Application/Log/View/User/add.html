@@ -1,0 +1,63 @@
+<script language="JavaScript">
+<!--
+function checkName(){
+	ThinkAjax.send('__URL__/checkAccount/','ajax=1&account='+$F('account'));
+}
+//-->
+</script>
+
+<div class="pageContent">
+<form method="post" action="__URL__/add" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+		<p>
+			<label>用户名称：</label>
+			<input type="text" size="28" class="required alphanumeric textInput" name="userName" id="">
+		</p>
+		<p>
+			<label>上级用户：</label>
+			<input type="text" size="28" class="required textInput" name="upUserId" id="">
+		</p>
+		<p>
+			<label>用户类型：</label>
+			<select name="userType" id="" class="combox">
+				<option value="1">业务员</option>
+				<option value="2">普通用户</option>
+				<option value="3">财务经办</option>
+				<option value="4">财务审核</option>
+				<option value="5">代理商</option>
+			</select>
+		</p>
+		<p>
+			<label>用户等级：</label>
+			<select name="" id="" class="combox">
+				<option value="1">一般用户</option>
+				<option value="2">系统管理员</option>
+				<option value="3">超级管理员</option>
+			</select>
+		</p>
+		<p>
+			<label>所属机构：</label>
+			<input type="text" size="28" class="required textInput" name="orgId" id="" />
+		</p>
+		<p>
+			<label>用户状态：</label>
+			<select name="userStatus" id="" class="combox">
+				<option value="1">启用</option>
+				<option value="0">停用</option>
+			</select>
+		</p>
+		<p>
+			<label>备注：</label>
+			<input type="text" name="remark" class="textInput" />
+		</p>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>
+
+

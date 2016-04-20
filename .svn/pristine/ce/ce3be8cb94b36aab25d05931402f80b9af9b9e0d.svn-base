@@ -1,0 +1,25 @@
+
+<div class="pageContent">
+<div layoutH="50" width="100%">
+	<table class="table" width="100%" nowrapTD="false">
+	<thead>
+		<tr>
+			<th>告警元素</th>
+			<th>告警信息</th>
+			<th>告警时间</th>
+			<th>备注</th>
+		</tr>
+	</thead>
+	<volist id="vo" name="sinfo">
+	<tbody>
+		<tr>
+			<td>{$vo['element']}</td>
+			<td width="150">{$vo['info']}</td>
+			<td width="180">{$vo['time']}</td>
+			<td width="300">{$vo['remark']}独守空房绝对是福建福鼎市开发的实力开发进度顺利开发大赛拉开数量扩大解放了肯定是福建了肯定是福建的实力开发将来肯定是福建</td>
+		</tr>
+	</volist>
+	</tbody>
+</table>
+</div>
+</div>

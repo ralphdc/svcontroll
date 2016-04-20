@@ -1,0 +1,23 @@
+<div class="tableList bd_side" layouth="142">
+	<table class="list" width="100%">
+		<thead>
+			<tr>
+				<th width="50"><input type="checkbox" name="1" id="1" /></th>
+				<th width="50">元素编号</th>
+				<th>元素名称</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="elements" id="vo">
+			<tr>
+				<td><input type="checkbox" name="element" value="{$vo['id']}" /></td>
+				<td>{$i}</td>
+				<td>{$vo['elementName']}</td>
+			</tr>
+			</volist>
+		</tbody>
+	</table>
+	</div>
+	<div class="panelBar">
+	<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+</div>

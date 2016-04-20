@@ -1,0 +1,197 @@
+<div class="pageContent">
+<form novalidate="novalidate" onsubmit="return validateCallback(this, JTdialogAjaxDone)" class="pageForm required-validate" 
+action="/index.php/Service/Graphlogic/specailNode" method="post">
+	<div class="pageFormContent" layouth="58" id="topo_edit_dialog">
+	<p><input type="hidden" name="oldServiceName" id="oldServiceName" value="" /></p>
+		<p>
+			<label>产品名称：</label>
+			<select id="monitor_pro" name="monitor_pro" onchange="toggleService('monitor_pro')">
+				<option value="all">所有产品</option>
+				<?php foreach($prolist as $pro): ?>
+				<option value="<?php echo $pro['pdIcon']; ?>"><?php echo $pro['pdName']; ?></option>
+				<?php endforeach; ?>
+			</select>
+		</p>
+	<!-- 	<p>
+				<label>查询产品：</label>
+				<input type="text" name="proSeachShow" id="proSeachShow" value="" />
+				<a class="btnLook" href="javascript:void(0)" onclick="proSearch('proSeachShow')" id="prolookup"></a>
+				<span style="color:#FF0000;display:none;" id="psearchMsg">查询成功！</span>
+		</p>
+	-->
+		<p>
+				<label>查询服务：</label>
+				<input type="text" name="serviceSeachShow" id="serviceSeachShow" value="" />
+				<a class="btnLook" href="javascript:void(0)" onclick="serviceSearch('serviceSeachShow')" id="slookup"></a>
+				<span style="color:#FF0000;display:none;" id="ssearchMsg">查询成功！</span>
+		</p> 
+		 
+		<p>
+				<label>对应服务：</label>
+				<?php if(count($service)): ?> 
+				<select size="<?php echo count($service)+1; ?>" id="targetservice" name="targetservice" onchange="selectService()">
+					<?php foreach($service as $sk=>$sv): ?>
+					<option value="<?php echo $sk; ?>"><?php echo $sv; ?></option>
+					<?php endforeach; ?>
+				</select>
+				<?php endif; ?>
+		</p>
+		<p>
+				<label>节点名称：</label>
+				<input type="text" name="nodeNameInfo" id="nodeNameInfo" value="" class="required" />
+		</p>
+		
+			
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+	</form>
+</div>
+
+
+<script type="text/javascript">
+			
+//初始化界面，调整高度；
+$(document).ready(function(){
+	var newHeight = $("#targetservice").height();
+	$("#targetservice").parent().height(newHeight+10);
+	
+	//获取原服务名称；
+	var targetElement = scene.selectedElements[0];
+	var oServiceNameObj = targetElement.getXgdId();
+	var oServiceName	= oServiceNameObj.xgdid;
+	$("#oldServiceName").val(oServiceName);
+})
+			
+//查询产品，已经隐藏此功能；
+function proSearch(domid)
+{
+	var doms = $("#"+domid);
+	var doms_val = doms.val();
+	if(doms_val.length > 0){
+		$.post('__URL__/proSearch',{'pdName':doms_val},function(res){
+			var data = eval("(" + res +")");
+			if(data.statusCode == 1){
+				$("#monitor_pro option").each(function(ky,ev){
+					if($(this).text() == data.pdName){
+						$("#monitor_pro")[0].selectedIndex  = ky;
+					}
+				});
+				toggleService('monitor_pro');
+				
+				$("#ssearchMsg").fadeIn(600);
+				$("#ssearchMsg").fadeOut(600);
+				
+			}
+		})
+		
+	}
+}
+			
+//查询服务；
+function serviceSearch(domid)
+{
+	var doms = $("#"+domid);
+	var doms_val = doms.val();
+	if(doms_val.length > 0){
+		$.post('__URL__/serviceSearch',{'sName':doms_val},function(res){
+			var data = eval("(" + res +")");
+			if(data.statusCode == 1){
+				//选中此服务对应的产品名称；
+				$("#monitor_pro option").each(function(ky,ev){
+					if($(this).text() == data.aliasProduct){
+						$("#monitor_pro")[0].selectedIndex  = ky;
+					}
+				});
+				//构造html;
+				var options = "" ;
+				var i ;
+				options += "<option selected='selected' value='"+data.serviceName+"@"+data.serviceFunction+"@"+data.aliasProduct+"'>";
+				options += data.serviceName+"("+data.serviceFunction+")";
+				options += "</option>";
+				
+				//把构造数据加入dom同时设置尺寸；
+				if(options.length > 0){
+					$("#targetservice").attr("size",2);
+					$("#targetservice").html(options);
+					var newHeight = $("#targetservice").height();
+					$("#targetservice").parent().height(newHeight+10);
+				}
+				//设置节点名称；
+				$("#nodeNameInfo").val(data.serviceName);
+				//成功提示；
+				$("#ssearchMsg").fadeIn(600);
+				$("#ssearchMsg").fadeOut(600);
+				
+			}
+		})
+	}
+}
+				
+//切换产品名称；
+function toggleService(domid)
+{
+	var cobj = $("#"+domid);
+	var ov = cobj.find("option:selected").text();
+	$.post('__URL__/queryProService',{'pdName':ov},function(res){
+		var datas = eval("(" + res + ")");
+		if(datas.statusCode == 1){
+			var data = datas.data;
+			var options = "" ;
+			var i ;
+			for(i=0; i<data.length; i++){
+				options += "<option value='"+data[i].serviceName+"@"+data[i].serviceFunction+"@"+data[i].aliasProduct+"'>";
+				options += data[i].serviceName+"("+data[i].serviceFunction+")";
+				options += "</option>";
+			}
+			if(options.length > 0){
+				$("#targetservice").attr("size",data.length+1);
+				$("#targetservice").html(options);
+				var newHeight = $("#targetservice").height();
+				$("#targetservice").parent().height(newHeight+10);
+			}
+		}
+	})
+}
+
+
+function selectService()
+{
+	var service = $("#targetservice").val();
+	var sCon = service.split("@");
+	//设置产品名称选中；
+	$("#monitor_pro option").each(function(k,v){
+		if($(this).text() == sCon[2]){
+			$("#monitor_pro")[0].selectedIndex  = k;
+		}
+	})
+	$("#nodeNameInfo").val(sCon[0]);
+}
+
+function JTdialogAjaxDone(json){
+	DWZ.ajaxDone(json);
+	if (json.statusCode == DWZ.statusCode.ok) {
+		var current = new Date().getTime();
+		var nodeid = json.serviceName;
+		if(json.icon){
+			var nodeImage = '/Public/Images/jtopolg/'+json.icon;
+		}else{
+			var nodeImage = '/Public/Images/jtopolg/node2.png';
+		}
+		var node = scene.selectedElements[0];
+		node.setImage(nodeImage);			//修改节点图标；
+		node.text = json.nodeText;			//修改节点文本；
+		node.setXgdId(nodeid); 				//添加唯一标识；
+		node.setProName(json.proName)		//添加服务所属的产品名称；
+	//	node.setDtype(dtype); 				//设置设备类型；
+		//console.log(node);
+		$.pdialog.closeCurrent();
+	}
+}
+
+
+</script>

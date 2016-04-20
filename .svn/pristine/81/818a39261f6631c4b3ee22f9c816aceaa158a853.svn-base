@@ -1,0 +1,117 @@
+<!--  
+<include file="Public:pagerFormLog" />
+-->
+<form id="pagerForm" action="__URL__/editChildTP" method="post">
+
+	<input type="hidden" name="pageNum" value="1"/>
+
+	<input type="hidden" name="numPerPage" value="{$_REQUEST.numPerPage}"/>
+
+	<input type="hidden" name="_order" value="{$_REQUEST._order}"/>
+
+	<input type="hidden" name="_sort" value="{$_REQUEST._sort}"/>
+
+	<volist name="map" id="m">
+
+    <input type="hidden" name="{$key}" value="{$_REQUEST[$key]}"/>
+
+    </volist>
+
+</form>
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return dialogSearch(this);" action="__URL__/editChildTP" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+			<label>拓扑图名称：</label>
+			<input type="text" value="{$_REQUEST['data']['topoName']}" id="query" name="data[topoName]" class="textInput">
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+		<tr>
+			<th width="60">序号</th>
+			<th>拓扑名称</th>
+			<th>创建日期</th>
+			<th>节点数</th>
+			<th width="80">操作</th>
+		</tr>
+		</thead>
+		<tbody>
+			<volist id="vo" name="list">
+			<tr class="childtpConentGp">
+				<td>
+				<input type="hidden" class="tpTagIdGp" value="{$vo.topoId}" />
+				<?php 
+					$tag = ($currentPage-1)*$numPerPage + $i;
+				?>
+				<?php echo $tag; ?>
+				</td>
+				<td><a href="#">{$vo.topoName}</a></td>
+				<td>{$vo.createDate}</td>
+				<td>{$vo.nodes}</td>
+				<td width="200">
+					<a class="btnSelect" target="ajaxTodo" callback="handleChildTP"  href="__URL__/saveChildTP/id/{$vo.topoId}">选择</a>
+				</td>
+			</tr>
+			</volist>
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<?php
+					$numPerPageArr = array(20,50,100,200);
+					foreach($numPerPageArr as $val)
+					{
+						if($val == $numPerPage)
+							$selected = 'selected';
+						echo '<option value="'.$val.'" '.$selected.'>'.$val.'</option>';
+							$selected = '';
+					}
+				?>
+			</select>
+			<span>条，共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="dialog" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		var currentEditId = $("input[name='raltpid']").val();
+		$(".childtpConentGp").each(function(){
+			var cid = $(this).find(".tpTagIdGp").val();
+			if(cid == currentEditId){
+				$(this).hide();
+			}
+		})
+	})
+	function handleChildTP(json)
+	{
+		if (json.statusCode == DWZ.statusCode.ok) {
+			//编辑子拓扑成功~！
+			var node = scene.selectedElements[0];
+			var current = new Date().getTime();
+			var nodeid = json.tpid +'_'+ current;
+			node.text = json.tpname;	//修改节点文本；
+			node.setXgdId(nodeid); 		//添加唯一标识；
+			node.setDtype('childtp'); 	//设置设备类型；
+			$.pdialog.closeCurrent();
+		}else{
+			alertMsg.error("提交有误，请稍后再试！");
+		}
+	}
+</script>

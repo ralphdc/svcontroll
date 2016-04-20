@@ -1,0 +1,74 @@
+
+<include file="Public:pagerForm" />
+
+<div class="pageHeader">
+	<!--form rel="pagerForm" onsubmit="return divSearch(this,'user_group_list');" action="" method="post"-->
+	<form  rel="pagerForm" action="" method="post" onsubmit="return navTabSearch(this)">
+		<div class="searchBar">
+			<table class="searchContent">
+				<tr>
+					<td><label>产品名称：</label><input type="text" name="productName" id="productName" class="textInput" /></td>	
+					<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<input type="hidden" name="pageNo" value="1" />
+		<input type="hidden" name="pageSize" value="16" />
+		<!--input type="hidden" name="orderField" value="termid" />
+		<input type="hidden" name="orderDirection" value="desc" /-->
+	</form>
+</div>
+
+<div class="panelBar">
+	<ul class="toolBar">
+		<li><a href="__URL__/add" class="add" target="dialog" mask="true" rel="" title="添加" width="600" height="400"><span>添加</span></a></li>
+		<li class="line">line</li>
+		<li class=""><a href="__URL__/delete/id/{productId}" class="delete" target="ajaxTodo" warn="请选择用户"  rel="" title="确定要删除吗？" ><span>删除</span></a></li>
+		<li class="line">line</li>
+		<li class=""><a href="__URL__/edit/id/{productId}" class="edit" target="dialog" mask="true" rel="" title="修改" width="600" height="400" warn="请选择产品"><span>修改</span></a></li>
+	</ul>
+</div>
+
+<div class="tableList" layouth="118">
+	<table class="list" width="100%">
+		<thead>
+			<tr>
+				<th width="30"><input type="checkbox" group="product_id" class="checkboxCtrl" /></th>
+				<th width="90">产品编码</th>
+				<th>产品名称</th>
+				<th>产品状态</th>
+				<th>产品描述</th>
+				<th>新增用户</th>
+				<th>新增时间</th>
+				<th>修改用户</th>
+				<th>修改时间</th>
+				<th>备注</th>
+			</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="products" >
+			<tr target="productId" rel="{$vo['id']}">
+				<td><input  type="checkbox" name="productid" id="productid" value="{$vo['id']}" ></td>					
+				<td>{$vo['productCode']}</td>
+				<td>{$vo['productName']}</td>
+				<td>{$vo['productStatus']}</td>
+				<td>{$vo['productDesc']}</td>
+				<td>{$vo['createBy']}</td>
+				<td>{$vo['createTime']}</td>
+				<td>{$vo['updateBy']}</td>
+				<td>{$vo['updateTime']}</td>
+				<td>{$vo['remark']}</td>
+			</tr>
+		</volist>
+
+		</tbody>
+	</table>
+</div>
+
+<div class="panelBar">
+	<div class="pages">
+		<span>共{$totalCount}条</span>
+	</div>
+	<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="{$pageNumShown}" currentPage="{$currentPage}"></div>
+</div>

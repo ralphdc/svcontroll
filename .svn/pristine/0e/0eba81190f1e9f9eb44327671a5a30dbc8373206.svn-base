@@ -1,0 +1,98 @@
+<include file="Public:pagerFormLog" />
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__URL__" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">	
+			
+			<li>
+			<label>流水号 ：</label>
+			<input type="text" value="{$_REQUEST['cid']}" id="cid" name="cid" class="textInput">
+			<input type="hidden" value="{$_REQUEST['type']}" name="type" />
+			</li>
+			<li>
+			<label>商户号 ：</label>
+			<input type="text" value="{$_REQUEST['merNo']}" id="merNo" name="merNo" class="textInput">
+			</li>
+			<li>
+			<label>终端号 ：</label>
+			<input type="text" value="{$_REQUEST['tmlNo']}" id="tmlNo" name="tmlNo" class="textInput">
+			</li>
+			<li>
+				<label>时间（起）：</label>
+				<input size="20" maxDate="<?php echo date('Y-m-d'); ?>" type="text" value="{$_REQUEST['startTime']}" id="startTime" name="startTime" readonly="true" datefmt="yyyy-MM-dd HH:mm:ss" class="date textInput readonly">
+			</li>
+			<li>
+				<label>时间（终）：</label>
+				<input size="20" maxDate="<?php echo date('Y-m-d'); ?>" type="text" value="{$_REQUEST['endTime']}" id="endTime" name="endTime" readonly="true" datefmt="yyyy-MM-dd HH:mm:ss" class="date textInput readonly">
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+
+
+
+
+
+
+
+<div class="pageContent">
+
+<table class="table" width="100%" layoutH="110">
+		<thead>
+		<tr>
+			<th>编号</th>
+			<th>流水号</th>
+			<th>父调用链</th>
+			<th>服务名</th>
+			<th>记录时间</th>
+			
+		</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr target="sid_user" rel="{$vo['id']}">
+				<td>
+					<?php
+						$listnums = $numPerPage * ($currentPage-1) + $key+1;
+						echo $listnums;
+					?>
+				</td>
+				<td><a style="text-decoration:underline;color:green" rel="L30605" target="navTab" title="交易调用节点" href="/index.php/Log/CallChain/index/type/3/cid/{$vo['pcid']}/startTime/<?php echo $_REQUEST['startTime']?$_REQUEST['startTime']:date('Y-m-d H:i:s');?>/endTime/<?php echo $_REQUEST['endTime']?$_REQUEST['endTime']:date('Y-m-d H:i:s');?>/from/transchain">{$vo['flow']}</a></td>
+				<td><a style="text-decoration:underline;color:green" rel="L30605" target="navTab" title="交易调用节点" href="/index.php/Log/CallChain/index/type/3/cid/{$vo['pcid']}/startTime/<?php echo $_REQUEST['startTime']?$_REQUEST['startTime']:date('Y-m-d H:i:s');?>/endTime/<?php echo $_REQUEST['endTime']?$_REQUEST['endTime']:date('Y-m-d H:i:s');?>/from/transchain">{$vo['pcid']}</a></td>
+				
+				<td>{$vo['srv']}</td>
+				<td>{$vo['logtime']}</td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<?php
+					$numPerPageArr = array(20,50,100,200);
+					foreach($numPerPageArr as $val)
+					{
+						if($val == $numPerPage)
+							$selected = 'selected';
+						echo '<option value="'.$val.'" '.$selected.'>'.$val.'</option>';
+							$selected = '';
+					}
+				?>
+			</select>
+			<span>条，共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+
+</div>

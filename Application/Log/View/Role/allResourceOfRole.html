@@ -1,0 +1,112 @@
+<table class="ui_info_plate">
+					<tr>
+						<td class="plate_item" width="250">
+							<p class="ui_info_tit">所拥有的菜单</p>
+							<div class="ui_info_con" layouth="181">
+								<ul class="tree collapse treeFolder" id="menuOfRole">
+									<volist id="item" name="menuList" >
+									<li><a href="javascript:;" class="treenode" tvalue="{$item['id']}" tname="" rel="{$item['id']}" rel2="{$item['menuType']}" >{$item['menuName']}</a>
+									<notempty name="item['subMenuList']">
+									<ul>
+										<volist id="subItem" name="item['subMenuList']" >
+										<li ><a class="treenode" href="javascript:;" tvalue="{$subItem['id']}" rel="{$subItem['id']}" rel2="{$subItem['menuType']}" >{$subItem['menuName']}</a>
+											<notempty name="subItem['subMenuList']">
+											<ul>
+											<volist id="ssubItem" name="subItem['subMenuList']" >
+											<li  ><a class="treenode" href="javascript:;" tvalue="{$ssubItem['id']}" rel="{$ssubItem['id']}" rel2="{$ssubItem['menuType']}" >{$ssubItem['menuName']}</a></li>
+											</volist>
+											</ul>
+											</notempty>
+										</li>
+										</volist>
+									</ul>
+									</notempty>
+									</li>
+								</volist>
+								</ul>
+							</div>
+						</td>
+						<td class="plate_item user_element" width="275">
+							<p class="ui_info_tit">所拥有的动作</p>
+							<div class="tableList bd_side" layouth="192">
+								<table class="list" width="100%">
+									<thead>
+										<tr>
+											<th>菜单名称</th>
+											<th>动作名称</th>
+											<th>动作编码</th>
+											
+										</tr>
+									</thead>
+									<tbody>
+										<volist id="item" name="actList" >
+											<tr>
+												<td>{$item['menuName']}</td>
+												<td>{$item['actName']}</td>
+												<td>{$item['actCode']}</td>
+											</tr>
+										</volist>
+										
+									</tbody>
+								</table>
+							</div>
+							<div class="panelBar">
+								<!-- <div class="pages">
+									<span>共{$totalCount}条</span>
+								</div> >
+								<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div-->
+							</div>
+						</td>
+						<td class="plate_item user_element" width="275">
+							<p class="ui_info_tit">所拥有的元素</p>
+							<div class="tableList bd_side" layouth="192">
+								<table class="list" width="100%">
+									<thead>
+										<tr>
+											<th>元素名称</th>
+											<th>元素编码</th>
+										</tr>
+									</thead>
+									<tbody>
+										<volist id="item" name="elementList" >
+											<tr>
+												<td>{$item['elementName']}</td>
+												<td>{$item['elementCode']}</td>
+												<!--td>{$item['actName']}</td-->
+											</tr>
+										</volist>
+										
+										
+									</tbody>
+								</table>
+							</div>
+							<div class="panelBar">
+								<!-- <div class="pages">
+									<span>共{$totalCount}条</span>
+								</div> >
+								<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div-->
+							</div>
+						</td>
+						<td class="plate_item" width="200">
+							<p class="ui_info_tit">所拥有的工作流</p>
+							<div class="ui_info_con" layouth="181">
+								<ul class="tree collapse">
+									<li>
+										<a href="javascript:;">用户管理</a>
+										<ul>
+											<li><a href="javascript:;">用户录入</a></li>
+											<li><a href="javascript:;">用户修改</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="javascript:;">角色管理</a>
+										<ul>
+											<li><a href="javascript:;">用户录入</a></li>
+											<li><a href="javascript:;">用户修改</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</table>

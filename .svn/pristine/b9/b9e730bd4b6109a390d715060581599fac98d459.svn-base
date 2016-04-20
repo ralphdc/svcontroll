@@ -1,0 +1,201 @@
+<div class="pageContent">
+	<form method="post" action="/index.php/Service/Configure/edit_c" class="pageForm required-validate" onsubmit="return validateCallback(this, configAddAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58">
+		
+			<div class="config_fm_item">
+				<span class="config_fm_label">服务名：</span>
+				<input type="text" name="configInstanceName" id="configInstanceName" value="{$configInstanceName}" class="required textInput add_name" />
+				<input type="hidden" name="configInstanceId" value="{$configInstanceId}" id="configInstanceId"/>
+			</div>
+			<div class="config_fm_item">
+				<span class="config_fm_label">校验自定义项 ：</span>
+				<input type="radio" name="check"  class="textInput add_name" value="1" checked/>是&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="radio" name="check" class="textInput add_name" value="0" />否
+			</div>
+			<div class="config_fm_item">
+				<span class="config_fm_label">选择配置项：</span>
+				<div class="config_info_plate" id="addInstance">
+					<?php
+						if($addInstanceStr)
+						{
+							echo $addInstanceStr;	
+						}else
+						{
+					?>
+						<div class="config_info_item itemlistnum">
+							<div class="num">1</div>
+							<span class="pro">配置项分类：</span>
+							<select style="width:100px" id="parentid" name="item[]" class="textInput" onchange="showItemChilds(this);">
+								{$itemListStr}
+							</select>
+							<span class="pro ml30">配置项：</span>
+							<select style="width:100px" id="childId" name="itemChild[]" class="textInput itemchild" onchange="showItemChildcontent(this);">
+								<option value='0'>请选择</option>
+							</select>
+							<a href="javascript:;" class="ui_btn_del">删除</a>
+						</div>
+					<?php
+						}
+					?>
+					<div class="config_info_add">
+						<a href="javascript:;" class="ui_btn_add">添加</a>
+					</div>
+				</div>
+			</div>
+			<div class="config_fm_item">
+				<span class="config_fm_label">内容：</span>
+				<textarea name="content1" id="content1" cols="80" rows="5" disabled>{$content}</textarea>
+			</div>
+			<div class="config_fm_item">
+				<span class="config_fm_label">自定义配置：</span>
+				<textarea title="双击打开全屏编辑自定义配置" name="content2" id="content2" cols="80" rows="5"><?php echo htmlspecialchars($customProperty);?></textarea>
+			</div>
+			<div class="config_fm_item">
+				<span class="config_fm_label">描述：</span>
+				<input type="text" name="desc" id="desc" size="80" value="{$description}" class="textInput" />
+			</div>
+			
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+
+function getAllitemId()
+{
+	var temStr = '';
+	$('#addInstance').find('.itemchild').each(function(index,dom){
+		domObj = $(dom);
+		temStr = temStr+domObj.val()+',';
+	})
+	return temStr;
+}
+
+$(function(){
+	$('.ui_btn_del').click(function(){
+		$(this).parent('.config_info_item').remove();
+		$('.itemlistnum').each(function(i){
+			$('.num',this).text(i+1);
+		});
+		if(getAllitemId() == '')
+		{
+			$('#content1').val('');
+		}else
+		{
+			//根据父类的ID获取对应的配置实例列表
+			$.post('/index.php/Service/Configure/getItemInfo',{'ids':getAllitemId()},function(data){
+				if(data)
+				{
+					$('#content1').val(data);
+				}
+			})
+		}
+		
+	});
+	
+	$('.ui_btn_add').click(function(){
+		var itemParent = '{$itemListStr}';
+		var mark=$(this).parent('.config_info_add'),
+			index=$('.itemlistnum').length+1,
+			html=$('<div class="config_info_item itemlistnum"><div class="num">'+index+'</div><span class="pro">配置项分类：</span> <select style="width:100px" id="parentid" name="item[]" class="textInput" onchange="showItemChilds(this);">'+itemParent+'</select> <span class="pro ml30">配置项：</span> <select style="width:100px" id="childId" name="itemChild[]" class="textInput itemchild" onchange="showItemChildcontent(this);"><option value="0">请选择</option></select> <a href="javascript:;" class="ui_btn_del">删除</a></div>');
+		mark.before(html);
+		$('.ui_btn_del',html).click(function(){
+			$(this).parent('.config_info_item').remove();
+			$('.itemlistnum').each(function(i){
+				$('.num',this).text(i+1);
+			});
+			if(getAllitemId() == '')
+			{
+				$('#content1').val('');
+			}else
+			{
+				//根据父类的ID获取对应的配置实例列表
+				$.post('/index.php/Service/Configure/getItemInfo',{'ids':getAllitemId()},function(data){
+					if(data)
+					{
+						$('#content1').val(data);
+					}
+				})
+			}
+		});
+	});
+});
+
+function configAddAjaxDone(json){
+	var name=$('.add_name').val();
+	if(name==''){
+		alert('服务名不能为空');
+		return false;
+	}
+	DWZ.ajaxDone(json);
+	if(json.statusCode == '200')
+	{
+		renameTreeNodeAndID(name,json.id);
+		$.pdialog.closeCurrent();
+	}
+}
+
+function showItemChilds(itemParent)
+{	
+	var itemParentVal = itemParent.value; 
+	if(itemParentVal > 0)
+	{
+		//根据父类的ID获取对应的配置实例列表
+		$.post('/index.php/Service/Configure/getItemList',{'id':itemParentVal},function(data){
+			if(data)
+			{
+				var itemParentobj = $(itemParent);
+				itemParentobj.next().next().html(data);
+			}else
+			{
+				alertMsg.error('还没有该配置项的配置实例！请添加该配置项的配置实例之后再来选择！');
+			}
+		})
+	}else
+	{
+		alertMsg.error('请选择配置项！');
+		return false;
+	}
+}
+
+function showItemChildcontent(itemChild)
+{
+	var itemChildVal = itemChild.value; 
+	if(itemChildVal > 0)
+	{
+		var idstr = getAllitemId();
+		var itemChildValLen =  idstr.split(itemChildVal).length-1;
+		if(itemChildValLen > 1)
+		{
+			alertMsg.error('已经选择了这个配置项，不能重复选取!');
+			$(itemChild).val('0');
+			return false;
+		}
+		//根据父类的ID获取对应的配置实例列表
+		$.post('/index.php/Service/Configure/getItemInfo',{'ids':idstr},function(data){
+			if(data)
+			{
+				$('#content1').val(data);
+			}else
+			{
+				alertMsg.error('还没有该配置项！请添加该配置项之后再来选择！');
+			}
+		})
+	}else
+	{
+		alertMsg.error('请选择配置项！');
+		return false;
+	}
+}
+
+$('#content2').dblclick(function(){
+	$.pdialog.open('/index.php/Service/Configure/importinfo?id='+{$instancessid},'defined_my_win','编辑自定义配置项',{'mask':true,'max':true});
+})
+
+</script>

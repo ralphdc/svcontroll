@@ -1,0 +1,87 @@
+<div class="pageContent" style="width: 420px;">
+	<form method="post" action="__URL__/update/method/batUpdate/tradeMethod/batUpdate" class="pageForm required-validate" onsubmit="return validateCallback(this, batUpdateAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+
+			<div class="config_fm_item">
+				<span class="config_fm_label">选择配置项：</span>
+				<div class="config_info_plate" >
+						<div class="config_info_item itemlistnum">
+							<div class="num">1</div>
+							<span class="pro">配置项分类：</span>
+							<select class="textInput" name="params[]">
+							<option value="weight">weight</option>
+							<option value="serverIp">serverIp</option>
+							<option value="serverPort">serverPort</option>
+							<option value="queueType">queueType</option>
+							<option value="queueName">queueName</option>
+							<option value="concurrentConsumers">concurrentConsumers</option>
+							<option value="service_control_name">service_control_name</option>
+							</select>
+							<span class="pro ml30">配置项值：</span>
+							<input name='paramsvalue[]' value="" size='20' class="required textInput" />
+							<a href="javascript:;" class="ui_btn_del">删除</a>
+							
+						</div>
+					<div class="config_info_add">
+						<a href="javascript:;" class="ui_btn_add">添加</a>
+					</div>
+				</div>
+			</div>
+			<input type='hidden' value="{$_REQUEST['Ids']}" name='ids'/>
+			<input type='hidden' value="{$_REQUEST['serviceIds']}" name='serviceIds'/>
+			
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">一键修改配置</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+
+$(function(){
+	$('.ui_btn_del').click(function(){
+		$(this).parent('.config_info_item').remove();
+		$('.itemlistnum').each(function(i){
+			$('.num',this).text(i+1);
+		});
+
+	});
+	
+	$('.ui_btn_add').click(function(){
+		var itemParent = '<select class="textInput" name="params[]" onchange="">'+
+							'<option value="weight">weight</option>'+
+							'<option value="serverPort">serverPort</option>'+
+							'<option value="serverIp">serverIp</option>'+
+							'<option value="queueType">queueType</option>'+
+							'<option value="queueName">queueName</option>'+
+							'<option value="concurrentConsumers">concurrentConsumers</option>'+
+							'<option value="service_control_name">service_control_name</option>'+
+							'</select>';
+		var mark=$(this).parent('.config_info_add'),
+			index=$('.itemlistnum').length+1,			
+			html=$('<div class="config_info_item itemlistnum"><div class="num">'+index+'</div><span class="pro">配置项分类：</span>'+itemParent+'<span class="pro ml30">配置项值：</span><input name="paramsvalue[]" value="" size="20" class="required textInput" /> <a href="javascript:;" class="ui_btn_del">删除</a></div>');
+		mark.before(html);
+		$('.ui_btn_del',html).click(function(){
+			$(this).parent('.config_info_item').remove();
+			$('.itemlistnum').each(function(i){
+				$('.num',this).text(i+1);
+			});
+			
+		});
+	});
+	
+
+});
+
+	function batUpdateAjaxDone(json){
+		DWZ.ajaxDone(json);
+		if(json.statusCode == '1')
+		{
+			$.pdialog.closeCurrent();
+		}
+	}
+</script>

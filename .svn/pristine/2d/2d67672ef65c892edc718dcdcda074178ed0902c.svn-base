@@ -1,0 +1,324 @@
+<div class="pageContent">
+<!-- 
+<form novalidate="novalidate" onsubmit="return validateCallback(this, JTdialogAjaxDone)" class="pageForm required-validate" 
+action="/index.php/Service/Graphlogic/specailNode" method="post">
+ -->
+	<div class="pageFormContent" layouth="80" id="topo_edit_dialog">
+	<p><input type="hidden" name="oldServiceName" id="oldServiceName" value="" /></p>
+		<p>
+			<label>产品名称：</label>
+			<select id="monitor_pro" name="monitor_pro" onchange="toggleService('monitor_pro')">
+				<option value="all">所有产品</option>
+				 <?php if(count($prolist) > 0): ?>
+				 	<?php foreach($prolist as $list): ?>
+				 		<option value="<?php  echo $list['pdIcon']?$list['pdIcon']:'default.png'; ?>"><?php echo $list['pdName']; ?></option>
+				 	<?php endforeach; ?>
+				 <?php endif; ?>
+				 
+			</select>
+		</p>
+	<!-- 	<p>
+				<label>查询产品：</label>
+				<input type="text" name="proSeachShow" id="proSeachShow" value="" />
+				<a class="btnLook" href="javascript:void(0)" onclick="proSearch('proSeachShow')" id="prolookup"></a>
+				<span style="color:#FF0000;display:none;" id="psearchMsg">查询成功！</span>
+		</p>
+	-->
+		<p>
+				<label>查询服务：</label>
+				<input type="text" name="serviceSeachShow" id="serviceSeachShow" value="" placeholder="请输入服务名称" />
+				<a class="btnLook" href="javascript:void(0)" onclick="serviceSearch('serviceSeachShow')" id="slookup"></a>
+				<span style="color:#FF0000;display:none;" id="ssearchMsg">查询成功！</span>
+		</p> 
+		
+		<p style="width:100%">
+				<label>对应服务：</label>
+				<?php if(count($service)): ?> 
+				<select size="<?php echo count($service)+1; ?>" style="height:200px; overflow:scroll" id="targetservice" name="targetservice" onchange="selectService()">
+					<?php foreach($service as $sk=>$sv): ?>
+					<option value="<?php echo $sk; ?>"><?php echo $sv; ?></option>
+					<?php endforeach; ?>
+				</select>
+				<?php endif; ?>
+		</p>
+		<div style="clear:both; height:20px;"></div>
+		<p>
+				<label>节点名称：</label>
+				<input type="text" name="nodeNameInfo" id="nodeNameInfo" value="" class="required" style="color:#000;" />
+		</p>
+		
+			
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="button" onclick="saveLGTP()">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+			
+//初始化界面，调整高度；
+$(document).ready(function(){
+	var newHeight = $("#targetservice").height();
+	$("#targetservice").parent().height(newHeight+10);
+	
+	//获取原服务名称；
+	var targetElement = scene.selectedElements[0];
+	var oServiceNameObj = targetElement.getXgdId();
+	var oServiceName	= oServiceNameObj.xgdid;
+	$("#oldServiceName").val(oServiceName);
+	
+	$("#serviceSeachShow").on("keyup",function(){
+		if($(this).val() == ''){
+			$("#monitor_pro").val('all');
+			toggleService('monitor_pro');
+			$("#nodeNameInfo").val('');
+		}
+	})
+})
+			
+//查询产品，已经隐藏此功能；
+function proSearch(domid)
+{
+	var doms = $("#"+domid);
+	var doms_val = doms.val();
+	if(doms_val.length > 0){
+		$.post('__URL__/proSearch',{'pdName':doms_val},function(res){
+			var data = eval("(" + res +")");
+			if(data.statusCode == 1){
+				$("#monitor_pro option").each(function(ky,ev){
+					if($(this).text() == data.pdName){
+						$("#monitor_pro")[0].selectedIndex  = ky;
+					}
+				});
+				toggleService('monitor_pro');
+				
+				$("#ssearchMsg").fadeIn(600);
+				$("#ssearchMsg").fadeOut(600);
+				
+			}
+		})
+		
+	}
+}
+			
+//查询服务；
+function serviceSearch(domid)
+{
+	var doms = $("#"+domid);
+	var doms_val = doms.val();
+	if(!checkEmpty(doms_val)){
+		$.post('__URL__/serviceSearch',{'sName':doms_val},function(res){
+			var dataInfo = eval("(" + res +")");
+			if(dataInfo.statusCode == 1){
+				var options = "" ;
+				var i ;
+				var result = dataInfo.data;
+				for(i=0; i<result.length; i++){
+					options += "<option value='"+result[i].serviceName+"@"+result[i].serviceFunction+"@"+result[i].aliasProduct+"'>";
+					options += result[i].serviceName+"("+result[i].serviceFunction+")";
+					options += "</option>";
+				}
+				//把构造数据加入dom同时设置尺寸；
+				if(options.length > 0){
+					//$("#targetservice").attr("size",2);
+					$("#targetservice").html(options);
+					/* var newHeight = $("#targetservice").height();
+					$("#targetservice").parent().height(newHeight+10); */
+				}
+				
+				
+				//成功提示；
+				$("#ssearchMsg").html('查询成功！').fadeIn(600);
+				$("#nodeNameInfo").val('');
+				$("#ssearchMsg").fadeOut(600);
+				
+				
+				
+				
+				/* //选中此服务对应的产品名称；
+				$("#monitor_pro option").each(function(ky,ev){
+					if($(this).text() == dataInfo.aliasProduct){
+						$("#monitor_pro")[0].selectedIndex  = ky;
+					}
+				});
+				//构造html;
+				var options = "" ;
+				var i ;
+				for(i=0; i< )
+				options += "<option selected='selected' value='"+data.serviceName+"@"+data.serviceFunction+"@"+data.aliasProduct+"'>";
+				options += data.serviceName+"("+data.serviceFunction+")";
+				options += "</option>";
+				
+				//把构造数据加入dom同时设置尺寸；
+				if(options.length > 0){
+					$("#targetservice").attr("size",2);
+					$("#targetservice").html(options);
+					var newHeight = $("#targetservice").height();
+					$("#targetservice").parent().height(newHeight+10);
+				}
+				//设置节点名称；
+				$("#nodeNameInfo").val(data.serviceName);
+				//成功提示；
+				$("#ssearchMsg").fadeIn(600);
+				$("#ssearchMsg").fadeOut(600); */
+				
+			}else{
+				//失败提示；
+				$("#targetservice").html('');
+				$("#nodeNameInfo").val('');
+				$("#targetservice").width(350);
+				$("#ssearchMsg").html('未查询到结果！').fadeIn(600);
+				$("#ssearchMsg").fadeOut(600);
+			}
+		})
+	}else{
+		alertMsg.error('请输入文本进行查询~！');
+		return false;
+	}
+}
+				
+//切换产品名称；
+function toggleService(domid)
+{
+	var cobj = $("#"+domid);
+	var ov = cobj.find("option:selected").text();
+	$.post('__URL__/queryProService',{'pdName':ov},function(res){
+		var datas = eval("(" + res + ")");
+		if(datas.statusCode == 1){
+			var data = datas.data;
+			var options = "" ;
+			var i ;
+			for(i=0; i<data.length; i++){
+				options += "<option value='"+data[i].serviceName+"@"+data[i].serviceFunction+"@"+data[i].aliasProduct+"'>";
+				options += data[i].serviceName+"("+data[i].serviceFunction+")";
+				options += "</option>";
+			}
+			if(options.length > 0){
+				$("#targetservice").attr("size",data.length+1);
+				$("#targetservice").html(options);
+				var newHeight = $("#targetservice").height();
+				$("#targetservice").parent().height(newHeight+10);
+			}
+		}
+	})
+}
+
+
+function selectService()
+{
+	var service = $("#targetservice").val();
+	var sCon = service.split("@");
+	//设置产品名称选中；
+	$("#monitor_pro option").each(function(k,v){
+		if($(this).text() == sCon[2]){
+			$("#monitor_pro")[0].selectedIndex  = k;
+		}
+	})
+	$("#nodeNameInfo").val(sCon[0]);
+}
+
+/* function JTdialogAjaxDone(json){
+	DWZ.ajaxDone(json);
+	if (json.statusCode == DWZ.statusCode.ok) {
+		var current = new Date().getTime();
+		var nodeid = json.serviceName;
+		if(json.icon){
+			var nodeImage = '/Public/Images/jtopolg/'+json.icon;
+		}else{
+			var nodeImage = '/Public/Images/jtopolg/node2.png';
+		}
+		
+		var textsArr = getDisplayNodesText();
+		var node = scene.selectedElements[0];
+		//判断是新增还是编辑操作；
+		var nodeServiceNameObj 		= node.getServiceName();
+		var old_service_name 		= nodeServiceNameObj.serviceName;
+		if(old_service_name != '' && old_service_name != null && old_service_name != undefined ){
+			if(typeof(old_service_name) == 'string' && old_service_name.length > 0){
+				var i;
+				for(i=0; i<textsArr.length; i++){
+					if(textsArr[i] == old_service_name) textsArr.splice(i,1);
+				}
+			}
+		}
+		
+		var j;
+		for(j=0; j<textsArr.length; j++){
+			if(textsArr[j] == json.nodeText) alertMsg.error("拓扑图中已存在相同节点名称！");
+		}
+		
+		node.setImage(nodeImage);			//修改节点图标；
+		node.text = json.nodeText;			//修改节点文本；
+		node.setXgdId(nodeid); 				//添加唯一标识；
+		node.setProName(json.proName);		//添加服务所属的产品名称；
+		node.setServiceName(json.serviceName);
+		$.pdialog.closeCurrent();
+	}
+} */
+
+function saveLGTP()
+{
+	var service = $("#targetservice").val();
+	var service_text = $("#nodeNameInfo").val();
+	var service_pro_icon = $("#monitor_pro").val();
+	//校验数据；
+	if(checkEmpty(service)){
+		alertMsg.error("请选择对应服务！");
+		return false;
+	}
+	if(checkEmpty(service_text)){
+		alertMsg.error("请填写节点名称！");
+		return false;
+	}
+	if(checkEmpty(service_pro_icon)){
+		alertMsg.error("请选择产品名称！");
+		return false;
+	}
+
+	var background = service_pro_icon;
+	var serviceArr = service.split("@");
+	var realService = serviceArr[0];
+	
+	//检查节点文本是否冲突；
+	var tag=1;
+	var node = scene.selectedElements[0];
+	var textsArr = getDisplayNodesText();
+	//把自己剔除掉；
+	if(textsArr.length > 1){
+		var p;
+		var still = node.text;
+		for(p=0; p<textsArr.length; p++){
+			if(textsArr[p] == still) textsArr.splice(p,1);
+		}
+		var j;
+		for(j=0; j<textsArr.length; j++){
+			if(textsArr[j] == service_text) {
+				tag	=	0;
+				alertMsg.error("拓扑图中已存在相同节点名称！");
+				return false;
+			}
+		}
+	}
+	
+	
+	//验证通过~
+	if(tag == 1){
+		var nodeImage = '/Public/Images/jtopolg/'+background;
+		node.setImage(nodeImage);			//修改节点图标；
+		node.text = service_text;
+		var current = new Date().getTime();
+		var xgdid = service_text+'_'+current;
+		node.setXgdId(xgdid);
+		node.setDtype("default");
+		node.setServiceName(realService);
+		$.pdialog.closeCurrent();
+	}
+}
+
+
+
+</script>

@@ -1,0 +1,35 @@
+<div class="tableList bd_side" layouth="162">
+	<table class="list" width="100%">
+		<thead>
+			<tr class="tr_odd">
+				<th>用户编号</th>
+				<th>用户名</th>
+				<th>授权时间</th>
+				<th>生效日期</th>
+				<th>截止日期</th>
+				<th>授权范围</th>
+				<th>其他操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name='userList' id='userList'>
+			<tr>
+				<td>{$i}</td>
+				<td>{$userList['handlerName']}</td>
+				<td>{$userList['createTime']}</td>
+				<td>{$userList['begindate']}</td>
+				<td>{$userList['enddate']}</td>
+				<td>{$userList['productName']}</td>
+				<td>{$userList['remark']}</td>
+			</tr>
+			</volist>
+			
+		</tbody>
+	</table>
+</div>
+<div class="panelBar">
+	<!-- <div class="pages">
+		<span>共{$totalCount}条</span>
+	</div> -->
+	<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+</div>

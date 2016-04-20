@@ -1,0 +1,27 @@
+<div class="pageContent" style="width: 420px;">
+	<form method="post" action="__URL__/add" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>XXXX：</label>
+				<input type="text" size="28" name="groupName" class="required textInput">
+			</p>
+			<p>
+				<label>XXXXXX：</label>
+				<select name="groupStatus" id="" class="combox">
+					<option value="1">启用</option>
+					<option value="0">停用</option>
+				</select>
+			</p>
+			<p class="merterms">
+				<label>XXXX：</label>
+				<input type="text" size="28" name="remark" class="textInput">
+			</p>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">添加</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

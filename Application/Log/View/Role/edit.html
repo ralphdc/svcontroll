@@ -1,0 +1,41 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/edit" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58">
+			<p>
+				<label>角色名称：</label>
+				<input type="text" size="28" name="roleName" class="textInput" value="{$roleinfo['roleName']}" />
+				<input type="hidden" size="28" name="id" class="textInput" value="{$roleinfo['id']}" />
+				<input type="hidden" size="28" name="productId" class="textInput" value="{$roleinfo['productId']}" />
+			</p>
+			<p>
+				<label>角色编码：</label>
+				<input type="text" size="28" name="roleCode" class="textInput" value="{$roleinfo['roleCode']}" />
+			</p>
+			<p>
+				<label>角色描述：</label>
+				<input type="text" size="28" name="roleDesc" class="textInput" value="{$roleinfo['roleDesc']}" />
+			</p>
+			<p>
+				<label>所属产品：</label>
+				<select name="" id="" class="combox">
+					<option value=""  selected = selected >{$roleinfo['productName']}</option>
+				</select>
+			</p>
+			<p>
+				<label>备注：</label>
+				<input type="text" size="28" name="remark" class="textInput" value="{$roleinfo['remark']}" />
+			</p>
+
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">修改</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+
+

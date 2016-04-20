@@ -1,0 +1,89 @@
+<div class="pageContent">
+<form method="post" action="__URL__/add" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="50" style="height: 302px; overflow: auto;">
+			<p>
+				<label>元素ID：</label>
+				<input class="required" type="text" id="id" name="id" maxlength="50" size="30" value="<?php echo $row['id'];?>"/>
+			</p>
+			<p>
+				<label>元素名称：</label>
+				<input class="required" type="text" id="elemName" name="elemName" maxlength="50" size="30" value="<?php echo $row['elemName'];?>"/>
+			</p>
+			<p>
+				<label>处理方式：</label>
+				<select name="dealMode" style="width:120px">
+				<option value=''>请选择</option>
+				<?php if(is_array($dealType) && !empty($dealType)){
+					
+						foreach ($dealType as $tkey=>$tval)
+						{
+							if($tkey == $row['dealMode'])
+								$selected = 'selected';
+							echo '<option value='.$tkey.' '.$selected.'>'.$tval.'</option>';
+								$selected ='';
+						}
+				}?>
+				</select>
+			</p>
+				<p>
+				<label>处理级别：</label>
+				<select name="priority" style="width:120px">
+				<?php if(is_array($firstorno) && !empty($firstorno)){
+					
+						foreach ($firstorno as $fkey=>$fval)
+						{
+							if($fkey == $row['priority'])
+								$selected = 'selected';
+							echo '<option value='.$fkey.' '.$selected.'>'.$fval.'</option>';
+								$selected ='';
+						}
+				}?>
+				</select>
+			</p>
+			<p>
+				<label>报警次数：</label>
+				<input class="required digits" type="text" id="respWarnTimes" name="respWarnTimes" maxlength="50" size="30" value="<?php echo $row['respWarnTimes'];?>"/>
+			</p>
+			<p>
+				<label>测试次数：</label>
+				<input class="required digits" type="text" id="respTestTimes" name="respTestTimes" maxlength="50" size="30" value="<?php echo $row['respTestTimes'];?>"/>
+			</p>
+			
+			<p>
+				<label>时间间隔：</label>
+				<input class="required digits" type="text" id="flowInterval" name="flowInterval" maxlength="50" size="30" value="<?php echo $row['flowInterval'];?>"/>（单位：分钟）
+			</p>
+			
+			<p>
+				<label>发送信息数：</label>
+				<input class="required digits" type="text" id="msgNum" name="msgNum" maxlength="50" size="30" value="<?php echo $row['msgNum'];?>"/>
+			</p>
+			<p>
+				<label>资源类型：</label>
+				<select name="resId" style="width:120px">
+				<option value=''>请选择</option>
+				<?php if(is_array($resType) && !empty($resType)){
+					
+						foreach ($resType as $tkkey=>$tkval)
+						{
+							if($tkkey == $row['resId'])
+								$selected = 'selected';
+							echo '<option value='.$tkkey.' '.$selected.'>'.$tkval.'</option>';
+								$selected ='';
+						}
+				}?>
+				</select>
+			</p>
+			<p>
+				<label>消息备注：</label>
+				<textarea id="remarks" name="remarks" style="width: 184px; height: 83px;" maxlength="200" onchange="this.value=this.value.substring(0, 200)" onkeydown="this.value=this.value.substring(0, 200)" onkeyup="this.value=this.value.substring(0, 200)" ></textarea>
+			</p>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>

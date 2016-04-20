@@ -1,0 +1,159 @@
+<?php
+/**
+ * 服务管制-仓库中心
+ * @author zengguangqiu
+ *
+ */
+class HistoryqueryController extends CommonController {
+	//var $navTab = 'D60608';
+	var $navTab = '2c948cfb51ec5db00151ec929fae0021';
+	var $deploymentFlagArr = array('1'=>'未发布','2'=>'已发布');
+	var $servicetype = array('1'=>'C服务','2'=>'Web服务','3'=>'Java服务');
+	var $status = array('0'=>'未通知','1'=>'已通知');
+
+	
+// 框架首页
+	public function index() {
+			
+		$Historyquery = new HistoryqueryModel($_POST,$_GET);
+		$defaultTree = $Historyquery->defaultTree($_POST,$_GET);
+		
+		//组装数据
+		$tmp_result['defaultTree']	= '{"name":"服务","open":true';
+		
+		if(is_array($defaultTree) && count($defaultTree))
+		{
+			$tmp_result['defaultTree']	.=',"children": [';
+			for($i=0;$i<sizeof($defaultTree);$i++){
+					
+				$tmp_result['defaultTree']
+					.= '{"name":"'
+					. $defaultTree[$i]["name"]
+					. '","open":true,"children":[';
+					
+				if($defaultTree[$i]['service']){
+					for($j=0;$j<sizeof($defaultTree[$i]['service']);$j++ ){
+							
+						$tmp_result['defaultTree']
+							.= '{"id":"'
+							. $defaultTree[$i]['service'][$j]['id']
+							. '","name":"'
+							. $defaultTree[$i]['service'][$j]['name']
+							. '","url":"/index.php/Service/Historyquery/listServ?id='
+							. $defaultTree[$i]['service'][$j]['id']																
+							. '&serviceName='
+							. $defaultTree[$i]['service'][$j]['name']	
+							. '","target":"ajax","open":true,"children":[';
+							
+						if($defaultTree[$i]['service'][$j]['ip']){
+							for($k=0;$k<sizeof($defaultTree[$i]['service'][$j]['ip']);$k++ ){
+								$tmp_result['defaultTree']
+									.= '{"id":"'
+									. $defaultTree[$i]['service'][$j]['serviceid']
+									. '","name":"'
+									. $defaultTree[$i]['service'][$j]['ip'][$k]
+									. '","url":"/index.php/Service/Historyquery/listServIp?id='
+									. $defaultTree[$i]['service'][$j]['id']
+									. '&serviceName='
+									. $defaultTree[$i]['service'][$j]['name']									
+									. '&ip='
+									. $defaultTree[$i]['service'][$j]['ip'][$k]
+									. '","target":"ajax"},';
+							}
+						}
+		
+						$tmp_result['defaultTree']	.= ']},';
+					}
+				}
+				$tmp_result['defaultTree']	.= ']},';
+			}
+			$tmp_result['defaultTree']	.= ']';
+		}
+		$tmp_result['defaultTree'] .='}';
+
+		$this->assign ( 'defaultTree', $tmp_result['defaultTree'] );
+		$this->assign('status',$this->status);
+		$this->display();
+	}
+	
+	public function listServ() {
+			$request = array();
+			foreach($_POST as $k =>$v){
+				$request[$k] = $v;
+			}
+				
+			C ( 'SHOW_RUN_TIME', false ); // 运行时间显示
+			C ( 'SHOW_PAGE_TRACE', false );
+				
+			$pageNum =empty($_REQUEST['numPerPage']) ? C('PAGE_LISTROWS') : $_REQUEST['numPerPage'];
+			$this->assign ( 'numPerPage', $pageNum ); //每页显示多少条
+			$this->assign ( 'currentPage', !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1);
+				
+			$Historyquery = new HistoryqueryModel($_POST,$_GET);
+			$result = $Historyquery->findByServ($_POST,$_GET);
+			$count = $Historyquery->countByServ($_POST,$_GET);
+		
+			$this->assign('status',$this->status);
+			$this->assign ( 'totalCount', $count );
+			$this->assign ( 'list', $result );
+			$this->assign ( 'map', array('service'=>'','level'=>'','startTime'=>'','endTime'=>'') );
+			cookie('_currentUrl_', __SELF__);
+							
+			$this->display('list');
+	}
+	
+	public function listServIp() {
+			$request = array();
+			foreach($_POST as $k =>$v){
+				$request[$k] = $v;
+			}
+				
+			C ( 'SHOW_RUN_TIME', false ); // 运行时间显示
+			C ( 'SHOW_PAGE_TRACE', false );
+				
+			$pageNum =empty($_REQUEST['numPerPage']) ? C('PAGE_LISTROWS') : $_REQUEST['numPerPage'];
+			$this->assign ( 'numPerPage', $pageNum ); //每页显示多少条
+			$this->assign ( 'currentPage', !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1);
+				
+			$Historyquery = new HistoryqueryModel($_POST,$_GET);
+			$result = $Historyquery->findByServIp($_POST,$_GET);
+			$count = $Historyquery->countByServIp($_POST,$_GET);
+			$this->assign ( 'totalCount', $count );
+			$this->assign ( 'list', $result );
+			$this->assign ( 'map', array('service'=>'','level'=>'','startTime'=>'','endTime'=>'') );
+			cookie('_currentUrl_', __SELF__);
+
+			$this->assign('status',$this->status);
+			$this->display('list');
+	}
+
+	public function search(){
+
+		if($_POST){
+			$request = array();
+			foreach($_POST as $k =>$v){
+				$request[$k] = $v;
+			}
+				
+			//dump($_POST);
+			C ( 'SHOW_RUN_TIME', false ); // 运行时间显示
+			C ( 'SHOW_PAGE_TRACE', false );
+				
+			$pageNum =empty($_REQUEST['numPerPage']) ? C('PAGE_LISTROWS') : $_REQUEST['numPerPage'];
+			$this->assign ( 'numPerPage', $pageNum ); //每页显示多少条
+			$this->assign ( 'currentPage', !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1);
+				
+			$Historyquery = new HistoryqueryModel($_POST,$_GET);
+			$result = $Historyquery->search($_POST,$_GET);
+			$count = $Historyquery->count($_POST,$_GET);
+				
+			$this->assign ( 'totalCount', $count );
+			$this->assign ( 'list', $result );
+			$this->assign ( 'map', array('service'=>'','level'=>'','startTime'=>'','endTime'=>'') );
+			cookie('_currentUrl_', __SELF__);
+			$this->assign('status',$this->status);
+			$this->display('list');
+		}
+	}
+
+}

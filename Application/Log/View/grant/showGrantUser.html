@@ -1,0 +1,39 @@
+<div class="pageHeader">
+	<form rel="id" onsubmit="return divSearch(this,'showGrantUser');" action="__URL__/showGrantUser" method="post">
+		<div class="searchBar">
+			<table class="searchContent">
+				<tr>
+					<td><label class="header_label">授权用户名称：</label><input type="text" name="userName" id="" class="textInput" value="{$_POST['userName']}"/></td>
+					<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<input type="hidden" name="pageNum" value="1" />
+	 </form> 
+</div>
+<div class="tableList" layouth="95">
+	<table class="list" width="100%">
+		<thead>
+			<tr>
+				<th width="10%" class="td_fr"></th>
+				<th width="30%" class="td_fr">登录名</th>
+				<th width="60%" class="td_ls">用户名称</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist id="vo" name="authUsers" >
+			<tr target="id" rel="{$vo['id']}">
+				<td class="td_fr"><input  type="radio" name="user"  value="{$vo['id']}" ></td>	
+				<td class="td_fr">{$vo['userNo']}</td>
+				<td class="td_ls">{$vo['userName']}</td>
+			</tr>
+			</volist>
+			
+		</tbody>
+	</table>
+</div>
+<div class="panelBar">
+	
+	<div class="pagination" rel="showGrantUser" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="{$pageNumShown}" currentPage="{$currentPage}"></div>
+</div>

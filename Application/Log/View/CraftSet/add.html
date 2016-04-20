@@ -1,0 +1,58 @@
+<div class="pageContent">
+<form method="post" action="__URL__/add" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div id="AnalyzerSet" class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+		<p>
+			<label>服务名称：</label>
+			<input type="text" size="35" class="required textInput" name="name" id="name">
+		</p>
+		<p class="choiceAnalyzer">
+			<label>匹配字符串：</label><input class="required textInput" type="text" size="35" name="analyser[]" value=""/><a class="btn_add" style="cursor:pointer;" onclick="javascript:addNewAnalyzer();">新增</a>
+		</p>
+		<p>
+			<label>类型：</label>
+			<input type="text" size="35" class="required textInput" name="type" id="type">
+		</p>
+		<p>
+			<label>描述：</label>
+			<textarea name="desc" style="width: 223px; height: 51px;" ></textarea>
+		</p>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>
+<script>
+	function addNewAnalyzer()
+	{
+		var pageFormContentobj = $('#AnalyzerSet');
+		var cloneObj = pageFormContentobj.find('.choiceAnalyzer:last');
+		cloneObj.after('<p class="choiceAnalyzer"><label>匹配字符串：</label><input class="required textInput" type="text" size="35" name="analyser[]" value=""/><a class="btn_del" style="cursor:pointer" onclick="javascript:deleteAnalyzer(this);">删除</a></p>');
+		pageFormContentobj.find('.choiceAnalyzer:last').initUI();
+	}
+	function deleteAnalyzer(obj)
+	{
+		var pageFormContentobj = $('#AnalyzerSet');
+		$(obj).parent('p').remove();
+	}
+</script>
+<style>
+.btn_add{background-color: #5ab629;background-image: linear-gradient(to bottom, #81d141, #5ab629);border-color: #5ab629;color: #fff;text-shadow: 0 1px 0 #3ea01c; border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14);
+    display: block;
+    float: left;
+    padding: 3px 5px;margin-left:10px;}
+.btn_del{background-color: #ed3d07;background-image: linear-gradient(to bottom, #fc931a, #ed3d07);border-color: #ed3d07;color: #fff;text-shadow: 0 1px 0 #d72e00; border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.14);
+    display: block;
+    float: left;
+    padding: 3px 5px;margin-left:10px;}
+</style>
+

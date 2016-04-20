@@ -1,0 +1,51 @@
+<div class="pageContent">
+	<form method="post" action='/index.php/Service/Configure/add_a' class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58">
+			<p>
+				<label>类型：</label>
+				<select name="" id="" class="combox">
+					<option value="1">启动脚本</option>
+					<option value="2">关闭脚本</option>
+					<option value="3">回滚脚本</option>
+				</select>
+			</p>
+			<p>
+				<label>属性：</label>
+				<select name="" id="" class="combox">
+					<option value="1">C服务脚本</option>
+					<option value="2">JAVA服务脚本</option>
+				</select>
+			</p>
+			<p>
+				<label>脚本名称：</label>
+				<input type="text" size="40" class="required textInput" name="" id="" />
+			</p>
+			<p>
+				<label>存储路径：</label>
+				<input type="text" size="40" class="required textInput" name="" id="" />
+			</p>
+			<p>
+				<label>参数说明：</label>
+				<input type="text" size="40" class="required textInput" name="" id="" />
+			</p>
+			<p>
+				<label>开发责任人：</label>
+				<input type="text" size="40" class="required textInput" name="" id="" />
+			</p>
+			<p>
+				<label>功能描述：</label>
+				<input type="text" size="40" class="required textInput" name="" id="" />
+			</p>
+			<p>
+				<label>备注：</label>
+				<input type="text" size="40" class="required textInput" name="" id="" />
+			</p>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

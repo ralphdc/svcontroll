@@ -1,0 +1,158 @@
+<div class="pageContent">
+		<div class="panelBar">
+			<ul class="toolBar">
+				<li><a class="add" href="__URL__/addPLService/method/getprovidelist/serverInstanceId/{$_REQUEST['serverInstanceId']}/appId/{$_REQUEST['appId']}" target="dialog" mask="true" rel="addPLService" width="550" height="650"><span>添加</span></a></li>
+				<li><a id ="deleteprovideName" class="delete" href="javascript:void(0);"  mask="true" title="确定要删除吗?"  ><span>删除</span></a></li>
+				<li><a class="edit" href="__URL__/editPLService/method/showbiztypeprovide/id/{serverId}" target="dialog" mask="true" rel="editPLService"  width="550" height="650"><span>修改</span></a></li>
+				<li><a id="stopallPLService" class="edit" href="__URL__/stopPLService/tradeMethod/stopPLService" target="selectedTodo" postType="string" title='你确定要停止所选中的服务吗' rel="serverId[]"><span>一键停止服务</span></a></li>
+				<li><a id ="editallPLService" class="edit" href="__URL__/editAllPLService/Ids/{serverId}" target="dialog" mask="true" postType="string" rel="editallPLService" width="850" height="350"><span>一键修改配置</span></a></li>
+				<li><a id ="showServiceStatus" class="edit" href="__URL__/showServiceStatus/Ids/{serverId}" target="dialog" mask="true" postType="string" rel="serviceIds" width="1000" height="650"><span>查看服务状态</span></a></li>
+			</ul>
+			<input type="hidden" name="requestappID" id="requestappID" value="{$_REQUEST['appId']}" />
+			<input type="hidden" name="serverInstanceId" id="serverInstanceId" value="{$_REQUEST['serverInstanceId']}" />
+		</div>
+		<div class="panelBar">
+			<ul class="toolBar">
+			<li><a  class="edit" href="javascript:void(0);"  mask="true" postType="string" rel="serviceIds" width="1000" height="650"><span id='spanShowServiceStatus'>当前状态：{$desc}</span></a></li>
+			</ul>
+		</div>
+		
+		<div layoutH='72' style="overflow:auto;height:520px;" >
+		<table class="list" width="100%" layoutH="90">
+			
+			<thead>
+			<tr>
+				<th width="100"><input type="checkbox" class="checkboxCtrl" group="serverId[]" ></th>
+				<th width="100">服务名称</th>
+				<th width="100">负载均衡类型</th>
+				<th width="100">协议类型</th>
+			</tr>
+			</thead>
+			<tbody id='serviceList'>
+			<volist name="list" id="vo" >
+				<tr target="serverId" rel="{$vo['id']}">
+					<td><input type="checkbox" value="{$vo['id']}" providename="{$vo['provideName']}" name="serverId[]"></td>
+					<td class="provideName">{$vo['provideName']}</td>
+					<td>{$vo['loadBalanceType']|showLoadBalanceType}</td>
+					<td>{$vo['protocolType']}</td>
+					<!--td><a class="eidt" href="__URL__/editPLService/method/showbiztypeprovide/id/{$vo['id']}" target="dialog" mask="true" rel="editPLService" width="500" height="600"><span style="color:#009900">修改</span></a></td-->
+				</tr>
+			</volist>
+			
+			</tbody>
+		</table>
+		</div>
+		<!--div class="panelBar">
+			<div class="pages">
+				<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<option value="20" <eq name="numPerPage" value="20">selected=selected</eq>>20</option>
+				<option value="5" <eq name="numPerPage" value="5">selected=selected</eq>>5</option>
+				<option value="10" <eq name="numPerPage" value="10">selected=selected</eq>>10</option>
+				<option value="17" <eq name="numPerPage" value="17">selected=selected</eq>>17</option>
+				
+			</select>
+				<span>共{$total}条</span>
+				
+			</div>
+			<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$pageSize}" pageNumShown="5" currentPage="{$currentPage}"></div>
+		</div-->
+	</div>
+
+
+<script type="text/javascript">
+
+$("#deleteprovideName").click(function(){
+	var provideName = $("#serviceList .selected .provideName").html();// td 
+	if(provideName == null){
+		alertMsg.error('请您选择一条数据！');return;
+	}
+	
+	var serverId = $("#serviceList .selected").attr("rel");
+	var appId = $("#requestappID").val();
+	var url = '__URL__/foreverdelete/method/deleteprovide/tradeMethod/deleteExposeService/id/'+serverId+'/appId/'+appId+'/provideName/'+provideName;   
+	alertMsg.confirm('确定要删除吗?', {
+                        okCall: function() {
+							$.ajax({
+								type: 'POST',
+								url: url,
+								dataType: "json",
+								cache: false,
+								success: navTableAjaxDone,
+								error: DWZ.ajaxError
+							});
+                        }
+                    });
+
+
+
+});
+
+
+function navTableAjaxDone(json){
+	var appId = $("#requestappID").val();
+	var serverInstanceId =  $("#serverInstanceId").val();
+	var url =  '__URL__/serviceList/appId/'+appId+'/serverInstanceId/'+serverInstanceId+ '/method/getprovide/';
+	$("#showSubscribeRef").loadUrl(url);
+	//$("#serviceList").loadUrl(url);
+	if (json.statusCode == DWZ.statusCode.ok) {
+		  alertMsg.correct('删除成功！');
+         // $.pdialog.closeCurrent();
+    }
+}
+
+$("#editallPLService").click(function(){
+	 var href = '__URL__/editAllPLService/method/editAllPLService/tradeMethod/editAllPLService/Ids/';
+	 var Ids = '';
+	 var serviceIds = '';
+	 $("input[name='serverId[]']:checked").each(function(i){
+		Ids += $(this).val() +",";
+		serviceIds += $(this).attr("providename") +",";
+	 });
+	 
+	 if(Ids ==''){
+		Ids = '{Ids}';
+	 }
+	 if(serviceIds ==''){
+	    serviceIds = '{serviceIds}';
+	 }
+	 href = href + Ids +'/serviceIds/'+serviceIds;
+	 $(this).attr('href',href);
+});
+
+$("#stopallPLService").click(function(){
+
+	 var href = '__URL__/stopPLService/tradeMethod/stopPLService/appid/';
+	 var appID = $("#requestappID").val();
+	 var serviceIds = '';
+	 $("input[name='serverId[]']:checked").each(function(i){
+		 serviceIds += $(this).attr("providename") +",";
+	 });
+	 
+	 if(serviceIds ==''){
+	    serviceIds = '{serviceIds}';
+	 }
+	 href = href + appID +'/serviceIds/'+serviceIds;
+	 $(this).attr('href',href);
+
+});
+
+//查看服务状态
+$("#showServiceStatus").click(function(){
+	 var href = '__URL__/showServiceStatus/serviceIds/';
+	 var appID = $("#requestappID").val();
+	 var serviceIds = '';
+	 $("input[name='serverId[]']:checked").each(function(i){
+		 serviceIds += $(this).attr("providename") +",";
+	 });
+	 
+	 if(serviceIds ==''){
+	    serviceIds = '{serviceIds}';
+	 }
+	 href = href + serviceIds;
+	 $(this).attr('href',href);
+
+});
+
+</script>
+

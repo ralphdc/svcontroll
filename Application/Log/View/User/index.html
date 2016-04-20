@@ -1,0 +1,313 @@
+
+<include file="Public:pagerForm" />
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="" method="post">
+		<div class="searchBar">
+			<table class="searchContent">
+				<tr>
+					<td><label>用户名称：</label><input type="text" name="userName" id="" class="textInput"><input type="hidden" name="userId" id="userId" class="textInput"></td>	</td>	
+					<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</div>
+
+
+<div class="main_con">
+	<div class="main_side_list">
+		<div class="ui_plate_operate">
+			<a href="__URL__/add" target="dialog" mask="true" height="350" width="450" class="btn">添加</a>
+			<a href="__URL__/delete/ids/{sid_user}" target="ajaxTodo" title="你确定要删除吗？" warn="请选择用户" class="btn">删除</a>
+			<a href="__URL__/edit/id/{sid_user}" target="dialog" mask="true" height="350" width="450"  warn="请选择用户" class="btn">修改</a>
+			<a href="__URL__/detail/id/{sid_user}" target="dialog" mask="true" height="500" warn="请选择用户" class="btn">详情</a>
+			<a href="__URL__/resetPwd/id/{sid_user}" target="ajaxTodo" title="你确定要重置密吗？" warn="请选择用户" class="btn">重置密码</a>
+			<a href="__URL__/editgrant/id/{sid_user}" target="dialog" mask="true" height="600" width="900" warn="请选择用户" class="btn">编辑权限</a>
+		</div>
+		<div class="tableList" layouth="140">
+
+			<table class="list" width="100%">
+				<thead>
+					<tr class="tr_odd">
+
+						<th width="10%" class="td_fr"></th>
+						<th width="30%" class="td_fr">用户编号</th>
+						<th width="60%" class="td_ls">用户名</th>
+
+
+					</tr>
+				</thead>
+				<tbody>
+
+				<volist id="vo" name="users" >
+					<tr target="sid_user" rel="{$vo['id']}">
+						<td class="td_fr"><input  type="radio" name="user" id="user" value="{$vo['id']}"  ></td>
+						<td class="td_fr">{$numStart + $i}</td>
+						<td class="td_ls">{$vo['userName']}</td>
+
+					</tr>
+				</volist>
+				</tbody>
+			</table>
+		</div>
+		<div class="panelBar">
+			<!--div class="pages">
+				<span>共{$usernum}条</span>
+			</div-->
+			<div class="pagination" targetType="navTab" totalCount="{$usernum}" numPerPage="{$pageSize}" pageNumShown="{$pageNumShown}" currentPage="{$currentPage}"></div>
+		</div>
+	</div>
+	
+	<div class="main_con_info tabs">
+		<div class="tabsHeader">
+			<div class="tabsHeaderContent">
+				<ul>
+					<li><a href="javascript:;"><span>角色</span></a></li>
+					<li><a href="javascript:;" onclick="showGrantUser()"><span>授权</span></a></li>
+					<li><a href="javascript:;"><span>用户组</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="tabsContent" layouth="84">
+			<div class="ui_tab_bd">
+				<div class="ui_red_tip">角色说明：产品 ==> 角色 ==> 权限（菜单、动作、元素、数据行级、工作流）</div>
+				<div id="DetailOfUser">
+				<table class="ui_info_plate">
+					<tr>
+						<td class="plate_item user_role" width="330">
+							<p class="ui_info_tit">所拥有的角色</p>
+							<div class="tableList bd_side" layouth="192">
+								<table class="list" width="100%">
+									<thead>
+										<tr>
+											<th>产品名称</th>
+											<th>产品编码</th>
+											<th>角色名称</th>
+											<th>角色编码</th>
+											<th>角色类型</th>
+											
+										</tr>
+									</thead>
+									<tbody>
+										
+									</tbody>
+								</table>
+							</div>
+							<div class="panelBar">
+								<!-- <div class="pages">
+									<span>共{$totalCount}条</span>
+								</div> -->
+								<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+							
+							</div>
+						</td>
+						<td class="plate_item user_compe" width="220">
+							<p class="ui_info_tit">所拥有菜单和动作权限</p>
+							<div class="ui_info_con" layouth="230">
+								
+							</div>
+						</td>
+						<td class="plate_item user_element" width="200">
+							<p class="ui_info_tit">所拥有元素权限</p>
+							<div class="tableList bd_side" layouth="192">
+								<table class="list" width="100%">
+									<thead>
+										<tr>
+											<th>元素编号</th>
+											<th>元素名称</th>
+										</tr>
+									</thead>
+									<tbody>
+										
+									</tbody>
+								</table>
+							</div>
+							<div class="panelBar">
+								<!-- <div class="pages">
+									<span>共{$totalCount}条</span>
+								</div> -->
+								<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+							</div>
+						</td>
+						<td class="plate_item" width="200">
+							<p class="ui_info_tit">所拥有工作流权限</p>
+							<div class="ui_info_con" layouth="181">
+								<ul class="tree treeCheck">
+									<li>
+										<a href="javascript:;" tname="" tvalue="">用户管理</a>
+										<ul>
+											<li><a href="javascript:;" tname="" tvalue="">用户录入</a></li>
+											<li><a href="javascript:;" tname="" tvalue="">用户修改</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="javascript:;" tname="" tvalue="">角色管理</a>
+										<ul>
+											<li><a href="javascript:;" tname="" tvalue="">用户录入</a></li>
+											<li><a href="javascript:;" tname="" tvalue="">用户修改</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</table>
+				</div>
+			</div>
+			<div class="user_tab_authorize">
+				<div class="ui_red_tip">授权说明：授权Ａ授权于Ｂ，Ｂ拥有Ａ的某些授权的相关权限</div>
+				<div class="plr10" id="showGrantUser">
+					<div class="tableList bd_side" layouth="162">
+						<table class="list" width="100%">
+							<thead>
+								<tr class="tr_odd">
+									<th>用户编号</th>
+									<th>用户名</th>
+									<th>授权时间</th>
+									<th>生效时间</th>
+									<th>有效期</th>
+									<th>授权范围</th>
+									<th>其他操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!--tr>
+									<td>00001</td>
+									<td>sdfasdf</td>
+									<td>20140527</td>
+									<td>20140528</td>
+									<td>3个月</td>
+									<td>MPay、TMS</td>
+									<td>sdfasdf</td>
+								</tr>
+								<tr class="tr_odd">
+									<td>00002</td>
+									<td>sdfasdf</td>
+									<td>20140527</td>
+									<td>20140528</td>
+									<td>3个月</td>
+									<td>MPay、TMS</td>
+									<td>sdfasdf</td>
+								</tr-->
+							</tbody>
+						</table>
+					</div>
+					<div class="panelBar">
+						<!-- <div class="pages">
+							<span>共{$totalCount}条</span>
+						</div> -->
+						<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+					</div>
+				</div>
+			</div>
+			<div class="ui_tab_bd">
+				<div class="pageHeader">
+					<form rel="pagerForm" onsubmit="return divSearch(this,'');" action="" method="post">
+						<div class="searchBar">
+							<table class="searchContent">
+								<tr>
+									<td><label>用户组编号：</label><input type="text" name="" id="" class="textInput"></td>
+									<td><label>用户组名称：</label><input type="text" name="" id="" class="textInput"></td>	
+									<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+									</td>
+								</tr>
+							</table>
+						</div>
+						<input type="hidden" name="pageNum" value="1">
+						<input type="hidden" name="numPerPage" value="20">
+						<input type="hidden" name="orderField" value="termid">
+						<input type="hidden" name="orderDirection" value="desc">
+					</form>
+				</div>
+				<div class="plr10">
+					<div class="tableList bd_side" layouth="176">
+						<table class="list" width="100%">
+							<thead>
+								<tr class="tr_odd">
+									<th>用户组编号</th>
+									<th>用户组名称</th>
+									<th>用户编号</th>
+									<th>用户名称</th>
+									<th>上级用户</th>
+									<th>用户等级</th>
+									<th>用户类型</th>
+									<th>所属机构</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>00001</td>
+									<td>sdfasdf</td>
+									<td>sdfasdf</td>
+									<td>sdfasdf</td>
+									<td>sdfasdf</td>
+									<td>sdfasdf</td>
+									<td>sdfasdf</td>
+									<td>sdfasdf</td>
+								</tr>
+								<tr class="tr_odd">
+									<td>00001</td>
+									<td>sdfasdf</td>
+									<td>sdfasdf</td>
+									<td>sdfasdf</td>
+									<td>sdfasdf</td>
+									<td>sdfasdf</td>
+									<td>sdfasdf</td>
+									<td>sdfasdf</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="panelBar">
+						<!-- <div class="pages">
+							<span>共{$totalCount}条</span>
+						</div> -->
+						<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+ 
+ $("input[name='user']").click(function(){ 
+	var userId = $(this).val();
+	//给隐藏的userId赋值，后面点击授权的要用
+	$("#userId").val(userId);
+
+	showDetailOfUser(userId)
+	showGrantUser(userId);
+});
+
+function showGrantUser(userId){
+	var userId = $("#userId").val();
+	//alert(userId);
+	var $box = $("#showGrantUser");
+	$box.ajaxUrl({
+		type: "POST",
+		url: "__URL__/showGrantUser",
+		data: 'authorizerId='+userId,
+		callback: function() {
+			$box.find("[layoutH]").layoutH();
+		}
+	});
+}
+
+function showDetailOfUser(userId){
+	var $box = $("#DetailOfUser");
+	$box.ajaxUrl({
+		type: "POST",
+		url: "__URL__/getDetailOfUser",
+		data: 'userId='+userId,
+		callback: function() {
+			$box.find("[layoutH]").layoutH();
+		}
+	});
+}
+
+</script>
+

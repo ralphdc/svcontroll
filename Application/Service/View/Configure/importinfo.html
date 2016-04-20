@@ -1,0 +1,19 @@
+<div class="pageContent">
+	<div class="pageFormContent" layouth="58">
+		<textarea style="width: 995px; height: 646px;" name="customPropertyss" id="customPropertyss"><?php echo htmlspecialchars($customProperty);?></textarea>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div><input type="submit" value="完成编辑" class="ui_btn_green" style="float:right"  id="saveBtnninf" /></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</div>
+<script>
+//svn import
+$('#saveBtnninf').click(function(){
+	
+	$('#content2').val($("#customPropertyss").val());
+	$.pdialog.closeCurrent();
+})
+</script>

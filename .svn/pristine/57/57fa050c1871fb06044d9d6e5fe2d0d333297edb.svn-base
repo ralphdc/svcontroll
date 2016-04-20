@@ -1,0 +1,127 @@
+<include file="Public:pagerFormLog" />
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__URL__" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+			<label>类型：</label>
+			<select name="type">
+				<option value=''>请选择</option>
+				<?php if(is_array($resType) && !empty($resType)){
+					
+						foreach ($resType as $tkey=>$tval)
+						{
+							if($tkey == $_REQUEST['type'])
+								$selected = 'selected';
+							echo '<option value='.$tkey.' '.$selected.'>'.$tval.'</option>';
+								$selected ='';
+						}	
+				}?>
+				</select>
+			</li>
+			<li>
+			<label>元素ID：</label>
+			<input type="text" value="{$_REQUEST['elemId']}" id="elemId" name="elemId" class="textInput">
+			</li>
+			<li>
+			<label>元素名称：</label>
+			<input type="text" value="{$_REQUEST['elemName']}" id="elemName" name="elemName" class="textInput">
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<div class="panelBar" style="height:29px;">
+		<ul class="toolBar">
+			<li><a class="add" href="__URL__/add" title="新增" target="dialog" mask="true" height="469" width="471"><span>新增</span></a></li>
+			<li><a posttype="string" title="确实要删除选中记录吗？" rel="ids" target="selectedTodo" class="delete" href="__URL__/foreverdelete/id/{sid_user}"><span>批量删除选中</span></a></li>
+			<li><a warn="请选择要设置的元素" title="设置元素通知人和方式" rel="setNoticeType" max="true" target="dialog" href="__URL__/setNoticeType/elementID/{sid_user}/pageNum/{$currentPage}" class="add"><span>设置元素通知人和方式</span></a></li>
+			<li class="line">line</li>
+		</ul>
+	</div>
+
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+		<tr>
+			<th class="center" style="width: 43px; cursor: default;"><div title="" class="gridCol"><input type="checkbox" class="checkboxCtrl" group="ids"></div></th>
+			<th width="60">序号</th>
+			<th>元素ID</th>
+			<th>元素名称</th>
+			<th>处理方式</th>
+			<th>响应报警次数</th>
+			<th>响应测试次数</th>
+			<th>流量控制</th>
+			<th>发信息数</th>
+			<th>资源类型</th>
+			<th>监控状态</th>
+			<th>时间(起)</th>
+			<th>时间(终)</th>
+			<th>当前模式</th>
+			<th>优先级别</th>
+			<th width="100">操作</th>
+		</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr target="sid_user" rel="{$vo['id']}">
+				<td class="center" style="width: 43px;"><div><input type="checkbox" value="{$vo['id']}" name="ids"></div></td>
+				<td>
+					<?php
+						$listnums = $numPerPage * ($currentPage-1) + $key+1;
+						echo $listnums;
+					?>
+				</td>
+				<td>{$vo['id']}</td>
+				<td>{$vo['elemName']}</td>
+				<td>{$dealType[$vo['dealMode']]}</td>
+				<td>{$vo['respWarnTimes']}</td>
+				<td>{$vo['respTestTimes']}</td>
+				<td>{$vo['flowInterval']}</td>
+				<td>{$vo['msgNum']}</td>
+				<td>{$vo['resName']}</td>
+				<td>{$status[$vo['status']]}</td>
+				<td>{$vo['start']}</td>
+				<td>{$vo['end']}</td>
+				<td>{$currmode[$vo['currMode']]}</td>
+				<td>{$firstorno[$vo['priority']]}</td>
+				<td>
+				<a height="525" width="466" target="dialog" rel="fitting_index1" class="btnEdit" title="编辑开启或者关闭监控" href="__URL__/edit/id/{$vo['id']}/pageNum/{$currentPage}">编辑</a>
+				<a href="__URL__/savepersons/?id={$vo['id']}&pageNum={$currentPage}" target="dialog" title="调试模式下分配人员" rel="see_people_win" mask="true"  max="true" class="btnAdd"></a>
+				<a class="btnDel" target="ajaxTodo" title="确实要删除这条记录吗" href="__URL__/delete/id/{$vo['id']}">删除</a>
+				</td>
+				
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<?php
+					$numPerPageArr = array(20,50,100,200);
+					foreach($numPerPageArr as $val)
+					{
+						if($val == $numPerPage)
+							$selected = 'selected';
+						echo '<option value="'.$val.'" '.$selected.'>'.$val.'</option>';
+							$selected = '';
+					}
+				?>
+			</select>
+			<span>条，共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+
+
+</div>

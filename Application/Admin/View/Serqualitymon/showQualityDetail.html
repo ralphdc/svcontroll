@@ -1,0 +1,64 @@
+<div id="showQualityDetail">
+<div class="item_list_filter"  style="padding-left:20px">
+	<form class="pagerForm" action="__URL__/showQualityDetail" method="post" onsubmit="return divSearch(this, 'showQualityDetail');">
+		<span class="">服务：</span>
+		<input type="text" size="15" name="service" class="textInput" value="{$_REQUEST['service']}" />			
+		<span class="">ip地址：</span>
+		<input type="text" size="15" name="ip" id="" class="textInput" value="{$_REQUEST['ip']}"  />
+		<span class="">状态：</span>
+		<select name="status" id="" class="">
+			<option value="" <eq name="_REQUEST['status']" value="">selected</eq> >全部</option>
+			<option value="0" <eq name="_REQUEST['status']" value="0">selected</eq> >异常</option>
+			<option value="1" <eq name="_REQUEST['status']" value="1">selected</eq> >正常</option>				
+		</select>
+		<span>时间（起）：</span>
+		<input maxDate="<?php echo date('Y-m-d'); ?>"  type="text" value="<?php if($_REQUEST['beginTime']) echo  date("Y-m-d H:i:s",strtotime($_REQUEST['beginTime']));else echo date('Y-m-d H:i:s',strtotime("-1 day")); ?>"  name="beginTime"  datefmt="yyyy-MM-dd HH:mm:ss" class="date textInput">
+		<span>时间（终）：</span>
+		<input maxDate="<?php echo date('Y-m-d'); ?>"  type="text" value="<?php if($_REQUEST['endTime']) echo date("Y-m-d H:i:s",strtotime($_REQUEST['endTime']));else echo date('Y-m-d H:i:s'); ?>" name="endTime"  datefmt="yyyy-MM-dd HH:mm:ss" class="date textInput">
+		<input type="submit" value="查询" class="ui_btn_green" />
+	</form>
+</div>
+<div id="Serquality_list">
+	<div class="tableList" layouth="90" style="overflow:auto;height:560px;" >
+		<table class="list tac" width="100%">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>服务</th>
+					<th>IP地址</th>
+					<th>时间</th>
+					<th>状态</th>
+					<th>信息</th>
+				</tr>
+			</thead>
+			<tbody>
+			<volist id="vo" name="list">
+					<tr target="script_id" rel="{$vo['smId']}">
+						<td>{$i}</td>
+						<td>{$vo['serviceName']}</td>
+						<td>{$vo['ip']}</td>
+						<td>{$vo['warnDate']/1000|date="Y-m-d H:i:s",###}</td>
+						<td id="showtime">{$vo['status']}</td>
+						<td><a href="__URL__/showDetailWindow/ip/{$vo['ip']}/id/{$i}" style="color:#008800" width="960" height="700" target="navTab" rel="detail{$i}">{$vo['info']}</a> </td>
+								
+					</tr>
+				</volist>				
+			</tbody>
+		</table>
+	</div>
+	<div class="panelBar">
+		<div class="pages">
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+</div>
+</div>
+
+<script type="text/javascript">
+$("#showtime").click(function(){
+	var time = (new Date()).getTime();
+	alert(time);
+});
+
+</script>

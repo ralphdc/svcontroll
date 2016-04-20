@@ -1,0 +1,44 @@
+<?php
+/**
+ * 服务管制-作业中心-作业调度
+ * @author zengguangqiu
+ *
+ */
+class SchedulingController extends CommonController {
+	//var $navTab = 'D60604';
+	var $navTab = '2c948cfb51ebb03c0151ebbbfe1f001b';
+	
+// 框架首页
+	public function index() 
+	{
+		C ( 'SHOW_RUN_TIME', false ); // 运行时间显示
+		C ( 'SHOW_PAGE_TRACE', false );
+		$servicetype = array('1'=>'C服务','2'=>'Web服务','3'=>'Java服务');
+		$pnStatus = array('1'=>'未完成','2'=>'已完成');
+		$deleteflag = array('1'=>'有效','2'=>'无效');
+		$pageNum =empty($_REQUEST['numPerPage']) ? C('PAGE_LISTROWS') : $_REQUEST['numPerPage'];
+		$this->assign ( 'numPerPage', $pageNum ); //每页显示多少条
+		$this->assign ( 'currentPage', !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1);
+		$Scheduling = new SchedulingModel($_POST,$_GET);
+		$result = $Scheduling->findByPost($_POST,$_GET);
+		$count = $Scheduling->countByPost($_POST,$_GET);
+		$this->assign ( 'totalCount', $count );
+		$this->assign ( 'list', $result );
+		$this->assign ( 'servicetype', $servicetype );
+		$this->assign('pnStatus',$pnStatus);
+		$this->assign('deleteflag',$deleteflag);
+		//dump($result);
+		$this->assign ( 'map', array('servicename'=>'','servicetype'=>'','product'=>'','persion'=>'','startTime'=>'','endTime'=>'','pnStatus'=>''));
+		cookie('_currentUrl_', __SELF__);
+		$this->display();
+	}
+	
+	public function history_list() {
+		$this->display();
+	}
+	
+	public function program() {
+		$this->display();
+	}
+	
+}

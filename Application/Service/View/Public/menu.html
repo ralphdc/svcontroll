@@ -1,0 +1,85 @@
+<div class="accordion" fillspace="sidebar" id="sysMenu">
+		<?php if(!empty($menu)): ?>
+			<?php foreach($menu as $mk=>$mv): ?>
+			<div class="accordionHeader">
+					<h2><div class="side_menu_icon_2"><?php echo $mv['name']; ?></div></h2>
+			</div>
+			<?php if(!empty($mv['children'])): ?>
+				<div class="accordionContent">
+					<ul class="tree leftmenu treeFolder">
+						<?php foreach($mv['children'] as $mvk=>$mvv): ?>
+							<li>
+								<a 
+									<?php if(!empty($mvv['children'])): ?>
+										class="tree_menu" 
+									<?php else: ?>
+									 target="navTab" rel="<?php echo $mvv['id'] ?>" 
+									 <?php endif; ?> 
+								
+								<?php if($mvv['name'] == '服务治理'): ?> 
+									<?php if($_SESSION['WEB_ENVIRONMENT'] == 3): ?>
+										href="http://172.20.6.136:85/containerui/index.do" 
+										<?php elseif($_SESSION['WEB_ENVIRONMENT'] == 4 || $_SESSION['WEB_ENVIRONMENT'] == 5): ?>
+										 href="http://172.17.4.203:8080/containerui/index.do"
+										  <?php elseif($_SESSION['WEB_ENVIRONMENT'] == 2): ?>
+										  href="http://10.128.133.113/containerui/index.do"
+										   <?php else: ?>href="http://172.17.4.203:8080/containerui/index.do"
+									<?php endif; ?> 
+									<?php else: ?>
+										 href="/index.php/<?php echo getUrl($mvv['url']);?>"
+								<?php endif;?>>
+								<?php echo $mvv['name']; ?>
+								</a>
+								<?php if(!empty($mvv['children'])): ?>
+									<ul style="display: none;">
+										<?php foreach($mvv['children'] as $mvvk=>$mvvv): ?>
+												<li><a href="/index.php/<?php echo getUrl($mvvv['url']);?>" target="navTab" rel="<?php echo $mvvv['id'];?>"> <?php echo $mvvv['name'];?></a></li>
+										<?php endforeach; ?>
+										<?php if($mvv['name'] == '拓扑镜像'): ?>
+											<li>
+												<a href="/index.php/Service/Mornode" target="navTab" rel="D890170">监控节点管理</a>
+											</li>
+											<li>
+												<a href="/index.php/Service/Snmp" target="navTab" rel="SNMP88967">SNMP模板管理</a>
+											</li>
+										<?php endif; ?>
+									</ul>
+								<?php endif; ?>
+								
+
+							</li>
+						<?php endforeach; ?>
+						<!-- 
+						<?php if($mv['name'] == '监控管理'): ?>
+							<li>
+								<a href="/index.php/javascript:void(0);" class="tree_menu">SNMP配置</a>
+								<ul style="display: none;">
+									<li><a href="/index.php/Service/Snmp" target="navTab" rel="SNMP88967">模板管理</a></li>
+								</ul>
+							</li>
+						<?php endif; ?>
+						 -->
+					</ul>
+				</div>
+			<?php endif; ?>
+		<?php endforeach; ?>
+		<?php else: ?>
+		没有可以显示的菜单
+		<?php endif; ?>
+</div>
+<script type="text/javascript">
+/* $(document).ready(function(){
+	
+	$(".tree_menu").next("ul").find("a").each(function(e){
+		var href = $(this).attr("href");
+		var menuId = $(this).attr("rel");
+		if(href.indexOf("?") > -1){
+			var newHref = href + "&" + "menuId="+menuId;
+		}else{
+			var newHref = href + "/?" + "menuId="+menuId;
+		}
+		$(this).attr("href",newHref);
+	})
+	
+}) */
+</script>

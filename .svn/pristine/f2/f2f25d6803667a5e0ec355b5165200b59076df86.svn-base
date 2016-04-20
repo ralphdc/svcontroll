@@ -1,0 +1,109 @@
+<style type="text/css">
+	.downloadtile td{height:30px; background:#eeeff0; border:1px #d8d8d8 solid; font-weight:bold; color:#616161;}
+</style>
+<div class="pageContent" id="downldmonitor">
+	<p style="padding:7px" id="contest"></p>
+	<input type="hidden" id="countns" value="0"/>
+	<div id="addList">
+		<table class="table" targetType="dialog"  width="100%" layoutH="100">
+			<thead>
+				<tr class="downloadtile">
+					<td>时间</th>
+					<td>状态</th>
+					<td>返回结果</th>
+					<td>IP</th>
+					<td>请求序列号</th>
+				</tr>
+			</thead>
+			<tbody>	
+			
+			</tbody>
+		</table>
+		
+		<div class="formBar">
+		<ul>
+		<li><div class="button"><div class="buttonContent"><button type="button" class="close">关闭</button></div></div></li>
+		</ul>
+		</div>
+		
+		</div>
+</div>
+
+<script type="text/javascript">
+
+var secs =30; //倒计时的秒数    
+function Load(){    
+	for(var i=secs;i>=0;i--)    
+	{    
+		_setoutTime = window.setTimeout('doUpdate(' + i + ')', (secs-i) * 1000);    
+	}    
+}    
+function doUpdate(num){
+	var tr="<tr>";
+	var td="<td>";
+	var cons = "读取中，请稍后。等待时间："+num+"秒";
+	var trstr = tr+td+cons+"</td></tr>";
+	$("#contest").html(trstr);
+	//document.getElementById('tiaozhuan').innerHTML = '将在<span class=\"acticleR1\">'+num+'</span>秒后自动跳转到商城首页' ;    
+	if(num == 0) {
+		var shows = $("#countns").val();
+		if(shows==0){
+			$("#contest").html("等待超时！");
+		}else{
+			clearTimeout(_setoutTime);
+			$("#contest").html('数据读取成功！');
+		}
+	}    
+} 
+
+Load(); 
+
+//$("<p>Time-Out is 30s!</p>").before($("#addList"));
+if(typeof(EventSource)!=="undefined")
+{
+	var source=new EventSource("__URL__/checkRedisInfo");
+	source.onmessage=function(event)
+	{
+		var container = $("#addList").find("tbody");
+		
+		var res = event.data;
+		var resjson=eval("("+res+")");
+		if(Number(resjson.numbers) > 0){
+			//var thd = "<tr><th>时间</th><th>状态</th><th>返回结果</th><th>IP</th><th>序列号</th></tr>";
+			var shows = $("#countns").val(1);
+			var jsoncontent = resjson.cont;
+			var jsondom="";
+			 $.each(jsoncontent,function(key,value){
+				 var jstr = "<tr>";
+				 jstr += "<td>"+value.timestamp+"</td>";
+				 
+				 if(value.state == 'start') {
+					 stateStr = '开始控制';
+				 }else{
+					 stateStr = '停止控制';
+				 }
+				 if(value.errorCode == '00') {
+					 errorStr = '成功';
+				 }else{
+					 errorStr = '失败';
+				 }
+				 
+				 jstr += "<td>"+stateStr+"</td>";
+				 jstr += "<td>"+errorStr+"</td>";
+				 jstr += "<td>"+value.ip+"</td>";
+				 jstr += "<td>"+value.requestSerial+"</td>";
+				 jstr += "</tr>";
+				 jsondom += jstr;
+			 })
+			var container = $("#addList").find("tbody");
+			$(container).html(jsondom);
+		}
+		
+	};
+}
+else
+{
+	$("#downldmonitor").prepend($("<p>Sorry, your browser does not support server-sent events...</p>"));
+}
+
+</script>

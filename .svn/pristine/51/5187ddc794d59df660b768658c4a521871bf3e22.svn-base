@@ -1,0 +1,28 @@
+<div class="pageContent">
+<form method="post" action="__URL__/edit" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>切换线路至：</label>
+				 <select name="line">
+				<?php if(is_array($type) && !empty($type)){
+						
+						foreach ($type as $tkey=>$tval)
+						{
+							if($tkey != $row['line'])
+								$selected = 'selected';
+							echo '<option value='.$tkey.'  '.$selected.'>'.$tval.'</option>';
+							$selected = '';
+						}
+				}?>
+				</select>
+				<input type="hidden" value="{$row['elemId']}" name="elemId">
+			</p>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">切换</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>

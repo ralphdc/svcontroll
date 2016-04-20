@@ -1,0 +1,41 @@
+<div class="pageContent">
+
+	<form method="post" action="__URL__/createGroup"  class="pageForm required-validate" onsubmit="return validateCallback(this, groupCreateAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" style="width:350px; overflow: hidden;">
+			<input type="hidden" name="action" value="{$action}" />
+			<input type="hidden" name="gpid" value="{$gpid}" />
+			<p>
+				<label>组名：</label>
+				<input class="required" type="text" id="groupName" name="groupName" maxlength="50" size="30" value=""/>
+			</p>
+			<p>
+				<label>组描述：</label>
+				<input type="text" id="groupDes" name="groupDes" maxlength="50" size="30" value=""/>
+			</p>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+function groupCreateAjaxDone(json){
+	
+	DWZ.ajaxDone(json);
+	if(json.act == 'add'){
+		if(json.gid > 0)
+		{
+			addTreeNode(operate_tree,json);
+			$.pdialog.closeCurrent();
+		}
+	}else{
+		editTreeNode(operate_tree,json.gnewname);
+		$.pdialog.closeCurrent();
+	}
+	
+}
+</script>

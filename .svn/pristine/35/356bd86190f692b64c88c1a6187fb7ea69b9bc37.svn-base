@@ -1,0 +1,101 @@
+<div class="pageContent">
+
+<form method="post" action="__URL__/setNoticeType/" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+	<input type="hidden" name="id" id="id" value="{$elementID}" />
+	<input type="hidden" name="pageNuma" id="pageNuma" value="{$pageNum}" />
+	
+		<table class="table" targetType="dialog" layoutH="112" width="100%">
+		<thead>
+			<tr>
+				<th width="30"><input type="checkbox" class="checkboxCtrl"  id="checkAll"/></th>
+				<th width="60">序号</th>
+				<th width="60">运维人员</th>
+				<th width="60">运维账号</th>
+				<th width="100">通知方式</th>
+			</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr class="scontent">
+				<?php 
+						$checked = '';
+						if(isset($person_rights[$vo['staffId']]))
+						{
+							$checked = 'checked="checked"';
+						}
+				?>
+				<td class="center" style="width: 43px;"><div>
+				<input type="checkbox" value="{$vo['staffId']}" name="staff[]" {$checked} class="bck"  />
+				</div></td>
+				<td>{++$key}</td>
+				<?php $vokey = $key; ?>
+				<td>{$vo['staffName']}</td>
+				<td>{$vo['staffAccount']}</td>
+				<?php
+					$we_checked = "";
+					$email_checked = "";
+					$msg_checked = "";
+					if(isset($rights[$vo['staffId']])){
+
+						if(intval($rights[$vo['staffId']][0]) == 1){
+							$we_checked = "checked='checked'";
+						}
+						
+						if(intval($rights[$vo['staffId']][1]) == 1){
+							$email_checked = "checked='checked'";
+						}
+
+						if(intval($rights[$vo['staffId']][2]) == 1){
+							$msg_checked = "checked='checked'";
+						}
+					}
+				?>
+				<td>
+					 <input type="checkbox" value="wechat" name="noticetype[{$vo['staffId']}][wechat]" <?php echo $we_checked;?>  />微信 
+				 	 <input type="checkbox" value="email" name="noticetype[{$vo['staffId']}][email]"  <?php echo $email_checked;?> />邮件 
+			 	 	 <input type="checkbox" value="msg" name="noticetype[{$vo['staffId']}][msg]"  <?php echo $msg_checked;?> />短消息 
+				</td>
+			</tr>
+		</volist>
+		<volist id="vogp" name="groups">
+			<tr class="scontent">
+				<td class="center" style="width: 43px;">
+					<div>
+						<input type="checkbox" value="{$vogp['groupId']}" name="sgroup[]" <if condition="in_array($vogp['groupId'],$grights)"> checked="checked" </if> class="bck" />
+					</div>
+				</td>
+				<td>{++$vokey}</td>
+				<td><span style="color:#FF0000">{$vogp['groupName']}</span></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>
+
+<script type="text/javascript">
+/* $(function(){
+	$("#checkAll").unbind();
+	$("#checkAll").bind('click',function(e){
+		
+		var state = $(this).attr("checked");
+		console.log($(this).attr("checked"));
+		 if (state) { 
+		        $(":checkbox").attr("checked", true);  
+		    } else {
+		        $(":checkbox").attr("checked", false);  
+		    }  
+	})
+}) */
+	
+</script>

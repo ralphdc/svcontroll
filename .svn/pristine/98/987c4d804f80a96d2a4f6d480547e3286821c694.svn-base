@@ -1,0 +1,45 @@
+<div id='showHostResourceList'>
+<div class="item_list_filter"  style="padding-left:20px">
+
+</div>
+<div id="Serquality_list">
+	<div class="tableList" layouth="90" style="overflow:auto;height:560px;" >
+		<table class="list tac" width="100%">
+			<thead>
+				<tr>
+					<th>主机名</th>
+					<th>IP地址</th>
+					<th>CPU</th>
+					<th>内存</th>
+					<th>硬盘使用率</th>
+					<th>服务</th>
+				</tr>
+			</thead>
+			<tbody>
+			<volist id="vo" name="list">
+					<tr target="script_id" rel="{$vo['smId']}">
+						<td>
+							{$vo['name']}
+						</td>
+						<td>{$vo['ip']}</td>
+						<td>
+							{$vo['cpu']}
+						</td>
+						<td>{$vo['memory']}</td>
+						<td>{$vo['diskUsage']}
+						</td>
+						<td>{$vo['services']}</td>
+								
+					</tr>
+				</volist>				
+			</tbody>
+		</table>
+	</div>
+	<div class="panelBar">
+		<div class="pages">
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+</div>
+</div>

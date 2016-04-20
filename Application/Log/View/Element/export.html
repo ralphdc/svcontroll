@@ -1,0 +1,60 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/export_return" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58">
+			<table class="ui_info_plate">
+				<tr>
+					<td class="plate_item" width="250">
+						<div class="ui_info_tit">元素列表：</div>
+						<div class="tableList bd1" layouth="91">
+							<table class="list" width="100%">
+								<thead>
+									<tr>
+										<th width="30"><input type="checkbox" group="product_id" class="checkboxCtrl" /></th>
+										<th>元素编号</th>
+										<th>元素名称</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><input  type="checkbox" name="product_id" id="" value="{$vo['groupId']}" ></td>					
+										<td>001</td>
+										<td>sdfsdf</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</td>
+					<td class="plate_item vam">
+						<div class="ui_icon_rel"></div>
+					</td>
+					<td class="plate_item" width="250">
+						<div class="ui_info_tit">已选元素列表：</div>
+						<div class="tableList bd1" layouth="91">
+							<table class="list" width="100%">
+								<thead>
+									<tr>
+										<th>元素编号</th>
+										<th>元素名称</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>				
+										<td>001</td>
+										<td>sdfsdf</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="formBar">
+			<ul>
+				<!-- <li><div class="buttonActive"><div class="buttonContent"><button type="submit">确定</button></div></div></li> -->
+				<li><div class="buttonActive"><div class="buttonContent"><a href="/Competence/dwztp321/Application/Admin/View/Element/test.xlsx" class="btn_page_link" target="dwzExport" targetType="dialog">导出 EXCEL</a></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

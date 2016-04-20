@@ -1,0 +1,35 @@
+<div class="pageContent" style="width: 420px;">
+	<form method="post" action="__URL__/edit/id/{$product['id']}" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>产品名称：</label>
+				<input type="text" size="28" name="productName" class="textInput" value="{$product['productName']}">
+			</p>
+			<p>
+				<label>产品编码：</label>
+				<input type="text" size="28" name="productCode" class="textInput" value="{$product['productCode']}">
+			</p>
+			<p>
+				<label>产品状态：</label>
+				<select name="productStatus" id="" class="combox">
+					<option value="1">启用</option>
+					<option value="0">停用</option>
+				</select>
+			</p>
+			<p style="height:auto;">
+				<label>产品描述：</label>
+				<textarea name="productDesc" class="editor textInput" cols="27" rows="3" maxlength="100">{$product['productDesc']}</textarea>
+			</p>
+			<p style="height:auto;">
+				<label>备注：</label>
+				<textarea name="remark" class="editor textInput" cols="27" rows="3" maxlength="100">{$product['remark']}</textarea>
+			</p>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">修改</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

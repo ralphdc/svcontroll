@@ -1,0 +1,314 @@
+
+<div class="pageContent">
+	<div class="pageFormContent" layouth="16">
+		
+		<div class="header_info">
+			<div class="header_info_tit">用户信息</div>
+			<div class="header_info_text">
+				<span class="header_info_prop ml20">用户名：</span>
+				<span class="header_info_val">{$userinfo['userName']}</span>
+				<span class="header_info_prop ml20">用户类型：</span>
+				<span class="header_info_val"><?php echo C('userType')[$userinfo['userType']]; ?></span><!--{$Think.config.userType.1}-->
+				<!--span class="header_info_prop">用户等级：</span>
+				<span class="header_info_val">{$userinfo['userType']}</span>
+				<span class="header_info_prop ml20">所属机构：</span>
+				<span class="header_info_val">{$userinfo['orgId']}</span>
+				<span class="header_info_prop ml20">上级用户：</span>
+				<span class="header_info_val">{$userinfo['upUserId']}</span-->
+				<input type="hidden" id="userId"  value="{$userinfo['id']}" name="userId">
+			</div>
+		</div>
+		
+		<div class="tabs">
+			<div class="tabsHeader">
+				<div class="tabsHeaderContent">
+					<ul>
+						<li><a href="javascript:;"><span>角色权限</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="tabsContent">
+				<div>
+					<div class="pageHeader">
+						<!--form rel="pagerForm" onsubmit="return divSearch(this,'');" action="" method="post"--> 
+							<div class="searchBar">
+								<table class="searchContent">
+									<tr>
+										<td>
+											<label class="header_label">所属产品：</label>
+											<select name="productId" id="productId" class="combox">
+												<volist id="vo" name="products">
+													<option value="{$vo['id']}" <?php if($_POST['productId'] == $vo['id'] ){ echo "selected=selected";} ?> > {$vo['productName']}</option>
+												</volist>
+											</select>
+										</td>
+										<td><label class="header_label">角色名称：</label><input type="text" name="roleName" id="roleName" class="textInput" /></td>
+										<td><div class="buttonActive"><div class="buttonContent"><button type="submit" id="searchRoles">查询</button></div></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<input type="hidden" name="pageNum" value="1" />
+							<input type="hidden" name="numPerPage" value="20" />
+							
+						<!--/form-->
+					</div>
+					<div class="tableList mr10" layouth="240">
+						<table class="ui_info_plate" width="1850">
+							<tr>
+								<td class="plate_item" width="200" id="showroles">
+									<div class="tableList bd_side" layouth="301">
+										<table class="list" width="100%">
+											<thead>
+												<tr>
+													<th><input type="checkbox" group="role_id_a" class="checkboxCtrl" /></th>
+													<th>角色名称</th>
+													<th>角色编号</th>
+												</tr>
+											</thead>
+											<tbody>
+												<volist id="item" name="roleList" >
+												<tr>
+													<td><input name="role_id_a" value="{$item['id']}" type="checkbox" /></td>
+													<td>{$startNum + $i}</td>
+													<td>{$item['roleName']}</td>
+													
+												</tr>
+												</volist>
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages">
+											<span>共{$totalCount}条</span>
+										</div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</td>
+								<td class="plate_item vam">
+									<!--div class="ui_icon_rel"></div-->
+									<button id="showRoughButton" type="button" class="ui_btn_add">==></button>
+								</td>
+								<td class="plate_item" width="200" id="showRolesDetail">
+									<div class="tableList bd_side" layouth="301" >
+										<table class="list" width="100%">
+											<thead>
+												<tr>
+													<th>权限类型</th>
+													<th>权限名称</th>
+												</tr>
+											</thead>
+											<tbody >
+												
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages">
+											<span>共{$totalCount}条</span>
+										</div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</td>
+								<td class="plate_item vam" width="100">
+									<div class="tac">
+										<a href="javascript:;" class="ui_btn_add"  rel="user_id_a" posttype="string" id="roleToUserButton">添加</a>
+									</div>
+									<div class="tac mt20">
+										<a href="javascript:;" class="ui_btn_del"  rel="user_id_b" title="确实要移除选中的用户吗？" posttype="string" id="delRoles" >移除</a>
+									</div>
+								</td>
+								<td class="plate_item" width="200">
+									<div class="tableList bd_side" layouth="301">
+										<table class="list" width="100%">
+											<thead>
+												<tr>
+													<th><input type="checkbox" group="role_id_b" class="checkboxCtrl" /></th>
+													<th>角色编号</th>
+													<th>角色名称</th>
+												</tr>
+											</thead>
+											<tbody id="showSelectedRole">
+												
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages">
+											<span>共{$totalCount}条</span>
+										</div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</td>
+								<td class="plate_item vam">
+									<button id="showDetailButton" type="button" class="ui_btn_add">==></button>
+								</td>
+								<td id="toshowDetail"><table><tr>
+								<td class="plate_item" width="300">
+									<div class="ui_info_tit">所拥有菜单</div>
+									<div class="ui_info_con" layouth="320">
+										<ul class="tree treeCheck collapse">
+											
+										</ul>
+									</div>
+								</td>
+								<td class="plate_item vam">
+									<div class="ui_icon_rel"></div>
+								</td>
+								<td class="plate_item" width="350">
+									<div class="ui_info_tit">所拥有动作权限</div>
+									<div class="ui_info_con" layouth="320">
+										<ul class="tree treeCheck collapse">
+											
+										</ul>
+									</div>
+								</td>
+								<td class="plate_item vam">
+									<div class="ui_icon_rel"></div>
+								</td>
+								<td class="plate_item" width="200">
+									<div class="ui_info_tit">所拥有元素权限</div>
+									<div class="tableList" layouth="330">
+										<table class="list" width="100%">
+											<thead>
+												<tr>
+													<th><input type="checkbox" group="user_id_b" class="checkboxCtrl" /></th>
+													<th>元素编号</th>
+													<th>元素名称</th>
+												</tr>
+											</thead>
+											<tbody>
+												
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages">
+											<span>共{$totalCount}条</span>
+										</div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</td>
+								<td class="plate_item vam">
+									<div class="ui_icon_rel"></div>
+								</td>
+								<td class="plate_item" width="200">
+									<div class="ui_info_tit">所拥有工作流权限</div>
+									<div class="ui_info_con" layouth="320">
+										<ul class="tree treeCheck collapse">
+											
+										</ul>
+									</div>
+								</td>
+								</tr></table></td> 
+							</tr>
+						</table>
+					</div>
+					
+					<div class="formBar">
+						<ul>
+							<li><div class="buttonActive"><div class="buttonContent"><button type="button" id="role2usersave">保存</button></div></div></li>
+							<li><div class="button"><div class="buttonContent"><button type="button" class="close" >取消</button></div></div></li>
+							<li><div class="button"><div class="buttonContent"><a href="/Competence/dwztp321/Admin/Role" target="navTab" rel="L103" class="btn_page_link">角色管理</a></div></div></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<script type="text/javascript">
+$(function(){
+	$('.pageContent .btn_page_link').click(function(){
+		$('.pageContent .close:first').click();
+	});
+});
+
+$("#searchRoles").click(function(){
+	var productionId = $("#productId").val();
+	var roleName = $("#roleName").val();
+	var $box = $("#showroles");
+	$box.ajaxUrl({
+		type: "POST",
+		url: "__URL__/showRoleOfProduct",
+		data: 'productionId='+productionId+'&roleName='+roleName,
+		callback: function() {
+			$box.find("[layoutH]").layoutH();
+		}
+	});
+});
+
+$("#showRoughButton").click(function(){
+	var roleIds = "";
+	var html = $("input[name='role_id_a']:checked").each(function(){
+		roleIds += $(this).val() + ",";
+	});
+	
+	var $box = $("#showRolesDetail");
+	$box.ajaxUrl({
+		type: "POST",
+		url: "__URL__/showResourOfRoles",
+		data: 'roleIds='+roleIds,
+		callback: function() {
+			$box.find("[layoutH]").layoutH();
+		}
+	});
+});
+
+//对选中之后的角色点击查看按钮
+$("#showDetailButton").click(function(){
+	var roleIds='';
+	var html = $("#showSelectedRole input[name='role_id_a']:checked").each(function(){
+		roleIds += $(this).val() + ",";
+	});
+	//alert(roleIds);return;
+	var $box = $("#toshowDetail");
+	$box.ajaxUrl({
+		type: "POST",
+		url: "__URL__/queryRolesDetail",
+		data: 'roleIds='+roleIds,
+		callback: function() {
+			$box.find("[layoutH]").layoutH();
+		}
+	});
+});
+
+$("#roleToUserButton").click(function(){
+	var html = '';
+	$("#showSelectedRole").html('');
+	var map = $("input[name='role_id_a']:checked").each(function(){
+		html += "<tr>"+$(this).parent().parent().html()+ "</tr>,";
+	});
+	$("#showSelectedRole").html(html);
+});
+
+$("#role2usersave").click(function(){
+	var roleIds = "";
+	var map = $("#showSelectedRole input[name='role_id_a']:checked").each(function(){
+		 roleIds += $(this).val() +",";
+	});
+	
+	var userId = $("#userId").val();
+	$.ajax({ 
+	type:'POST',
+	url: "__URL__/saveRolesToUser", 
+	data: 'roleIds='+roleIds+"&userId="+userId, 
+	success: function(msg){
+		if(msg == "1"){
+			alertMsg.correct('您的数据保存成功！');
+		}else{
+			alertMsg.error('保存出错！');
+		}
+	}
+	});
+	
+});
+
+$('#delRoles').click(function(){
+	var map = $("#showSelectedRole input[name='role_id_a']:checked").each(function(){
+		$(this).parent().parent().remove();
+	});
+	
+});
+</script>

@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>主机告警级别统计柱状图</title>
+
+		<script type="text/javascript" src="__PUBLIC__/dwz/js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+$(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '按日期统计柱状图'
+            },
+            subtitle: {
+                //text: 'Source: <a href="http://en.wikipedia.org/wiki/List_of_cities_proper_by_population">Wikipedia</a>'
+            },
+            xAxis: {
+                type: 'category',
+                labels: {
+                    rotation: -45,
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
+                }
+            },
+            legend: {
+                enabled: true
+            },
+            tooltip: {
+                pointFormat: '日志消息条数: <b>{point.y:.1f} 条</b>',
+            },
+            series: [{
+                name: '日志条数',
+                data: [
+					{$data}
+                ],
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    color:'red',
+                    align: 'right',
+                    x: 4,
+                    y: 10,
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif',
+                        textShadow: '0 0 3px black'
+                    }
+                }
+            }]
+        });
+    });
+    
+
+		</script>
+	</head>
+	<body>
+<script src="__PUBLIC__/Highcharts/js/highcharts.js"></script>
+<script src="__PUBLIC__/Highcharts/js/modules/exporting.js"></script>
+
+<div id="container" style="height: 400px; margin: 0 auto"></div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<div class="ui_info_con" layouth="130">
+	<ul class="tree treeFolder treeCheck collapse">
+		<volist id="item" name="menu" >
+			<li><a href="javascript:;" class="treenode"  rel="{$item['id']}" rel2="{$item['menuType']}" >{$item['menuName']}</a>
+			<notempty name="item['subMenuList']">
+			<ul>
+				<volist id="subItem" name="item['subMenuList']" >
+				<li ><a   class="treenode" href="javascript:;"  rel="{$subItem['id']}" rel2="{$subItem['menuType']}" >{$subItem['menuName']}</a>
+					<notempty name="subItem['subMenuList']">
+					<ul>
+					<volist id="ssubItem" name="subItem['subMenuList']" >
+					<li  ><a   class="treenode" href="javascript:;"   rel="{$ssubItem['id']}" rel2="{$ssubItem['menuType']}" >{$ssubItem['menuName']}</a></li>
+					</volist>
+					</ul>
+					</notempty>
+				</li>
+				</volist>
+			</ul>
+			</notempty>
+			</li>
+		</volist>
+	</ul>
+</div>

@@ -1,0 +1,15 @@
+<form id="pagerForm" action="__URL__" method="post">
+	<input type="hidden" name="pageNum" value="1"/>
+
+</form>
+
+<script type="text/javascript">
+	$("#productId").change(function(){
+		//alert('123123');
+		var name = $("#productId option:selected").text();
+		$.cookie('productId',$(this).val(),{path:'__ROOT__'});///Competence/dwztp321
+		$.cookie('productName',name,{path:'__ROOT__'});///Competence/dwztp321
+		//$.cookie('productId',$(this).val(),{path:'__APP__/Admin'});/Competence/dwztp321
+		//$.cookie('productName',name,{path:'__APP__/Admin'});
+	})
+</script>

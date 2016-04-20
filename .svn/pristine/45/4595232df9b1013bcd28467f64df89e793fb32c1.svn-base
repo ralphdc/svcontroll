@@ -1,0 +1,87 @@
+<include file="Public:pagerFormLog" />
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__URL__" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+			<label>IP地址：</label>
+			<input type="text" value="{$_REQUEST['ipv']}" id="ipv" name="ipv" class="textInput">
+			<input type="hidden" id="cfginstanceid" name="cfginstanceid" value="{$_REQUEST['cfginstanceid']}">
+			</li>
+			<li>
+			<label>服务名：</label>
+			<input type="text" value="{$_REQUEST['servicename']}" id="servicename" name="servicename" class="textInput">
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<div class="panelBar" style="height:29px;">
+		<ul class="toolBar">
+			<!-- <li><a class="add" href="__URL__/add" title="新增" target="dialog" mask="true"  height="262" width="447"><span>新增</span></a></li>
+			<li><a class="edit" href="__URL__/edit/id/{sid_user}" target="dialog" mask="true" warn="请选择一条记录"><span>编辑</span></a></li> 
+			<li><a posttype="string" title="确实要删除选中记录吗？" rel="ids" target="selectedTodo" class="delete" href="__URL__/foreverdelete/id/{sid_user}"><span>批量删除选中</span></a></li>
+			-->
+			<li class="line">line</li>
+		</ul>
+	</div>
+
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+		<tr>
+			<th class="center" style="width: 43px; cursor: default;"><div title="" class="gridCol"><input type="checkbox" class="checkboxCtrl" group="ids"></div></th>
+			<th width="60">序号</th>
+			<th>服务名</th>
+			<th>服务版本</th>
+			<th>IP地址</th>
+			<th>路径</th>
+		</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr target="sid_user" rel="{$vo['sysid']}">
+				<td class="center" style="width: 43px;"><div><input type="checkbox" value="{$vo['sysid']}" name="ids"></div></td>
+				<td>
+					<?php
+						$listnums = $numPerPage * ($currentPage-1) + $key+1;
+						echo $listnums;
+					?>
+				</td>
+				<td>{$vo['ss_name']}</td>
+				<td>{$vo['version']}</td>
+				<td>{$vo['ipv']}</td>
+				<td>{$vo['path']}</td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<?php
+					$numPerPageArr = array(20,50,100,200);
+					foreach($numPerPageArr as $val)
+					{
+						if($val == $numPerPage)
+							$selected = 'selected';
+						echo '<option value="'.$val.'" '.$selected.'>'.$val.'</option>';
+							$selected = '';
+					}
+				?>
+			</select>
+			<span>条，共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+	
+</div>

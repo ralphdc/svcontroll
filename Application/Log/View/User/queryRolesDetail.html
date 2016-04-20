@@ -1,0 +1,117 @@
+<table><tr>
+<td class="plate_item" width="300">
+	<div class="ui_info_tit">所拥有菜单</div>
+	<div class="ui_info_con" layouth="320">
+		<ul class="tree treeCheck collapse">
+			<volist id="item" name="menuTree" >
+				<li><a href="javascript:;" class="treenode" tvalue="{$item['id']}" tname="" rel="{$item['id']}" rel2="{$item['menuType']}" >{$item['menuName']}</a>
+				<notempty name="item['subMenuList']">
+				<ul>
+					<volist id="subItem" name="item['subMenuList']" >
+					<li ><a class="treenode" href="javascript:;" tvalue="{$subItem['id']}" rel="{$subItem['id']}" rel2="{$subItem['menuType']}" >{$subItem['menuName']}</a>
+						<notempty name="subItem['subMenuList']">
+						<ul>
+						<volist id="ssubItem" name="subItem['subMenuList']" >
+						<li  ><a class="treenode" href="javascript:;" tvalue="{$ssubItem['id']}" rel="{$ssubItem['id']}" rel2="{$ssubItem['menuType']}" >{$ssubItem['menuName']}</a></li>
+						</volist>
+						</ul>
+						</notempty>
+					</li>
+					</volist>
+				</ul>
+				</notempty>
+				</li>
+			</volist>
+		</ul>
+	</div>
+</td>
+<td class="plate_item vam">
+	<div class="ui_icon_rel"></div>
+</td>
+<td class="plate_item" width="350">
+	<div class="ui_info_tit">所拥有动作权限</div>
+	<div class="ui_info_con" layouth="320">
+		<ul class="tree treeCheck collapse">
+		<volist id="item" name="actionTree" >
+				<li><a href="javascript:;" class="treenode" tvalue="{$item['id']}" tname="" rel="{$item['id']}" rel2="{$item['menuType']}" >{$item['menuName']}</a>
+				<notempty name="item['subMenuList']">
+				<ul>
+					<volist id="subItem" name="item['subMenuList']" >
+					<li ><a class="treenode" href="javascript:;" tvalue="{$subItem['id']}" rel="{$subItem['id']}" rel2="{$subItem['menuType']}" >{$subItem['menuName']}</a>
+						<notempty name="subItem['subMenuList']">
+						<ul>
+						<volist id="ssubItem" name="subItem['subMenuList']" >
+						<li><a class="treenode" href="javascript:;" tvalue="{$ssubItem['id']}" rel="{$ssubItem['id']}" rel2="{$ssubItem['menuType']}" >{$ssubItem['menuName']}</a>
+											
+						
+						</li>
+						</volist>
+						</ul>
+						</notempty>
+					</li>
+					</volist>
+				</ul>
+				</notempty>
+				</li>
+			</volist>
+			
+		</ul>
+	</div>
+</td>
+<td class="plate_item vam">
+	<div class="ui_icon_rel"></div>
+</td>
+<td class="plate_item" width="200">
+	<div class="ui_info_tit">所拥有元素权限</div>
+	<div class="tableList" layouth="330">
+		<table class="list" width="100%">
+			<thead>
+				<tr>
+					<th><input type="checkbox" group="user_id_b" class="checkboxCtrl" /></th>
+					<th>元素编号</th>
+					<th>元素名称</th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist id="item" name="elementList" >
+					<tr>
+						<td>{$i}</td>
+						<td>{$item['elementName']}</td>
+						<!--td>{$item['actName']}</td-->
+					</tr>
+				</volist>
+			</tbody>
+		</table>
+	</div>
+	<div class="panelBar">
+		<div class="pages">
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+	</div>
+</td>
+<td class="plate_item vam">
+	<div class="ui_icon_rel"></div>
+</td>
+<td class="plate_item" width="200">
+	<div class="ui_info_tit">所拥有工作流权限</div>
+	<div class="ui_info_con" layouth="320">
+		<ul class="tree treeCheck collapse">
+			<li>
+				<a href="javascript:;" tname="" tvalue="">用户管理</a>
+				<ul>
+					<li><a href="javascript:;" tname="" tvalue="">用户录入</a></li>
+					<li><a href="javascript:;" tname="" tvalue="">用户修改</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="javascript:;" tname="" tvalue="">角色管理</a>
+				<ul>
+					<li><a href="javascript:;" tname="" tvalue="">用户录入</a></li>
+					<li><a href="javascript:;" tname="" tvalue="">用户修改</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</td>
+</tr></table>

@@ -1,0 +1,53 @@
+<div class="pageContent">
+	<form method="post" action='/index.php/Service/Configure/test_ajax' class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58">
+			<p>
+				<label>服务实例：</label>
+				<input type="text" size="40" class="required textInput" name="" id="" disabled="disabled" value="nac_cup_sz" />
+			</p>
+			<p>
+				<label>部署路径：</label>
+				<input type="text" size="40" class="required textInput" name="" id="" value="123" />
+			</p>
+			<p>
+				<label>IP地址：</label>
+				<input type="text" size="40" class="required textInput" name="" id="" value="123" />
+			</p>
+			<p>
+				<label>部署组：</label>
+				<input type="text" size="40" class="required textInput" name="" id="" value="123" />
+			</p>
+			<p>
+				<label>部署用户：</label>
+				<input type="text" size="40" class="required textInput" name="" id="" value="123" />
+			</p>
+			<p>
+				<label>操作类型：</label>
+				<select name="" id="" class="combox" value="2">
+					<option value="1">启动脚本</option>
+					<option value="2">关闭脚本</option>
+				</select>
+			</p>
+			<p>
+				<label>执行时间：</label>
+				<input type="text" size="40" class="required textInput" name="" id="" value="123" />
+			</p>
+			<p>
+				<label>计划类型：</label>
+				<select name="" id="" class="combox" value="1">
+					<option value="1">关闭</option>
+				</select>
+			</p>
+			<p>
+				<label>进程ID：</label>
+				<input type="text" size="40" class="required textInput" name="" id="" value="123" />
+			</p>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

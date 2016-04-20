@@ -1,0 +1,61 @@
+<div class="panel collapse" minH="100" defH="<?php $count = count($lists['providerlist']); $height  = 40+30*$count;
+		echo ($height<40)?40:$height; ?>">
+		<h1>ice服务端</h1>
+		<div>
+			<table class="table list" width="98%">
+				<thead>
+					<tr>
+						<th width="80">服务</th>
+						<th>路径</th>
+						<th>IP</th>
+						<th>端口</th>
+						<th>权重</th>
+						<th>GroupID</th>
+						<th>框架版本号</th>
+					</tr>
+				</thead>
+				<tbody>
+					<volist id="providerlist" name="lists['providerlist']" >
+					<tr>
+						<td>{$providerlist['servicename']}</td>
+						<td>{$providerlist['path']}</td>
+						<td>{$providerlist['ipv']}</td>
+						<td>{$providerlist['port']}</td>
+						<td>{$providerlist['weight']}</td>
+						<td>{$providerlist['groupid']}</td>
+						<td>{$providerlist['framework']}</td>
+					</tr>
+					</volist>	
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<div class="panel collapse" minH="100" defH="<?php $count = count($lists['consumerlist']); $height  = 40+30*$count;
+		echo($height<40)?40:$height; ?>">
+		<h1>ice客户端</h1>
+		<div>
+			<table class="table list" width="98%">
+				<thead>
+					<tr>
+						<th width="80">服务</th>
+						<th>路径</th>
+						<th>IP</th>
+						<th>GroupID</th>
+						<th>框架版本号</th>
+					</tr>
+				</thead>
+				<tbody>
+					<volist id="consumerlist" name="lists['consumerlist']" >
+					<tr>
+						<td>{$consumerlist['servicename']}</td>
+						<td>{$consumerlist['path']}</td>
+						<td>{$consumerlist['ipv']}</td>
+						<td>{$consumerlist['groupid']}</td>
+						<td>{$consumerlist['framework']}</td>
+					</tr>
+					</volist>	
+				</tbody>
+			</table>
+		</div>
+	</div>

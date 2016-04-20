@@ -1,0 +1,86 @@
+<script src="__PUBLIC__/dwz/js/jquery.ztree.excheck-3.5.js" type="text/javascript"></script>
+
+<div class="pageContent">
+	<form method="post" action='/index.php/Service/Deployment/toexcuteorder' class="pageForm required-validate" onsubmit="return validateCallback(this,callDialogAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58">
+			<div class="repertory_call_left">
+				<div class="searchBar">
+					<table class="searchContent">
+						<tr>
+							<td><label>IP：</label><input type="text" name="ip" id="ip" class="textInput" size="14"></td>
+							<td><label>机器名：</label><input type="text" name="hostname" id="hostname" class="textInput" size="15"></td>
+							<td><a type="submit" id="btn_search" class="button btn_search ui_btn_green" style="height:22px;line-height:22px;margin-left:15px;">查询</a></td>
+						</tr>
+					</table>
+				</div>
+				<div id='productIpTree'>
+				
+					{$ipProductTree}
+
+				</div>
+			</div>
+			<div id="instance_detail" class="repertory_call_right" layouth="80">
+				<p>
+					<label>用户名：</label>
+					<select name="username" id="" class="combox">					
+						<option value="root">root</option>
+						<option value="oracle">oracle</option>
+						<option value="test">test</option>
+					</select>
+				</p>
+				<p>
+					<label>执行命令：</label>
+					<textarea rows="20" cols="60" style="width: 280px; height: 138px;" name="scriptCmd"></textarea>
+				</p>
+			</div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<input type="hidden" value="" name="ips" id="ips" />
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+function kkk(){
+	var ips='';
+	$("#productIpTree").find('.checked').each(function(index,obj){
+		if ($(obj).next('a').hasClass('level2') ) {
+			
+			ips = ips + $(obj).next('a').attr('tvalue') + ',';
+		}
+	});
+	
+	$('#ips').val(ips.substring(0,ips.length-1));
+	
+}
+
+$("#btn_search").click(function(){
+	$.post('/index.php/Service/Repertory/callByReqs'
+			,{ip:$("#ip").val(),hostname:$("#hostname").val(),mwId:'init'}
+			,function(data){
+					$("#productIpTree").html(data.message).initUI();
+			}
+			,"json"
+	);
+	
+});
+
+function callDialogAjaxDone(json){
+	var ips=$('#ips').val();
+	if(ips==''){
+		alertMsg.error('机器未选择');
+		return false;
+	}	
+	DWZ.ajaxDone(json);
+	//alert(json.statusCode);
+	
+	if(json.statusCode==1){
+		$.pdialog.closeCurrent();
+	}
+}
+</script>
+

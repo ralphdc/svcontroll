@@ -1,0 +1,271 @@
+
+<div class="pageContent">
+	<div class="pageFormContent" layouth="16">
+		
+		<div class="header_info">
+			<div class="header_info_tit">用户组信息</div>
+			<div class="header_info_text">
+				<span class="header_info_prop">用户组编号：</span>
+				<span class="header_info_val">001</span>
+				<span class="header_info_prop ml20">用户组名称：</span>
+				<span class="header_info_val">sdfg</span>
+			</div>
+		</div>
+		
+		<div class="tabs">
+			<div class="tabsHeader">
+				<div class="tabsHeaderContent">
+					<ul>
+						<li><a href="javascript:;"><span>用户列表</span></a></li>
+						<li><a href="javascript:;"><span>组角色权限</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="tabsContent">
+				<div>
+					<div class="pageHeader">
+						<!-- <form rel="pagerForm" onsubmit="return divSearch(this,'');" action="" method="post"> -->
+							<div class="searchBar">
+								<table class="searchContent">
+									<tr>
+										<td><label class="header_label">用户编号：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td><label class="header_label">用户名称：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td>
+											<label class="header_label">所属机构：</label>
+											<select name="" id="" class="combox">
+												<option value="1">所有机构</option>
+												<option value="2">财务部</option>
+												<option value="3">运维部</option>
+												<option value="4">开发组</option>
+											</select>
+										</td>
+										<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<input type="hidden" name="pageNum" value="1" />
+							<input type="hidden" name="numPerPage" value="20" />
+							<input type="hidden" name="orderField" value="termid" />
+							<input type="hidden" name="orderDirection" value="desc" />
+						<!-- </form> -->
+					</div>
+					<table class="ui_info_plate">
+						<tr>
+							<td class="plate_item" width="430">
+								<div class="tableList" layouth="267">
+									<table class="list" width="100%">
+										<thead>
+											<tr>
+												<th><input type="checkbox" group="user_id_a" class="checkboxCtrl" /></th>
+												<th>用户编号</th>
+												<th>用户名称</th>
+												<th>用户类型</th>
+												<th>用户等级</th>
+												<th>所属机构</th>
+												<th>其他信息</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input name="user_id_a" value="" type="checkbox" /></td>
+												<td>001</td>
+												<td>001</td>
+												<td>001</td>
+												<td>001</td>
+												<td>001</td>
+												<td>001</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="panelBar">
+									<div class="pages">
+										<span>共{$totalCount}条</span>
+									</div>
+									<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+								</div>
+							</td>
+							<td class="plate_item vam" width="100">
+								<div class="tac">
+									<a href="javascript:;" class="ui_btn_add" target="selectedTodo" rel="user_id_a" posttype="string">添加</a>
+								</div>
+								<div class="tac mt20">
+									<a href="javascript:;" class="ui_btn_del" target="selectedTodo" rel="user_id_b" title="确实要移除选中的用户吗？" posttype="string">移除</a>
+								</div>
+							</td>
+							<td class="plate_item" width="200">
+								<div class="tableList" layouth="267">
+									<table class="list" width="100%">
+										<thead>
+											<tr>
+												<th><input type="checkbox" group="user_id_b" class="checkboxCtrl" /></th>
+												<th>用户编号</th>
+												<th>用户名称</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input name="user_id_b" value="" type="checkbox" /></td>
+												<td>001</td>
+												<td>fdfsdfs</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="panelBar">
+									<div class="pages">
+										<span>共{$totalCount}条</span>
+									</div>
+									<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+								</div>
+							</td>
+						</tr>
+					</table>
+					<div class="formBar">
+						<ul>
+							<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+							<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+							<li><div class="button"><div class="buttonContent"><a href="/Competence/dwztp321/Admin/User" target="navTab" rel="L101" class="btn_page_link">用户管理</a></div></div></li>
+						</ul>
+					</div>
+				</div>
+				<div>
+					<div class="pageHeader">
+						<!-- <form rel="pagerForm" onsubmit="return divSearch(this,'');" action="" method="post"> -->
+							<div class="searchBar">
+								<table class="searchContent">
+									<tr>
+										<td><label class="header_label">角色编号：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td><label class="header_label">角色名称：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td>
+											<label class="header_label">所属产品：</label>
+											<select name="" id="" class="combox">
+												<option value="1">MPAY产品</option>
+												<option value="2">TMS产品</option>
+												<option value="3">卡产品</option>
+											</select>
+										</td>
+										<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<input type="hidden" name="pageNum" value="1" />
+							<input type="hidden" name="numPerPage" value="20" />
+							<input type="hidden" name="orderField" value="termid" />
+							<input type="hidden" name="orderDirection" value="desc" />
+						<!-- </form> -->
+					</div>
+					<table class="ui_info_plate">
+						<tr>
+							<td class="plate_item" width="200">
+								<div class="tableList bd_side" layouth="267">
+									<table class="list" width="100%">
+										<thead>
+											<tr>
+												<th><input type="checkbox" group="role_id_a" class="checkboxCtrl" /></th>
+												<th>角色编号</th>
+												<th>角色名称</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input name="role_id_a" value="" type="checkbox" /></td>
+												<td>001</td>
+												<td>001</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="panelBar">
+									<div class="pages">
+										<span>共{$totalCount}条</span>
+									</div>
+									<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+								</div>
+							</td>
+							<td class="plate_item vam">
+								<div class="ui_icon_rel"></div>
+							</td>
+							<td class="plate_item" width="200">
+								<div class="tableList bd_side" layouth="267">
+									<table class="list" width="100%">
+										<thead>
+											<tr>
+												<th>权限类型</th>
+												<th>权限名称</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>001</td>
+												<td>001</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="panelBar">
+									<div class="pages">
+										<span>共{$totalCount}条</span>
+									</div>
+									<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+								</div>
+							</td>
+							<td class="plate_item vam" width="100">
+								<div class="tac">
+									<a href="javascript:;" class="ui_btn_add" target="selectedTodo" rel="user_id_a" posttype="string">添加</a>
+								</div>
+								<div class="tac mt20">
+									<a href="javascript:;" class="ui_btn_del" target="selectedTodo" rel="user_id_b" title="确实要移除选中的用户吗？" posttype="string">移除</a>
+								</div>
+							</td>
+							<td class="plate_item" width="200">
+								<div class="tableList bd_side" layouth="267">
+									<table class="list" width="100%">
+										<thead>
+											<tr>
+												<th><input type="checkbox" group="role_id_b" class="checkboxCtrl" /></th>
+												<th>角色编号</th>
+												<th>角色名称</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input name="role_id_b" value="" type="checkbox" /></td>
+												<td>001</td>
+												<td>001</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="panelBar">
+									<div class="pages">
+										<span>共{$totalCount}条</span>
+									</div>
+									<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+								</div>
+							</td>
+						</tr>
+					</table>
+					
+					<div class="formBar">
+						<ul>
+							<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+							<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+							<li><div class="button"><div class="buttonContent"><a href="/Competence/dwztp321/Admin/Role" target="navTab" rel="L103" class="btn_page_link">角色管理</a></div></div></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<script type="text/javascript">
+$(function(){
+	$('.pageContent .btn_page_link').click(function(){
+		$('.pageContent .close:first').click();
+	});
+});
+</script>

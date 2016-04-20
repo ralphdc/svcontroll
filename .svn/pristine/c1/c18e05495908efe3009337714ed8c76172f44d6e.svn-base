@@ -1,0 +1,74 @@
+
+		<div class="pageContent" style="width: 880px;">
+			<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+				<p>
+					<label>用户编号：</label>
+					<span class="info">16545612</span>
+				</p>
+				<p>
+					<label>用户名称：</label>
+					<span class="info">sdfasdgfg</span>
+				</p>
+				<p>
+					<label>上级用户：</label>
+					<span class="info">fsdfsdf</span>
+				</p>
+				<p>
+					<label>用户状态：</label>
+					<span class="info">启用</span>
+				</p>
+				<p>
+					<label>用户类型：</label>
+					<span class="info">adfsf</span>
+				</p>
+				<p>
+					<label>所属机构：</label>
+					<span class="info">asdferg</span>
+				</p>
+				
+				<p>
+					<label>所属产品：</label>
+					<span class="info">产品1，产品2</span>
+				</p>
+				<p>
+					<label>备注：</label>
+					<span class="info">asdg</span>
+				</p>
+				<p>
+					<label>新增人员：</label>
+					<span class="info">asdg</span>
+				</p>
+				<p>
+					<label>新增时间：</label>
+					<span class="info">2014-07-14 04:07:56</span>
+				</p>
+				<p>
+					<label>修改人员：</label>
+					<span class="info">dfghg</span>
+				</p>
+				<p>
+					<label>修改时间：</label>
+					<span class="info">2014-07-14 04:07:56</span>
+				</p>
+			</div>
+			<div class="formBar">
+				<ul>
+					<li><div class="button"><div class="buttonContent"><button type="button" class="close">关闭</button></div></div></li>
+				</ul>
+			</div>
+		</div>
+	
+
+	<div class="dialogFooter"><div class="dialogFooter_r"><div class="dialogFooter_c"></div></div></div>
+	<div class="resizable_h_l" tar="nw"></div>
+	<div class="resizable_h_r" tar="ne"></div>
+	<div class="resizable_h_c" tar="n"></div>
+	<div class="resizable_c_l" tar="w" style="height:300px;"></div>
+	<div class="resizable_c_r" tar="e" style="height:300px;"></div>
+	<div class="resizable_f_l" tar="sw"></div>
+	<div class="resizable_f_r" tar="se"></div>
+	<div class="resizable_f_c" tar="s"></div>
+
+
+
+

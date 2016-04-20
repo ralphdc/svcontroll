@@ -1,0 +1,159 @@
+@CHARSET "UTF-8";
+
+
+.jtopo_toolbar{
+	padding-left:20px;
+	background-color: rgb(216, 231, 242);
+	height: 28px;
+	padding-top: 7px;"
+}
+
+.jtopo_toolbar input{
+	background: #2558a4;
+	color:#FFF;
+	font-weight: bold;
+}
+
+
+.container_box{
+	margin: 10px 40px;
+	overflow:hidden;
+}
+
+.rmenue{
+	width: 90px;
+	position: absolute;
+	z-index:300;
+	border:1px #eee solid;
+	display: none;
+}
+
+#nodeEditMenu ul{
+	background: #FFF;
+	border: 1px #FFF solid;
+}
+
+#nodeEditMenu ul li{
+	height:20px;
+	line-height: 20px;
+	display: block;
+	background: #336170;
+	padding-left: 5px;
+	border-bottom: 1px #f8f8f8 solid;
+	padding-top:3px;
+	
+}
+
+
+#nodeEditMenu ul li a{
+	color:#FFF;
+}
+
+
+#childTPEditMenu ul{
+	background: #FFF;
+	border: 1px #FFF solid;
+}
+
+#childTPEditMenu ul li{
+	height:20px;
+	line-height: 20px;
+	display: block;
+	background: #336170;
+	padding-left: 5px;
+	border-bottom: 1px #f8f8f8 solid;
+	
+}
+
+
+#childTPEditMenu ul li a{
+	color:#FFF;
+}
+
+
+
+#linkmenu ul{
+	background: #FFF;
+	border: 1px #FFF solid;
+}
+
+#linkmenu ul li{
+	height:20px;
+	line-height: 20px;
+	display: block;
+	background: #336170;
+	padding-left: 5px;
+	border-bottom: 1px #f8f8f8 solid;
+}
+
+#linkmenu ul li a{
+	color:#FFF;
+}
+
+#interpet{
+	background: #FFF;
+	padding:10px;
+	color:#FF0000;
+}
+
+#stageSc{ overflow:scroll; }
+
+
+.lmenue{
+	width: 200px;
+	position: absolute;
+	z-index:400;
+	border:1px #eee solid;
+	display: none;
+	color:#FFF;
+	background:#feffd5;
+	padding:3px;
+}
+
+
+.lmenue ul{
+	background: #FFF;
+	border: 1px #FFF solid;
+}
+
+.lmenue ul li{
+	height:20px;
+	line-height: 20px;
+	display: block;
+	background: #336170;
+	padding-left: 5px;
+	border-bottom: 1px #f8f8f8 solid;
+	padding-top:3px;
+	
+}
+
+.lmenue ul li a{
+	color:#FFF;
+}
+
+.lmenue ul li.hover{
+	height:20px;
+	line-height: 20px;
+	display: block;
+	background: #feffd5;
+	padding-left: 5px;
+	border-bottom: 1px #f8f8f8 solid;
+	
+}
+
+
+.lmenue ul li.hover span p{
+	color:#173c59;
+	
+}
+
+
+.nodeLeft{
+	width:30%;
+	float:left;
+}
+
+.nodeRight{
+	width:65%;
+	float:right;
+}

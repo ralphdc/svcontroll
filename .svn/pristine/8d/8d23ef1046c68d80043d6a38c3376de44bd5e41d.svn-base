@@ -1,0 +1,30 @@
+<div class="pageContent">
+<form method="post" action="__URL__/add" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>IP地址：</label>
+				<input class="required" type="text" id="ip" name="ip" maxlength="50" size="30" value="<?php echo $row['ip'];?>"/>
+			</p>
+			<p>
+				<label>监听端口：</label>
+				<input class="required" type="text" id="port" name="port" maxlength="50" size="30" value="<?php echo $row['port'];?>"/>
+			</p>
+			<p>
+				<label>超时时间：</label>
+				<input class="required" type="text" id="otInterval" name="otInterval" maxlength="50" size="30" value="<?php echo $row['otInterval'];?>"/>
+			</p>
+			<p>
+				<label>挂载资源层：</label>
+				<input type="hidden" name="prtv.id" value="<?php echo $row['res_ids'];?>">
+				<input size="30" class="readonly required textInput" type="text" name="prtv.name" value="<?php echo $row['res_names'];?>" readonly="true">
+				<a class="btnLook" href="/index.php/Service/searchipres" mask="true" lookupGroup="prtv" width="886" height="603">查找：</a>
+			</p>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>

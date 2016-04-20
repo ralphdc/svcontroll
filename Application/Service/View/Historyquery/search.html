@@ -1,0 +1,78 @@
+	<include file="Public:pagerFormLog" />
+
+	<div id="repertory_content" layouth="0">
+		<div class="item_list_filter" style="border-bottom:solid 1px #ddd;">
+			<!-- form action="" method=""-->
+				<span class="pro">svn路径：</span>
+				<input type="text" size="40" name="svnlink" id="svnurl" class="textInput" />
+				<input type="submit" value="导入" class="ui_btn_green" id="svnbtn" />
+			<!--/form-->
+		</div>
+		<div class="item_list_filter"  style="padding-left:20px">
+			<form class="pagerForm" action="/index.php/Service/Repertory/search" method="post" onsubmit="return divSearch(this, 'repertory_content');">
+				<span class="">产品名：</span>
+				<input type="text" size="15" name="productname" id="" class="textInput" value="{$_REQUEST[productname]}"/>			
+				<span class="">服务名：</span>
+				<input type="text" size="15" name="servicename" id="" class="textInput" value="{$_REQUEST[servicename]}"/>
+				<span class="">版本：</span>
+				<input type="text" size="15" name="serviceversion" id="" class="textInput" value="{$_REQUEST[serviceversion]}"/>
+				<span class="">MD5：</span>
+				<input type="text" size="15" name="md5" id="" class="textInput" value="{$_REQUEST[md5]}"/>
+				<span class="">状态：</span>
+				<select name="deploymentFlag" id="" class="">
+					<option value="" <?php if($_REQUEST[deploymentFlag]=="") echo "selected" ?> >全部</option>
+					<option value="2" <?php if($_REQUEST[deploymentFlag]==2) echo "selected" ?> >已发布</option>
+					<option value="1" <?php if($_REQUEST[deploymentFlag]==1) echo "selected" ?> >未发布</option>				
+				</select>												
+				<input type="submit" value="查询" class="ui_btn_green" />
+			</form>
+		</div>
+		<div id="repertory_list">
+			<div class="tableList" layouth="130">
+				<table class="list tac" width="100%">
+					<thead>
+						<tr>
+							<th width="40px"><input type="checkbox" name="" id="" /></th>
+							<th>序号</th>
+							<th>服务名</th>
+							<th>版本</th>
+							<th>类型</th>
+							<th>功能描述</th>
+							<th>svn路径</th>
+							<th>发布状态</th>
+							<th>构建时间</th>
+							<th>MD5</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+					<tbody>
+						<volist id="vo" name="list">
+							<tr target="script_id" rel="{$vo['smId']}">
+								<td><input type="checkbox" name="" id="" /></td>
+								<td>{$vo['mwId']}</td>
+								<td>{$vo['servicename']}</td>
+								<td>{$vo['serviceversion']}</td>
+								<td>{$vo['servicetype']}</td>
+								<td>{$vo['servicefunction']}</td>
+								<td>{$vo['svnpath']}</td>
+								<td>
+									<?php echo $deploymentFlagArr[$vo['deploymentFlag']] ?>
+								</td>
+								<td>{$vo['buildtime']}</td>
+								<td>{$vo['md5']}</td>
+								<td>
+									<a href="/index.php/Service/Repertory/call/mwId/{$vo['mwId']}/sername/{$vo['servicename']}/desploypath/<?php echo base64_encode($vo['desploypath']) ?>" height="600" width="900" mask="true" class="btnEdit ml10" title="作业计划" rel="call_win" target="dialog">调用</a>
+								<a href="/index.php/Service/Repertory/del/id/{$vo['mwId']}" target="ajaxTodo" title="确定要删除？" class="btnDel ml10">删除</a></td>								
+							</tr>
+						</volist>					
+					</tbody>
+				</table>
+			</div>
+			<div class="panelBar">
+				<div class="pages">
+					<span>共{$totalCount}条</span>
+				</div>
+				<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+			</div>
+		</div>
+	</div></html>

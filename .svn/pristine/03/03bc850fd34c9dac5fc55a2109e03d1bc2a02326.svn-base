@@ -1,0 +1,52 @@
+<div class="pageContent" style="width:300px; overflow:hidden">
+
+	<form method="post" action="__URL__/noticeSubmit"  class="pageForm required-validate" onsubmit="return validateCallback(this, noticeChangeAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent">
+				<input type="hidden" name="gid" value="{$gid}" />
+				<input type="hidden" name="oid" value="{$oid}" />
+				<p style="width:280px; overflow:hidden">
+				<style type="text/css">
+					.myfont{ 	font-size: 12px;
+							    margin: 0;
+							    padding: 6px 5px;
+								float:left;
+								color: #616161;
+							    font-family: "Microsoft yahei",Arial,sans-serif;
+							}
+				</style>
+					<label>联系人:</label> <span class="myfont">{$nm}</span>
+				</p>
+				<p style="width:280px; overflow:hidden">
+					<label>通知方式:</label>
+					<if condition="$noticeType eq 0">
+						<input type="checkbox"  name="noticetype['msg']" value="1"/>短消息
+						<input type="checkbox" name="noticetype['des']" value="2"/>邮件
+					<elseif condition="$noticeType eq 1" /> 
+						<input type="checkbox"  name="noticetype['msg']" value="1" checked="checked"/>短消息
+						<input type="checkbox" name="noticetype['des']" value="2"/>邮件
+					<elseif condition="$noticeType eq 2" />
+						<input type="checkbox"  name="noticetype['msg']" value="1" />短消息
+						<input type="checkbox" name="noticetype['des']" value="2" checked="checked" />邮件
+					<elseif condition="$noticeType eq 3" />
+						<input type="checkbox"  name="noticetype['msg']" value="1" checked="checked" />短消息
+						<input type="checkbox" name="noticetype['des']" value="2" checked="checked" />邮件
+					</if>
+				</p>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+	function noticeChangeAjaxDone(json){
+		DWZ.ajaxDone(json);
+		if(json.statusCode==200)
+		{
+			//更新树信息；
+			updateNodeNotice(operate_tree,json.ntype)
+			alertMsg.correct("操作成功!");
+			
+		}else{
+			alertMsg.error(json.message);
+		}
+	}
+</script>

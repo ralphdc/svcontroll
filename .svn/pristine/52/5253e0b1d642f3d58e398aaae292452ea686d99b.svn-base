@@ -1,0 +1,44 @@
+<div class="pageContent">
+<form method="post" action="__URL__/edit" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>IP地址：</label>
+				<input class="required" type="text" id="ip" name="ip" maxlength="50" size="30" value="<?php echo $row['ip'];?>"/>
+				<input type="hidden" name="id" id="id" value="<?php echo $row['id'];?>" />
+			</p>
+			<p>
+				<label>监听端口：</label>
+				<input class="required" type="text" id="port" name="port" maxlength="50" size="30" value="<?php echo $row['port'];?>"/>
+			</p>
+			<p>
+				<label>超时时间：</label>
+				<input class="required" type="text" id="otInterval" name="otInterval" maxlength="50" size="30" value="<?php echo $row['otInterval'];?>"/>
+			</p>
+			<p>
+				<label>挂载资源层：</label>
+				<?php 
+					$tempArr = $row['mountList'];
+					if(is_array($tempArr)&& count($tempArr))
+					{
+						foreach($tempArr as $tkey=>$tval)
+						{
+							$tempresIdArr[$tkey] = $tval['resId'];
+							$temphostIpArr[$tkey] = $tval['hostIp'];
+						}
+						$tempresIdStr = implode(',', $tempresIdArr);
+						$temphosipStr = implode(',', $temphostIpArr);
+					}
+				?>
+				<input type="hidden" name="prtv.id" value="{$tempresIdStr}">
+				<input size="30" class="readonly required textInput" type="text" name="prtv.name" value="{$temphosipStr}"  readonly="true">
+				<a class="btnLook" href="/index.php/Service/searchipres" mask="true" lookupGroup="prtv" width="886" height="603">查找：</a>
+			</p>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>

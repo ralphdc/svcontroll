@@ -1,0 +1,320 @@
+<HEAD>
+	<link href="__PUBLIC__/dwz/themes/css/demo.css" rel="stylesheet" type="text/css" />
+	<link href="__PUBLIC__/dwz/themes/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+	<script src="__PUBLIC__/dwz/js/jquery.ztree.all-3.5.js" type="text/javascript"></script>
+	<SCRIPT type="text/javascript">
+		<!--
+		var demoIframe;
+		
+		var setting = {
+			view: {
+				showLine: false,
+				dblClickExpand: false,
+				selectedMulti: false,
+				nameIsHTML:true,
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			edit: {
+				enable: true,
+				showAddBtn: false,
+				showRemoveBtn: false,
+				showRenameBtn: false
+			},
+			callback: {
+				onRightClick: OnRightClick,
+				beforeRename: beforeRename,
+				beforeClick: function(treeId, treeNode) {
+					var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+					if (treeNode.isParent) {
+						zTree.expandNode(treeNode);
+						return false;
+					} else {
+						//demoIframe.attr("src",treeNode.file);
+						//alert(treeNode.file);
+						//windows.open(treeNode.file);
+						return true;
+					}
+				}
+			}
+		};
+		
+		var zNodes =[
+					{ id:1, pId:0, name:"配置项", open:true},
+		 			{ id:2, pId:1, name:"DB", open:true},
+		 			{ id:11, pId:2, name:"DB1-1"},
+		 			{ id:12, pId:2, name:"DB1-2"},
+		 			{ id:13, pId:2, name:"DB1-3"},
+		 			{ id:3, pId:1, name:"redis", open:true},
+		 			{ id:21, pId:3, name:"redis2-1"},
+		 			{ id:22, pId:3, name:"redis2-2"},
+		 			{ id:23, pId:3, name:"redis2-3"},
+		 			{ id:4, pId:1, name:"memcache", open:true},
+		 			{ id:31, pId:4, name:"memcache3-1"},
+		 			{ id:32, pId:4, name:"memcache3-2"},
+		 			{ id:33, pId:4, name:"memcache3-3"}
+		 		];
+  
+  	 	function beforeRename(treeId, treeNode, newName) {
+			if (newName.length == 0) {
+				alert("节点名称不能为空.");
+				var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+				setTimeout(function(){zTree.editName(treeNode)}, 10);
+				return false;
+			}
+			return true;
+		}
+
+		function OnRightClick(event, treeId, treeNode) {
+			if (!treeNode && event.target.tagName.toLowerCase() != "button" && $(event.target).parents("a").length == 0) {
+				zTree.cancelSelectedNode();
+				showRMenu("root", event.clientX, event.clientY);
+			} else if (treeNode && !treeNode.noR) {
+				zTree.selectNode(treeNode);
+				showRMenu("node", event.clientX, event.clientY);
+			}
+		}
+
+		function showRMenu(type, x, y) {
+			$("#rMenu ul").show();
+			if (type=="root") {
+				$("#m_del").hide();
+				$("#m_edit").hide();
+				$("#m_copy").hide();
+				$("#m_paste").hide();
+			} else {
+				$("#m_del").show();
+				$("#m_edit").show();
+				$("#m_copy").show();
+				$("#m_paste").show();
+			}
+			rMenu.css({"top":y-95+"px", "left":x-150+"px", "visibility":"visible"});
+
+			$("body").bind("mousedown", onBodyMouseDown);
+		}
+		function hideRMenu() {
+			if (rMenu) rMenu.css({"visibility": "hidden"});
+			$("body").unbind("mousedown", onBodyMouseDown);
+		}
+		function onBodyMouseDown(event){
+			if (!(event.target.id == "rMenu" || $(event.target).parents("#rMenu").length>0)) {
+				rMenu.css({"visibility" : "hidden"});
+			}
+		}
+		var addCount = 1;
+		var fid = 50;
+		function addTreeNode() {
+			hideRMenu();
+			var newNode = {id:fid++, name:"增加" + (addCount++)};
+			if (zTree.getSelectedNodes()[0]) {
+				newNode.checked = zTree.getSelectedNodes()[0].checked;
+				zTree.addNodes(zTree.getSelectedNodes()[0], newNode);
+			} else {
+				zTree.addNodes(null, newNode);
+			}
+			updateType();
+		}
+  	 	function editTreeNode() {
+  	 		hideRMenu();
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			var nodes = zTree.getSelectedNodes();
+			treeNode = nodes[0];
+			/* var j;
+			for(j in treeNode)
+			{
+				alert(treeNode[j]);
+			} */
+			if (nodes.length == 0) {
+				alert("请先选择一个节点");
+				return;
+			}
+			zTree.editName(treeNode);
+		};
+  	 	
+		function removeTreeNode() {
+			hideRMenu();
+			var nodes = zTree.getSelectedNodes();
+			if (nodes && nodes.length>0) {
+				if (nodes[0].children && nodes[0].children.length > 0) {
+					var msg = "要删除的节点是父节点，如果删除将连同子节点一起删掉。\n\n请确认！";
+					if (confirm(msg)==true){
+						zTree.removeNode(nodes[0]);
+					}
+				} else {
+					zTree.removeNode(nodes[0]);
+					var parentnode = nodes[0].getParentNode();
+					if(parentnode && parentnode.children.length == 0)
+					{
+						parentnode.name = parentnode.name.replace(/ \(.*\)/gi, "");
+						zTree.updateNode(parentnode);
+					}
+				}
+				updateType();
+			}
+		}
+		
+		function fontCss(treeNode) {
+			var aObj = $("#" + treeNode.tId + "_a");
+			aObj.removeClass("copy").removeClass("cut");
+			if (treeNode === curSrcNode) {
+				if (curType == "copy") {
+					aObj.addClass(curType);
+				} else {
+					aObj.addClass(curType);
+				}			
+			}
+		}
+		var curSrcNode, curType;
+		function setCurSrcNode(treeNode) {
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			if (curSrcNode) {
+				delete curSrcNode.isCur;
+				var tmpNode = curSrcNode;
+				curSrcNode = null;
+				fontCss(tmpNode);
+			}
+			curSrcNode = treeNode;
+			if (!treeNode) return;
+
+			curSrcNode.isCur = true;			
+			zTree.cancelSelectedNode();
+			fontCss(curSrcNode);
+		}
+		function copyTreeNode(e) {
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+			nodes = zTree.getSelectedNodes();
+			if (nodes.length == 0) {
+				alert("请先选择一个节点");
+				return;
+			}
+			curType = "copy";
+			setCurSrcNode(nodes[0]);
+			hideRMenu();
+		}
+		
+		function pasteTreeNode(e) {
+			if (!curSrcNode) {
+				alert("请先选择一个节点进行 复制 / 剪切");
+				return;
+			}
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+			nodes = zTree.getSelectedNodes(),
+			targetNode = nodes.length>0? nodes[0]:null;
+			if (curSrcNode === targetNode) {
+				alert("不能移动，源节点 与 目标节点相同");
+				return;
+			} else if (curType === "cut" && ((!!targetNode && curSrcNode.parentTId === targetNode.tId) || (!targetNode && !curSrcNode.parentTId))) {
+				alert("不能移动，源节点 已经存在于 目标节点中");
+				return;
+			} else if (curType === "copy") {
+				targetNode = zTree.copyNode(targetNode, curSrcNode, "inner");
+			} else if (curType === "cut") {
+				targetNode = zTree.moveNode(targetNode, curSrcNode, "inner");
+				if (!targetNode) {
+					alert("剪切失败，源节点是目标节点的父节点");
+				}
+				targetNode = curSrcNode;
+			}
+			setCurSrcNode();
+			delete targetNode.isCur;
+			zTree.selectNode(targetNode);
+			hideRMenu();
+			updateType();
+		}
+		
+		/*
+		function checkTreeNode(checked) {
+			var nodes = zTree.getSelectedNodes();
+			if (nodes && nodes.length>0) {
+				zTree.checkNode(nodes[0], checked, true);
+			}
+			hideRMenu();
+		}
+		 function resetTree() {
+			hideRMenu();
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		} */
+		
+		//遍历所有的父亲节点并计算出该父亲节点下面子节点的数量
+		function changeparentnums(nodes)
+		{
+			var nodechild = nodes;
+			if(nodechild && nodechild.length > 0)
+			{
+				for (var i=0, l=nodechild.length; i<l; i++) {
+					var num = nodechild[i].children ? nodechild[i].children.length : 0;
+					if(num > 0)
+					{
+						if(nodechild[i].isParent)
+						{
+							nodechild[i].name = nodechild[i].name.replace(/ \(.*\)/gi, "") + " (<font color='red'>" + num + "</font>)";
+							zTree.updateNode(nodechild[i]);
+							changeparentnums(nodechild[i].children);
+						}
+					}
+				}
+			}
+		}
+		function updateType() {
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			var nodes1 = zTree.getNodes();
+			changeparentnums(nodes1);
+		}
+		
+		var zTree, rMenu;
+		$(document).ready(function(){
+			//demoIframe = $("#testIframe");
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+			zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			updateType();
+			rMenu = $("#rMenu");
+			$("#m_add").bind("click", addTreeNode);
+			$("#m_edit").bind("click", editTreeNode);
+			$("#m_del").bind("click", removeTreeNode);
+			$("#m_copy").bind("click", copyTreeNode);
+			$("#m_paste").bind("click", pasteTreeNode);
+			
+			
+		});
+		//-->
+	</SCRIPT>
+	<style type="text/css">
+div#rMenu {position:absolute; visibility:hidden; top:0; background-color: #555;text-align: left;padding: 2px;}
+div#rMenu ul li{
+	margin: 1px 0;
+	padding: 0 5px;
+	cursor: pointer;
+	list-style: none outside none;
+	background-color: #DFDFDF;
+}
+.ztree li a.copy{padding-top:0; background-color:#316AC5; color:white; border:1px #316AC5 solid;}
+.ztree li a.cut{padding-top:0; background-color:silver; color:#111; border:1px #316AC5 dotted;}
+
+.ztree li span.button.switch.level0 {visibility:hidden; width:1px;}
+.ztree li ul.level0 {padding:0; background:none;}
+	</style>
+ </HEAD>
+<div class="pageContent">
+<div class="content_wrap">
+	<div class="zTreeDemoBackground left">
+		<ul id="treeDemo" class="ztree"></ul>
+	</div>
+	<div class="right">
+		<IFRAME ID="testIframe" Name="testIframe" FRAMEBORDER=0 SCROLLING=AUTO width=100%  height=600px SRC="http://www.baidu.com"></IFRAME>
+	</div>
+</div>
+
+
+<div id="rMenu">
+	<ul>
+		<li id="m_add">增加节点</li>
+		<li id="m_edit">编辑节点</li>
+		<li id="m_del">删除节点</li>
+		<li id="m_copy">复制节点</li>
+		<li id="m_paste">粘贴节点</li>
+	</ul>
+</div>
+</div>

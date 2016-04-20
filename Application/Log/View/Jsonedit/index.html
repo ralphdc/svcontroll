@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+  <!-- require.js -->
+  <script src="__PUBLIC__/dwz/js/jsonEditjs/require.js"></script>
+  <script>
+    require.config({
+      packages: [
+        {
+          name: 'JSONEditor',
+          location: '__PUBLIC__/dwz/js/jsonEditjs/',
+          main: 'JSONEditor'
+        }
+      ],
+    
+    });
+  </script>
+
+  <!-- json editor -->
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/dwz/themes/css/jsoneditor.css">
+  <style type="text/css">
+    body {
+      font: 10.5pt arial;
+      color: #4d4d4d;
+      line-height: 150%;
+      width: 500px;
+    }
+
+    code {
+      background-color: #f5f5f5;
+    }
+
+    #jsoneditor {
+      width: 1370px;
+      height: 670px;
+    }
+  </style>
+</head>
+<body>
+<div id="jsoneditor"></div>
+
+<script type="text/javascript" >
+  var container, options, json, editor;
+
+  require(['JSONEditor'], function (JSONEditor) {
+    container = document.getElementById('jsoneditor');
+
+    options = {
+      mode: 'view',
+      error: function (err) {
+        console.trace();
+        alert(err.toString());
+      },
+      editable: function (node) {
+        console.log(node);
+        switch(node.field) {
+          case '_id':
+            return false;
+
+          case '_field':
+            return {
+              field: false,
+              value: true
+            };
+
+          default:
+            return true;
+        }
+      }
+    };
+
+    json = {$info};
+
+    editor = new JSONEditor(container, options, json);
+  });
+</script>
+</body>
+</html>

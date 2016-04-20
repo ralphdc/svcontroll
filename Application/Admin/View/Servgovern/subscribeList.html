@@ -1,0 +1,105 @@
+<include file="Public:pagerForm" />
+<div class="pageContent">
+		<div class="panelBar">
+			<ul class="toolBar">
+				<li><a id="subscribe" class="add" mask="true" rel="addsubscribe"><span>订阅</span></a></li>
+				<form rel="pagerForm" id='searchBizTypeForm'  onsubmit="return dialogSearch(this);" action="__URL__/subscribeList/serverInstanceId/{$_REQUEST['serverInstanceId']}/method/showbiztype/appId/{$_REQUEST['appId']}" method="post">
+				  <select name="serverTypeId" onchange="BizTypeFormSearch();">
+					<option value="">全部</option>
+					<volist name="ServerTypelist" id="Serverlist">
+					<option value="{$Serverlist['id']}" <?php if($Serverlist['id'] == $_REQUEST['serverTypeId']){echo "selected=selected";}?> >{$Serverlist['typeName']}</option>
+					</volist>
+				  </select>
+				<input type="text" id="bizType" name="bizType" size='32' value="{$_REQUEST['bizType']}"></input>
+				<input type="submit" id="searchBizType" name="searchBizType" value="查找"/>
+				</form>
+			</ul>
+			<input type="hidden" size="28" name="appId" id="appId" class="textInput" value="{$_REQUEST['appId']}">
+		</div>
+		
+		<table class="list" width="100%" layoutH="80">
+			<thead>
+			<tr>
+				<th width="100">选择</th>
+				<th width="100">序号</th>
+				<th width="100">服务类型名</th>
+				<th width="100">业务类型</th>
+				<th width="100">定制</th>
+				
+			</tr>
+			</thead>
+			<tbody id="subscribeList">
+			<volist name="list" id="vo" >
+				<tr target="serverId" rel="">
+					<td><input type="radio" name="selectbiztype" value="{$vo['id']}"></td>
+					<td>{$i}</td>
+					<td>{$vo['serverTypeName']}</td>
+					<td>{$vo['bizType']}</td>
+					<td><input name="isCustom" value="0" type="checkbox"></td>
+				</tr>
+			</volist>
+			
+			</tbody>
+		</table>
+		<!--div class="panelBar">
+			<div class="pages">
+				<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<option value="20" <eq name="numPerPage" value="20">selected=selected</eq>>20</option>
+				<option value="5" <eq name="numPerPage" value="5">selected=selected</eq>>5</option>
+				<option value="10" <eq name="numPerPage" value="10">selected=selected</eq>>10</option>
+				<option value="17" <eq name="numPerPage" value="17">selected=selected</eq>>17</option>
+				
+			</select>
+				<span>共{$total}条</span>
+
+			</div>
+			<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$pageSize}" pageNumShown="5" currentPage="{$currentPage}"></div>
+		</div-->
+	</div>
+
+
+<script type="text/javascript">
+  
+$("#subscribe").click(function(){ 
+	var trdata = $("input[name='selectbiztype']:checked").parent().parent();
+	//console.log(testdata);
+	//alert(testdata);
+	//var trdata = $(".selected").html();
+	//alert(trdata);
+	//console.log(trdata);
+	//return;
+	var isCustom = 0;
+	if($("input[name='isCustom']",trdata).attr("checked")=='checked'){
+		isCustom = 1;
+	}else{
+		isCustom = 0;
+	}
+	var bizType = $("td",trdata).slice(3,4).html();
+	var serverInstanceId = {$_REQUEST['serverInstanceId']};
+	var appId = $("#appId").val();
+	if(bizType == null){
+		alertMsg.error('请选择数据后提交！');return;
+	}
+	 $.ajax({
+        type: 'POST',
+        url: "__URL__/insert/method/subscribe/tradeMethod/addSubscibers",
+        dataType: "json",
+        cache: false,
+		data:"bizType="+bizType+'&isCustom='+isCustom+'&serverInstanceId='+serverInstanceId+'&appId='+appId,
+        success:navTabAjaxDone,
+        error: DWZ.ajaxError
+    });
+	$(".selected","#subscribeList").remove();
+});
+
+function BizTypeFormSearch(){
+    var $form = $("#searchBizTypeForm");
+    //if (form[DWZ.pageInfo.pageNum]) form[DWZ.pageInfo.pageNum].value = 1;
+    $.pdialog.reload($form.attr('action'), {
+        data: $form.serializeArray()
+    });
+    return false;
+}
+</script>
+

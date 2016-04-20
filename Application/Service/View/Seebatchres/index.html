@@ -1,0 +1,105 @@
+<include file="Public:pagerFormLog" />
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__URL__" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+			<label>服务名：</label>
+			<input type="text" value="{$_REQUEST['servicename']}" id="servicename" name="servicename" class="textInput">
+			<input type="hidden" name="ptaskid" value="{$ptaskid}"/>
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<table class="table" width="100%" layoutH="112">
+		<thead>
+		<tr>
+			<th width="60">序号</th>
+			<th>服务名</th>
+			<th>IP地址</th>
+			<th>调度类型</th>
+			<th>部署类型</th>
+			<th>时间表达式</th>
+			<th>调用次数</th>
+			<th>成功次数</th>
+			<th>失败次数</th>
+			<th>部署路径</th>
+			<th>部署组</th>
+			<th>部署用户</th>
+			<th>操作人</th>
+			<th>调度状态</th>
+			<th>操作时间</th>
+			<th width="100">&nbsp&nbsp&nbsp&nbsp操 作&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</th>
+		</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr target="sid_user" rel="{$vo['arId']}">
+				<td>
+					<?php
+						$listnums = $numPerPage * ($currentPage-1) + $key+1;
+						echo $listnums;
+					?>
+				</td>
+				<td>{$vo['disServicename']}</td>
+				<td>{$vo['disIpv']}</td>
+				<td>
+					<?php echo $status[$vo['disStatus']];?>
+				</td>
+				<td>
+					<?php echo $distype[$vo['disType']];?>
+				</td>
+				<td>{$vo['disCron']}</td>
+				<td>{$vo['disTimes']}</td>
+				<td>{$vo['disSuccess']}</td>
+				<td>{$vo['disFail']}</td>
+				<td>{$vo['disPath']}</td>
+				<td>{$vo['disGroup']}</td>
+				<td>{$vo['disOwner']}</td>
+				<td>{$vo['disPerson']}</td>
+				<if condition="$vo['disResult'] eq 1 "><td style="color:red">{$resultArr[$vo['disResult']]}</td>    
+				<else /><td>{$resultArr[$vo['disResult']]}</td>
+				</if>
+				<td>{$vo['disDate']}</td>
+				<td>
+					<if condition="$vo['deleteflag'] == 1">
+					<a href="/index.php/Service/Schedhistroy/program?&dispatchid={$vo['dispatchId']}" target="dialog" title="作业计划修改" rel="scheduling_program_win" mask="true" width="500" height="500" class="btnEdit">重新部署启动关闭</a>    
+					</if>
+					<a href="/index.php/Service/Schedhistroy/Seeconfige/?&instanceid={$vo['instanceid']}" target="dialog" title="查看配置" rel="see_config_win" mask="true" width="500" height="500" class="btnInfo"></a>
+					<a href="/index.php/Service/Schedhistroy/Seelog/?&dispatchid={$vo['dispatchId']}" target="dialog" title="查看日志" rel="see_log_win" mask="true" width="500" height="500" class="btnView"></a>
+				</td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<?php
+					$numPerPageArr = array(20,50,100,200);
+					foreach($numPerPageArr as $val)
+					{
+						if($val == $numPerPage)
+							$selected = 'selected';
+						echo '<option value="'.$val.'" '.$selected.'>'.$val.'</option>';
+							$selected = '';
+					}
+				?>
+			</select>
+			<span>条，共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+
+
+</div>

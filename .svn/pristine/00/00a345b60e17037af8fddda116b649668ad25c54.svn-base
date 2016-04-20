@@ -1,0 +1,104 @@
+<include file="Public:pagerFormLog" />
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__URL__" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">	
+			<li>
+			<label>调用链ID：</label>
+			<input type="text" value="{$_REQUEST['cid']}" id="cid" name="cid" class="textInput"/>
+			<input type="hidden" value="{$_REQUEST['type']}" name="type" />
+			</li>
+			<li>
+				<label>时间（起）：</label>
+				<input size="19" maxDate="<?php echo date('Y-m-d'); ?>" type="text" value="{$_REQUEST['startTime']}" id="startTime" name="startTime" readonly="true" datefmt="yyyy-MM-dd HH:mm:ss" class="date textInput readonly">
+			</li>
+			<li>
+				<label>时间（终）：</label>
+				<input size="19" maxDate="<?php echo date('Y-m-d'); ?>" type="text" value="{$_REQUEST['endTime']}" id="endTime" name="endTime" readonly="true" datefmt="yyyy-MM-dd HH:mm:ss" class="date textInput readonly">
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<div class="panelBar" style="height:27px;">
+		<ul class="toolBar">
+			<!-- <li><a class="edit" href="__URL__/exportexcell/param/{$_REQUEST|json_encode|base64_encode}" title="导出Excell"><span>导出成Excell表格</span></a></li> -->
+		</ul>
+	</div>	
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+		<tr>
+			<th width="60">编号</th>
+			<th>调用链ID</th>
+			<th>日志等级</th>
+			<th width="100">信息</th>
+			<th>IP地址</th>
+			<th>服务名称</th>
+			<th>类名</th>
+			<th>方法名</th>
+			<th>日志类型</th>
+			<th>进程ID</th> 
+			<th>行号</th>
+			<th width="100" orderField="logTime" <if condition="$_REQUEST._order eq 'logTime'">class="{$_REQUEST._sort}"</if> >发生时间</th>
+			
+		</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr target="sid_user" rel="{$vo['id']}">
+				<td>
+					<?php
+						$listnums = $numPerPage * ($currentPage-1) + $key+1;
+						echo $listnums;
+					?>
+				</td>
+				<td>{$vo['cid']}</td>
+				<td>{$vo['lvl']}</td>
+				<td><a height="563" width="524" mask="true" rel="see_info_win4" title="查看信息" target="dialog" href="/index.php?s=/Log/QueryHistoryLog/showinfo/id/{$vo['id']}/type/4"><?php echo substr($vo['msg'],0,100);?></a></td>
+				<td>{$vo['ip']}</td>
+				<td>{$vo['srv']}</td>
+				<td>{$vo['cls']}</td>
+				<td>{$vo['fn']}</td>
+				<td>{$vo['lt']}</td>
+				<td>{$vo['pid']}</td>
+				<td>{$vo['ln']}</td>
+				<td>{$vo['logTime']}</td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<?php
+					$numPerPageArr = array(20,50,100,200);
+					foreach($numPerPageArr as $val)
+					{
+						if($val == $numPerPage)
+							$selected = 'selected';
+						echo '<option value="'.$val.'" '.$selected.'>'.$val.'</option>';
+							$selected = '';
+					}
+				?>
+			</select>
+			<span>条，共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	$(function(){
+		$("#cid").width(600);
+	})
+</script>

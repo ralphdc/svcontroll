@@ -1,0 +1,1604 @@
+[ 2016-04-11T18:37:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371020455
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371020455
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371020455
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371020455
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时37分45秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970776,"cpuUsages":[2,3],"totalStorage":97744220,"usedStorage":18032706,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601952}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371020455
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: tpid E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 585 行.
+NOTIC: [8] Undefined variable: get E:\www\Sermanage\Application\Service\Model\GraphSearchModel.class.php 第 114 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined variable: get E:\www\Sermanage\Application\Service\Model\GraphSearchModel.class.php 第 115 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时37分45秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970776,"cpuUsages":[2,3],"totalStorage":97744220,"usedStorage":18032706,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601952}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时37分46秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970776,"cpuUsages":[2,3],"totalStorage":97744220,"usedStorage":18032706,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601952}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:08+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:08+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:08+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:08+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时37分53秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970900,"cpuUsages":[2,3],"totalStorage":97744220,"usedStorage":18032710,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601956}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:08+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:11+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:11+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:11+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:11+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时37分56秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970900,"cpuUsages":[2,3],"totalStorage":97744220,"usedStorage":18032702,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601948}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:11+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T18:37:12+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:12+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:12+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:12+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时37分57秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970900,"cpuUsages":[2,3],"totalStorage":97744220,"usedStorage":18032702,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601948}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:12+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:16+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17461,17760","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-11 18:37:16","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-11T18:37:16+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-11T18:37:16+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17461,"ip":"172.17.6.180","hostName":"test9-OOP","vm":1,"environment":"1","deviceId":"17791","deviceName":"反向代理","iconUrl":"56ebd21bc0d92.png","warns":"0"},{"id":17760,"ip":"172.17.3.86","hostName":"optserver.mpay.com2","vm":1,"environment":"5","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"2"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:16+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 684 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:19+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:19+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:19+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:19+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分03秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970916,"cpuUsages":[2,3],"totalStorage":97744220,"usedStorage":18032706,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601952}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:19+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:22+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:22+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:22+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:22+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分07秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970900,"cpuUsages":[2,2],"totalStorage":97744220,"usedStorage":18032706,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601952}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:22+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:23+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:23+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:23+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:23+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分07秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970900,"cpuUsages":[2,2],"totalStorage":97744220,"usedStorage":18032706,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601952}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:23+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:30+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:30+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:30+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分14秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970892,"cpuUsages":[2,2],"totalStorage":97744220,"usedStorage":18032710,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601956}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:30+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:31+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17461,17760","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-11 18:37:31","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-11T18:37:31+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-11T18:37:31+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17461,"ip":"172.17.6.180","hostName":"test9-OOP","vm":1,"environment":"1","deviceId":"17791","deviceName":"反向代理","iconUrl":"56ebd21bc0d92.png","warns":"0"},{"id":17760,"ip":"172.17.3.86","hostName":"optserver.mpay.com2","vm":1,"environment":"5","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"2"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:31+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 684 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分17秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970892,"cpuUsages":[2,2],"totalStorage":97744220,"usedStorage":18032710,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601956}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分18秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970892,"cpuUsages":[2,2],"totalStorage":97744220,"usedStorage":18032710,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601956}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:42+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:42+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:42+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:42+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分27秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970900,"cpuUsages":[100,3],"totalStorage":97744220,"usedStorage":18032714,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601960}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:42+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分28秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970900,"cpuUsages":[100,3],"totalStorage":97744220,"usedStorage":18032714,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601960}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分29秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970900,"cpuUsages":[100,3],"totalStorage":97744220,"usedStorage":18032714,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601960}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:44+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T18:37:46+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17461,17760","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-11 18:37:46","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-11T18:37:46+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-11T18:37:46+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17461,"ip":"172.17.6.180","hostName":"test9-OOP","vm":1,"environment":"1","deviceId":"17791","deviceName":"反向代理","iconUrl":"56ebd21bc0d92.png","warns":"0"},{"id":17760,"ip":"172.17.3.86","hostName":"optserver.mpay.com2","vm":1,"environment":"5","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"2"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:46+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 684 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分39秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970784,"cpuUsages":[100,3],"totalStorage":97744220,"usedStorage":18032722,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601968}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:37:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分39秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970784,"cpuUsages":[100,3],"totalStorage":97744220,"usedStorage":18032722,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601968}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T18:37:55+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:37:56+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:37:56+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:37:56+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分40秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970784,"cpuUsages":[100,2],"totalStorage":97744220,"usedStorage":18032722,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601968}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:37:56+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:38:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17461,17760","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-11 18:38:01","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-11T18:38:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-11T18:38:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17461,"ip":"172.17.6.180","hostName":"test9-OOP","vm":1,"environment":"1","deviceId":"17791","deviceName":"反向代理","iconUrl":"56ebd21bc0d92.png","warns":"0"},{"id":17760,"ip":"172.17.3.86","hostName":"optserver.mpay.com2","vm":1,"environment":"5","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"2"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:01+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 684 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T18:38:05+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:38:05+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:38:05+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:38:05+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分50秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970892,"cpuUsages":[100,3],"totalStorage":97744220,"usedStorage":18032738,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601984}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:05+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:38:06+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:38:06+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:38:06+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:38:06+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分50秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970892,"cpuUsages":[100,3],"totalStorage":97744220,"usedStorage":18032738,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601984}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:06+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:38:06+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:38:06+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:38:06+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:38:06+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时38分51秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1970892,"cpuUsages":[100,3],"totalStorage":97744220,"usedStorage":18032738,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601984}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:06+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:38:17+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:38:17+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:38:17+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:38:17+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时39分02秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1971024,"cpuUsages":[100,3],"totalStorage":97744220,"usedStorage":18032742,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601988}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:17+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T18:38:18+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17461,17760","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-11 18:38:18","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-11T18:38:18+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-11T18:38:18+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17461,"ip":"172.17.6.180","hostName":"test9-OOP","vm":1,"environment":"1","deviceId":"17791","deviceName":"反向代理","iconUrl":"56ebd21bc0d92.png","warns":"0"},{"id":17760,"ip":"172.17.3.86","hostName":"optserver.mpay.com2","vm":1,"environment":"5","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"2"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:18+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 684 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:38:18+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:38:18+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:38:18+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:38:18+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时39分02秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1971024,"cpuUsages":[100,3],"totalStorage":97744220,"usedStorage":18032742,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601988}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:18+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:38:18+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:38:18+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:38:18+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:38:18+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时39分03秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1971024,"cpuUsages":[100,3],"totalStorage":97744220,"usedStorage":18032742,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601988}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:18+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时39分13秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1971016,"cpuUsages":[100,3],"totalStorage":97744220,"usedStorage":18032730,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601976}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时39分14秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1971016,"cpuUsages":[100,3],"totalStorage":97744220,"usedStorage":18032730,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601976}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时39分14秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1971016,"cpuUsages":[100,3],"totalStorage":97744220,"usedStorage":18032730,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601976}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T18:38:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17461,17760","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-11 18:38:33","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-11T18:38:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-11T18:38:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17461,"ip":"172.17.6.180","hostName":"test9-OOP","vm":1,"environment":"1","deviceId":"17791","deviceName":"反向代理","iconUrl":"56ebd21bc0d92.png","warns":"0"},{"id":17760,"ip":"172.17.3.86","hostName":"optserver.mpay.com2","vm":1,"environment":"5","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"2"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 684 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371123095
+ERR: ////////////////////////////// request_by_other post is {"id":"17760","_":"1460371123095","key":"topo.server.get","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-11 18:38:43","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371123095
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371123095
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"id":17760,"ip":"172.17.3.86","hostName":"optserver.mpay.com2","room":"4","cabinet":"机柜11","product":"omp","os":"win12","vm":1,"environment":"5","serverModel":"2","phyServerHostname":null,"deviceType":"防火墙","deviceid":"17790"},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371123095
+ERR: ////////////////////////////// request_by_other post is {"ip":"172.17.3.86","key":"topo.node.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-11 18:38:43","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371123095
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371123095
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"warns":"0","time":"14天4小时47分","status":"0","path":"/chunmiao/omp-zookeeper","service":"omp-zookeeper","pid":"32655","version":"0.0.1"},{"warns":"0","time":"25天3小时22分","status":"0","path":"/usr/local/approot/groupweight","service":"omp_groupweight","pid":"16937","version":"1.0.0"},{"warns":"2","time":"133天3小时20分","status":"0","path":"/home/mpay_shjk","service":"mpay_shjk","pid":"26349","version":"1.0.2"},{"warns":"0","time":"14天2小时59分","status":"1","path":"/lichaoqun/tms_dll","service":"tms-dll-server","pid":"24580","version":"1.0.0"},{"warns":"0","time":"39天7小时45分","status":"1","path":"/chunmiao/pmsignlist","service":"pmsignlist","pid":"13044","version":"1.0.0"}],"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371123095
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371123095
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371123095
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371123095
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时39分27秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1971024,"cpuUsages":[2,2],"totalStorage":97744220,"usedStorage":18032746,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601992}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/detail?id=17760&_=1460371123095
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: tpid E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 585 行.
+NOTIC: [8] Undefined variable: get E:\www\Sermanage\Application\Service\Model\GraphSearchModel.class.php 第 114 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined variable: get E:\www\Sermanage\Application\Service\Model\GraphSearchModel.class.php 第 115 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时39分28秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1971024,"cpuUsages":[2,2],"totalStorage":97744220,"usedStorage":18032746,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601992}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:43+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:38:48+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17461,17760","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-11 18:38:48","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-11T18:38:48+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-11T18:38:48+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17461,"ip":"172.17.6.180","hostName":"test9-OOP","vm":1,"environment":"1","deviceId":"17791","deviceName":"反向代理","iconUrl":"56ebd21bc0d92.png","warns":"0"},{"id":17760,"ip":"172.17.3.86","hostName":"optserver.mpay.com2","vm":1,"environment":"5","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"2"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:48+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 684 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T18:38:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:38:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:38:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:38:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时39分39秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1971272,"cpuUsages":[2,3],"totalStorage":97744220,"usedStorage":18032746,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601992}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:38:54+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:39:04+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17461,17760","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-11 18:39:04","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-11T18:39:04+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-11T18:39:04+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17461,"ip":"172.17.6.180","hostName":"test9-OOP","vm":1,"environment":"1","deviceId":"17791","deviceName":"反向代理","iconUrl":"56ebd21bc0d92.png","warns":"0"},{"id":17760,"ip":"172.17.3.86","hostName":"optserver.mpay.com2","vm":1,"environment":"5","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"2"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:39:04+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 684 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T18:39:05+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:39:05+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:39:05+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:39:05+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时39分50秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1971016,"cpuUsages":[2,3],"totalStorage":97744220,"usedStorage":18032746,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17601992}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:39:05+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:39:16+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:39:16+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:39:16+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:39:16+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时40分00秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1971140,"cpuUsages":[2,3],"totalStorage":97744220,"usedStorage":18032758,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17602004}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:39:16+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T18:39:20+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17461,17760","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-11 18:39:20","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-11T18:39:20+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-11T18:39:20+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17461,"ip":"172.17.6.180","hostName":"test9-OOP","vm":1,"environment":"1","deviceId":"17791","deviceName":"反向代理","iconUrl":"56ebd21bc0d92.png","warns":"0"},{"id":17760,"ip":"172.17.3.86","hostName":"optserver.mpay.com2","vm":1,"environment":"5","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"2"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:39:20+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 684 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-11T18:39:26+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:39:26+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:39:26+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:39:26+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时40分11秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1971140,"cpuUsages":[2,3],"totalStorage":97744220,"usedStorage":18032762,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17602008}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:39:26+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:39:35+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17461,17760","topoIds":"","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-11 18:39:35","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-11T18:39:35+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-11T18:39:35+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"serverInfo":[{"id":17461,"ip":"172.17.6.180","hostName":"test9-OOP","vm":1,"environment":"1","deviceId":"17791","deviceName":"反向代理","iconUrl":"56ebd21bc0d92.png","warns":"0"},{"id":17760,"ip":"172.17.3.86","hostName":"optserver.mpay.com2","vm":1,"environment":"5","deviceId":"17790","deviceName":"防火墙","iconUrl":"56ebaca3d1efb.png","warns":"2"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:39:35+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined variable: postTpStr E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 684 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-11T18:39:37+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-11T18:39:37+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-11T18:39:37+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-11T18:39:37+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"6天4时40分22秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1971016,"cpuUsages":[2,3],"totalStorage":97744220,"usedStorage":18032766,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374484},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17602012}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-11T18:39:37+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

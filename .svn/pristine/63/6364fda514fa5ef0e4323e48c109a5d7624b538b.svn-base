@@ -1,0 +1,24 @@
+<?php
+//ICE权重设置
+class IceWeightController extends CommonController {
+	public $navTabId = "D703";
+	public function index() {
+		$model = CM("IceWeight");
+		$result = $model->sendJavaData('icegroupTree','');
+		if($result['errorCode'] == 0){
+			$weightTree = $result['data'];
+		}
+		$this->assign("menu",$weightTree);
+		$this->display();
+	}
+	
+	public function showGroup(){
+		$model = CM("IceWeight");
+		$result = $model->sendJavaData('icegroupGet',$_REQUEST);
+		if($result['errorCode'] == 0){
+			$conproGet = $result['data'];
+		}
+		$this->assign("lists",$conproGet);
+		$this->display();
+	}
+}

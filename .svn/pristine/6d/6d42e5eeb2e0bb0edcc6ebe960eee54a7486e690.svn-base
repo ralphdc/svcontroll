@@ -1,0 +1,48 @@
+<div class="pageContent">
+<form method="post" action="__URL__/delete" class="pageForm required-validate" onsubmit="return validateCallback(this, deleteDialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			
+			<p style="width:400px;">
+				<label style="width:180px;">是否删除服务端groupID：</label>
+				<input type="radio" name="providerdelete" value="1" checked />是
+				<input type="radio" name="providerdelete" value="0" />否
+			</p>
+			<p style="width:400px;">
+				<label style="width:180px;">是否删除权重：</label>
+				<input type="radio" name="weightdelete" value="1" checked />是
+				<input type="radio" name="weightdelete" value="0" />否
+			</p>
+			<if condition="($_REQUEST['flag'] eq 3)">
+			<p style="width:400px;">
+				<label style="width:180px;">是否删除客户端groupID：</label>
+				<input type="radio" name="consumerdelete" value="1" checked />是
+				<input type="radio" name="consumerdelete" value="0" />否
+			</p>
+			</if>
+			<input type="hidden" size="28" name="servicename" class="textInput"  value="{$_REQUEST['servicename']}">
+			<input type="hidden" size="28" name="path" class="textInput"  value="<?php echo str_replace("*", "/", $_REQUEST['path']); ?>">
+			<input type="hidden" size="28" name="ip" class="textInput"  value="{$_REQUEST['IP']}">
+			<input type="hidden" size="28" name="port" class="textInput"  value="{$_REQUEST['port']}">
+			<input type="hidden" size="28" name="treessname" class="textInput"  value="{$_REQUEST['treessname']}">
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">删除</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>
+
+<script type="text/javascript">
+function deleteDialogAjaxDone(json){
+    DWZ.ajaxDone(json);
+    if (json.statusCode == DWZ.statusCode.ok) {
+        if (json.navTabId) {
+            $("#Service_list").loadUrl(json.forwardUrl);
+        }
+        $.pdialog.closeCurrent();
+    }
+}
+</script>
+  

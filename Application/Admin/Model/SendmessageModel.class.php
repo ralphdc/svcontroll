@@ -1,0 +1,497 @@
+<?php
+use Think\Model;
+/** 
+ * @author xiangjun
+ * 
+ * 
+ */
+class SendmessageModel  {
+	/**
+	 * 设置查询的字段和显示字段
+	 * @var array
+	 */
+	var $pareTable = array();
+	
+	/**
+	 * 模糊搜索组合字段
+	 * @var unknown_type
+	 */
+	
+	var $inStr = '';
+	/**
+	 * 
+	 * 数据库查找字段
+	 * @var string
+	 */
+	var $fields = '';
+	
+	/**
+	 * LEFT JOIN 外表附件条件
+	 * @var string
+	 */
+	var $externSql = '';
+	var $server = '/omp/servicectrol';
+	var $hostSerqulityServer = '/omp/monitor';
+	
+	/**
+	 * 2015-11-17 ICE分组调用李超群提供的接口；
+	 * 初始化环境信息；
+	 */
+	function __construct(){
+	    $this->env = isset($_SESSION['WEB_ENVIRONMENT']) ? $_SESSION['WEB_ENVIRONMENT'] : '';
+	}
+	/**
+	 * 根据POST过来的数据提取查询条件查询记录条数
+	 * @param array $post
+	 * @return int
+	 */
+	function countByPost ($post, $get) {
+		if(empty($this->count)){
+		   $this->count = 0;
+		}
+		return $this->count;	
+	}
+	
+	/**
+	 * 根据POST过来的数据提取查询条件查询记录
+	 * @param array $post
+	 * @return array
+	 */
+	function findByPost ($post, $get) {
+		if(!Empty($post)){
+			foreach ($post as $key=>$valus){
+				$post[$key]=trim($valus," ");
+			}
+		}
+	  	$Num = $post['pageNum']!='' ? $post['pageNum'] : 1;
+		if ($post['numPerPage']!='') {
+			setcookie('numPerPage',$post['numPerPage']);
+			$numPer = $post['numPerPage'];
+		}
+		else {
+			$numPer = $_COOKIE['numPerPage']!=0 ?$_COOKIE['numPerPage'] : 20;
+		}
+		$limit1 = (intval($Num)-1)*intval($numPer);
+		$limit = array(intval($numPer),$limit1);
+		$post['method']=$this->method['index'];
+		$post['pageno']=intval($Num);
+		$post['pagesize']=intval($numPer);
+		$post = $this->formatPost($post,$get);
+		$array = $this->request_by_other($post,$get);
+		$array = json_decode($array,true);
+		$this->count = $array['count'];		
+		return $array['data'];
+	}
+	function getAll ($post=null, $get=null) {
+	  	
+		$post['method']=$this->method['getAll'];
+		$post = $this->formatPost($post,$get);	
+		$array = $this->request_by_other( $post);
+		$array = json_decode($array,true);		
+		$this->count = $array['count'];			
+		return $array[data];
+	}
+	
+	/**
+	 * 需将当前用户id   和entrycode传进去
+	 * 产品id
+	 * Enter description here ...
+	 * @param unknown_type $code
+	 */
+	function valideatePermEntry($code,$productid){
+		$post['method']=$this->public_method['permentry'];
+		//产品ID从配置文件中读取		
+		$productid = FLEA::getAppInf('app_products');
+		$post['productid']=$productid[0]['productid'];
+		$post['entrycode']=$code;
+		$post['session']=$_SESSION['MPOSSESS']['session'];
+		$post = $this->formatPost($post);
+		$array = $this->request_by_other($post);
+		return json_decode($array,true);
+	}
+	//去除空格的方法
+	function trimSpace($data)
+	{
+		foreach($data as $k=>$v)
+		{
+			if(is_array($v))
+				$this->trimSpace($v);
+			else 
+				$data[$k] =trim($v);	
+		}
+	}
+	
+	function postSave($post,$get=null){		
+		$result = '';
+		if($post['form_act']=='create'){		
+			$post['method'] = $this->method['add'];			
+			$post = $this->formatPost($post,$get);	
+	
+			$result =$this->request_by_other( $post);
+			
+		}elseif($post['form_act']=='update'){
+			$post['method'] = $this->method['update'];
+			$post = $this->formatPost($post,$get);
+			$result = $this->request_by_other($post);
+		}	
+		
+		$result =  json_decode($result,true);
+		if($result['rtn'] == 'OK')
+		{
+			return true;
+		}else 
+		{
+			return false;
+		}	
+	}
+	
+	function findByField($post){
+		$post['method']=$this->method['get'];
+		$post[$this->primaryKey]=$post[$this->primaryKey];	
+		$post = $this->formatPost($post);	
+		$result = $this->request_by_other( $post);
+		$result =  json_decode($result,true);	
+		return $result[object];
+	}
+	
+	function postRemove($pk){
+		$data=array(
+		     'method'=>$this->method['delete'],
+		     $this->primaryKey=>$pk,
+		);			
+		
+		$data = $this->formatPost($data);	
+		$result = $this->request_by_other( $data);
+		return json_decode($result,true);
+	}
+ 	/**
+     * 批量删除选中的记录
+     * @param array $get
+     */
+    function postRemoveAll($ids) {
+    	if (is_array($this->primaryKey))
+    		return false;
+    	$pkvs = split(',', trim($ids,','));
+    	$i =0;
+		foreach ($pkvs as $value) {
+			$result = $this->postRemove($value);
+			if($result['rtn']== 'OK'){
+				++$i;
+			}
+		}
+    	return $i;
+    }
+	
+	function findCount($post){
+		//验证唯一性
+		$post['method']=$this->method['get'];
+		$post = $this->formatPost($post);
+		$result = $this->request_by_other( $post);
+		$array = json_decode($result,true);
+		if(isset($array['object'])&& !empty($array['object']) ){
+			return 1;
+		}else{
+			return 0;
+		}
+	}
+	
+	function replaceParam($key){
+		$post['paramno']=$key;
+		$post['method']=$this->public_method['replaceparam'];
+		$post= $this->formatPost($post);
+		$result = json_decode($this->request_by_other($post),true);
+		return $result;
+	}
+	
+	protected function _formatPost($post,$get=null){
+		//添加系统参数
+		date_default_timezone_set('Asia/Shanghai');
+		$post['ver']='v1.0';
+		$post['encoding']='utf-8';
+		$post['timestamp']=date('Y-m-d H:i:s');
+		$post['format']='json';
+		//appid
+		$post['appid']='0001';
+		$post['signtype']='md5';
+		$post['cuserid']=intval($_SESSION['login_count']);
+		$post['data']['systemflag'] = $_SESSION['SYSTEM_FLAG'];
+		if(isset($get)){
+			foreach ($get as $key =>$val){
+						$post[$key]=$val;
+				}	
+		}
+		return $post;
+	}
+	
+	protected function ___formatPost($post,$get=null){
+	    //print_r($post); exit;
+	    //添加系统参数
+	    date_default_timezone_set('Asia/Shanghai');
+	    //必选项；
+	    $pt['data']['desployEnv']  =   $_SESSION['WEB_ENVIRONMENT'];
+	    $pt['key']                 =   $post['key'];
+	    
+	    if(isset($post['groupName']))          $pt['data']['groupName']        = $post['groupName'];
+	    if(isset($post['groupId']))            $pt['data']['groupId']          = $post['groupId'];
+	    if(isset($post['operaterPerson']))     $pt['data']['operaterPerson']   = $post['operaterPerson'];
+	    if(isset($post['submitor']))           $pt['data']['submitor']         = $post['submitor'];
+	    if(isset($post['groupDescription']))   $pt['data']['groupDescription'] = $post['groupDescription'];
+	    if(isset($post['pageSize']))           $pt['page']['pageSize']         = $post['pageSize'];
+	    if(isset($post['pageNo']))             $pt['page']['pageNo']           = $post['pageNo'];
+	    
+	    
+	    //$post['page']['pageSize'] = intval($post['data']['numPerPage']) ? intval($post['data']['numPerPage']) : C('PAGE_LISTROWS');
+	    //$post['page']['pageNo'] = intval($post['data']['pageNum']) ? intval($post['data']['pageNum']) : 1;
+	    
+	    return $pt;
+	}
+	
+	protected function __ICEformat($act,$post,$get=null)
+	{
+	    switch ($act){
+	        case 'create':
+	            $res['data']['desployEnv'] = $_SESSION['WEB_ENVIRONMENT'];
+	            $res['data']['operaterPerson'] = 'admin';
+	            $res['data']['groupName'] = $post['groupName'];
+	            $res['data']['groupDescription'] = $post['groupDes'];
+	            $res['key'] = $post['key'];
+	        break;
+	        default:
+	        break;
+	    }
+	    
+	    return $res;
+	}
+
+	/**
+	 * Curl版本
+	 * 使用方法：
+	 * $post_string = "app=request&version=beta";
+	 * request_by_other('http://facebook.cn/restServer.php',$post_string);
+	 */
+	function request_by_other($post,$urltype=0)
+	{
+		//return true;
+		if($urltype == 0){
+			$post = $this->_formatPost($post);
+			//return ;
+			$url = C('TodatabaseUrl').$this->server;
+		}else if($urltype == 1){
+			$url = C('TotradeUrl').$post["method"];
+		}else if($urltype == 2){
+		    $channelUrl = strval(session('CurrentChannelSysUrl'));
+			//$url = C('TochannelUrl').$post["method"];
+			$url = $channelUrl.$post["method"];
+		}else if($urltype == 3){
+			$post = $this->_formatPost($post);
+			$url = C('TowatermoniUrl').$this->server;
+		}else{
+			$url = "url address is error!";
+		}
+		Think\Log::write("////////////////////////////// request_by_other url is ".$url);
+		unset($post["method"]);
+		unset($post["tradeMethod"]);
+		
+		$sign = md5(json_encode($post));      //签名
+		$str = urlencode(json_encode($post)); //转码
+		$content ='';
+		if($urltype == 0){
+			$content = 'json='.$str.'&sign='.$sign;//$str
+			Think\Log::write("////////////////////////////// request_by_other000 post content is ".$content);
+		}else if($urltype == 1){
+			$senddata = json_encode($post);
+			$content = $senddata;//
+			Think\Log::write("////////////////////////////// request_by_other111 post content is ".$content);
+		}else if($urltype == 2){
+			foreach($post as $k=>$v){
+				$content .= "$k=$v"."&";
+			}
+			Think\Log::write("////////////////////////////// request_by_other222 post content is ".$content);
+		}else if($urltype == 3){
+			$content = 'json='.json_encode($post);
+			Think\Log::write("////////////////////////////// request_by_other333 post content is ".$content);
+		}else{
+			Think\Log::write("////////////////////////////// request_by_other444 post content is errorerrorerror ");
+		}
+		
+		$ch = curl_init(); //初始化curl
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Expect: "));
+		
+		if($urltype == 0||$urltype == 3){             
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-type: application/x-www-form-urlencoded"));
+		}else{
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-type: application/json"));
+		}
+		
+		if($urltype == 3){
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array("User-Agent:Jimmy\'s POST Example beta"));
+			curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-length:" . strlen($content) + 8));
+		}
+		
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 60); //超时时间
+		//curl_setopt($ch, CURLOPT_HTTPHEADER, 0);
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $content);
+		$response = curl_exec($ch);
+		Think\Log::write("////////////////////////////// request_by_other response is ".$response);
+		if(curl_errno($ch)){
+			Think\Log::write("rtnFALSErtnFALSErtnFALSErtnFALSE");
+			return '{"rtn":"FALSE","rtnMsg":"SYS ERROR"}';
+		}
+		curl_close($ch);
+		
+		$response = json_decode($response,true);
+		return $response;
+
+	}
+	
+	
+	function request_by_other2( $post_string)
+	{
+		$str = json_encode($post_string);
+		Think\Log::write("////////////////////////////// request_by_othersss post is ".$str);
+// 		dump($str);
+		$context = array(
+        	'http' => array(
+            'method' => 'POST',
+        	'timeout'=>600,
+            'header' => 
+        				'Content-type: application/x-www-form-urlencoded' .
+                        '\r\n'.'User-Agent : Jimmy\'s POST Example beta' .
+                        '\r\n'.'Content-length:' . strlen($str) + 8,
+            'content' => 'json='.$str.'&sign='.md5($str),
+			)
+        );
+		
+	    $stream_context = stream_context_create($context);
+	    $data = file_get_contents(C('TowatermoniUrl').$this->server, false, $stream_context);
+	    Think\Log::write("file_get_contents data is".$data);
+	    $data = json_decode($data,true);
+	    return $data;
+	}
+	
+	
+	/**
+	 * Curl版本
+	 * 使用方法：
+	 * $post_string = "app=request&version=beta";
+	 * request_by_other('http://facebook.cn/restServer.php',$post_string);
+	 */
+	function sendmessage($post)
+	{
+		$post = $this->_formatPost($post);
+		$url = C('ToiceweightUrl').$this->server;
+	
+		unset($post["method"]);
+		unset($post["tradeMethod"]);
+	
+		$sign = md5(json_encode($post));      //签名
+		$str = urlencode(json_encode($post)); //转码
+		$content = 'json='.json_encode($post);
+		Think\Log::write("////////////////////////////// request_by_other URL is ".$url);
+		Think\Log::write("////////////////////////////// request_by_other content is ".$content);
+		$ch = curl_init(); //初始化curl
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Expect: "));
+
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-type: application/x-www-form-urlencoded"));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("User-Agent:Jimmy\'s POST Example beta"));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-length:" . strlen($content) + 8));
+
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 60); //超时时间
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $content);
+		$response = curl_exec($ch);
+		Think\Log::write("////////////////////////////// request_by_other response is ".$response);
+		if(curl_errno($ch)){
+			Think\Log::write("rtnFALSErtnFALSErtnFALSErtnFALSE");
+			return '{"rtn":"FALSE","rtnMsg":"SYS ERROR"}';
+		}
+		curl_close($ch);
+		$response = json_decode($response,true);
+		
+		return $response;
+	
+	}
+	
+	function ice_sendmessage($post)
+	{
+	    $post = $this->___formatPost($post);
+	    $url = C('ToiceweightUrl').$this->server;
+	
+	    unset($post["method"]);
+	    unset($post["tradeMethod"]);
+	
+	    $sign = md5(json_encode($post));      //签名
+	    $str = urlencode(json_encode($post)); //转码
+	    $content = 'json='.json_encode($post);
+	    Think\Log::write("////////////////////////////// request_by_other URL is ".$url);
+	    Think\Log::write("////////////////////////////// request_by_other content is ".$content);
+	    $ch = curl_init(); //初始化curl
+	    curl_setopt($ch, CURLOPT_URL, $url);
+	    curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
+	    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Expect: "));
+	
+	    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-type: application/x-www-form-urlencoded"));
+	    curl_setopt($ch, CURLOPT_HTTPHEADER, array("User-Agent:Jimmy\'s POST Example beta"));
+	    curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-length:" . strlen($content) + 8));
+	
+	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	    curl_setopt($ch, CURLOPT_TIMEOUT, 60); //超时时间
+	    curl_setopt($ch, CURLOPT_POST, 1);
+	    curl_setopt($ch, CURLOPT_POSTFIELDS, $content);
+	    $response = curl_exec($ch);
+	    Think\Log::write("////////////////////////////// request_by_other response is ".$response);
+	    if(curl_errno($ch)){
+	        Think\Log::write("rtnFALSErtnFALSErtnFALSErtnFALSE");
+	        return '{"rtn":"FALSE","rtnMsg":"SYS ERROR"}';
+	    }
+	    curl_close($ch);
+	    $response = json_decode($response,true);
+	
+	    return $response;
+	
+	}
+	
+	//
+	function request_by_HostSerqualit($post,$urlpath){
+		$url = C('TohostSerqulityUrl').$this->hostSerqulityServer.$urlpath;
+		
+		
+		$sign = md5(json_encode($post));      //签名
+		$str = urlencode(json_encode($post)); //转码
+		$content = 'json='.json_encode($post);
+		Think\Log::write("////////////////////////////// request_by_other URL is ".$url);
+		Think\Log::write("////////////////////////////// request_by_other content is ".$content);
+		$ch = curl_init(); //初始化curl
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Expect: "));
+		
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-type: application/x-www-form-urlencoded"));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("User-Agent:Jimmy\'s POST Example beta"));
+		curl_setopt($ch, CURLOPT_HTTPHEADER, array("Content-length:" . strlen($content) + 8));
+		
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+		curl_setopt($ch, CURLOPT_TIMEOUT, 60); //超时时间
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $content);
+		$response = curl_exec($ch);
+		Think\Log::write("////////////////////////////// request_by_other response is ".$response);
+		if(curl_errno($ch)){
+			Think\Log::write("rtnFALSErtnFALSErtnFALSErtnFALSE");
+			return '{"rtn":"FALSE","rtnMsg":"SYS ERROR"}';
+		}
+		curl_close($ch);
+		$response = json_decode($response,true);
+		
+		return $response;
+	}
+}
+
+?>

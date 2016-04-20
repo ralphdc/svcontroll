@@ -1,0 +1,63 @@
+<include file="Public:pagerFormLog" />
+<div class="pageHeader">
+	<form rel="pagerForm" method="post" action="__URL__" onsubmit="return dwzSearch(this, 'dialog');">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+				<label>机房名称:</label>
+				<input class="textInput" name="arName" value="{$_REQUEST['arName']}" type="text">
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<table class="table" layoutH="112" targetType="dialog" width="100%">
+		<thead>
+			<tr>
+				<th>机房名称</th>
+				<th>机房描述</th>
+				<th width="80">查找带回</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php
+				if(is_array($list) && count($list))
+				{
+					foreach($list as $key=>$val)
+					{
+						$valueStr = "{id:".$val['arId'].",name:'".$val['arName']."'}";
+						echo '<tr><td>'.$val['arName'].'</td><td>'.$val['arDec'].'</td><td>
+						<a class="btnSelect" href="javascript:$.bringBack('.$valueStr.')" title="查找带回">选择</a>
+					</td></tr>';
+					}
+				}
+			?>
+		</tbody>
+	</table>
+
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="dialogPageBreak({numPerPage:this.value})">
+				<?php
+					$numPerPageArr = array(20,50,100,200);
+					foreach($numPerPageArr as $val)
+					{
+						if($val == $numPerPage)
+							$selected = 'selected';
+						echo '<option value="'.$val.'" '.$selected.'>'.$val.'</option>';
+							$selected = '';
+					}
+				?>
+			</select>
+			<span>条，共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="dialog" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+</div>

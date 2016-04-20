@@ -1,0 +1,89 @@
+<div class="pageContent">
+	<form method="post" action='/index.php/Service/Schedhistroy/shutdownser' class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone);" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58">
+			<p>
+				<label>服务实例：</label>
+				<input type="text" size="28" class="required textInput" name="servicename" id="servicename" value="{$rowInfo['servicename']}" readonly />
+				<input type="hidden" name="serviceid" id="serviceid" value="{$rowInfo['serviceid']}"/>
+				<input type="hidden" name="path" id="path" value="{$rowInfo['path']}"/>
+				
+			</p>
+			<p>
+				<label>IP地址：</label>
+				<input type="text" size="28" class="required textInput" name="ipv" id="ipv" value="{$rowInfo['ipv']}" readonly />
+			</p>
+			<p>
+				<label>版本号：</label>
+				<input type="text" size="28" class="required textInput" name="version" id="version" value="{$rowInfo['version']}" readonly />
+			</p>
+			<p>
+				<label>部署类型：</label>
+					<select name="opmtype" id="opmtype" onchange="changecron(this);">
+						<?php
+							$disStr = '';
+								foreach($distype as $dskey=>$dsval)
+								{
+									if($dskey == $rowInfo['disType'])
+										$selected = 'selected';
+									$disStr .='<option value="'.$dskey.'" '.$selected.'>'.$dsval.'</option>';
+									$selected = '';
+								}
+								echo $disStr;
+							?>
+					</select>
+			</p>
+			<p id="crontimep" style="display:none;">
+				<label>时间表达式：</label>
+				<input size="28" minDate="<?php echo date('Y-m-d'); ?>" type="text" value="" id="crone" name="cron" readonly="true" datefmt="yyyy-MM-dd HH:mm:ss" class="date textInput readonly">
+			</p>
+			<p>
+				<label>操作人：</label>
+				<input type="text" size="28" readonly class="required textInput" name="person" id="person" value="{$_SESSION['cUserNo']}" />
+			</p>
+			<p>
+				<label>进程号：</label>
+				<input type="text" size="28" class="required textInput" name="processnum" id="processnum" value="{$rowInfo['processnum']}" readonly />
+			</p>
+			<p>
+				<label>优雅退出：</label>
+					<select name="iselegant" id="iselegant">
+						<?php
+							$disStrs = '';
+								foreach($iselegant as $iskey=>$isval)
+								{
+									if($iskey == $rowInfo['iselegant'])
+										$selected = 'selected';
+									$disStrs .='<option value="'.$iskey.'" '.$selected.'>'.$isval.'</option>';
+									$selected = '';
+								}
+								echo $disStrs;
+							?>
+					</select>
+			</p>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+<script>
+	function changecron(opmtype)
+	{
+		var opmtypeObj = $(opmtype);
+		var opmtypeval = opmtypeObj.val();
+		if(opmtypeval == 1)
+		{
+			$('#crone').removeClass("required");
+			$('#crone').val('');
+			$('#crontimep').hide();
+		}else if(opmtypeval == 2)
+		{
+			$('#crone').addClass("required");
+			$('#crontimep').show();
+		}
+	}
+</script>

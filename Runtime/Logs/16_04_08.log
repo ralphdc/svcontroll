@@ -1,0 +1,2447 @@
+[ 2016-04-08T21:26:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-08T21:26:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-08T21:26:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-08T21:26:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"3天6时35分20秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1989804,"cpuUsages":[2,2],"totalStorage":97744220,"usedStorage":18018146,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374456},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17587420}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:26:29+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:26:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17460","topoIds":"248","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-08 21:26:33","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-08T21:26:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-08T21:26:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoInfo":[{"topoId":248,"topoName":"wl-20160329-0005","nodes":2,"createDate":"2016-03-30 17:47:00.0","environment":5,"topoType":1,"creator":"admin"}],"serverInfo":[{"id":17460,"ip":"172.20.0.248","hostName":"test8-PKL","vm":1,"environment":"1","deviceId":"17750","deviceName":"路由器","iconUrl":"other.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:26:33+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:26:39+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-08T21:26:39+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-08T21:26:39+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-08T21:26:39+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"3天6时35分20秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1989804,"cpuUsages":[2,2],"totalStorage":97744220,"usedStorage":18018146,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374456},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17587420}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:26:39+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:26:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17460","topoIds":"248","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-08 21:26:41","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-08T21:26:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-08T21:26:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoInfo":[{"topoId":248,"topoName":"wl-20160329-0005","nodes":2,"createDate":"2016-03-30 17:47:00.0","environment":5,"topoType":1,"creator":"admin"}],"serverInfo":[{"id":17460,"ip":"172.20.0.248","hostName":"test8-PKL","vm":1,"environment":"1","deviceId":"17750","deviceName":"路由器","iconUrl":"other.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:26:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:26:50+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-08T21:26:50+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-08T21:26:50+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-08T21:26:50+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"3天6时35分20秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1989804,"cpuUsages":[2,2],"totalStorage":97744220,"usedStorage":18018146,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374456},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17587420}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:26:50+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:26:50+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17460","topoIds":"248","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-08 21:26:50","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-08T21:26:50+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-08T21:26:50+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoInfo":[{"topoId":248,"topoName":"wl-20160329-0005","nodes":2,"createDate":"2016-03-30 17:47:00.0","environment":5,"topoType":1,"creator":"admin"}],"serverInfo":[{"id":17460,"ip":"172.20.0.248","hostName":"test8-PKL","vm":1,"environment":"1","deviceId":"17750","deviceName":"路由器","iconUrl":"other.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:26:50+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:26:55+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17460","topoIds":"248","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-08 21:26:55","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-08T21:26:55+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-08T21:26:56+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoInfo":[{"topoId":248,"topoName":"wl-20160329-0005","nodes":2,"createDate":"2016-03-30 17:47:00.0","environment":5,"topoType":1,"creator":"admin"}],"serverInfo":[{"id":17460,"ip":"172.20.0.248","hostName":"test8-PKL","vm":1,"environment":"1","deviceId":"17750","deviceName":"路由器","iconUrl":"other.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:26:56+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:27:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => ip=172.17.3.86
+    [length] => 14
+    [path] => /monitor/snmp/summary
+)
+
+[ 2016-04-08T21:27:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/summary
+[ 2016-04-08T21:27:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => ip=172.17.3.86
+        )
+
+)
+
+[ 2016-04-08T21:27:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"sysName":"optserver.mpay.com","sysDescr":"Linux optserver.mpay.com 2.6.39-400.17.1.el6uek.x86_64 #1 SMP Fri Feb 22 18:16:18 PST 2013 x86_64","sysUpTime":"3天6时35分20秒","sysStatus":"RUNNING","totalMemory":2054968,"usedMemory":1989804,"cpuUsages":[2,2],"totalStorage":97744220,"usedStorage":18018146,"storageDetail":[{"total":495844,"partition":"/boot","used":56270},{"total":44614752,"partition":"/home","used":374456},{"total":1027484,"partition":"/dev/shm","used":0},{"total":51606140,"partition":"/","used":17587420}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:27:00+08:00 ] 127.0.0.1 /index.php/Service/Graph/pushInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:27:05+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17460","topoIds":"248","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-08 21:27:05","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-08T21:27:05+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-08T21:27:05+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoInfo":[{"topoId":248,"topoName":"wl-20160329-0005","nodes":2,"createDate":"2016-03-30 17:47:00.0","environment":5,"topoType":1,"creator":"admin"}],"serverInfo":[{"id":17460,"ip":"172.20.0.248","hostName":"test8-PKL","vm":1,"environment":"1","deviceId":"17750","deviceName":"路由器","iconUrl":"other.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:27:05+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.045000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:27:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17460","topoIds":"248","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-08 21:27:10","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-08T21:27:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-08T21:27:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoInfo":[{"topoId":248,"topoName":"wl-20160329-0005","nodes":2,"createDate":"2016-03-30 17:47:00.0","environment":5,"topoType":1,"creator":"admin"}],"serverInfo":[{"id":17460,"ip":"172.20.0.248","hostName":"test8-PKL","vm":1,"environment":"1","deviceId":"17750","deviceName":"路由器","iconUrl":"other.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:27:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:27:22+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17460","topoIds":"248","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-08 21:27:22","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-08T21:27:22+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-08T21:27:22+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoInfo":[{"topoId":248,"topoName":"wl-20160329-0005","nodes":2,"createDate":"2016-03-30 17:47:00.0","environment":5,"topoType":1,"creator":"admin"}],"serverInfo":[{"id":17460,"ip":"172.20.0.248","hostName":"test8-PKL","vm":1,"environment":"1","deviceId":"17750","deviceName":"路由器","iconUrl":"other.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:27:22+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:27:25+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17460","topoIds":"248","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-08 21:27:25","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-08T21:27:25+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-08T21:27:25+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoInfo":[{"topoId":248,"topoName":"wl-20160329-0005","nodes":2,"createDate":"2016-03-30 17:47:00.0","environment":5,"topoType":1,"creator":"admin"}],"serverInfo":[{"id":17460,"ip":"172.20.0.248","hostName":"test8-PKL","vm":1,"environment":"1","deviceId":"17750","deviceName":"路由器","iconUrl":"other.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:27:25+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:27:37+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17460","topoIds":"248","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-08 21:27:37","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-08T21:27:37+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-08T21:27:37+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoInfo":[{"topoId":248,"topoName":"wl-20160329-0005","nodes":2,"createDate":"2016-03-30 17:47:00.0","environment":5,"topoType":1,"creator":"admin"}],"serverInfo":[{"id":17460,"ip":"172.20.0.248","hostName":"test8-PKL","vm":1,"environment":"1","deviceId":"17750","deviceName":"路由器","iconUrl":"other.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:27:37+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:27:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17460","topoIds":"248","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-08 21:27:41","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-08T21:27:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-08T21:27:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoInfo":[{"topoId":248,"topoName":"wl-20160329-0005","nodes":2,"createDate":"2016-03-30 17:47:00.0","environment":5,"topoType":1,"creator":"admin"}],"serverInfo":[{"id":17460,"ip":"172.20.0.248","hostName":"test8-PKL","vm":1,"environment":"1","deviceId":"17750","deviceName":"路由器","iconUrl":"other.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:27:41+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:27:53+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17460","topoIds":"248","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-08 21:27:53","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-08T21:27:53+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-08T21:27:53+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoInfo":[{"topoId":248,"topoName":"wl-20160329-0005","nodes":2,"createDate":"2016-03-30 17:47:00.0","environment":5,"topoType":1,"creator":"admin"}],"serverInfo":[{"id":17460,"ip":"172.20.0.248","hostName":"test8-PKL","vm":1,"environment":"1","deviceId":"17750","deviceName":"路由器","iconUrl":"other.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:27:53+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:27:55+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17460","topoIds":"248","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-08 21:27:55","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-08T21:27:55+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-08T21:27:55+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoInfo":[{"topoId":248,"topoName":"wl-20160329-0005","nodes":2,"createDate":"2016-03-30 17:47:00.0","environment":5,"topoType":1,"creator":"admin"}],"serverInfo":[{"id":17460,"ip":"172.20.0.248","hostName":"test8-PKL","vm":1,"environment":"1","deviceId":"17750","deviceName":"路由器","iconUrl":"other.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:27:55+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:28:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// request_by_other post is {"ids":"17460","topoIds":"248","key":"topo.info.summary","ver":"v1.0","encoding":"utf-8","timestamp":"2016-04-08 21:28:10","format":"json","data":{"submitor":"admin","envType":"5","environment":"5"},"envType":"5","signtype":"md5","cuserid":0}
+[ 2016-04-08T21:28:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: ////////////////////////////// URL post is http://172.17.6.180:8080/omp/topo
+[ 2016-04-08T21:28:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+ERR: request_by_other file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"topoInfo":[{"topoId":248,"topoName":"wl-20160329-0005","nodes":2,"createDate":"2016-03-30 17:47:00.0","environment":5,"topoType":1,"creator":"admin"}],"serverInfo":[{"id":17460,"ip":"172.20.0.248","hostName":"test8-PKL","vm":1,"environment":"1","deviceId":"17750","deviceName":"路由器","iconUrl":"other.png","warns":"0"}]},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-08T21:28:10+08:00 ] 127.0.0.1 /index.php/Service/Graph/monitorNodeInfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of GraphController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [2048] Declaration of GraphController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\GraphController.class.php 第 3 行.
+NOTIC: [8] Undefined index: MPOSSESS E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 285 行.
+NOTIC: [8] Undefined index: customProperty E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 339 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 346 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:28:30+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+
+[ 2016-04-08T21:28:32+08:00 ] 127.0.0.1 /index.php/Service/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015600s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015600s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: \\\\\\\\\\\\\\\\输入的用户名和密码分别是：用户名：admin,密码：123456
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service url is http://172.17.3.97:8080/kms/login/ajaxsubmit.do
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service params is Array
+(
+    [name] => admin
+    [password] => 123456
+)
+
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service method is POST
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service request is POST /kms/login/ajaxsubmit.do?name=admin&password=123456 HTTP/1.1
+Host: 172.17.3.97
+Connection:close
+
+
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service response is HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=E50D47512D41340B5539D6C8E5804EB4; Path=/kms/; HttpOnly
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 08 Apr 2016 13:30:46 GMT
+Connection: close
+
+5a
+{"JSESSIONID":"E50D47512D41340B5539D6C8E5804EB4","STATE":0,"userName":"admin","OPERATE":3}
+0
+
+
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: \\\\\\\\\\\\\\\\登录信息返回的JSON：{"JSESSIONID":"E50D47512D41340B5539D6C8E5804EB4","STATE":0,"userName":"admin","OPERATE":3}
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: \\\\\\\\\\\\\\\\登录信息解析后的结果是：Array
+(
+    [JSESSIONID] => E50D47512D41340B5539D6C8E5804EB4
+    [STATE] => 0
+    [userName] => admin
+    [OPERATE] => 3
+)
+
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015600s ]
+NOTIC: [8] Undefined variable: cookie E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 470 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service url is http://172.17.3.97:8080/kms/actiontree/myMenus.do
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service params is Array
+(
+    [domain] => SERVICE_MANAGE
+)
+
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service method is POST
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service request is POST /kms/actiontree/myMenus.do?domain=SERVICE_MANAGE HTTP/1.1
+Host: 172.17.3.97
+Cookie:JSESSIONID=E50D47512D41340B5539D6C8E5804EB4
+Connection:close
+
+
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service response is HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Fri, 08 Apr 2016 13:30:46 GMT
+Connection: close
+
+175e
+[{"id":"2c948cfb51ebb03c0151ebb3ece6000a","name":"服务管制","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebb5bf60000f","name":"配置中心","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebb73feb0011","name":"配置","url":"Service/Configure","icon":"","children":[]},{"id":"2c948cfb51ebb03c0151ebb84a6c0013","name":"配置节点恢复","url":"Service/Retrive","icon":"","children":[]}]},{"id":"2c948cfb51ebb03c0151ebb8e4840014","name":"仓库中心","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebb9ea470016","name":"仓库中心","url":"Service/Repertory","icon":"","children":[]},{"id":"2c948cfb51ebb03c0151ebbaba760018","name":"批量处理","url":"Service/Batchprocess/index/from/2","icon":"","children":[]}]},{"id":"2c948cfb51ebb03c0151ebbb44c40019","name":"作业中心","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebbbfe1f001b","name":"作业调度","url":"Service/Scheduling","icon":"","children":[]}]},{"id":"2c948cfb51ebb03c0151ebbc7b5c001c","name":"转账通道","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebbd5347001e","name":"转账通道","url":"Service/Ukey","icon":"","children":[]}]}]},{"id":"2c948cfb51ebb03c0151ebb48c15000b","name":"监控管理","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec65a5fc000a","name":"服务监控中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec67723f000f","name":"服务监控","url":"Service/Sermonitor","icon":"","children":[]}]},{"id":"2c948cfb51ec5db00151ec65fbf8000b","name":"质量监控","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec68273b0011","name":"渠道切换","url":"Admin/Channel","icon":"","children":[]}]},{"id":"2c948cfb51ec5db00151ec665e33000c","name":"第三方工具中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec68aa560013","name":"下载管理","url":"Service/Download","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec8e100e0015","name":"Cacti连接","url":"http://10.128.133.212/cacti/","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec8e93310017","name":"Naigos连接","url":"http://10.128.133.213/nagios/","icon":"","children":[]}]},{"id":"2c948cfb51ec5db00151ec66a58f000d","name":"监控配置中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec8f67fc0019","name":"运维成员管理","url":"Service/Operatmember","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9042b1001b","name":"代理资源映射","url":"Service/Agentresource","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec90fa0d001d","name":"监控元素","url":"Service/Addmonelement","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec91f28e001f","name":"元素资源类型","url":"Service/Moniconfig","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec929fae0021","name":"历史查询","url":"Service/Historyquery","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9344b30023","name":"实时监控","url":"Service/Realmonitor","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec93fc8c0025","name":"渠道","url":"Service/Channelswitch","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec94aa210027","name":"监控过滤","url":"Service/Monitorfilter","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9640660029","name":"切换设置","url":"Admin/SysMonitor/showIp","icon":"","children":[]}]},{"id":"2c9183e1532c1050015372f511d30003","name":"拓扑镜像","url":null,"icon":"","children":[{"id":"2c9183e1532c1050015372f741e60005","name":"物理图管理","url":"Service/Graph?from=graphNav","icon":"","children":[]},{"id":"2c9183e1532c1050015372f8083f0007","name":"逻辑图管理","url":"Service/Graphlogic?from=graphlgNav","icon":"","children":[]},{"id":"2c9183e1532c1050015372f8af300009","name":"产品图标管理","url":"Service/Proicon","icon":"","children":[]}]}]},{"id":"2c948cfb51ebb03c0151ebb4c96f000c","name":"主机管理","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec975f99002b","name":"初始化机器","url":"Service/Deployment","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec97e9dd002d","name":"密码管理","url":"Service/passmanage","icon":"","children":[]}]},{"id":"2c948cfb51ebb03c0151ebb502c8000d","name":"资产管理","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec985607002e","name":"资源中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec993e620031","name":"机房管理","url":"Service/Areamanage","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec99d3710033","name":"机柜管理","url":"Service/Cabinet","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9a6dfb0035","name":"机器类型/型号管理","url":"Service/Mechinetype","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9b06fe0037","name":"操作系统","url":"Service/Operatesystem","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9b7d650039","name":"服务器管理","url":"Service/Servermanage","icon":"","children":[]},{"id":"2c9183e1532c105001537308eef90056","name":"设备类型","url":"Service/DeviceType","icon":"","children":[]}]},{"id":"2c948cfb51ec5db00151ec989f66002f","name":"非计算资源中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec9c2a49003b","name":"资产","url":"Service/DeviceInfo","icon":"","children":[]}]}]},{"id":"2c948cfb51ebb03c0151ebb549e1000e","name":"服务治理","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec9ccdd8003d","name":"设置T1T2系统","url":"Admin/SetSystem","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9da7f5003f","name":"服务治理","url":"http://172.17.4.203:8080/containerui/index.do","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9e37b10041","name":"流水质量监控","url":"Admin/SysMonitor","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9ea69e0043","name":"Ice权重","url":"Admin/IceWeight","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9f41b20045","name":"权重服务","url":"Admin/WeightService","icon":"","children":[]}]}]
+0
+
+
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: \\\\\\\\\\\\\\\\获取菜单解析后的结果是：Array
+(
+    [0] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb3ece6000a
+            [name] => 服务管制
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ebb03c0151ebb5bf60000f
+                            [name] => 配置中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebb73feb0011
+                                            [name] => 配置
+                                            [url] => Service/Configure
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebb84a6c0013
+                                            [name] => 配置节点恢复
+                                            [url] => Service/Retrive
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ebb03c0151ebb8e4840014
+                            [name] => 仓库中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebb9ea470016
+                                            [name] => 仓库中心
+                                            [url] => Service/Repertory
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebbaba760018
+                                            [name] => 批量处理
+                                            [url] => Service/Batchprocess/index/from/2
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [id] => 2c948cfb51ebb03c0151ebbb44c40019
+                            [name] => 作业中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebbbfe1f001b
+                                            [name] => 作业调度
+                                            [url] => Service/Scheduling
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [id] => 2c948cfb51ebb03c0151ebbc7b5c001c
+                            [name] => 转账通道
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebbd5347001e
+                                            [name] => 转账通道
+                                            [url] => Service/Ukey
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb48c15000b
+            [name] => 监控管理
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec65a5fc000a
+                            [name] => 服务监控中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec67723f000f
+                                            [name] => 服务监控
+                                            [url] => Service/Sermonitor
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec65fbf8000b
+                            [name] => 质量监控
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec68273b0011
+                                            [name] => 渠道切换
+                                            [url] => Admin/Channel
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec665e33000c
+                            [name] => 第三方工具中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec68aa560013
+                                            [name] => 下载管理
+                                            [url] => Service/Download
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec8e100e0015
+                                            [name] => Cacti连接
+                                            [url] => http://10.128.133.212/cacti/
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec8e93310017
+                                            [name] => Naigos连接
+                                            [url] => http://10.128.133.213/nagios/
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec66a58f000d
+                            [name] => 监控配置中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec8f67fc0019
+                                            [name] => 运维成员管理
+                                            [url] => Service/Operatmember
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9042b1001b
+                                            [name] => 代理资源映射
+                                            [url] => Service/Agentresource
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec90fa0d001d
+                                            [name] => 监控元素
+                                            [url] => Service/Addmonelement
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [3] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec91f28e001f
+                                            [name] => 元素资源类型
+                                            [url] => Service/Moniconfig
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [4] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec929fae0021
+                                            [name] => 历史查询
+                                            [url] => Service/Historyquery
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [5] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9344b30023
+                                            [name] => 实时监控
+                                            [url] => Service/Realmonitor
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [6] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec93fc8c0025
+                                            [name] => 渠道
+                                            [url] => Service/Channelswitch
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [7] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec94aa210027
+                                            [name] => 监控过滤
+                                            [url] => Service/Monitorfilter
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [8] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9640660029
+                                            [name] => 切换设置
+                                            [url] => Admin/SysMonitor/showIp
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [id] => 2c9183e1532c1050015372f511d30003
+                            [name] => 拓扑镜像
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c9183e1532c1050015372f741e60005
+                                            [name] => 物理图管理
+                                            [url] => Service/Graph?from=graphNav
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c9183e1532c1050015372f8083f0007
+                                            [name] => 逻辑图管理
+                                            [url] => Service/Graphlogic?from=graphlgNav
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [id] => 2c9183e1532c1050015372f8af300009
+                                            [name] => 产品图标管理
+                                            [url] => Service/Proicon
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb4c96f000c
+            [name] => 主机管理
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec975f99002b
+                            [name] => 初始化机器
+                            [url] => Service/Deployment
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec97e9dd002d
+                            [name] => 密码管理
+                            [url] => Service/passmanage
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [3] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb502c8000d
+            [name] => 资产管理
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec985607002e
+                            [name] => 资源中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec993e620031
+                                            [name] => 机房管理
+                                            [url] => Service/Areamanage
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec99d3710033
+                                            [name] => 机柜管理
+                                            [url] => Service/Cabinet
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9a6dfb0035
+                                            [name] => 机器类型/型号管理
+                                            [url] => Service/Mechinetype
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [3] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9b06fe0037
+                                            [name] => 操作系统
+                                            [url] => Service/Operatesystem
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [4] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9b7d650039
+                                            [name] => 服务器管理
+                                            [url] => Service/Servermanage
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [5] => Array
+                                        (
+                                            [id] => 2c9183e1532c105001537308eef90056
+                                            [name] => 设备类型
+                                            [url] => Service/DeviceType
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec989f66002f
+                            [name] => 非计算资源中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9c2a49003b
+                                            [name] => 资产
+                                            [url] => Service/DeviceInfo
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [4] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb549e1000e
+            [name] => 服务治理
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9ccdd8003d
+                            [name] => 设置T1T2系统
+                            [url] => Admin/SetSystem
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9da7f5003f
+                            [name] => 服务治理
+                            [url] => http://172.17.4.203:8080/containerui/index.do
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9e37b10041
+                            [name] => 流水质量监控
+                            [url] => Admin/SysMonitor
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9ea69e0043
+                            [name] => Ice权重
+                            [url] => Admin/IceWeight
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9f41b20045
+                            [name] => 权重服务
+                            [url] => Admin/WeightService
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+
+[ 2016-04-08T21:28:48+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+NOTIC: [8] Undefined index: ServiceLoginMenu E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 18 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: volist E:\www\Sermanage\Runtime\Cache\Service\573a565d88655dd6d35e2fd9412a37b4.php 第 154 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:28:49+08:00 ] 127.0.0.1 /index.php/Service/Common/setMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:28:53+08:00 ] 127.0.0.1 /index.php/Service/Mornode?_=1460122133831
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => json=&pageNo=1&pageSize=20
+    [length] => 26
+    [path] => /monitor/snmp/nodesearch
+)
+
+[ 2016-04-08T21:28:53+08:00 ] 127.0.0.1 /index.php/Service/Mornode?_=1460122133831
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/nodesearch
+[ 2016-04-08T21:28:53+08:00 ] 127.0.0.1 /index.php/Service/Mornode?_=1460122133831
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => json=&pageNo=1&pageSize=20
+        )
+
+)
+
+[ 2016-04-08T21:28:53+08:00 ] 127.0.0.1 /index.php/Service/Mornode?_=1460122133831
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"nodeId":17850,"template":{"templateId":19,"templateName":"V1_001","templateType":1,"communityRead":"public","communityWrite":null,"userName":null,"contextName":null,"authProtocol":null,"encryProtocol":null,"port":161,"timeout":5,"retrys":3,"enabled":true},"ip":"172.50.50.53","hostName":"test4","deviceType":"VPN","osType":"win12","groupName":"UIOP","defaultInterval":2,"cpuInterval":2,"memoryInterval":2,"networkInterval":2,"diskInterval":2,"enabled":true,"createDate":1460022363000,"creator":"admin","status":0,"templateId":19},{"nodeId":17848,"template":{"templateId":17,"templateName":"KLNM_009000001","templateType":1,"communityRead":"public","communityWrite":"sde","userName":"","contextName":"","authProtocol":"","encryProtocol":"","port":161,"timeout":5,"retrys":3,"enabled":true},"ip":"172.17.6.180","hostName":"test9-OOP","deviceType":"反向代理","osType":"win12","groupName":"tmp_0039999","defaultInterval":2,"cpuInterval":2,"memoryInterval":2,"networkInterval":22,"diskInterval":2,"enabled":false,"createDate":1460022401000,"creator":"admin","status":0,"templateId":17},{"nodeId":17849,"template":{"templateId":1,"templateName":"1","templateType":1,"communityRead":"public","communityWrite":"public","userName":"li","contextName":"","authProtocol":"MD5","encryProtocol":"DES","port":161,"timeout":5000,"retrys":3,"enabled":true},"ip":"172.17.3.86","hostName":"optserver.mpay.com2","deviceType":"防火墙","osType":"win12","groupName":"1","defaultInterval":1,"cpuInterval":3,"memoryInterval":3,"networkInterval":3,"diskInterval":2,"enabled":true,"createDate":1460103363000,"creator":"admin","status":0,"templateId":1}],"pageNo":1,"pageSize":20,"totalPage":1,"total":3}
+[ 2016-04-08T21:28:53+08:00 ] 127.0.0.1 /index.php/Service/Mornode?_=1460122133831
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [8] Undefined index: MornodePerPage E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 16 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Model\MornodeModel.class.php 第 24 行.
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Application\Service\Model\MornodeModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: MornodePerPage E:\www\Sermanage\Application\Service\Model\MornodeModel.class.php 第 30 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+NOTIC: [2] Missing argument 1 for MornodeModel::countByPost(), called in E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php on line 21 and defined E:\www\Sermanage\Application\Service\Model\MornodeModel.class.php 第 52 行.
+NOTIC: [2] Missing argument 2 for MornodeModel::countByPost(), called in E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php on line 21 and defined E:\www\Sermanage\Application\Service\Model\MornodeModel.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 8 行.
+NOTIC: [8] Undefined index: _order E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 10 行.
+NOTIC: [8] Undefined index: _sort E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 12 行.
+NOTIC: [8] Undefined variable: map E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 14 行.
+NOTIC: [8] Undefined index: ip E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 26 行.
+NOTIC: [8] Undefined index: groupName E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 30 行.
+NOTIC: [8] Undefined index: enabled E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 36 行.
+NOTIC: [8] Undefined index: enabled E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 37 行.
+NOTIC: [8] Undefined index: deviceType E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 42 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:28:53+08:00 ] 127.0.0.1 /index.php/Service/Common/setMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015600s ]
+
+[ 2016-04-08T21:28:55+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122134970
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031200s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031200s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015600s ]
+
+[ 2016-04-08T21:30:17+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122217750
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015601s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015601s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:32:17+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122337445
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:32:25+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122345056
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:32:46+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122366282
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015601s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015601s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:34:28+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122468836
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:36:14+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122574256
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:37:40+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122660052
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:37:47+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122667904
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:38:18+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122698572
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.015601s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015601s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:38:31+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122711765
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:38:56+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122736423
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015601s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015601s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:39:02+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122742680
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:39:17+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122757653
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:39:26+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122766033
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:41:05+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122865322
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:41:13+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122873328
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:41:46+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122906211
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:41:52+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122912242
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:42:16+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122936614
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.015600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015600s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:42:46+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122966690
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.014000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.014000s ]
+
+[ 2016-04-08T21:43:08+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460122988619
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:43:20+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123000726
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:43:50+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123030765
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:44:39+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123079055
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:45:06+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123106424
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:45:13+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: volist E:\www\Sermanage\Runtime\Cache\Service\573a565d88655dd6d35e2fd9412a37b4.php 第 154 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:45:14+08:00 ] 127.0.0.1 /index.php/Service/Common/setMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:45:27+08:00 ] 127.0.0.1 /index.php/Service/Mornode?_=1460123127531
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => json=&pageNo=1&pageSize=20
+    [length] => 26
+    [path] => /monitor/snmp/nodesearch
+)
+
+[ 2016-04-08T21:45:27+08:00 ] 127.0.0.1 /index.php/Service/Mornode?_=1460123127531
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/nodesearch
+[ 2016-04-08T21:45:27+08:00 ] 127.0.0.1 /index.php/Service/Mornode?_=1460123127531
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => json=&pageNo=1&pageSize=20
+        )
+
+)
+
+[ 2016-04-08T21:45:27+08:00 ] 127.0.0.1 /index.php/Service/Mornode?_=1460123127531
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"nodeId":17850,"template":{"templateId":19,"templateName":"V1_001","templateType":1,"communityRead":"public","communityWrite":null,"userName":null,"contextName":null,"authProtocol":null,"encryProtocol":null,"port":161,"timeout":5,"retrys":3,"enabled":true},"ip":"172.50.50.53","hostName":"test4","deviceType":"VPN","osType":"win12","groupName":"UIOP","defaultInterval":2,"cpuInterval":2,"memoryInterval":2,"networkInterval":2,"diskInterval":2,"enabled":true,"createDate":1460022363000,"creator":"admin","status":0,"templateId":19},{"nodeId":17848,"template":{"templateId":17,"templateName":"KLNM_009000001","templateType":1,"communityRead":"public","communityWrite":"sde","userName":"","contextName":"","authProtocol":"","encryProtocol":"","port":161,"timeout":5,"retrys":3,"enabled":true},"ip":"172.17.6.180","hostName":"test9-OOP","deviceType":"反向代理","osType":"win12","groupName":"tmp_0039999","defaultInterval":2,"cpuInterval":2,"memoryInterval":2,"networkInterval":22,"diskInterval":2,"enabled":false,"createDate":1460022401000,"creator":"admin","status":0,"templateId":17},{"nodeId":17849,"template":{"templateId":1,"templateName":"1","templateType":1,"communityRead":"public","communityWrite":"public","userName":"li","contextName":"","authProtocol":"MD5","encryProtocol":"DES","port":161,"timeout":5000,"retrys":3,"enabled":true},"ip":"172.17.3.86","hostName":"optserver.mpay.com2","deviceType":"防火墙","osType":"win12","groupName":"1","defaultInterval":1,"cpuInterval":3,"memoryInterval":3,"networkInterval":3,"diskInterval":2,"enabled":true,"createDate":1460103363000,"creator":"admin","status":0,"templateId":1}],"pageNo":1,"pageSize":20,"totalPage":1,"total":3}
+[ 2016-04-08T21:45:27+08:00 ] 127.0.0.1 /index.php/Service/Mornode?_=1460123127531
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [8] Undefined index: MornodePerPage E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 16 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Model\MornodeModel.class.php 第 24 行.
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Application\Service\Model\MornodeModel.class.php 第 25 行.
+NOTIC: [8] Undefined index: MornodePerPage E:\www\Sermanage\Application\Service\Model\MornodeModel.class.php 第 30 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+NOTIC: [2] Missing argument 1 for MornodeModel::countByPost(), called in E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php on line 21 and defined E:\www\Sermanage\Application\Service\Model\MornodeModel.class.php 第 52 行.
+NOTIC: [2] Missing argument 2 for MornodeModel::countByPost(), called in E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php on line 21 and defined E:\www\Sermanage\Application\Service\Model\MornodeModel.class.php 第 52 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 8 行.
+NOTIC: [8] Undefined index: _order E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 10 行.
+NOTIC: [8] Undefined index: _sort E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 12 行.
+NOTIC: [8] Undefined variable: map E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 14 行.
+NOTIC: [8] Undefined index: ip E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 26 行.
+NOTIC: [8] Undefined index: groupName E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 30 行.
+NOTIC: [8] Undefined index: enabled E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 36 行.
+NOTIC: [8] Undefined index: enabled E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 37 行.
+NOTIC: [8] Undefined index: deviceType E:\www\Sermanage\Runtime\Cache\Service\55c93d27d434372e21ce2e8f2debb17b.php 第 42 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:45:27+08:00 ] 127.0.0.1 /index.php/Service/Common/setMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:45:34+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123134859
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:46:06+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123166568
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015600s ]
+
+[ 2016-04-08T21:46:24+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123184247
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:47:27+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123247525
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:47:50+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123270052
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:48:17+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123297710
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:50:33+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123433510
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015600s ]
+
+[ 2016-04-08T21:51:00+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123460698
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.015600s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:52:08+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123528840
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031200s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031200s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:52:47+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123566934
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:53:07+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123587526
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:53:41+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123621707
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:53:59+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123639326
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:54:10+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123650688
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:54:40+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123680917
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:55:20+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123720129
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:56:55+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123815564
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.002000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.002000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:57:09+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123829482
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-08T21:58:53+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123933577
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T21:59:24+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460123964281
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-08T22:00:36+08:00 ] 127.0.0.1 /index.php/Service/Mornode/list?_=1460124036940
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2048] Declaration of MornodeController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+NOTIC: [2048] Declaration of MornodeController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\MornodeController.class.php 第 2 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

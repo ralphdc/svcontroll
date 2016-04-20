@@ -1,0 +1,42 @@
+[ 2016-02-04T21:00:28+08:00 ] 172.20.0.200 /index.php/Service/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001049s ]
+ERR: 无法加载模块:Index.php
+
+[ 2016-02-04T21:00:28+08:00 ] 172.20.0.200 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000062s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002546s ]
+ERR: 无法加载模块:Favicon
+
+[ 2016-02-04T21:00:31+08:00 ] 172.20.0.200 /index.php/Service/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001282s ]
+ERR: 无法加载模块:Index.php
+
+[ 2016-02-04T21:00:32+08:00 ] 172.20.0.200 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001073s ]
+ERR: 无法加载模块:Favicon
+
+[ 2016-02-04T21:26:26+08:00 ] 172.20.0.200 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001068s ]
+ERR: 无法加载模块:Favicon
+
+[ 2016-02-04T21:26:33+08:00 ] 172.20.0.200 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001492s ]
+ERR: 无法加载模块:Favicon
+
+[ 2016-02-04T21:26:38+08:00 ] 172.20.0.200 /favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001476s ]
+ERR: 无法加载模块:Favicon
+

@@ -1,0 +1,27 @@
+<div class="pageContent" style="width: 636px;">
+	<form method="post" action="__URL__/edit/groupid/1" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>用户组名称：</label>
+				<input type="text" size="28" name="groupName" class="textInput" value="{$groupinfo['groupName']}">
+			</p>
+			<p>
+				<label>用户组状态：</label>
+				<select name="groupStatus" id="" class="combox">
+					<option value="1" <eq name="groupinfo['groupStatus']" value="1">selected=selected</eq>>启用</option>
+					<option value="0" <eq name="groupinfo['groupStatus']" value="0">selected=selected</eq>>停用</option>
+				</select>
+			</p>
+			<p class="merterms">
+				<label>备注：</label>
+				<input type="text" size="28" name="remark" class="textInput" value="{$groupinfo['remark']}">
+			</p>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

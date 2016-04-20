@@ -1,0 +1,5 @@
+<div class="pageContent">
+	<div class="pageFormContent">
+		<div style="height: 634px; overflow: auto;" layouth="58">{$logcontent}</div>
+	</div>
+</div>

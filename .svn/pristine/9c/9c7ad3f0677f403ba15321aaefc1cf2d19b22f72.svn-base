@@ -1,0 +1,240 @@
+
+<include file="Public:pagerForm" />
+
+<div id="user">
+	<div class="pageHeader">
+		<form rel="pagerForm" onsubmit="return divSearch(this,'user_group_list');" action="" method="post">
+			<div class="searchBar">
+				<table class="searchContent">
+					<tr>
+						<td><label>用户组编号：</label><input type="text" name="" id="" class="textInput" /></td>
+						<td><label>用户组名称：</label><input type="text" name="" id="" class="textInput" /></td>	
+						<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<input type="hidden" name="pageNum" value="1" />
+			<input type="hidden" name="numPerPage" value="20" />
+			<input type="hidden" name="orderField" value="termid" />
+			<input type="hidden" name="orderDirection" value="desc" />
+		</form>
+	</div>
+
+	
+	<div class="user_con">
+		<div class="user_list">
+			<div class="ui_plate_operate">
+				<a href="__URL__/add" target="dialog" mask="true" height="350" width="450"  class="btn">添加</a>
+				<a href="__URL__/delete/groupid/{groupid}" target="ajaxTodo" title="你确定要删除吗？" warn="请选择用户" class="btn">删除</a>
+				<a href="__URL__/edit/groupid/{groupid}" target="dialog" mask="true" height="350" width="450"  warn="请选择用户" class="btn">修改</a>
+				<a href="__URL__/edit_role/groupid/{groupid}" target="dialog" mask="true" height="600" width="900" warn="请选择用户" class="btn">编辑用户组角色</a>
+			</div>
+			<div id="user_group_list">
+				<div class="tableList" layouth="140">
+					<table class="list" width="100%">
+						<thead>
+							<tr class="tr_odd">
+								<th width="10%" class="td_fr"></th>
+								<th width="30%" class="td_fr">用户组编号</th>
+								<th width="60%" class="td_ls">用户组名称</th>
+							</tr>
+						</thead>
+						<tbody>
+							<volist id="vo" name="userGroup" >
+							
+							<tr target="groupid" rel="{$vo['groupId']}">
+								<td class="td_fr"><input  type="radio" name="user" id="user" value="{$vo['groupId']}" ></td>							
+								<td class="td_fr">{$numStart + $i}</td>
+								<td class="td_ls">{$vo['groupName']}</td>
+							</tr>
+							</volist>
+							
+						</tbody>
+					</table>
+				</div>
+				<div class="panelBar">
+					<div class="pagination page_simple" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="user_info tabs">
+			<div class="tabsHeader">
+				<div class="tabsHeaderContent">
+					<ul>
+						<li><a href="javascript:;"><span>组角色</span></a></li>
+						<li><a href="javascript:;"><span>组用户列表</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="tabsContent"  layouth="84">
+				<div class="ui_tab_bd">
+					<div class="ui_red_tip">组角色说明：用户组包含多个用户，一组用户具有同样的角色权限；产品 ==> 角色 ==> 权限（菜单、动作、元素、数据行级、工作流）</div>
+					<table class="ui_info_plate">
+						<tr>
+							<td class="plate_item user_role">
+								<p class="ui_info_tit">所拥有的角色</p>
+								<div class="tableList bd_side" layouth="192">
+									<table class="list" width="350">
+										<thead>
+											<tr>
+												<th></th>
+												<th>产品编号</th>
+												<th>产品名称</th>
+												<th>角色编号</th>
+												<th>角色类型</th>
+												<th>角色名称</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="checkbox" name="CheckboxGroup1" value="" id="CheckboxGroup1_1" /></td>
+												<td>0001</td>
+												<td>MPay产品</td>
+												<td>001</td>
+												<td>001</td>
+												<td>001</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="panelBar">
+									<!-- <div class="pages">
+										<span>共{$totalCount}条</span>
+									</div> -->
+									<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+								</div>
+							</td>
+							<td class="plate_item user_compe" width="200">
+								<p class="ui_info_tit">所拥有菜单和动作权限</p>
+								<div class="ui_info_con" layouth="230">
+									<ul class="tree treeCheck collapse">
+										<li>
+											<a href="javascript:;" tname="" tvalue="">用户管理</a>
+											<ul>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户录入</a></li>
+												<li><a href="javascript:;" tname="" tvalue="">用户修改</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="javascript:;" tname="" tvalue="">角色管理</a>
+											<ul>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户录入</a></li>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户修改</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<div class="ui_info_bot tar">
+									<a href="javascript:;" class="ui_btn_green">保存</a>
+								</div>
+							</td>
+							<td class="plate_item user_element" width="200">
+								<p class="ui_info_tit">所拥有元素权限</p>
+								<div class="tableList bd_side" layouth="192">
+									<table class="list" width="100%">
+										<thead>
+											<tr>
+												<th>元素编号</th>
+												<th>元素名称</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>0001</td>
+												<td>商户号</td>
+											</tr>
+											<tr>
+												<td>0002</td>
+												<td>终端号</td>
+											</tr>
+											<tr>
+												<td>0003</td>
+												<td>流水号</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="panelBar">
+									<!-- <div class="pages">
+										<span>共{$totalCount}条</span>
+									</div> -->
+									<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+								</div>
+							</td>
+							<td class="plate_item" width="200">
+								<p class="ui_info_tit">所拥有工作流权限</p>
+								<div class="ui_info_con" layouth="181">
+									<ul class="tree treeCheck collapse">
+										<li>
+											<a href="javascript:;" tname="" tvalue="">用户管理</a>
+											<ul>
+												<li><a href="javascript:;" tname="" tvalue="">用户录入</a></li>
+												<li><a href="javascript:;" tname="" tvalue="">用户修改</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="javascript:;" tname="" tvalue="">角色管理</a>
+											<ul>
+												<li><a href="javascript:;" tname="" tvalue="">用户录入</a></li>
+												<li><a href="javascript:;" tname="" tvalue="">用户修改</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div class="ui_tab_bd">
+					<div class="tableList m10" layouth="104">
+						<div class="ui_table_name">所拥有的用户</div>
+						<div class="tableList bd_side" layouth="172">
+							<table class="list" width="100%">
+								<thead>
+									<tr class="tr_odd">
+										<th>用户编号</th>
+										<th>用户名</th>
+										<th>用户等级</th>
+										<th>用户机构</th>
+										<th>用户类型</th>
+										<th>上级用户</th>
+										<th>其他信息</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>00001</td>
+										<td>sdfasdf</td>
+										<td>sdfasdf</td>
+										<td>sdfasdf</td>
+										<td>sdfasdf</td>
+										<td>sdfasdf</td>
+										<td>sdfasdf</td>
+									</tr>
+									<tr>
+										<td>00001</td>
+										<td>sdfasdf</td>
+										<td>sdfasdf</td>
+										<td>sdfasdf</td>
+										<td>sdfasdf</td>
+										<td>sdfasdf</td>
+										<td>sdfasdf</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="panelBar">
+							<!-- <div class="pages">
+								<span>共{$totalCount}条</span>
+							</div> -->
+							<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

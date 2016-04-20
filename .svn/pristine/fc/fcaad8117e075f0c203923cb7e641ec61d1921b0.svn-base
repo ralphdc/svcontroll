@@ -1,0 +1,49 @@
+配置需求：php5.4.26 ice_php 3.5.1 apache 2.4
+操作系统：64位
+1.安装ice_PHP 如路径为/opt/Ice-3.5.1/php
+
+2.修改php.ini配置
+a.将include_path配置加入ice_PHP的路径
+如include_path = ".;c:\php\includes;/opt/Ice-3.5.1/php"
+b.设置session路径
+如 session.save_path = '/tmp';
+c.php不能加载eaccelerator模板，如果有，需要注释掉
+如
+;extension="eaccelerator.so"
+;eaccelerator.shm_size="16"
+;eaccelerator.cache_dir="/tmp/eaccelerator"
+;eaccelerator.enable="1"
+;eaccelerator.optimizer="1"
+;eaccelerator.check_mtime="1"
+;eaccelerator.debug="0"
+;eaccelerator.filter=""
+;eaccelerator.shm_ttl="0"
+;eaccelerator.shm_prune_period="0"
+;eaccelerator.shm_only="0"
+
+d.重启apache或nginx服务器
+如：apache：/usr/local/apache2.2/bin/apachectl restart
+nginx:killall -9 php-fpm 
+/usr/local/webserver/php/sbin/php-fpm 
+
+3.进入站点根目录
+将svn://172.17.3.161/XGD-CX/Trunk/Code/Web/Sermanage代码svn co 到站点根目录
+如 站点根目录为 /home/wwwroot/Sermanage 进入此目录
+svn co svn://172.17.3.161/XGD-CX/Trunk/Code/Web/Sermanage ./
+
+4.设置文件夹属性
+/tmp 属性为777 
+/home/wwwroot/Sermanage/RunTime  属性为777 
+
+5.修改配置文件 /home/wwwroot/Sermanage/Application/Admin/Conf/config.php
+	//调用java的接口存数据库 陈治平
+	'TodatabaseUrl' 			=>'http://172.20.0.29:8080',//本地环境http://172.20.0.29:8080//开发环境http://172.20.4.1:8888
+	//调用java的接口通知容器服务 阳海涛
+	'TotradeUrl' 				=>'http://172.20.0.108:8080/container/containerService/',//本地环境http://172.20.0.108:8080/container/containerService/
+	//调用渠道切换的接口 李小泉
+	'TochannelUrl'				=>'http://172.20.0.27:8801/',//本地环境http://172.20.0.27:8801//开发环境
+	//登录
+	'ProxyLogin'				=>"SeraSap:tcp -h 172.17.3.131  -p 10001",//测试机不用改
+其它的不用改
+
+6.访问路径为 http://IP:端口/index.php

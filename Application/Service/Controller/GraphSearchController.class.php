@@ -1,0 +1,91 @@
+<?php
+
+/**
+ * 这个类主要用于处理编辑节点-选择带回；
+ * @author dongchao
+ *
+ */
+class GraphSearchController extends CommonController{
+    // 框架首页
+    public function index() {
+        C ( 'SHOW_RUN_TIME', false ); // 运行时间显示
+        C ( 'SHOW_PAGE_TRACE', false );
+        
+        if($_GET['pageNum'])
+        {
+            $_REQUEST['numPerPage'] = empty($_REQUEST['numPerPage']) ?  ($_COOKIE['jpnumPerPage']? $_COOKIE['jpnumPerPage']:C('PAGE_LISTROWS') ): $_REQUEST['numPerPage'];
+            $_REQUEST[C('VAR_PAGE')] = $_GET['pageNum'];
+            $_POST['pageNum'] = $_GET['pageNum'];
+        }
+        
+        $pageNum =empty($_REQUEST['numPerPage']) ?  ($_COOKIE['jpnumPerPage']? $_COOKIE['jpnumPerPage']:C('PAGE_LISTROWS') ): $_REQUEST['numPerPage'];
+        $this->assign ( 'numPerPage', $pageNum ); //每页显示多少条
+        $this->assign ( 'currentPage', !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1);
+        
+        
+        $dataModel = new GraphSearchModel();
+        $result = $dataModel->findByPost($_POST,$_GET);
+        $count = $dataModel->countByPost($_POST,$_GET);
+        $this->assign ( 'totalCount', $count );
+        $this->assign('list',$result); 
+        $this->display();
+    }
+    
+    public function searchHost()
+    {
+        if($_POST){
+            $dataModel = new GraphSearchModel();
+            $_POST['data']['deviceid'] = $_POST['deviceId'] ?  $_POST['deviceId'] : "";
+            $_POST['data']['pdId'] = $_POST['pdId'] ?  $_POST['pdId'] : "";
+            $_POST['data']['iphost'] = $_POST['host'] ?  $_POST['host'] : "";
+            $result = $dataModel->searchVersion($_POST);
+            if(!empty($result[0]['id'])){
+                $ajaxRs['statusCode'] = 1;
+                $ajaxRs['message'] = '查询成功！';
+                $ajaxRs['content'] = $result;
+                echo json_encode($ajaxRs); exit;
+            }else{
+                $ret = array("statusCode"=>"0","message"=> '没有查询到信息！',"navTabId"=>$this->navTab,
+                    "rel"=>"","forwardUrl"=>"","callbackType"=>"");
+                echo json_encode($ret);	return;
+            }
+        }
+    }
+    
+    Public function query()
+    {
+        if($_POST){
+            $dataModel = new GraphSearchModel();
+            $result = $dataModel->searchPdAndDevice(array('data'=>array('pdId'=>$_POST['proid'] ? $_POST['proid'] : "",'deviceid'=>$_POST['deviceid'] ? $_POST['deviceid'] : "" )));
+            if($result){
+                $response['statusCode'] = 1;
+                $response['message'] = '查询成功！';
+                $response['data']=$result;
+                echo json_encode($response); exit;
+            }else{
+                $ret = array("statusCode"=>"0","message"=> '没有查询到信息！',"navTabId"=>$this->navTab,
+                    "rel"=>"","forwardUrl"=>"","callbackType"=>"");
+                echo json_encode($ret);	return;
+            }
+        }
+    }
+    
+    Public function queryProAndDevice()
+    {
+        if($_POST){
+            $dataModel = new GraphSearchModel();
+            $result = $dataModel->searchPdAndDevice(array('data'=>array('pdId'=>$_POST['pdid'] ? $_POST['pdid'] : "",'deviceid'=>$_POST['deviceid'] ? $_POST['deviceid'] : "" )));
+            if($result){
+                $response['statusCode'] = 1;
+                $response['message'] = '查询成功！';
+                $response['data']=$result;
+                echo json_encode($response); exit;
+            }else{
+                $ret = array("statusCode"=>"0","message"=> '没有查询到信息！',"navTabId"=>$this->navTab,
+                    "rel"=>"","forwardUrl"=>"","callbackType"=>"");
+                echo json_encode($ret);	return;
+            }
+        }
+    }
+    
+}

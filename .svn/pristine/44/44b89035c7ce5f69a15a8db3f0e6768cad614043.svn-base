@@ -1,0 +1,96 @@
+<include file="Public:pagerFormLog" />
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__URL__" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">	
+			
+			<li>
+			<label>调用链ID ：</label>
+			<input type="text" value="{$_REQUEST['cid']}" id="cid" name="cid" class="textInput" size="50">
+			<input type="hidden" value="{$_REQUEST['type']}" name="type" />
+			</li>
+			<li>
+				<label>时间（起）：</label>
+				<input size="20" maxDate="<?php echo date('Y-m-d'); ?>" type="text" value="{$_REQUEST['startTime']}" id="startTime" name="startTime" readonly="1" datefmt="yyyy-MM-dd HH:mm:ss" class="date textInput readonly">
+			</li>
+			<li>
+				<label>时间（终）：</label>
+				<input size="20" maxDate="<?php echo date('Y-m-d'); ?>" type="text" value="{$_REQUEST['endTime']}" id="endTime" name="endTime" readonly="1" datefmt="yyyy-MM-dd HH:mm:ss" class="date textInput readonly">
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+
+
+
+
+
+
+
+<div class="pageContent">
+<div class="pageContent sortDrag" selector="h1" layoutH="42">
+<volist id="vol" name="list">
+	<div class="panel collapse">
+		<h1>{$vol['title']}</h1>
+		<div>
+		<table class="list" width="98%">
+		<thead>
+		<tr>
+			<th>编号</th>
+			<th>调用链</th>
+			<th>服务名</th>
+			<th>等级</th>
+			<th width="100">信息</th>
+			<th>耗时</th>
+			<th>方法名称</th>
+			<!-- <th>商户名</th> -->
+			<th>路径展示</th>
+			<th>记录时间</th>
+			<th>线程号</th>
+			<th>进程号</th>
+			<th>ip地址</th>
+		</tr>
+		</thead>
+		<tbody>
+		<?php $respList = $vol['respList']; ?>
+		<volist id="vo" name="respList">
+			<tr target="sid_user" rel="{$vo['id']}">
+				<td>
+					<?php
+						$listnums = $numPerPage * ($currentPage-1) + $key+1;
+						echo $listnums;
+					?>
+				</td>
+				<td>{$vo['cid']}</td>
+				<td>{$vo['srv']}</td>
+				<?php if($vo['lvl'] == 'ERROR') $style="style='color:red;'";else $style='';?>
+				<td {$style}>{$vo['lvl']}</td>
+				<td><a height="563" width="524" mask="true" rel="see_info_win" title="查看信息" target="dialog" href="/index.php?s=/Log/QueryHistoryLog/showinfo/id/{$vo['id']}/type/2/ltype/2"><?php echo substr($vo['msg'],0,30);?></a></td>
+				<?php if($vo['etc'] >= 5) $style="style='color:red;'";else $style='';?>
+				<td {$style}>{$vo['etc']}</td>
+				<td>{$vo['fn']}</td>
+				<!-- <td>{$vo['mn']}</td> -->
+				<td>{$vo['dir']}</td>
+				<td>{$vo['logtime']}</td>
+				<td>{$vo['tid']}</td>
+				<td>{$vo['pid']}</td>
+				<td>{$vo['ip']}</td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+		</div>
+	</div>
+</volist>
+
+</div>
+
+</div>

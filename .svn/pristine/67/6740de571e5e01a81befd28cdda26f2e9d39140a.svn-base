@@ -1,0 +1,91 @@
+<style type="text/css">
+.iconTbody{height:60px;}
+</style>
+<include file="Public:pagerFormLog" />
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__URL__" method="post">
+		<div class="searchBar">
+			<ul class="searchContent">
+				<li>
+					<label>设备名称：</label>
+					<input type="text" value="{$_REQUEST['data']['deviceName']}" id="data-deviceName" name="data[deviceName]" class="textInput">
+				</li>
+			</ul>
+			<div class="subBar">
+				<ul>
+					<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+				</ul>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<div class="panelBar" style="height:29px;">
+		<ul class="toolBar">
+			<li>
+				<a rel="addServer" class="add" href="__URL__/add"  title="新增" height="200" width="430" target="dialog" mask="true">
+					<span>新增</span>
+				</a>
+			</li>
+			<li class="line">line</li>
+			<li><a posttype="string" title="确实要删除选中记录吗？" rel="ids" target="selectedTodo" class="delete" href="__URL__/deletebatch/"><span>批量删除选中</span></a></li>
+			<li class="line">line</li>
+		</ul>
+	</div>
+	
+	<table class="table" width="100%" layoutH="138" class="iconTtable">
+		<thead>
+		<tr>
+			<th class="center" style="width: 43px; cursor: default;"><div title="" class="gridCol"><input type="checkbox" class="checkboxCtrl" group="ids"></div></th>
+			<th width="60">序号</th>
+			<th>设备名称</th>
+			<th>设备图标</th>
+			<th>备注</th>
+			<th>创建人</th>
+			<th width="105">操作</th>
+		</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr>
+				<td class="center" style="width: 43px;"><div><input type="checkbox" value="{$vo['deviceid']}" name="ids"></div></td>
+				<td>
+					<?php
+						$listnums = $numPerPage * ($currentPage-1) + $key+1;
+						echo $listnums;
+					?>
+				</td>
+				<td>{$vo['deviceName']}</td>
+				<td class="iconTbody"><if condition="strlen($vo['iconurl']) gt 0"><div><img src="/Public/Images/jtopo/{$vo['iconurl']}" width="30" height="30" /></div><else/>--</if></td>
+				<td>{$vo['deviceDemo']}</td>
+				<td>{$vo['operator']}</td>
+				<td>
+					<a class="btnDel" target="ajaxTodo" title="确实要删除这条记录吗" href="__URL__/delete/id/{$vo['deviceid']}">删除</a>
+					<a target="dialog" rel="editServer" class="btnEdit" title="编辑" href="__URL__/edit/id/{$vo['deviceid']}" height="200" width="430">编辑</a>
+				</td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<?php
+					$numPerPageArr = array(20,50,100,200);
+					foreach($numPerPageArr as $val)
+					{
+						if($val == $numPerPage)
+							$selected = 'selected';
+						echo '<option value="'.$val.'" '.$selected.'>'.$val.'</option>';
+							$selected = '';
+					}
+				?>
+			</select>
+			<span>条，共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+</div>

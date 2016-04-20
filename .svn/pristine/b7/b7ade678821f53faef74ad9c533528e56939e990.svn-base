@@ -1,0 +1,116 @@
+	<include file="Public:pagerFormLog" />
+
+	<div id="repertory_content" layouth="0">
+		<div class="item_list_filter" style="border-bottom:solid 1px #ddd;">
+			<!-- form action="" method=""-->
+				<span class="pro">svn路径：</span>
+				<textarea name="svnlink" id="svnurl" style="width: 630px; height: 17px;"></textarea>
+				<input type="submit" value="导入" class="ui_btn_green" id="svnbtn" />
+				<a title="批量导入" width="1016" height="702"  rel="dlg_page2" target="dialog" href="/index.php/Service/Repertory/import" ><input type="submit" value="批量导入" class="ui_btn_green"/></a>
+			<!--/form-->
+		</div>
+		<div class="item_list_filter"  style="padding-left:20px">
+			<form class="pagerForm" action="/index.php/Service/Repertory/search" method="post" onsubmit="return divSearch(this, 'repertory_content');">
+				<span class="">产品名：</span>
+				<input type="text" size="15" name="productname" id="" class="textInput" value="{$_REQUEST[productname]}"/>			
+				<span class="">服务名：</span>
+				<input type="text" size="15" name="servicename" id="" class="textInput" value="{$_REQUEST[servicename]}"/>
+				<span class="">版本：</span>
+				<input type="text" size="15" name="serviceversion" id="" class="textInput" value="{$_REQUEST[serviceversion]}"/>
+				<span class="">MD5：</span>
+				<input type="text" size="15" name="md5" id="" class="textInput" value="{$_REQUEST[md5]}"/>
+				<input type="hidden" name="desployenv" value="{$_REQUEST['desployenv']}" />
+				<span class="">状态：</span>
+				<select name="deploymentFlag" id="" class="">
+					<option value="" <?php if($_REQUEST[deploymentFlag]=="") echo "selected" ?> >全部</option>
+					<option value="2" <?php if($_REQUEST[deploymentFlag]==2) echo "selected" ?> >已发布</option>
+					<option value="1" <?php if($_REQUEST[deploymentFlag]==1) echo "selected" ?> >未发布</option>				
+				</select>												
+				<input type="submit" value="查询" class="ui_btn_green" />
+			</form>
+		</div>
+		<div id="repertory_list">
+			<div class="tableList" layouth="130">
+				<table class="list tac" width="100%">
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>服务名</th>
+							<th>版本</th>
+							<th>类型</th>
+							<th>功能描述</th>
+							<th width="50">svn路径</th>
+							<th>main入口</th>
+							<th>发布状态</th>
+							<th>导入时间</th>
+							<th>构建时间</th>
+							<th>MD5</th>
+							<th>&nbsp;&nbsp;操&nbsp;作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+						<volist id="vo" name="list">
+							<tr target="script_id" rel="{$vo['smId']}">
+								<td>
+									<?php
+										$listnums = $numPerPage * ($currentPage-1) + $key+1;
+										echo $listnums;
+									?>
+								</td>
+								<td>{$vo['servicename']}</td>
+								<td>{$vo['serviceversion']}</td>
+								<td>
+									<?php echo $servicetype[ $vo['servicetype'] ] ?>
+								</td>
+								<td>{$vo['servicefunction']}</td>
+								<td style="line-height: 2.5;display:block;width:100px;overflow:hidden" title="{$vo['svnpath']}">{$vo['svnpath']}</td>
+								<td title="{$vo['javamain']}">{$vo['javamain']|substr=0,7}</td>
+								<td <?php if($vo['deploymentFlag'] == 1){ echo 'style="color:red"';}
+								elseif($vo['deploymentFlag'] =='2' && ($vo['desployenv'] == '1' || $vo['desployenv'] == '4')){ echo 'style="color:green;"';} ?>>
+									<?php echo $deploymentFlagArr[$vo['deploymentFlag']] ?>
+								</td>
+								<td>{$vo['importtime']}</td>
+								<td>{$vo['buildtime']}</td>
+								<td>{$vo['md5']}</td>
+								<td>
+									<a rel="sendplan" href="/index.php/Service/Repertory/call/mwId/{$vo['mwId']}/ssid/{$vo['ssid']}/sername/{$vo['servicename']}/version/{$vo['serviceversion']}/defaultcfgid/{$vo['defaultcfgid']}/defaultcfg/{$vo['defaultcfg']}/desploypath/<?php echo base64_encode($vo['desploypath']) ?>" height="600" width="900" mask="true" class="btnEdit ml10" title="作业计划" target="dialog">调用</a>
+									<a class="btnInfo" rel="D60635" title="查看仓库记录" target="NavTab" href="/index.php/Service/Reperthistory/index/mwId/{$vo['mwId']}">查看历史</a>
+									<a href="/index.php/Service/Repertory/del/id/{$vo['mwId']}" target="ajaxTodo" title="确定要删除？" class="btnDel ml10">删除</a>
+								</td>								
+							</tr>
+						</volist>					
+					</tbody>
+				</table>
+			</div>
+			<div class="panelBar">
+				<div class="pages">
+					<span>共{$totalCount}条</span>
+				</div>
+				<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+			</div>
+		</div>
+	</div></html>
+<script>
+
+//svn import
+$('#svnbtn').click(function(){
+	$.post('/index.php/Service/Repertory/importsvn'
+			,{svnurl:$("#svnurl").val()}
+			,function(data){
+				if(data.statusCode=='1'){
+					alertMsg.correct(data.message);
+					 if (data.navTabId) {
+				            navTab.reload(data.forwardUrl, {
+				                navTabId: data.navTabId
+				            });
+					 }
+					
+				}else{
+					alertMsg.error(data.message);
+				}
+			}
+			,"json"
+	)
+})
+
+</script>

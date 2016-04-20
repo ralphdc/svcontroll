@@ -1,0 +1,123 @@
+<div class="item_list_filter"  style="padding-top:5px">
+
+</div>
+<div id="Serquality_list">
+	<div class="tableList" layouth="37" style="overflow:auto;height:620px;" >
+	<div style="float:left;margin-bottom:10px;"><span style='float:left;font-size:20px'>渠道个数：{$ChannelNum}，渠道实例总数：{$InstanceNum}</span><div style="float:left;margin-left:500px;"><input style="cursor: pointer" type="button" name="flush" id='flush' value="刷新"  /></div></div>
+	<volist id="vo" name="ChannelStatus">
+		<table class="list tac" width="100%" style="margin-top:20px;">
+			<tr>
+				<th colspan="6" align="left" >渠道名：{$vo['channelName']} 渠道ID：{$vo['channelID']} 渠道服务ID：{$vo['channelServiceID']} 实例个数：{$vo['instancesCount']} 状态：{$vo['status']|showChannelStatus}</th>
+			</tr>
+			<notempty name="vo['InstanceStatus']">
+ 			<tr>
+					<th>渠道实例地址</th>
+					<th>连续失败次数</th>
+					<th>连续成功次数</th>
+					<th>交易总次数</th>
+					<th>状态</th>
+					<th>操作</th>
+				</tr>
+				<volist  name="vo['InstanceStatus']"  id="Instance">
+					<tr target="script_id" rel="{$vo['smId']}">
+						<td>
+							{$Instance['host']}
+						</td>
+						<td>
+							{$Instance['consecutiveFailedTimes']}
+						</td>
+						<td>
+							{$Instance['consecutiveSuccessedTimes']}
+						</td>
+						<td>
+							{$Instance['totalTradeTimes']}
+						</td>
+						<td >
+							{$Instance['status']|showChannelInstanceStatus}
+						</td>
+						<td >
+						
+							<if condition="$Instance['status'] neq 3 "><input style="cursor: pointer" type="button" name="pause" id='pause' value="暂停交易" host="{$Instance['host']}" />
+							<else /> <input style="cursor: pointer" type="button" name="restore" id='restore' value="恢复交易" host="{$Instance['host']}" />
+							</if>
+							
+						</td>
+								
+					</tr>
+				</volist>
+					<tr><td colspan='6' align='left'>
+					<if condition="$vo['status'] eq 3 "><input style="cursor: pointer" type="button" name="changeChannel"  value="请求渠道路由放行部分交易走原渠道" ServiceID="{$Instance['channelServiceID']}" action="requestTrade"/> <input style="cursor: pointer" type="button" name="changeChannel"  value="取消渠道切换" ServiceID="{$Instance['channelServiceID']}" action="unblock" />
+					<else/><input style="cursor: pointer" type="button" name="changeChannel" value="通知路由切换渠道(慎用)" ServiceID="{$Instance['channelServiceID']}"   action="block" />
+					</if>
+					</td></tr>
+				</notempty>
+				<empty name="vo['InstanceStatus']">
+				<tr>
+					<td colspan="6" align="left" >没有该渠道的实例</td>
+				</tr>
+				</empty>
+	
+		</table>
+		<div ></div>
+		</volist>		
+	</div>
+
+</div>
+
+
+<script type="text/javascript">
+//暂停交易
+$("input[name='pause']").click(function(){
+	var host = $(this).attr("host");
+	$.ajax({
+	  type: "POST",
+	  async: false,
+	  url: "__URL__/changeInstanceStatus",
+	  data: "server="+host+"&action=pause",
+	  success: function(msg){
+		 $("#channelbody").loadUrl('__URL__/flush');  
+	   }
+	});
+
+})
+
+//恢复交易
+$("input[name='restore']").click(function(){
+	var host = $(this).attr("host");
+	$.ajax({
+	  type: "POST",
+	  async: false,
+	  url: "__URL__/changeInstanceStatus",
+	  data: "server="+host+"&action=restore",
+	  success: function(msg){
+		 $("#channelbody").loadUrl('__URL__/flush');  
+		 //$(this).attr({"value":'暂停交易','host2':'123123'});
+	   }
+	});
+
+})
+
+//切换渠道
+$("input[name='changeChannel']").click(function(){
+	var ServiceID = $(this).attr("ServiceID");
+	var type = $(this).attr("action");
+	$.ajax({
+	  type: "POST",
+	  async: false,
+	  url: "__URL__/changeChannelStatus",
+	  data: "serviceID="+ServiceID+"&action="+type,
+	  success: function(msg){
+		 $("#channelbody").loadUrl('__URL__/flush');  
+	   }
+	});
+
+})
+
+//刷新按钮
+$("input[name='flush']").click(function(){
+	 $("#channelbody").loadUrl('__URL__/flush');  
+})
+
+
+
+</script>

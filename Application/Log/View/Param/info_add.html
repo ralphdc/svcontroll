@@ -1,0 +1,34 @@
+<div class="pageContent" style="width: 420px;">
+	<form method="post" action="__URL__/add" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>参数编号：</label>
+				<input type="text" size="28" name="" class="required textInput" />
+			</p>
+			<p>
+				<label>参数名称：</label>
+				<input type="text" size="28" name="" class="required textInput" />
+			</p>
+			<p>
+				<label>上级参数：</label>
+				<input type="text" size="28" name="" class="required textInput" />
+			</p>
+			<p>
+				<label>参数类型：</label>
+				<select name="groupStatus" id="" class="combox">
+					<option value="1">参数</option>
+				</select>
+			</p>
+			<p style="height:auto;">
+				<label>备注：</label>
+				<textarea name="" class="editor textInput" cols="27" rows="3" maxlength="100">K301FZ</textarea>
+			</p>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">添加</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

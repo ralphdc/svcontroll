@@ -1,0 +1,64 @@
+<div class="pageContent">
+	<form method="post" action='/index.php/Service/Configure/add_a' class="pageForm required-validate" onsubmit="return validateCallback(this, configAddAjaxDone);" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58">
+			<div class="config_win_head">
+				属性类名：<input type="text" name="propName" id="" class="textInput add_name required" />
+			</div>
+			<div class="config_info_item numCount">
+				<div class="num">1</div>
+				<span class="pro">属性：</span>
+				<input type="text" name="prop[]" id="" class="textInput" />
+				<a href="javascript:;" class="ui_btn_del">删除</a>
+			</div>
+			<div class="config_info_add">
+				<a href="javascript:;" class="ui_btn_add">添加</a>
+			</div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	$('.ui_btn_del').click(function(){
+		$(this).parent('.config_info_item').remove();
+		$('.numCount').each(function(i){
+			$('.num',this).text(i+1);
+		});
+	});
+	
+	$('.ui_btn_add').click(function(){
+		var mark=$(this).parent('.config_info_add'),
+			index=$('.numCount').length+1,
+			html=$('<div class="config_info_item numCount"><div class="num">'+index+'</div><span class="pro">属性：</span> <input type="text" name="prop[]" id="" class="textInput" /> <a href="javascript:;" class="ui_btn_del">删除</a></div>');
+		mark.before(html);
+		$('.ui_btn_del',html).click(function(){
+			$(this).parent('.config_info_item').remove();
+			$('.numCount').each(function(i){
+				$('.num',this).text(i+1);
+			});
+		});
+	});
+});
+
+function configAddAjaxDone(json){
+	
+	var name=$('.add_name').val();
+	if(name==''){
+		alert('属性类名不能为空');
+		return false;
+	}
+	DWZ.ajaxDone(json);
+	//alert(json.id);
+	if(json.id > 0)
+	{
+		addTreeNode(config_tree_which,name,json.id);
+		$.pdialog.closeCurrent();
+	}	
+}
+</script>

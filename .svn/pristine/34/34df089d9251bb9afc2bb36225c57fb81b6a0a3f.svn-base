@@ -1,0 +1,707 @@
+<?php
+/**
+ * 服务管制--监控配置管理-- 运维成员管理
+ * @author zengguangqiu
+ *
+ */
+//定义权限
+define('MESSAGE', 1<< 0);    // 把短信的通知方式放在最右边
+define('EMAIL', 1<<1);    // 可邮件的通知方式向左移一位
+define('other', 1<<2);   // 可通知的方式向左移两位（后续可以不断的增加）
+
+class OperatmemberController extends CommonController {
+	var $navTab = 'D60606';
+	
+// 框架首页
+	public function index() {
+		C ( 'SHOW_RUN_TIME', false ); // 运行时间显示
+		C ( 'SHOW_PAGE_TRACE', false );
+		$pageNum =empty($_REQUEST['numPerPage']) ? C('PAGE_LISTROWS') : $_REQUEST['numPerPage'];
+		$this->assign ( 'numPerPage', $pageNum ); //每页显示多少条
+		$this->assign ( 'currentPage', !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1);
+		$Operatmember = new OperatmemberModel($_POST,$_GET);
+		$result = $Operatmember->findByPost($_POST,$_GET);
+		//2015-12-15超群对接，改变数据结构；
+		$iwant=array();
+		if(count($result[0])){
+		    $black = $result[0];
+		    foreach ($black as &$b){
+		        $b['color'] = "";
+		        $iwant[] = $b;
+		    }
+		}
+		
+		if(count($result[1])){
+		    $red = $result[1];
+		    foreach ($red as &$r){
+		        $r['color'] = "style='color:#FF0000'";
+		        $iwant[] = $r;
+		    }
+		}
+		//dg($iwant);
+		
+		$count = $Operatmember->countByPost($_POST,$_GET);
+		$this->assign ( 'totalCount', $count );
+		$this->assign ( 'list', $iwant );
+		//dump($result);
+		$this->assign ( 'map', array('name'=>'','mobile'=>'') );
+		cookie('_currentUrl_', __SELF__);
+		$this->display();
+	}
+	
+	public function add(){
+		if($_POST){
+			$request = array();
+			foreach($_POST as $k =>$v){
+				$request[$k] = $v;
+	
+			}
+			//组织要保存的数据
+			$post['data']['staffName'] = trim($_POST['staffName']);
+			$post['data']['staffAccount'] = trim($_POST['staffAccount']);
+			$post['data']['staffPhoneNo'] = trim($_POST['staffPhoneNo']);
+			$post['data']['staffEmail'] = trim($_POST['staffEmail']);
+			$post['data']['microBlogId'] = trim($_POST['microBlogId']);
+			$post['data']['wechatId'] = trim($_POST['wechatId']);
+			$post['form_act'] = 'create';
+			//调用java接口进行数据的操作
+			$Operatmember = new OperatmemberModel($_POST,$_GET);
+			$result = $Operatmember->postSave($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+		$this->display();
+	}
+	
+	function edit() {
+		if($_POST){
+			$request = array();
+			foreach($_POST as $k =>$v){
+				$request[$k] = $v;
+		
+			}
+			//组织要保存的数据
+			$post['data']['staffId'] = intval($_POST['id']);
+			$post['data']['staffName'] = trim($_POST['staffName']);
+			$post['data']['staffAccount'] = trim($_POST['staffAccount']);
+			$post['data']['staffPhoneNo'] = trim($_POST['staffPhoneNo']);
+			$post['data']['staffEmail'] = trim($_POST['staffEmail']);
+			$post['data']['microBlogId'] = trim($_POST['microBlogId']);
+			$post['data']['wechatId'] = trim($_POST['wechatId']);
+			$post['form_act'] = 'update';
+			//调用java接口进行数据的操作
+			$Operatmember = new OperatmemberModel($_POST,$_GET);
+			$result = $Operatmember->postSave($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+		$id = $_REQUEST ['id'];
+		$Operatmember = new OperatmemberModel($_POST,$_GET);
+		$vo = $Operatmember->getRowInfo($id);
+		$this->assign('row', $vo);
+		$this->display();
+	}
+	
+	/**
+	 * 删除
+	 * @see CommonController::foreverdelete()
+	 */
+	function foreverdelete()
+	{
+		$ids =$_POST['ids'];
+		$Operatmember = new OperatmemberModel();
+		
+		$idsArr = explode(",",$ids);
+		$info=array();
+		foreach ($idsArr as $id){
+		    $vo = $Operatmember->getRowInfo($id);
+		    $info[] = $vo['wechatId'];
+		}
+		$infoStr = implode(",",$info);
+		$result = $Operatmember->deleteAll(array($ids,$infoStr));
+		if($result['errorCode'] == 0){
+			$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}else{
+			$msg = $result['errorMessage'];
+			$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}
+	}
+	/**
+	 * 删除单个
+	 */
+	function delete()
+	{
+		$id =$_GET['id'];
+		$wechat = $_GET['wechatid'];
+		$Operatmember = new OperatmemberModel();
+		$result = $Operatmember->delete(array($id,$wechat));
+		if($result['errorCode'] == 0){
+			$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}else{
+			$msg = $result['errorMessage'];
+			$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}
+	}
+	
+	//分配权限
+	function setprivate()
+	{
+		if($_POST){
+			//获取前端传递过来的参数组合成相关的后台的数据
+			$elementArr = $_POST['orgId'];
+			$noticeTypeArr = $_POST['noticetype'];
+			$tempRight = array();
+			if(is_array($elementArr) && count($elementArr))
+			{
+				foreach ($elementArr as $elekey=>$eleval)
+				{
+					$type = '';
+					$child_type_wc     = !empty($noticeTypeArr[$eleval]['wechat']) ? '1' :'0';
+					$child_type_email  = !empty($noticeTypeArr[$eleval]['email']) ? '1' :'0';
+					$child_type_msg    = !empty($noticeTypeArr[$eleval]['msg']) ? '1' :'0';
+					$type = $child_type_wc.$child_type_email.$child_type_msg;
+					
+					$tempRight[$elekey]['elemId']= $eleval;
+					$tempRight[$elekey]['type']= bindec(strval($type));
+				}
+			}
+			//组织要保存的数据
+			$post['data']['toId'] = $_POST['id'];
+			$post['data']['rights'] =$tempRight;
+			$post['form_act'] = 'create';
+			//调用java接口进行数据的操作
+			$Operatmember = new OperatmemberModel($_POST,$_GET);
+			$result = $Operatmember->postSavePrivate($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+		//获取出所有的元素
+		$Addmonelement = new AddmonelementModel();
+		$allElementArr = $Addmonelement->getAll();
+		$this->assign('list',$allElementArr);
+		//dump($allElementArr);
+		//获取出当前选择的运维账号有的权限
+		$staffId = $_GET['staffId'];
+		$Operatmember= new OperatmemberModel();
+		$rights = $Operatmember->getAllrights($staffId);
+		
+		if(isset($rights[0]['elemId'])){
+		    $elemon_rights = array();
+		    foreach ($rights as $r){
+		        $elemon_rights[$r['elemId']] = $r['type'];
+		    }
+		}
+		$this->assign('elemon_rights',$elemon_rights);
+		
+		//拆分权限为数组
+		if(is_array($rights) && count($rights))
+		{
+			$tempRightsArr = array();
+			foreach ($rights as $key =>$val)
+			{
+			    
+				$rightInt = decbin(intval($val['type']));
+				
+			    if(strlen($rightInt) == 1){
+			        $rightInt = '00'.$rightInt;
+			    }
+			    
+			    if(strlen($rightInt) == 2){
+			        $rightInt = '0'.$rightInt;
+			    }
+			    
+			    $tempRightsArr[$val['elemId']] = $rightInt;
+			}
+		}
+		$this->assign('rights',$tempRightsArr);
+		$this->assign('staffId',$staffId);
+		$this->display();
+	}
+	
+	//复制权限
+	function copyprivate()
+	{
+		if($_POST){
+			//获取前端传递过来的参数组合成相关的后台的数据
+			//组织要保存的数据
+			$post['data']['fromId'] = $_POST['id'];
+			$post['data']['toId'] = $_POST['toId'];
+			$post['form_act'] = 'copy';
+			//调用java接口进行数据的操作
+			$Operatmember = new OperatmemberModel($_POST,$_GET);
+			$result = $Operatmember->postSavePrivate($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+		//获取出所有的元素
+		$Addmonelement = new AddmonelementModel();
+		$allElementArr = $Addmonelement->getAll();
+		$this->assign('list',$allElementArr);
+		//dump($allElementArr);
+		//获取出当前选择的运维账号有的权限
+		$staffId = $_GET['staffId'];
+		$Operatmember= new OperatmemberModel();
+		$rowStaffInfo = $Operatmember->getRowInfo($staffId);
+		$rights = $Operatmember->getAllrights($staffId);
+		
+		if(isset($rights[0]['elemId'])){
+		    $elemon_rights = array();
+		    foreach ($rights as $r){
+		        $elemon_rights[$r['elemId']] = $r['type'];
+		    }
+		}
+		$this->assign('elemon_rights',$elemon_rights);
+		
+		
+		//拆分权限为数组
+		if(is_array($rights) && count($rights))
+		{
+			$tempRightsArr = array();
+			foreach ($rights as $key =>$val)
+			{
+			     
+			    $rightInt = decbin(intval($val['type']));
+			
+			    if(strlen($rightInt) == 1){
+			        $rightInt = '00'.$rightInt;
+			    }
+			     
+			    if(strlen($rightInt) == 2){
+			        $rightInt = '0'.$rightInt;
+			    }
+			     
+			    $tempRightsArr[$val['elemId']] = $rightInt;
+			}
+			
+		}
+		//取出所有的运维人员的账号数组
+		$info = $Operatmember->getAll();
+		if(is_array($info) && count($info))
+		{
+			foreach ($info as $ikey=>$ival)
+			{
+				$operateArr[$ival['staffId']] = $ival['staffName'];
+			}
+		}
+		$this->assign('arrOperator',$operateArr);
+		$this->assign('rights',$tempRightsArr);
+		$this->assign('staffId',$staffId);
+		$this->assign('fromname',$rowStaffInfo['staffName']);
+		$this->display();
+	}
+	
+	
+	//2015-11-30 群组管理-李超群对接；
+	public function groupManage()
+	{
+	    $Operatmember= new OperatmemberModel();
+	    $tree = $Operatmember->getGroupTree();
+	    
+	    
+	    if($tree){
+	        //构造数据结构；
+	        $child = array();
+	        foreach ($tree as $key=>$value){
+	            foreach ($tree[$key]['groupStaffList'] as $ck=>&$cv){
+	                $cv['name']=$tree[$key]['groupStaffList'][$ck]['operatorName'];
+	                $cv['type']='cnd';
+	            }
+	            $child[]=array('name'=>$tree[$key]['groupName'],'gid'=>$tree[$key]['groupId'],'gname'=>$tree[$key]['groupName'],'gdes'=>$tree[$key]['groupName'],'type'=>'rnd','children'=>$tree[$key]['groupStaffList']);
+	        }
+	    }
+	    $treeArr = array("name"=>"群组","title"=>'群组管理操作','type'=>'root',"children"=>$child);
+	    $this->assign('operate_tree',json_encode($treeArr));
+	    $this->display();
+	}
+	
+	public function createGroup()
+	{
+	    if($_POST){
+	        $groupName = I('post.groupName','','trim,htmlspecialchars');
+	        $groupDes = I('post.groupDes','','trim,htmlspecialchars');
+	        $action = I('post.action','add');
+	        
+	        $Operatmember= new OperatmemberModel();
+	        if($action == 'add'){
+	            $result = $Operatmember->modelCreateGroup(array('group'=>$groupName,'des'=>$groupDes));
+	        }else{
+	            $groupid = I('post.gpid',0);
+	            $result = $Operatmember->modelEditGroup(array('group'=>$groupName,'des'=>$groupDes,'groupid'=>$groupid));
+	        }
+	        
+	        if(isset($result['errorCode']) &&  $result['errorCode'] == 0){
+	            $ret = array(
+	                "statusCode"=>"1",
+	                "message"=>'操作成功！',
+	                "navTabId"=>"",
+	                "rel"=>"",
+	                "forwardUrl"=>"",
+	                "callbackType"=>"closeCurrent",
+	                "gid"=>$result['data']['groupId'],
+	                'gname'=>$result['data']['groupName'],
+	                'gdes'=>$result['data']['groupDescription'],
+	                'gnewname'=>$groupName,
+	                'act'=>$action
+	            );
+	            echo json_encode($ret);	
+	            return;
+	        }else{
+	            $ret = array(
+	                "statusCode"=>"0",
+	                "message"=>$result['errorMessage'],
+	                "navTabId"=>'',//$this->navTab
+	                "rel"=>"",
+	                "forwardUrl"=>"","callbackType"=>"");
+	            echo json_encode($ret);	return;
+	        }
+	    }
+	    
+	    $gpid = $_REQUEST['gpid'];
+	    $gname = $_REQUEST['gnames'];
+	    $action = $_REQUEST['action'];
+	    $action = empty($action) ? 'add' : 'edit';
+	    
+	    $this->assign('action',$action);
+	    $this->assign('gpid',$gpid);
+	    $this->assign('gname',$gname);
+	    $this->display();
+	}
+	
+	public function getUnaddedStaff()
+	{
+	        $id = $_REQUEST['id'];
+	        if($id){
+	            $Operatmember= new OperatmemberModel();
+	            $result = $Operatmember->modelGetStaffList($id);
+	            $count = $Operatmember->countByPost();
+	            if(isset($result['errorCode']) &&  $result['errorCode'] == 0){
+	               $lists = $result['data']['staff'];
+	               $this->assign('list',$lists);
+	            }
+	        }
+	        $pageNum =empty($_REQUEST['numPerPage']) ? C('PAGE_LISTROWS') : $_REQUEST['numPerPage'];
+	        $this->assign ( 'numPerPage', $pageNum ); //每页显示多少条
+	        $this->assign ( 'currentPage', !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1);
+	        
+	        $this->assign ( 'totalCount', $count );
+	        $this->assign('id',$id);
+	        $this->display();
+	}
+	
+	public function groupAddStaff()
+	{
+	    if(IS_AJAX){
+	        $gid = I('post.id','','intval');
+	        $opids = I('post.stId','');
+	        $ntype = I('post.noticetype','');
+	        $onames = I('post.staffName','');
+	        if(count($opids) > 0){
+	            $groupStaff = array();
+	            $opArr = array();
+	            foreach ($opids as $idk=>$idv){
+	                if(isset($ntype[$idv]) && is_array($ntype[$idv]) && count($ntype[$idv]) > 0){
+	                    
+	                    $wechat = empty($ntype[$idv]['wechat']) ? '0' : '1';
+	                    $email = empty($ntype[$idv]['email']) ? '0' : '1';
+	                    $msg = empty($ntype[$idv]['msg']) ? '0' : '1';
+	                    
+	                    $nts = $wechat.$email.$msg;
+	                    $noticeType = bindec($nts);
+	                    
+	                    
+	                }else{
+	                    $noticeType = 0;
+	                }
+	                $opArr[]=array('operatorId'=>$idv,'noticeType'=> $noticeType,'operatorName'=>$onames[$idv]);
+	            }
+	            
+	            $groupStaff['groupStaff'] = $opArr;
+	            $groupStaff['groupId'] = $gid;
+	            $Operatmember= new OperatmemberModel();
+	            $result = $Operatmember->modelSubmitStaff($groupStaff);
+	            
+	            
+	            
+	            
+	           if(isset($result['errorCode']) &&  $result['errorCode'] == 0){
+    	            $ret = array(
+    	                "statusCode"=>"1",
+    	                "message"=>'新增成员操作成功！',
+    	                "navTabId"=>"",//$this->navTab
+    	                "rel"=>"",
+    	                "forwardUrl"=>"",
+    	                "callbackType"=>"closeCurrent",
+    	                "staffInfo"=>json_encode($result['data']['groupStaff'])
+    	            );
+	            echo json_encode($ret);	
+	            return;
+	           }else{
+    	            $ret = array("statusCode"=>"0","message"=>$result['errorMessage'],"navTabId"=>'',//$this->navTab
+    	                "rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+    	            echo json_encode($ret);	return;
+	           }
+	    }
+	   }
+	}
+	
+	//删除群组；
+	public function deleteGroup()
+	{
+	    if(IS_AJAX){
+	        $groupid = I('post.id',0);
+	        if($groupid){
+	            $Operatmember= new OperatmemberModel();
+	            $result = $Operatmember->modelDeleteGroup($groupid);
+	            if(isset($result['errorCode']) &&  $result['errorCode'] == 0){
+	                $ret = array(
+	                    "statusCode"=>"200",
+	                    "message"=>'新增成员操作成功！',
+	                    "navTabId"=>"",//$this->navTab
+	                    "rel"=>"",
+	                    "forwardUrl"=>"",
+	                    "callbackType"=>"closeCurrent"
+	                );
+	                echo json_encode($ret);
+	                return;
+	            }else{
+	                $ret = array("statusCode"=>"0","message"=>$result['errorMessage'],"navTabId"=>'',//$this->navTab
+	                    "rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+	                echo json_encode($ret);	return;
+	            }
+	        }
+	    }
+	}
+	
+	//删除成员；
+	public function deleteStaff()
+	{
+	    if(IS_AJAX){
+	        $groupid = I('post.gid',0);
+	        $operaterid = I('post.oid',0);
+	        if($groupid && $operaterid){
+	            $Operatmember= new OperatmemberModel();
+	            $result = $Operatmember->modelDeleteStaff(array('groupId'=>$groupid,'operatorId'=>$operaterid));
+	            if(isset($result['errorCode']) &&  $result['errorCode'] == 0){
+	                $ret = array(
+	                    "statusCode"=>"200",
+	                    "message"=>'删除成员操作成功！',
+	                    "navTabId"=>"",//$this->navTab
+	                    "rel"=>"",
+	                    "forwardUrl"=>"",
+	                    "callbackType"=>"closeCurrent"
+	                );
+	                echo json_encode($ret);
+	                return;
+	            }else{
+	                $ret = array("statusCode"=>"0","message"=>$result['errorMessage'],"navTabId"=>'',//$this->navTab
+	                    "rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+	                echo json_encode($ret);	return;
+	            }
+	        }
+	    }
+	}
+	
+	//获取联系人和群组；
+	public function getGroupAndStaff()
+	{
+	    if(IS_AJAX){
+	        
+	    }
+	}
+	
+	Public function showNoticeWay()
+	{
+	    
+	    $noticeType = $_REQUEST['noticetype'] ? $_REQUEST['noticetype'] : 0;
+	    
+	   $bin_type = strval(decbin($noticeType));
+	   
+	   if(strlen($bin_type)==1){
+	       $bin_type = '00'.$bin_type;
+	   }
+	   if(strlen($bin_type)==2){
+	       $bin_type = '0'.$bin_type;
+	   }
+	    
+	   
+	    
+	    
+	    $gid = $_REQUEST['gid'] ? $_REQUEST['gid'] : '';
+	    $oid = $_REQUEST['oid'] ? $_REQUEST['oid'] : '';
+	    $nm = $_REQUEST['oname'] ? $_REQUEST['oname'] : '';
+	    
+        $this->assign('bintype',$bin_type);
+        $this->assign('gid',$gid);
+        $this->assign('oid',$oid);
+        $this->assign('nm',$nm);
+        
+        $this->display();
+	}
+	
+	public function noticeSubmit()
+	{
+	    if(IS_AJAX){
+	         $groupid = I('post.gid',0);
+	         $operaterid = I('post.oid',0);
+	         $nt = I('post.noticetype');
+	         
+	         $wechat = empty($nt['wechat']) ? '0' : '1';
+	         $email = empty($nt['email']) ? '0' : '1';
+	         $msg = empty($nt['msg']) ? '0' : '1';
+	         $nts = $wechat.$email.$msg;
+	         $nts = bindec($nts);
+	         $Operatmember= new OperatmemberModel();
+	         $result = $Operatmember->modelUpdateStaffNotice(array('groupId'=>$groupid,'operatorId'=>$operaterid,'noticeType'=>$nts));
+	         if(isset($result['errorCode']) &&  $result['errorCode'] == 0){
+	             $ret = array(
+	                 "statusCode"=>"200",
+	                 "message"=>'操作成功！',
+	                 "navTabId"=>"",//$this->navTab
+	                 "rel"=>"",
+	                 "forwardUrl"=>"",
+	                 "callbackType"=>"",
+	                 "ntype"=>$nts
+	             );
+	             echo json_encode($ret);
+	             return;
+	         }else{
+	             $ret = array("statusCode"=>"0","message"=>$result['errorMessage'],"navTabId"=>'',//$this->navTab
+	                 "rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+	             echo json_encode($ret);	return;
+	         }
+	         
+	    }
+	}
+	
+	
+	Public function inviteFollow()
+	{
+	    if(IS_AJAX){
+	        $wechatid = I('get.weid',0);
+	        if($wechatid){
+	            $Operatmember= new OperatmemberModel();
+	            $result = $Operatmember->modelInviteFollow($wechatid);
+	               
+	            if(isset($result['errorCode']) &&  $result['errorCode'] == 0){
+	                $ret = array(
+	                    "statusCode"=>"200",
+	                    "message"=>'操作成功！',
+	                    "navTabId"=>"",//$this->navTab
+	                    "rel"=>"",
+	                    "forwardUrl"=>"",
+	                    "callbackType"=>""
+	                );
+	                echo json_encode($ret);
+	                return;
+	            }else{
+	                $ret = array("statusCode"=>"0","message"=>$result['errorMessage'],"navTabId"=>'',//$this->navTab
+	                    "rel"=>"","forwardUrl"=>"","callbackType"=>"");
+	                echo json_encode($ret);	return;
+	            }
+	        }else{
+	            $ret = array("statusCode"=>"0","message"=>"微信帐号为空，不能关注！","navTabId"=>'',//$this->navTab
+	                "rel"=>"","forwardUrl"=>"","callbackType"=>"");
+	            echo json_encode($ret);	return;
+	        }
+	    }
+	}
+	
+	//同步至微信平台；
+	public function syncWechat()
+	{
+	    if(IS_AJAX){
+	        $staffid = I('get.staffid',0);
+	        $wechat = I('get.idwe',0);
+            
+            $Operatmember= new OperatmemberModel();
+            //获取所有部门列表；
+            $departs = $Operatmember->modelGetDeparts();
+            //获取已经选择的部门；
+            $selected = $Operatmember->modelGetStaffDepart($wechat);
+           
+            $this->assign('departs',$departs);
+            $this->assign('staffdeparts',$selected['data']['id']);
+            $this->assign('staffid',$staffid);
+            $this->display();
+	    }
+	}
+	
+	public function weChatSubmit()
+	{
+	    $targets = I('post.stIdtiger');
+	    $staffid = I('post.staffid',0);
+	    if(!empty($targets) && $staffid){
+	        
+	       
+	        
+	        $ids = implode(",",$targets);
+	        $Operatmember= new OperatmemberModel();
+	        //获取成员信息；
+	        $vos = $Operatmember->getRowInfo($staffid);
+	        $result = $Operatmember->modelSyncSubmit($ids,$vos);
+	        
+	        
+	        
+	        if(isset($result['errorCode']) &&  $result['errorCode'] == 0){
+	            $ret = array(
+	                "statusCode"=>"1",
+	                "message"=>'操作成功！',
+	                "navTabId"=>"",//$this->navTab
+	                "rel"=>"",
+	                "forwardUrl"=>"",
+	                "callbackType"=>"closeCurrent"
+	            );
+	            echo json_encode($ret);
+	            return;
+	        }else{
+	            $ret = array("statusCode"=>"0","message"=>$result['errorMessage'],"navTabId"=>'',//$this->navTab
+	                "rel"=>"","forwardUrl"=>"","callbackType"=>"");
+	            echo json_encode($ret);	return;
+	        }
+	    }else{
+	        $ret = array("statusCode"=>"0","message"=>"您未选择部门，请检查！","navTabId"=>'',//$this->navTab
+	            "rel"=>"","forwardUrl"=>"","callbackType"=>"");
+	        echo json_encode($ret);	return;
+	    }
+	}
+}

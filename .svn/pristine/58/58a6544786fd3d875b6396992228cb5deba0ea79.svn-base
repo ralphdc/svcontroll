@@ -1,0 +1,114 @@
+<form id="pagerForm" action="/index.php/Admin/WeightService/groupSelect" method="post">
+	<input type="hidden" name="pageNum" value="1"/>
+	
+	<input type="hidden" name="numPerPage" value=""/>
+	<!--
+	 <input type="hidden" name="_order" value=""/>  
+	 <input type="hidden" name="_sort" value=""/>
+	 <input type="hidden" name="pdName" value=""/> -->
+	</form>
+	
+<div class="pageHeader">
+	<form   method="post" action="__URL__/groupSelect" onsubmit="return dwzSearch(this, 'dialog');" rel="pagerForm">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+				<label>组名:</label>
+				<input class="textInput" name="groupName" value="{$_REQUEST['groupName']}" type="text">
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="button" multLookup="gpId" warn="请选择组">选择带回</button></div></div></li>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="button" multLookup="gpId" class="btnDel" onclick="javascript:$.bringBack({groupName:''})">清除</button></div></div></li>
+			</ul>
+		</div>
+		<p><input type="checkbox" name="remainvalue" id="remain_value" /><label for="remain_value">保留原值</p>
+	</div>
+	</form>
+</div>
+<div class="pageContent" style="overflow:auto;">
+	<table class="table" targetType="dialog" layoutH="112" width="100%">
+		<thead>
+			<tr>
+				<th width="30"><input type="checkbox" class="checkboxCtrl" group="gpId" /></th>
+				<th>序号</th>
+				<th>组名称</th>
+				<th>操作人</th>
+				<th>操作时间</th>
+				<th>描述</th>
+				<!-- <th>产品描述</th> -->
+			</tr>
+		</thead>
+		<tbody>
+		<?php
+			
+			if(is_array($list) && count($list))
+			{
+				$i=0;
+				foreach($list as $key=>$val)
+				{
+					$i++;
+					$tag_number = ($currentPage -1) * $numPerPage +$i;
+					$valueStr = "{groupId:".$val['groupId'].",groupName:'".$val['groupName']."'}";
+					echo '<tr onclick="checkTime(this);">
+							<td onclick="checkTime1(this);"><input type="checkbox" name="gpId" value="'.$valueStr.'"/></td>
+							<td>'.$tag_number.'</td>
+							<td>'.$val['groupName'].'</td>
+							<td>'.$val['operaterPerson'].'</td>
+							<td>'.$val['operaterTime'].'</td>
+							<td>'.$val['groupDescription'].'</td>
+						  </tr>';
+				}
+			} 
+		?>
+		</tbody>
+	</table>
+	
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="dialogPageBreak({numPerPage:this.value})">
+				<?php
+					$numPerPageArr = array(20,50,100,200);
+					foreach($numPerPageArr as $val)
+					{
+						if($val == $numPerPage)
+							$selected = 'selected';
+						echo '<option value="'.$val.'" '.$selected.'>'.$val.'</option>';
+							$selected = '';
+					}
+				?>
+			</select>
+			<span>条，共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="dialog" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="1" currentPage="{$currentPage}"></div>
+	</div>
+</div>
+<script type="text/javascript">
+<!--
+	function checkTime(obj)
+	{
+		 var tempObj =  $(obj);
+	     var nowObj =tempObj.find('input');
+	     var checked = nowObj.attr('checked');
+	     if(checked){
+	  	   nowObj.removeAttr('checked');
+	     }else{
+	  	   nowObj.attr('checked','true');
+	  	 }
+	}
+	function checkTime1(obj)
+	{
+		 var tempObj =  $(obj);
+	     var nowObj =tempObj.find('input');
+		 var checked = nowObj.attr('checked');
+	     if(checked){
+	  	   nowObj.removeAttr('checked');
+	     }else{
+	  	   nowObj.attr('checked','true');
+	  	 }
+	}
+-->
+</script>

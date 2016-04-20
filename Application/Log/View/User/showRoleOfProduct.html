@@ -1,0 +1,27 @@
+<div class="tableList bd_side" layouth="301">
+	<table class="list" width="100%">
+		<thead>
+			<tr>
+				<th><input type="checkbox" group="role_id_a" class="checkboxCtrl" /></th>
+				<th>角色名称</th>
+				<th>角色编号</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist id="item" name="roleList" >
+			<tr>
+				<td><input name="role_id_a" value="{$item['id']}" type="checkbox" /></td>
+				<td>{$startNum + $i}</td>
+				<td>{$item['roleName']}</td>
+				
+			</tr>
+			</volist>
+		</tbody>
+	</table>
+</div>
+<!--div class="panelBar">
+	<div class="pages">
+		<span>共{$totalCount}条</span>
+	</div>
+	<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+</div-->

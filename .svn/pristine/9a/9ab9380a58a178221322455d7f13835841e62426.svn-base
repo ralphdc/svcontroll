@@ -1,0 +1,55 @@
+<style type="text/css">
+	.service-show-detail{display:none; width:290px; padding:10px; border:1px #63b025 solid;}
+	.service-table td{padding:4px; border-left:1px #c0c0c0 dotted; border-bottom:1px #c0c0c0 dotted; padding-left:10px; }
+	.sDetailInfo{position:absolute; line-height:20px; border:1px #7ec700 solid;padding:5px;width:200px;background:#f5ffe3;display:none;word-wrap: break-word;}
+</style>
+<div class="pageContent">
+<table class="service-table" width="100%" layoutH="50">
+	<tr>
+		<td width="100">告警元素</td>
+		<td width="150">告警信息</td>
+		<td width="180">告警时间</td>
+		<td>备注</td>
+	</tr>
+	<volist id="vo" name="sinfo">
+	<tr>
+		<td>{$vo['element']}</td>
+		<td>{$vo['info']}</td>
+		<td>{$vo['time']}</td>
+		<td width="300" height="30" class="sDetail">{$vo['remark']}<div class="sDetailInfo">{$vo['remark']}</div></td>
+	</tr>
+	</volist>
+</table>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(e){
+		$(".service-table tr").hover(function(){
+			$(this).css('background','#eaeaea');
+		},function(){
+			$(this).css('background','');
+		});
+		
+		
+	 	$(".sDetail").hover(function(e){
+			var ht = $(this).text();
+			if(!checkEmpty(ht)){
+				var eleft = e.pageX;
+				var etop = e.pageY;
+				var dialog = $.pdialog.getCurrent();
+				var dialog_left = parseInt(dialog.css('left'));
+				var shtml_left = eleft - dialog_left;
+				var shtml_real_left = shtml_left-200;
+				$(this).find(".sDetailInfo").show();
+				/* var sHtml = $("<div class='sDetailInfo'></div>")
+							.css({
+								'left':shtml_real_left
+								}
+							)
+							.html(ht);
+				$(this).append(sHtml);  */
+			}
+		},function(e){
+			$(this).find(".sDetailInfo").hide();
+		}) 
+	})
+</script>

@@ -1,0 +1,22 @@
+<div class="pageContent">
+		<table class="list" layoutH="50" width="100%">
+		<thead>
+			<tr>
+				<th>告警元素</th>
+				<th>告警信息</th>
+				<th>告警时间</th>
+				<th>备注</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist id="vo" name="sinfo">
+				<tr>
+					<td>{$vo['element']}</td>
+					<td>{$vo['info']}</td>
+					<td>{$vo['time']}</td>
+					<td>{$vo['remark']}</td>
+				</tr>
+			</volist>
+		</tbody>
+	</table>
+</div>

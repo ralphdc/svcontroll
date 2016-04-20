@@ -1,0 +1,62 @@
+<div class="pageContent">
+<form method="post" action="__URL__/setNoticeType/" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+	<input type="hidden" name="id" id="id" value="{$elementID}" />
+	<input type="hidden" name="pageNuma" id="pageNuma" value="{$pageNum}" />
+	
+		<table class="table" targetType="dialog" layoutH="112" width="100%">
+		<thead>
+			<tr>
+				<th width="30"><input type="checkbox" class="checkboxCtrl" group="orgId[]" /></th>
+				<th width="60">序号</th>
+				<th width="60">运维人员</th>
+				<th width="60">运维账号</th>
+				<th width="100">通知方式</th>
+				
+				
+				
+			</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr target="sid_user" rel="{$vo['staffId']}">
+				
+				<?php 
+						$checked = '';
+						if(is_array($rights[$vo['staffId']]) && count($rights[$vo['staffId']]))
+						{
+							$checked = 'checked';
+						}
+						 
+				?>
+				<td class="center" style="width: 43px;"><div><input type="checkbox" value="{$vo['staffId']}" name="orgId[]" {$checked} ></div></td>
+				<td>{++$key}</td>
+				<td>{$vo['staffName']}</td>
+				<td>{$vo['staffAccount']}</td>
+				<?php
+					$checked1 = '';
+					$checked2 = '';
+					if(in_array(1,$rights[$vo['staffId']]))
+					{
+						$checked1 = 'checked';
+					}
+					if(in_array(2,$rights[$vo['staffId']]))
+					{
+						$checked2 = 'checked';
+					}
+				?>
+				<td><input type="checkbox" value="1" name="noticetype[{$vo['staffId']}][1]" {$checked1}>短消息  <input type="checkbox" value="2" name="noticetype[{$vo['staffId']}][2]" {$checked2}>邮件 </td>
+				
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>

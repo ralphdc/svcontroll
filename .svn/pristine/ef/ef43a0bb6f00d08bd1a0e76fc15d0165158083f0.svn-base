@@ -1,0 +1,110 @@
+<style type="text/css">
+.iconTbody{height:60px;}
+</style>
+<include file="Public:pagerFormLog" />
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__URL__" method="post">
+		<div class="searchBar">
+			<ul class="searchContent">
+				<li>
+					<label>IP：</label>
+					<input type="text" value="{$_REQUEST['ip']}" id="data-ip" name="ip" class="textInput" placeholder="请输入IP或节点名" />
+				</li>
+				<li>
+					<label>组名：</label>
+					<input type="text" value="{$_REQUEST['groupName']}" id="data-gName" name="groupName" class="textInput" placeholder="请输入所属组名" />
+				</li>
+				<li>
+					<label>是否可用：</label>
+					<select name="enabled" id="data-enabled" class="combox">
+						<option value="">请选择状态</option>
+						<option value="true" <?php if($_REQUEST['enabled'] == 'true'): ?> selected="selected" <?php endif ?>>可用</option>
+						<option value="false" <?php if($_REQUEST['enabled'] == 'false'): ?> selected="selected" <?php endif ?>>不可用</option>
+					</select>
+				</li>
+				<li>
+					<label>设备类型编号：</label>
+					<input type="text" value="{$_REQUEST['deviceType']}" id="data-deviceType" name="deviceType" class="textInput" placeholder="请输入整数值" />
+				</li>
+			</ul>
+			<div class="subBar">
+				<ul>
+					<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+				</ul>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div class="pageContent">
+	<div class="panelBar" style="height:29px;">
+		<ul class="toolBar">
+			<li>
+				<a rel="addMornode" class="add" href="__URL__/list"  title="新增" height="450" width="470" target="dialog" mask="true">
+					<span>新增</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	
+	<table class="table" width="100%" layoutH="138" class="iconTtable">
+		<thead>
+		<tr>
+			<th width="60">序号</th>
+			<th>主机名称</th>
+			<th>设备类型</th>
+			<th>IP</th>
+			<th>操作系统</th>
+			<th>组名</th>
+			<th>启用状态</th>
+			<th>模板名称</th>
+			<th>模板ID</th>
+			<th width="105">操作</th>
+		</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr>
+				<td>
+					<?php
+						$listnums = $numPerPage * ($currentPage-1) + $key+1;
+						echo $listnums;
+					?>
+				</td>
+				<td><?php if($vo['status']): ?><img src="/Public/extend/yes.png" width="18" height="18" align="absmiddle" /><?php else: ?><img src="/Public/extend/no.png" width="18" height="18" align="absmiddle" /><?php endif; ?>&nbsp;{$vo['hostName']}</td>
+				<td>{$vo['deviceType']}</td>
+				<td>{$vo['ip']}</td>
+				<td>{$vo['osType']}</td>
+				<td>{$vo['groupName']}</td>
+				<td><?php if($vo['enabled']): ?><img src="/Public/extend/yes.png" width="18" height="18" /><?php else: ?><img src="/Public/extend/no.png" width="18" height="18" /><?php endif; ?></td>
+				<td>{$vo['template']['templateName']}</td>
+				<td>{$vo['templateId']}</td>
+				<td>
+					<a class="btnDel" target="ajaxTodo" title="确实要删除这条记录吗" href="__URL__/delete/id/{$vo['nodeId']}">删除</a>
+					<a target="dialog" rel="editServer" class="btnEdit" title="编辑" href="__URL__/edit/id/{$vo['nodeId']}" height="450" width="470">编辑</a>
+				</td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<?php
+					$numPerPageArr = array(20,50,100,200);
+					foreach($numPerPageArr as $val)
+					{
+						if($val == $numPerPage)
+							$selected = 'selected';
+						echo '<option value="'.$val.'" '.$selected.'>'.$val.'</option>';
+							$selected = '';
+					}
+				?>
+			</select>
+			<span>条，共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+</div>

@@ -1,0 +1,89 @@
+<?php
+//渠道切换
+class ChannelController extends CommonController {
+
+	public function index(){
+		$model = CM("Channel");
+		//获取各渠道状态
+		$ChannelStatus = $model->sendChannelData('ChannelStatus');
+
+		//获取各渠道的实例状态
+		$InstanceStatus = $model->sendChannelData('InstanceStatus');
+		
+		//组装数据，将$InstanceStatus组装进$ChannelStatus
+		foreach ($ChannelStatus as $k => $v){
+			foreach($InstanceStatus as $InstanceK =>$InstanceV){
+				if($v['channelID'] == $InstanceV['channelID'] ){
+					$ChannelStatus[$k]['InstanceStatus'][] = $InstanceV;
+				}
+			}
+		}
+		
+		//重新排序
+		foreach($ChannelStatus as $k => $v){
+			if($v['InstanceStatus'] == ''){
+				$newkey = $k +100;
+				$ChannelStatus[$newkey] = $v;
+				unset($ChannelStatus[$k]);
+			}
+		}
+		$channelNum = count($ChannelStatus);
+		$InstanceNum = count($InstanceStatus);
+
+		$this->assign("ChannelNum",$channelNum);
+		$this->assign("InstanceNum",$InstanceNum);
+		$this->assign("ChannelStatus",$ChannelStatus);
+		$this->display();
+	}
+	
+	function changeInstanceStatus(){
+		$model = CM("Channel");
+		//获取各渠道状态
+		$ChannelStatus = $model->sendChannelData('InstanceStatus');
+		echo 1 ;
+	}
+	
+	function changeChannelStatus(){
+		$model = CM("Channel");
+		//获取各渠道状态
+		$ChannelStatus = $model->sendChannelData('ChannelStatus');
+		echo 1 ;
+	}
+	
+	public function flush(){
+		$model = CM("Channel");
+		//获取各渠道状态
+		$ChannelStatus = $model->sendChannelData('ChannelStatus');
+	
+		//获取各渠道的实例状态
+		$InstanceStatus = $model->sendChannelData('InstanceStatus');
+	
+		//组装数据，将$InstanceStatus组装进$ChannelStatus
+		foreach ($ChannelStatus as $k => $v){
+			foreach($InstanceStatus as $InstanceK =>$InstanceV){
+				if($v['channelID'] == $InstanceV['channelID'] ){
+					$ChannelStatus[$k]['InstanceStatus'][] = $InstanceV;
+				}
+			}
+		}
+	
+		//重新排序
+		foreach($ChannelStatus as $k => $v){
+			if($v['InstanceStatus'] == ''){
+				$newkey = $k +100;
+				$ChannelStatus[$newkey] = $v;
+				unset($ChannelStatus[$k]);
+			}
+		}
+		$channelNum = count($ChannelStatus);
+		$InstanceNum = count($InstanceStatus);
+	
+		$this->assign("ChannelNum",$channelNum);
+		$this->assign("InstanceNum",$InstanceNum);
+		$this->assign("ChannelStatus",$ChannelStatus);
+		$this->display();
+	}
+	
+}
+
+

@@ -1,0 +1,105 @@
+
+<include file="Public:pagerForm" />
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__URL__" method="post">
+		<div class="searchBar">
+			<table class="searchContent">
+				<tr>
+					<td>
+						<label class="header_label">产品名称：</label>
+						<select name="productId" id="productId" class="combox">
+							<volist id="vo" name="products">
+								<option value="{$vo['id']}" <?php if($_COOKIE['productId'] == $vo['id'] ){ echo "selected=selected";} ?> >{$vo['productName']}</option>
+							</volist>
+						</select>
+					</td>
+					<!--td><label>动作编码：</label><input type="text" name="actCode" id="actCode" class="textInput" value="{$_POST['actCode']}"/></td-->
+					<td><label>动作名称：</label><input type="text" name="actName" id="actName" class="textInput" value="{$_POST['actName']}"/></td>
+					
+					<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+
+</div>
+
+<div class="panelBar" >
+	<ul class="toolBar">
+		<li><a href="__URL__/add" class="add" target="dialog" mask="true" rel="" title="添加" width="1200" height="500"><span>添加</span></a></li>
+		<li class="line">line</li>
+		<li class=""><a href="__URL__/delete/id/{actId}" class="delete" target="ajaxTodo"  title="确定要删除吗？" ><span>删除</span></a></li>
+		<li class="line">line</li>
+		<li class=""><a href="__URL__/edit/id/{actId}" class="edit" target="dialog" mask="true" rel="" title="修改" width="1200" height="500" warn="请选择动作"><span>修改</span></a></li>
+		<!--li class="line">line</li>
+		<li><a href="__URL__/export/id/{actId}" class="icon" target="dialog" mask="true" rel="" title="导出动作数据" width="750" height="500" warn="请选择动作"><span>导出动作数据</span></a></li-->
+	</ul>
+			<form id="pagerForm" onsubmit="return navTabSearch(this);" action="__URL__/add" method="post">
+		<div class="searchBar" >
+			<table class="searchContent">
+				<tr>
+					<td>
+						<label class="header_label">产品名称：</label>
+						<select name="productId" id="productId" class="combox">
+							<volist id="vo" name="products">
+								<option value="{$vo['id']}" <?php if($_COOKIE['productId'] == $vo['id'] ){ echo "selected=selected";} ?> >{$vo['productName']}</option>
+							</volist>
+						</select>
+					</td>
+					
+					<td><label>动作名称：</label><input type="text" name="actName" id="actName" class="textInput" value="{$_POST['actName']}"/></td>
+					
+					<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+					</td>
+				</tr>
+			</table>
+				
+		</div>
+	</form>
+</div>
+
+
+
+<div class="tableList" layouth="118" id="testShow">
+	<table class="list" width="100%">
+		<thead>
+			<tr>
+				<th width="30"><input type="checkbox" group="product_id" class="checkboxCtrl" /></th>
+				<th width="90">编号</th>
+				<th>动作名称</th>
+				<th>动作编码</th>
+				<th>新增用户</th>
+				<th>新增时间</th>
+				<th>修改用户</th>
+				<th>修改时间</th>
+				<th>备注</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist id="actions" name="actions" >
+			<tr target="actId" rel="{$actions['id']},{$actions['productId']}" >
+				<td><input  type="checkbox" name="actionid" id="" value="{$actions['id']}" ></td>					
+				<td>{$numStart + $i}</td>
+				<td>{$actions['actName']}</td>
+				<td>{$actions['actCode']}</td>
+				<td>{$actions['createBy']}</td>
+				<td>{$actions['createTime']}</td>
+				<td>{$actions['updateBy']}</td>
+				<td>{$actions['updateTime']}</td>
+				<td>{$actions['remark']}</td>
+			</tr>
+			</volist>
+		</tbody>
+	</table>
+</div>
+
+<div class="panelBar">
+	<div class="pages">
+		<span>共{$totalCount}条</span>
+	</div>
+	<div class="pagination"  targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="{$pageNumShown}" currentPage="{$currentPage}"></div>
+</div>
+
+

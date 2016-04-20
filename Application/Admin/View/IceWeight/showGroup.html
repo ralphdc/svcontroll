@@ -1,0 +1,42 @@
+<div class="pageContent sortDrag" selector="h1" layoutH="15">
+		
+	<div class="panel collapse" minH="100" defH="570">
+		<h1>服务列表</h1>
+		<div>
+			<table id="serviceList" class="list" width="98%">
+				<thead>
+					<tr>
+						<th width="80">服务</th>
+						<th>路径</th>
+						<th>IP</th>
+						<th>端口</th>
+						<th>权重</th>
+						<th>服务端GroupID</th>
+						<th>客户端GroupID</th>
+						<th>框架版本号</th>
+					</tr>
+				</thead>
+				<tbody>
+					<foreach name="lists" item="vo" >
+					<foreach name="vo" item="vvo" >
+					<tr>
+						<td bordercolor="#9900CC">{$vvo['servicename']}</td>
+						<td>{$vvo['path']}</td>
+						<td>{$vvo['ip']}</td>
+						<td>{$vvo['port']}</td>
+						<td>{$vvo['weight']}</td>
+						<td>{$vvo['providergrouid']}</td>
+						<td>{$vvo['consumergroupid']}</td>
+						<td>{$vvo['framework']}</td>
+					</tr>
+					</foreach>	
+					</foreach>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div>
+<script type="text/javascript">
+
+</script>

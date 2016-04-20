@@ -1,0 +1,35 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/grant" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58">
+			<div class="item_fm_row">
+				<div class="fm_label_row">请填写生效时间：</div>
+				<input type="text" size="28" class="required textInput ui_input date" pattern="yyyy/MM/dd" name="fromtime" id="" />
+				<input type="hidden" name="grantuerid" size="28" value="{$grantuerid}" />
+				<input type="hidden" name="regrantuserids" size="28" value="{$regrantuserids}" />
+				<span class="fm_text mlr10">至</span>
+				<input type="text" size="28" class="required textInput ui_input date" pattern="yyyy/MM/dd" name="endtime" id="" />
+			</div>
+			<div class="item_fm_row">
+				<label>有效期：</label>
+				<input type="text" size="28" class="required textInput" name="dates" id="">
+				<span class="ml10">天</span>
+			</div>
+			<div class="item_fm_row">
+				<label style="width:140px;line-height:24px;">请选择授权的产品范围：</label>
+				<volist id="vo" name="products" >
+					<label for="" class="cb"><input type="checkbox" name="product" value="{$vo['id']}"  />{$vo['productName']}</label>
+				</volist>
+			</div>
+			
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+
+

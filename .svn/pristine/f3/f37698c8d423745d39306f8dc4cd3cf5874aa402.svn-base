@@ -1,0 +1,404 @@
+<link href="__PUBLIC__/dwz/themes/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/dwz/js/jquery.ztree.all-3.5.js" type="text/javascript"></script>
+
+
+<include file="Public:pagerForm" />
+
+<div class="pageHeader">
+
+</div>
+
+<div layouth="22">
+	<div id ='serviceTree' class="side_tree js_drag_width ztree" layouth="33">
+		
+	</div>
+	<div id="showSubscribeRef" class="pageContent " layouth="33">
+		
+	</div>
+</div>
+
+<div id="rMenu">
+	<ul>
+		<li id="addServiceGroup" onclick="addServiceGroup();">添加服务组</li>
+		<li id="addServiceType" onclick="addServiceType();">添加服务类型</li>
+		<li id="editServiceGroup" onclick="editServiceGroup();">修改服务组名</li>
+		<li id="delServiceGroup" onclick="delServiceGroup();">删除服务组</li>
+		<li id="addInstance" onclick="addInstance();">添加服务类型实例</li>
+		<li id="editServiceType" onclick="editServiceType();">修改服务类型名</li>
+		<li id="delServiceType" onclick="delServiceType();">删除服务类型</li>
+		<li id="used_service" onclick="subscribe();">订阅服务</li>
+		<li id="editInstance" onclick="editInstance();">修改实例名</li>
+		<li id="delInstance" onclick="delInstance();">删除服务实例</li>
+		<li id="copyInstance" onclick="copyInstance();">复制实例</li>
+		<li id="showInstanceStatus" onclick="showInstanceStatus();">查看实例状态</li>
+		<li id="autoUpgrade" onclick="autoUpgrade();">一键灰度升级</li>
+		<li id="autoRecover" onclick="autoRecover();">一键恢复</li>
+	</ul>
+</div>
+	<style type="text/css">
+		div#rMenu {position:absolute; visibility:hidden; top:0; background-color: #999;text-align: left;padding: 2px;}
+		div#rMenu ul li{
+			padding: 0 15px;
+			margin: 0;
+			margin-top: -1px;
+			border: solid 1px #ccc;
+			background-image: linear-gradient(top,#f8f8f8,#e0e0e0);
+			background-image: -webkit-linear-gradient(top,#f8f8f8,#e0e0e0);
+			background-image: -moz-linear-gradient(top,#f8f8f8,#e0e0e0);
+			line-height: 24px;
+			cursor: pointer;
+			color: #555;
+		}
+	</style>
+<script type="text/javascript">
+		var setting = {
+			view: {
+				dblClickExpand: true
+			},
+			check: {
+				enable: false
+			},
+			callback: {
+				onRightClick: OnRightClick
+			}
+		};
+
+		var zNodes = {$menu};
+
+		function OnRightClick(event, treeId, treeNode) {
+			if (!treeNode && event.target.tagName.toLowerCase() != "button" && $(event.target).parents("a").length == 0) {
+				//zTree.cancelSelectedNode();
+				//showRMenu("root", event.clientX, event.clientY);
+			} else if (treeNode && !treeNode.noR) {
+				//console.log(treeNode);
+				zTree.selectNode(treeNode);
+				var level = treeNode.level;
+				if(level < 4){
+				showRMenu(level, event.clientX, event.clientY);
+				}
+			}
+		}
+
+		function showRMenu(level, x, y) {
+			$("#rMenu").show();
+			if(level == 0){
+				$("#addServiceGroup").show();
+				$("#editServiceGroup").hide();
+				$("#delServiceGroup").hide();
+				$("#addServiceType").hide();
+				$("#addInstance").hide();
+				$("#editServiceType").hide();
+				$("#delServiceType").hide();
+				$("#used_service").hide();
+				$("#editInstance").hide();
+				$("#delInstance").hide();
+				$("#copyInstance").hide();
+				$("#showInstanceStatus").hide();
+				$("#autoUpgrade").hide();
+				$("#autoRecover").hide();
+			}else if(level == 1){
+				$("#addServiceGroup").hide();
+				$("#addServiceType").show();
+				$("#editServiceGroup").show();
+				$("#delServiceGroup").show();
+				$("#addInstance").hide();
+				$("#editServiceType").hide();
+				$("#delServiceType").hide();
+				$("#used_service").hide();
+				$("#editInstance").hide();
+				$("#delInstance").hide();
+				$("#copyInstance").hide();
+				$("#showInstanceStatus").hide();
+				$("#autoUpgrade").hide();
+				$("#autoRecover").hide();
+			}else if(level == 2){
+				$("#addServiceGroup").hide();
+				$("#addServiceType").hide();
+				$("#editServiceGroup").hide();
+				$("#delServiceGroup").hide();
+				$("#addInstance").show();
+				$("#editServiceType").show();
+				$("#delServiceType").show();
+				$("#editInstance").hide();
+				$("#used_service").hide();
+				$("#delInstance").hide();
+				$("#copyInstance").hide();
+				$("#showInstanceStatus").hide();
+				$("#autoUpgrade").hide();
+				$("#autoRecover").hide();
+			}else if(level == 3){
+				$("#addServiceGroup").hide();
+				$("#addServiceType").hide();
+				$("#editServiceGroup").hide();
+				$("#delServiceGroup").hide();
+				$("#addInstance").hide();
+				$("#editServiceType").hide();
+				$("#delServiceType").hide();
+				$("#editInstance").show();
+				$("#used_service").show();
+				$("#delInstance").show();
+				$("#copyInstance").show();
+				$("#showInstanceStatus").show();
+				$("#autoUpgrade").show();
+				$("#autoRecover").show();
+				
+			}
+			rMenu.css({"top":(y-120)+"px", "left":(x-140)+"px", "visibility":"visible"});
+			$("body").bind("mousedown", onBodyMouseDown);
+		}
+		function hideRMenu() {
+			if (rMenu) rMenu.css({"visibility": "hidden"});
+			$("body").unbind("mousedown", onBodyMouseDown);
+		}
+		function onBodyMouseDown(event){
+			if (!(event.target.id == "rMenu" || $(event.target).parents("#rMenu").length>0)) {
+				rMenu.css({"visibility" : "hidden"});
+			}
+		}
+		var zTree, rMenu;
+		$(document).ready(function(){
+			$.fn.zTree.init($("#serviceTree"), setting, zNodes);
+			zTree = $.fn.zTree.getZTreeObj("serviceTree");
+			rMenu = $("#rMenu");
+		});
+				
+		//添加服务组
+		function addServiceGroup(){
+			var selectednodes = zTree.getSelectedNodes();
+			var level = selectednodes[0].level;
+			var id = selectednodes[0].id;
+			$.pdialog.open('__URL__/addGroup/id/'+id,'addGroup','添加服务组',{'width':'450','height':'200','mask':true});
+			rMenu.hide();
+		}
+		
+		//添加服务类型
+		function addServiceType(){
+			var selectednodes = zTree.getSelectedNodes();
+			var level = selectednodes[0].level;
+			var id = selectednodes[0].id;
+			$.pdialog.open('__URL__/addType/id/'+id,'addType','添加服务类型',{'width':'550','height':'200','mask':true});
+			rMenu.hide();
+		}
+		
+		//添加服务类型实例
+		function addInstance(){
+			var selectednodes = zTree.getSelectedNodes();
+			var level = selectednodes[0].level;
+			var id = selectednodes[0].id;
+			var typeName = selectednodes[0].name;
+			var serverType = selectednodes[0].serverType;
+			
+			$.pdialog.open('__URL__/addInstance/id/'+id+'/typeName/'+typeName+'/tradeMethod/getAppid/serverType/'+serverType,'addInstance','添加服务类型实例',{'width':'500','height':'250','mask':true});
+			rMenu.hide();
+		}
+		
+		//添加暴露服务
+		function addPLservice(){
+			var selectednodes = zTree.getSelectedNodes();
+			var id = selectednodes[0].id;
+			var appId = selectednodes[0].appId
+			//console.log(selectednodes);return;
+			$.pdialog.open('__URL__/serviceList/appId/'+appId+'/serverInstanceId/'+id+ '/method/getprovide','addService','添加暴露服务',{'width':'600','height':'500','mask':true});
+			rMenu.hide();
+		}
+		//显示订阅服务
+		function showPLservice(id,appId){
+			//alert(id);alert(appId);
+			var url =  '__URL__/serviceList/appId/'+appId+'/serverInstanceId/'+id+ '/method/getprovide/';
+			$("#showSubscribeRef").loadUrl(url);
+		}
+		
+		//订阅服务
+		function subscribe(){
+			var selectednodes = zTree.getSelectedNodes();
+			var id = selectednodes[0].id;
+			var appId =  selectednodes[0].appId;
+			//alert(id);return;
+			$.pdialog.open('__URL__/subscribeList/serverInstanceId/'+id+ '/method/showbiztype/appId/'+appId,'addService','订阅服务',{'width':'600','height':'500','mask':true});
+			rMenu.hide();
+		}
+		
+		//显示订阅服务
+		function showSubscribeRef(id,bizType,appId){
+			//alert(appId);
+			var url =  '__URL__/showSubscribes/tradeMethod/getSubscriberProviders';
+			var data = "bizType="+bizType+"&appId="+appId+"&id="+id;
+			$("#showSubscribeRef").loadUrl(url,data,'');
+		}
+		
+		//删除服务实例(机器)
+		function delInstance(){
+			var selectednodes = zTree.getSelectedNodes();
+			var id = selectednodes[0].id;
+			var appId =  selectednodes[0].appId;
+			var url = '__URL__/foreverdelete/tradeMethod/deleteMachine/method/delmachine/id/'+id+ '/appId/'+appId ;
+			alertMsg.confirm('确定要删除此服务实例？', {
+				okCall: function() {
+					ajaxTodo(url);
+				}
+			});
+			
+		}
+		
+		//修改服务组名
+		function editServiceGroup(){
+			var selectednodes = zTree.getSelectedNodes();
+			var level = selectednodes[0].level;
+			var id = selectednodes[0].id;
+			$.pdialog.open('__URL__/editGroup/method/getgroup/id/'+id,'editGroup','修改服务组',{'width':'450','height':'200','mask':true});
+			rMenu.hide();
+		}
+		
+		//修改服务类型名
+		function editServiceType(){
+			var selectednodes = zTree.getSelectedNodes();
+			var level = selectednodes[0].level;
+			var id = selectednodes[0].id;
+			$.pdialog.open('__URL__/editServiceType/method/gettype/id/'+id,'editServiceType','修改服务类型名',{'width':'450','height':'200','mask':true});
+			rMenu.hide();
+		}
+		
+		//修改实例名
+		function editInstance(){
+			var selectednodes = zTree.getSelectedNodes();
+			var level = selectednodes[0].level;
+			var id = selectednodes[0].id;
+			$.pdialog.open('__URL__/editInstance/method/getinstance/id/'+id,'editInstance','修改实例名',{'width':'500','height':'250','mask':true});
+			rMenu.hide();
+		}
+		
+		//一键复制实例名
+		function copyInstance(){
+			var selectednodes = zTree.getSelectedNodes();
+			var id = selectednodes[0].id;
+			var appId = selectednodes[0].appId;
+			var deployMode = selectednodes[0].deployMode;
+			$.pdialog.open('__URL__/copyInstance/appId/'+appId+'/id/'+id+'/deployMode/'+deployMode,'copyInstance','一键复制实例',{'width':'500','height':'250','mask':true});
+			rMenu.hide();
+		}
+		
+		//查看实例状态
+		function showInstanceStatus(){
+			var selectednodes = zTree.getSelectedNodes();
+			var id = selectednodes[0].id;
+			var appId = selectednodes[0].appId;
+			$.pdialog.open('__URL__/showInstanceStatus/appId/'+appId,'showInstanceStatus','查看实例状态',{'width':'500','height':'300','mask':true});
+			rMenu.hide();
+		}
+		
+		//删除服务组名
+		function delServiceGroup(){
+			rMenu.hide();
+			var selectednodes = zTree.getSelectedNodes();
+			var id = selectednodes[0].id;
+			var appId =  selectednodes[0].appId;
+			var url = '__URL__/foreverdelete/method/delServiceGroup/id/'+id;
+			alertMsg.confirm('确定要删除此服务组？', {
+				okCall: function() {
+					ajaxTodo(url);
+				}
+			});
+		}
+		
+		//删除服务类型
+		function delServiceType(){
+			rMenu.hide();
+			var selectednodes = zTree.getSelectedNodes();
+			var id = selectednodes[0].id;
+			var appId =  selectednodes[0].appId;
+			var url = '__URL__/foreverdelete/method/delServiceType/id/'+id;
+			alertMsg.confirm('确定要删除此服务类型？', {
+				okCall: function() {
+					ajaxTodo(url);
+				}
+			});
+		}
+		
+		//一键灰度升级
+		function autoUpgrade(){
+			rMenu.hide();
+			var selectednodes = zTree.getSelectedNodes();
+			var id = selectednodes[0].id;
+			var appId =  selectednodes[0].appId;
+			var url = '__URL__/autoUpgrade/appId/'+appId;
+			alertMsg.confirm('确定要一键灰度升级？', {
+				okCall: function() {
+					ajaxTodo(url,showStatus);
+				}
+			});
+		}
+		
+		function showStatus(json){
+			if (json.statusCode == DWZ.statusCode.error) {
+				if (json.message && alertMsg) {
+					alertMsg.error(json.message);
+				}
+				return false;
+			} else {
+				if (json.message && alertMsg) alertMsg.correct(json.message);
+				var  statushtml = '当前状态：' + json.desc;
+				$("#spanShowServiceStatus").html(statushtml);
+			}
+			
+			
+			
+			
+			
+		}
+		
+		//一键恢复
+		function autoRecover(){
+			rMenu.hide();
+			var selectednodes = zTree.getSelectedNodes();
+			var id = selectednodes[0].id;
+			var appId =  selectednodes[0].appId;
+			var url = '__URL__/autoRecover/appId/'+appId;
+			alertMsg.confirm('确定要一键恢复？', {
+				okCall: function() {
+					ajaxTodo(url,showStatus);
+				}
+			});
+		}
+		
+	$(document).ready(function(){	
+	$('.js_drag_width').each(function(){
+		if($('.mouse_area',this).length!=0){
+			return;
+		}
+		var area=$(this),
+			handle=$('<div class="mouse_area" style="position:absolute;top:0;right:0;width:5px;height:100%;cursor:e-resize;"></div>')
+		$(this).css('position','relative').append(handle);
+		var drag_move=false,
+			s_x,
+			s_w;
+		handle.mousedown(function(event){
+			drag_move=true;
+			s_x=event.pageX;
+			s_w=area.width();
+			$('body').bind('selectstart',function(){return false;}).addClass('unselect');
+		});
+		$(document).mousemove(function(event){
+			if(drag_move){
+				var e_x=event.pageX,
+					dist=e_x-s_x,
+					e_w=s_w+dist;
+				if(e_w<100){
+					e_w=100
+				}else if(e_w>800){
+					e_w=800;
+				}
+				console.log(e_w);
+				area.width(e_w+'px');
+			}
+		}).mouseup(function(){
+			drag_move=false;
+			$('body').unbind('selectstart').removeClass('unselect');
+		});
+	});
+});
+
+
+		
+	
+
+</script> 

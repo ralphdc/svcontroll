@@ -1,0 +1,25 @@
+<?php if (!defined('THINK_PATH')) exit();?><div class="pageContent">
+<form method="post" action="/index.php/Service/Areamanage/add" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>机房名称：</label>
+				<input class="required" type="text" id="arName" name="arName" maxlength="50" size="30" value="<?php echo $row['arName'];?>"/>
+			</p>
+			<p>
+				<label>机房描述：</label>
+				<input class="required" type="text" id="arDec" name="arDec" maxlength="50" size="30" value="<?php echo $row['arDec'];?>"/>
+			</p>
+			<p>
+				<label>别名：</label>
+				<input type="text" id="arDemo" name="arDemo" maxlength="50" size="30" value="<?php echo $row['username'];?>"/>
+			</p>
+			
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>

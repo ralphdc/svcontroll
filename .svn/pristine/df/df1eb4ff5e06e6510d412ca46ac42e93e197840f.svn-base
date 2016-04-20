@@ -1,0 +1,21 @@
+
+<div class="pageContent">
+<table class="table" width="100%" layoutH="50">
+	<thead>
+		<tr>
+			<th>告警元素</th>
+			<th>告警信息</th>
+			<th>告警时间</th>
+			<th>备注</th>
+		</tr>
+	</thead>
+	<volist id="vo" name="sinfo">
+	<tr>
+		<td width="100">{$vo['element']}</td>
+		<td width="150">{$vo['info']}</td>
+		<td width="180">{$vo['time']}</td>
+		<td>{$vo['remark']}</td>
+	</tr>
+	</volist>
+</table>
+</div>

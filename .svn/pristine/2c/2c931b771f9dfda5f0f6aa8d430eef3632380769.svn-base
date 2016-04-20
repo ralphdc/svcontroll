@@ -1,0 +1,799 @@
+
+<include file="Public:pagerForm" />
+
+<div class="tabs">
+	<div class="tabsHeader">
+		<div class="tabsHeaderContent">
+			<ul>
+				<li><a href="javascript:;"><span>菜单管理</span></a></li>
+				<li><a href="javascript:;"><span>动作管理</span></a></li>
+				<li><a href="javascript:;"><span>数据元素管理</span></a></li>
+				<!--li><a href="javascript:;"><span>流程任务管理</span></a></li-->
+			</ul>
+		</div>
+	</div>
+	<div class="tabsContent" layouth="50">
+		<!-- 菜单管理 -->
+		<div>
+			<div class="pageHeader">
+				<form rel="pagerForm" onsubmit="return divSearch(this,'competence_res_menu');" action="__URL__/getMenus"  method="post">
+					<div class="searchBar">
+						<table class="searchContent">
+							<tr>
+								<td>
+									<label class="header_label">所属产品：</label>
+									<select name="productId" id="productId" class="combox">
+									<volist id="vo" name="products">
+										<option value="{$vo['id']}" <?php if($_COOKIE['productId'] == $vo['id'] ){ echo "selected=selected";} ?> >{$vo['productName']}</option>
+									</volist>
+									</select>
+								</td>
+								<!--td><label class="header_label">菜单名称：</label><input type="text" name="" id="" class="textInput" /></td-->
+								<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<input type="hidden" name="type" value="1" />
+				</form>
+			</div>
+			<table class="ui_info_plate">
+				<tr>
+					<td class="plate_item" width="250" id="competence_res_menu">
+						<div class="ui_info_con" layouth="130">
+							<ul class="tree otree treeFolder treeCheck collapse" id="menulist">
+								<volist id="item" name="menu" >
+									<li><a href="javascript:;" class="treenode" tvalue="{$item['id']}" tname="" rel="{$item['id']}" rel2="{$item['menuType']}" >{$item['menuName']}</a>
+									<notempty name="item['subMenuList']">
+									<ul>
+										<volist id="subItem" name="item['subMenuList']" >
+										<li ><a class="treenode" href="javascript:;" tvalue="{$subItem['id']}" rel="{$subItem['id']}" rel2="{$subItem['menuType']}" >{$subItem['menuName']}</a>
+											<notempty name="subItem['subMenuList']">
+											<ul>
+											<volist id="ssubItem" name="subItem['subMenuList']" >
+											<li  ><a class="treenode" href="javascript:;"  tvalue="{$ssubItem['id']}" rel="{$ssubItem['id']}" rel2="{$ssubItem['menuType']}" tname ="leave" >{$ssubItem['menuName']}</a></li>
+											</volist>
+											</ul>
+											</notempty>
+										</li>
+										</volist>
+									</ul>
+									</notempty>
+									</li>
+								</volist>
+							</ul>
+						</div>
+					</td>
+					<td class="plate_item" width="800">
+						<div class="tabs m0">
+							<div class="tabsHeader">
+								<div class="tabsHeaderContent" id="MenuTab">
+									<ul>
+										<li><a href="javascript:;" stype="1"><span>角色列表</span></a></li>
+										<li><a href="javascript:;" stype="2"><span>用户列表</span></a></li>
+										<li><a href="javascript:;" stype="3"><span>用户组列表</span></a></li>
+									</ul>
+									<div class="buttonActive" style="float:right;margin-top:5px;margin-right:10px;"><div class="buttonContent"><button type="button" id="queryMenu">刷新</button></div></div>
+								</div>
+							</div>
+							<div class="tabsContent" layouth="144">
+								<div class="p10" id="roleTable">
+									<div class="tableList" layouth="201" >
+										<table class="list" width="100%">
+											<thead>
+												<tr>
+													<tr>
+														<th>序号</th>
+														<th>角色名</th>
+														<th>角色编码</th>
+														<th>角色描述</th>
+														<th>创建时间</th>
+														<th>备注</th>
+													</tr>
+												</tr>
+											</thead>
+											<tbody>
+												
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages"><span>共3条</span></div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</div>
+								<div class="p10" id="userTable">
+									<div class="tableList" layouth="201">
+										<table class="list" width="100%">
+											<thead>
+												
+												<tr>
+													<th>序号</th>
+													<th>用户名</th>
+													<th>机构ID</th>
+													<th>用户状态</th>
+													<th>创建时间</th>
+												</tr>
+												
+											</thead>
+											<tbody>
+												
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages"><span>共4条</span></div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</div>
+								<div class="p10">
+									<div class="tableList" layouth="201">
+										<table class="list" width="100%">
+											<thead>
+												<tr>
+													<th>33XXX</th>
+													<th>XXXXX</th>
+													<th>XX</th>
+													<th>XXXXXXX</th>
+													<th>XXXXXXX</th>
+													<th>XXXXXX</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages"><span>共{$totalCount}条</span></div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- 菜单管理 end -->
+		
+		<!-- 动作管理 -->
+		<div>
+			<div class="pageHeader">
+				<form rel="pagerForm" onsubmit="return divSearch(this,'competence_res_action');" action="__URL__/getMenus" method="post">
+					<div class="searchBar">
+						<table class="searchContent">
+							<tr>
+								<td>
+									<label class="header_label">所属产品：</label>
+									<select name="productId" id="productId" class="combox">
+									<volist id="vo" name="products">
+										<option value="{$vo['id']}" <?php if($_COOKIE['productId'] == $vo['id'] ){ echo "selected=selected";} ?> >{$vo['productName']}</option>
+									</volist>
+								</td>
+								<td><label class="header_label">动作名称：</label><input type="text" name="" id="" class="textInput" placeholder="支持输入逗号检索多用户" /></td>
+								
+								<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+								
+								</td>
+							</tr>
+						</table>
+					</div>
+					<input type="hidden" name="type" value="2" />
+				</form>
+			</div>
+			<table class="ui_info_plate" >
+				<tr>
+				
+				<td id="competence_res_action">
+				<table width="400"><tr>
+					<td class="plate_item" width="250" >
+						<div class="ui_info_con" layouth="130">
+						
+						<ul class="tree otree treeFolder treeCheck collapse" id="actMenuList">
+								<volist id="item" name="menu" >
+									<li><a href="javascript:;" class="treenode" tvalue="{$item['id']}" tname="" rel="{$item['id']}" rel2="{$item['menuType']}" >{$item['menuName']}</a>
+									<notempty name="item['subMenuList']">
+									<ul>
+										<volist id="subItem" name="item['subMenuList']" >
+										<li ><a class="treenode" href="javascript:;" tvalue="{$subItem['id']}" rel="{$subItem['id']}" rel2="{$subItem['menuType']}" >{$subItem['menuName']}</a>
+											<notempty name="subItem['subMenuList']">
+											<ul>
+											<volist id="ssubItem" name="subItem['subMenuList']" >
+											<li  ><a class="treenode" href="javascript:;" tname='son3' tvalue="{$ssubItem['id']}" rel="{$ssubItem['id']}" rel2="{$ssubItem['menuType']}" tname ="leave" >{$ssubItem['menuName']}</a></li>
+											</volist>
+											</ul>
+											</notempty>
+										</li>
+										</volist>
+									</ul>
+									</notempty>
+									</li>
+								</volist>
+							</ul>
+							
+						</div>
+					</td>
+					<td class="plate_item" width="150">
+				
+						<div class="tableList bd1" layouth="105">
+							<div><button id="searchAct" type="button" style="float:right;" class="ui_btn_add">查找</button></div>
+							<table class="list" width="100%" id="showActions">
+								
+								<volist name='actions' id="vo">
+								<tr>
+									<td width="50px"><input type="checkbox" name="actionId" id="" class="textInput" /></td>
+									<td>{$vo['actionName']}</td>
+								</tr>
+								</volist>
+							</table>
+						</div>
+					</td>
+					</tr></table>
+					</td>
+					
+					<td class="plate_item" width="800">
+						<div class="tabs m0">
+							<div class="tabsHeader">
+								<div class="tabsHeaderContent" id='actTab'>
+									<ul>
+										<li><a href="javascript:;" stype="1"><span>角色列表</span></a></li>
+										<li><a href="javascript:;" stype="2"><span>用户列表</span></a></li>
+										<li><a href="javascript:;" stype="3"><span>用户组列表</span></a></li>
+									</ul>
+								<div class="buttonActive" style="float:right;margin-top:5px;margin-right:10px;"><div class="buttonContent"><button type="button" id="queryAction">刷新</button></div></div>	
+								</div>
+								
+							</div>
+							<div class="tabsContent" layouth="144">
+								<div class="p10" id="showActOfRoles">
+									<div class="tableList" layouth="201">
+										<table class="list" width="100%">
+											<thead>
+												<tr>
+													<th>序号</th>
+													<th>角色名</th>
+													<th>角色编码</th>
+													<th>角色描述</th>
+													<th>创建时间</th>
+													<th>备注</th>
+												</tr>
+											</thead>
+											<tbody>
+												
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages"><span>共{$totalCount}条</span></div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</div>
+								<div class="p10" id="showActOfUsers">
+									<div class="tableList" layouth="201">
+										<table class="list" width="100%">
+											<thead>
+												<tr>
+													<th>序号</th>
+													<th>用户名</th>
+													<th>用户状态</th>
+													<th>机构ID</th>
+													<th>创建时间</th>
+													<th>备注</th>
+												</tr>
+											</thead>
+											<tbody>
+												
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages"><span>共{$totalCount}条</span></div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</div>
+								<div class="p10">
+									<div class="tableList" layouth="201">
+										<table class="list" width="100%">
+											<thead>
+												<tr>
+													<th>XXXXX</th>
+													<th>XXXXX</th>
+													<th>XX</th>
+													<th>XXXXXXX</th>
+													<th>XXXXXXX</th>
+													<th>XXXXXX</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages"><span>共{$totalCount}条</span></div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- 动作管理 end -->
+		
+		<!-- 数据元素管理 -->
+		<div>
+			<div class="pageHeader">
+				<form rel="pagerForm" onsubmit="return divSearch(this,'competence_res_ele');" action="__URL__/getElementByPro" method="post">
+					<div class="searchBar">
+						<table class="searchContent">
+							<tr>
+								<td>
+									<label class="header_label">所属产品：</label>
+									<select name="productId" id="productId" class="combox">
+									<volist id="vo" name="products">
+										<option value="{$vo['id']}" <?php if($_COOKIE['productId'] == $vo['id'] ){ echo "selected=selected";} ?> >{$vo['productName']}</option>
+									</volist>
+									</select>
+								</td>
+								<td><label class="header_label">元素名称：</label><input type="text" name="elementName" id="" class="textInput" /></td>
+								
+								<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<input type="hidden" name="type" value="3" />
+				
+				</form>
+			</div>
+			<table class="ui_info_plate">
+				<tr>
+					<td class="plate_item" width="200" id="competence_res_ele">
+						<div class="tableList bd_side" layouth="142">
+							<table class="list" width="100%">
+								<thead>
+									<tr>
+										<th width="50"><input type="checkbox" name="1" id="1" /></th>
+										<th width="50">元素编号</th>
+										<th>元素名称</th>
+									</tr>
+								</thead>
+								<tbody>
+									<volist name="elements" id="vo">
+									<tr>
+										<td><input type="checkbox" name="element" value="{$vo['id']}" /></td>
+										<td>{$i}</td>
+										<td>{$vo['elementName']}</td>
+									</tr>
+									</volist>
+								</tbody>
+							</table>
+						</div>
+						<div class="panelBar">
+							<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+						</div>
+					</td>
+					<td class="plate_item" width="800">
+						<div class="tabs m0">
+							<div class="tabsHeader">
+								<div class="tabsHeaderContent" id="ElementTab">
+									<ul>
+										<li><a href="javascript:;" stype="1"><span>角色列表</span></a></li>
+										<li><a href="javascript:;" stype="2"><span>用户列表</span></a></li>
+										<li><a href="javascript:;" stype="3"><span>用户组列表</span></a></li>
+										<div class="buttonActive" style="float:right;margin-top:5px;margin-right:10px;"><div class="buttonContent"><button type="button" id="queryElement">刷新</button></div></div>	
+									</ul>
+								</div>
+							</div>
+							<div class="tabsContent" layouth="144">
+								<div class="p10" id="ElementRoleTable">
+									<div class="tableList" layouth="201">
+										<table class="list" width="100%">
+											<thead>
+												<tr>
+													<th>序号</th>
+													<th>角色名</th>
+													<th>角色编码</th>
+													<th>角色描述</th>
+													<th>创建时间</th>
+													<th>备注</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<volist name="role" id="vo">
+													<tr>
+														<td>{$i + $startNum}</td>
+														<td>{$vo['roleName']}</td>
+														<td>{$vo['roleCode']}</td>
+														<td>{$vo['roleDesc']}</td>
+														<td>{$vo['createTime']}</td>
+														<td>{$vo['remark']}</td>
+													</tr>
+													</volist>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages"><span>共{$totalCount}条</span></div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</div>
+								<div class="p10" id="ElementUserTable">
+									<div class="tableList" layouth="201">
+										<table class="list" width="100%">
+											<thead>
+													<tr>
+														<th>序号</th>
+														<th>用户名</th>
+														<th>机构ID</th>
+														<th>用户状态</th>
+														<th>创建时间</th>
+													</tr>
+											</thead>
+											<tbody>
+												<volist name="user" id="vo">
+													<tr>
+														<td>{$i + $startNum}</td>
+														<td>{$vo['userName']}</td>
+														<td>{$vo['orgId']}</td>
+														<td>{$vo['userStatus']}</td>
+														<td>{$vo['createTime']}</td>
+													</tr>
+												</volist>
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages"><span>共{$totalCount}条</span></div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</div>
+								<div class="p10" id="ElementUserGroupTable">
+									<div class="tableList" layouth="201">
+										<table class="list" width="100%">
+											<thead>
+												<tr>
+													<th>XXXXX</th>
+													<th>XXXXX</th>
+													<th>XX</th>
+													<th>XXXXXXX</th>
+													<th>XXXXXXX</th>
+													<th>XXXXXX</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages"><span>共{$totalCount}条</span></div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- 数据元素管理 end -->
+		
+		<!-- 流程任务管理 -->
+		<div>
+			<div class="pageHeader">
+				<form rel="pagerForm" onsubmit="return divSearch(this,'competence_res_tack');" action="" method="post">
+					<div class="searchBar">
+						<table class="searchContent">
+							<tr>
+								<td><label class="header_label">流程任务名称：</label><input type="text" name="" id="" class="textInput" /></td>
+								<td><label class="header_label">流程任务编号：</label><input type="text" name="" id="" class="textInput" /></td>
+								<td>
+									<label class="header_label">所属产品：</label>
+									<select name="" id="" class="combox">
+										<option value="1">MPAY产品</option>
+										<option value="2">TMS产品</option>
+										<option value="3">卡产品</option>
+									</select>
+								</td>
+								<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<input type="hidden" name="pageNum" value="1" />
+					<input type="hidden" name="numPerPage" value="20" />
+					<input type="hidden" name="orderField" value="termid" />
+					<input type="hidden" name="orderDirection" value="desc" />
+				</form>
+			</div>
+			<table class="ui_info_plate">
+				<tr>
+					<td class="plate_item" width="200" id="competence_res_tack">
+						<div class="tableList bd_side" layouth="142">
+							<table class="list" width="100%">
+								<thead>
+									<tr>
+										<th width="70">任务编号</th>
+										<th>任务名称</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>XXXXXX</td>
+										<td>XXXXXX</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="panelBar">
+							<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+						</div>
+					</td>
+					<td class="plate_item" width="800">
+						<div class="tabs m0">
+							<div class="tabsHeader">
+								<div class="tabsHeaderContent">
+									<ul>
+										<li><a href="javascript:;"><span>角色列表</span></a></li>
+										<li><a href="javascript:;"><span>用户列表</span></a></li>
+										<li><a href="javascript:;"><span>用户组列表</span></a></li>
+										<div class="buttonActive" style="float:right;margin-top:5px;margin-right:10px;"><div class="buttonContent"><button type="button" id="querywork">刷新3</button></div></div>	
+									</ul>
+								</div>
+							</div>
+							<div class="tabsContent" layouth="144">
+								<div class="p10">
+									<div class="tableList" layouth="201">
+										<table class="list" width="100%">
+											<thead>
+												<tr>
+													<th>XXXXX</th>
+													<th>XXXXX</th>
+													<th>XX</th>
+													<th>XXXXXXX</th>
+													<th>XXXXXXX</th>
+													<th>XXXXXX</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages"><span>共{$totalCount}条</span></div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</div>
+								<div class="p10">
+									<div class="tableList" layouth="201">
+										<table class="list" width="100%">
+											<thead>
+												<tr>
+													<th>XXXXX</th>
+													<th>XXXXX</th>
+													<th>XX</th>
+													<th>XXXXXXX</th>
+													<th>XXXXXXX</th>
+													<th>XXXXXX</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages"><span>共{$totalCount}条</span></div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</div>
+								<div class="p10">
+									<div class="tableList" layouth="201">
+										<table class="list" width="100%">
+											<thead>
+												<tr>
+													<th>XXXXX</th>
+													<th>XXXXX</th>
+													<th>XX</th>
+													<th>XXXXXXX</th>
+													<th>XXXXXXX</th>
+													<th>XXXXXX</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+													<td>XXXXXX</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<div class="panelBar">
+										<div class="pages"><span>共{$totalCount}条</span></div>
+										<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- 流程任务管理 end -->
+	</div>
+</div>
+<script type="text/javascript">
+$(function($) {
+	  $(".ckbox").click(function(){
+		alert("123");
+	});
+	
+	$('.otree').jTree({
+		'clickEven':function(tree,ckbox){
+			
+			$('input:checked',tree).each(function(){
+				//console.log($(this).val());
+				
+			});
+			
+			$('input:checked',ckbox).each(function(){
+				//alert($(this).val());
+			});
+			/*
+			$('input:checked',ckbox).each(function(){
+				alert($(this).val());
+			});*/
+		}
+	});
+});
+
+//点击菜单刷新按钮
+$("#queryMenu").click(function(){
+	var stype = $('#MenuTab .selected a').attr('stype');
+	var menuids = '';
+	var html = $("#menulist .checked :input[name='leave']").each(function(){
+		menuids = $(this).val(); //支持多个,后台待改进
+	});
+	if(stype == 1){
+		var $box = $("#roleTable");
+		$box.ajaxUrl({
+			type: "POST",
+			url: "__URL__/showMenuOfRoles",
+			data: 'menuId='+menuids,
+			callback: function() {
+				$box.find("[layoutH]").layoutH();
+			}
+		});
+	}else if(stype == 2){
+		var $box = $("#userTable");
+		$box.ajaxUrl({
+			type: "POST",
+			url: "__URL__/showMenuOfUsers",
+			data: 'menuId='+menuids,
+			callback: function() {
+				$box.find("[layoutH]").layoutH();
+			}
+		});
+	}
+
+});
+
+
+//点击动作刷新按钮
+$("#queryAction").click(function(){
+	var stype = $('#actTab .selected a').attr('stype');
+	var actionids = '';
+	var html = $("input[name='menuActionId']").each(function(){
+		actionids = $(this).val(); //支持多个,后台待改进
+	});
+	var $box ="";
+	if(stype == 1){
+		 $box = $("#showActOfRoles");
+	}else if(stype == 2){
+		 $box = $("#showActOfUsers");
+	}else{
+	
+	}
+	$box.ajaxUrl({
+			type: "POST",
+			url: "__URL__/showActOfRes",
+			data: 'actionids='+actionids+"&type="+stype,
+			callback: function() {
+				$box.find("[layoutH]").layoutH();
+			}
+		});
+
+});
+
+//点击元素刷新按钮
+$("#queryElement").click(function(){
+	var stype = $('#ElementTab .selected a').attr('stype');
+	var elementids = '';
+	var html = $("input[name='element']:checked").each(function(){
+		//elementids += $(this).val()+',' ; 
+		elementids = $(this).val(); 
+	});
+	var $box = "";
+	if(stype =="1"){
+		 $box = $("#ElementRoleTable");
+	}else if(stype == "2"){
+		 $box = $("#ElementUserTable");
+	}else{
+	
+	}
+	$box.ajaxUrl({
+			type: "POST",
+			url: "__URL__/showElementOfRes",
+			data: 'elementid='+elementids+"&type="+stype,
+			callback: function() {
+				$box.find("[layoutH]").layoutH();
+			}
+		});
+});
+
+$("#searchAct").click(function(){
+	var menuIds = "";
+	var html = $("#actMenuList .checked :input[name='son3']").parent().siblings("a").each(function(){
+	  // ids += $(this).attr("tvalue") +',';
+		menuId = $(this).attr("tvalue");
+	});
+	//alert(ids);
+	var $box = $("#showActions");
+		$box.ajaxUrl({
+			type: "POST",
+			url: "__URL__/showActions",
+			data: 'menuId='+menuId,
+			callback: function() {
+				$box.find("[layoutH]").layoutH();
+			}
+		});
+
+});
+
+</script>

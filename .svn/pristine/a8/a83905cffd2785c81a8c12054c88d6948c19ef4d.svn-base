@@ -1,0 +1,243 @@
+<?php
+/**
+ * 服务管制--监控配置管理
+ * @author zengguangqiu
+ *
+ */
+class ServermanageController extends CommonController {
+	var $navTab = 'D60613';
+	var $virtual = array('1'=>'物理机','2'=>'虚拟机');
+	
+	// 框架首页
+	public function index() {
+		C ( 'SHOW_RUN_TIME', false ); // 运行时间显示
+		C ( 'SHOW_PAGE_TRACE', false );
+		$pageNum =empty($_REQUEST['numPerPage']) ? C('PAGE_LISTROWS') : $_REQUEST['numPerPage'];
+		$this->assign ( 'numPerPage', $pageNum ); //每页显示多少条
+		$this->assign ( 'currentPage', !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1);
+		$Servermanage = new ServermanageModel($_POST,$_GET);
+		$result = $Servermanage->findByPost($_POST,$_GET);
+		$count = $Servermanage->countByPost($_POST,$_GET);
+		$this->assign ( 'totalCount', $count );
+		$this->assign ( 'list', $result );
+		$this->assign ( 'map', array('hostname'=>'','ipv'=>'','environment'=>'','isVirtual'=>''));
+		/* //取出服务器型号
+		$Mechinetype = new MechinetypeModel();
+		$allMechinetypeInfo = $Mechinetype->getAll();
+		//取出区域名称
+		$Areamanage = new AreamanageModel();
+		$allAreamanageInfo = $Areamanage->getAll();
+		//取出操作系统
+		$Operatesystem = new OperatesystemModel();
+		$allOperatesystemInfo = $Operatesystem->getAll();
+		$this->assign("MechinetypeInfo",$allMechinetypeInfo);
+		$this->assign("AreamanageInfo",$allAreamanageInfo);
+		$this->assign("OperatesystemInfo",$allOperatesystemInfo); */
+		$this->assign('virtual',$this->virtual);
+		$this->assign('environment',C('CONST_ENVIRONMENT'));
+		cookie('_currentUrl_', __SELF__);
+		$this->display();
+	}
+	public function add(){
+		if($_POST){
+			$request = array();
+			foreach($_POST as $k =>$v){
+				$request[$k] = $v;
+	
+			}
+			if(!empty($_POST["ips"]))
+			{
+				$tempips = explode("\n", $_POST["ips"]);
+				$ips = implode(',', $tempips);
+			}
+			if(empty($_POST['prt_pdName']))
+			{
+				$_POST['prt_pdId'] = '';
+			}
+			
+			//组织要保存的数据
+			$post['data']['product_ids'] = trim($_POST['prt_pdId']);
+			$post['data']['ipv'] = trim($_POST['ipv']);
+			$post['data']['ips'] = $ips;
+			$post['data']['hostname'] = trim($_POST['hostname']);
+			$post['data']['username'] = trim($_POST['username']);
+			$post['data']['password'] = trim($_POST['password']);
+			$post['data']['serverenv'] = trim($_POST['environment']);
+			$post['data']['isVirtual'] = intval($_POST['isVirtual']);
+			$post['data']['virtualCorrespondPhysicalId'] = $_POST['prtt_id'];
+			$post['data']['controlcard'] = trim($_POST['controlcard']);
+			$post['data']['stId'] = intval($_POST['stId']);
+			$post['data']['arId'] = intval($_POST['arId']);
+			$post['data']['cabinet_id'] = $_POST['cabinet_id'];
+			//2015-11-13 唐工需求，虚拟机添加操作系统选项，其他不变；
+			//$post['data']['sysid'] = $_POST['isVirtual'] == 2 ? '':intval($_POST['sysid']);
+			$post['data']['sysid'] = intval($_POST['sysid']);
+			$post['data']['serverdemo'] = $_POST['serverdemo'];
+			$post['form_act'] = 'create';
+			//调用java接口进行数据的操作
+			$Servermanage = new ServermanageModel($_POST,$_GET);
+			$result = $Servermanage->postSave($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+		//取出服务器型号
+		$Mechinetype = new MechinetypeModel();
+		$allMechinetypeInfo = $Mechinetype->getAll();
+		//取出区域名称
+		$Areamanage = new AreamanageModel();
+		$allAreamanageInfo = $Areamanage->getAll();
+		//取出操作系统
+		$Operatesystem = new OperatesystemModel();
+		$allOperatesystemInfo = $Operatesystem->getAll();
+		$this->assign("MechinetypeInfo",$allMechinetypeInfo);
+		$this->assign("AreamanageInfo",$allAreamanageInfo);
+		$this->assign("OperatesystemInfo",$allOperatesystemInfo);
+		$this->assign('virtual',$this->virtual);
+		$this->assign('environment',C('CONST_ENVIRONMENT'));
+		$this->display();
+	}
+	
+	function edit() {
+		if($_POST){
+			$request = array();
+			foreach($_POST as $k =>$v){
+				$request[$k] = $v;
+		
+			}
+			if(empty($_POST['prt_pdName']))
+			{
+				$_POST['prt_pdId'] = '';
+			}
+			//组织要保存的数据
+			$post['id'] = intval($_POST['id']);
+			$post['data']['product_ids'] = trim($_POST['prt_pdId']);
+			$post['data']['ipv'] = trim($_POST['ipv']);
+			$post['data']['hostname'] = trim($_POST['hostname']);
+			$post['data']['username'] = trim($_POST['username']);
+			$post['data']['password'] = trim($_POST['password']);
+			$post['data']['serverenv'] = trim($_POST['environment']);
+			$post['data']['isVirtual'] = intval($_POST['isVirtual']);
+			$post['data']['virtualCorrespondPhysicalId'] = $_POST['prtt_id'];
+			$post['data']['controlcard'] = trim($_POST['controlcard']);
+			$post['data']['stId'] = intval($_POST['stId']);
+			$post['data']['arId'] = intval($_POST['arId']);
+			$post['data']['cabinet_id'] = $_POST['cabinet_id'];
+			//2015-11-13 唐工需求，虚拟机添加操作系统选项，其他不变；
+			//$post['data']['sysid'] = $_POST['isVirtual'] == 2 ? '':intval($_POST['sysid']);
+			$post['data']['sysid'] = intval($_POST['sysid']);
+			$post['data']['serverdemo'] = $_POST['serverdemo'];
+			$post['form_act'] = 'update';
+			//调用java接口进行数据的操作
+			$Servermanage = new ServermanageModel($_POST,$_GET);
+			$result = $Servermanage->postSave($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+		$id = $_REQUEST ['id'];
+		$Servermanage = new ServermanageModel($_POST,$_GET);
+		$vo = $Servermanage->getRowInfo($id);
+		$this->assign('row', $vo);
+		//取出服务器型号
+		$Mechinetype = new MechinetypeModel();
+		$allMechinetypeInfo = $Mechinetype->getAll();
+		//取出区域名称
+		$Areamanage = new AreamanageModel();
+		$allAreamanageInfo = $Areamanage->getAll();
+		//取出操作系统
+		$Operatesystem = new OperatesystemModel();
+		$allOperatesystemInfo = $Operatesystem->getAll();
+		$this->assign("MechinetypeInfo",$allMechinetypeInfo);
+		$this->assign("AreamanageInfo",$allAreamanageInfo);
+		$this->assign("OperatesystemInfo",$allOperatesystemInfo);
+		$this->assign('environment',C('CONST_ENVIRONMENT'));
+		$this->assign('virtual',$this->virtual);
+		$this->display();
+	}
+	
+	/**
+	 * 删除
+	 * @see CommonController::foreverdelete()
+	 */
+	function foreverdelete()
+	{
+		$ids =$_POST['ids'];
+		$Servermanage = new ServermanageModel();
+		$result = $Servermanage->deleteAll($ids);
+		if($result['errorCode'] == 0){
+			$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}else{
+			$msg = $result['errorMessage'];
+			$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}
+	}
+	/**
+	 * 删除单个
+	 */
+	function delete()
+	{
+		$id =$_GET['id'];
+		$Servermanage = new ServermanageModel();
+		$result = $Servermanage->delete($id);
+		if($result['errorCode'] == 0){
+			$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}else{
+			$msg = $result['errorMessage'];
+			$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}
+	}
+	
+	function getCabitelist()
+	{
+		$areaid = $_POST['roomid'];
+		$option = '<option value="0">请选择机柜</option>';
+		if($areaid > 0)
+		{
+			$post['areaid'] = $areaid;
+			$Cabinet = new CabinetModel();
+			$allinfo = $Cabinet->getAll($post);
+			if(is_array($allinfo) && count($allinfo))
+			{
+				foreach ($allinfo as $key =>$val)
+				{
+					$option .= '<option value="'.$val['id'].'">'.$val['name'].'</option>';
+				}
+			}
+		}
+		echo $option;
+	}
+	
+	function seemechine()
+	{
+		$id = $_REQUEST ['id'];
+		$Servermanage = new ServermanageModel($_POST,$_GET);
+		$vo = $Servermanage->getRowInfo($id);
+		$this->assign("row",$vo);
+		$this->display();
+	}
+	
+	
+}

@@ -1,0 +1,82 @@
+<div class="pageContent">
+<form method="post" action="__URL__/update" class="pageForm required-validate" onsubmit="return validateCallback(this, editDialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>服务：</label>
+				<input type="text" size="28" name="servicename"  class="textInput readonly" readonly="true" value="{$_REQUEST['servicename']}">
+				<input type="hidden" size="28" name="treessname"  class="textInput readonly" readonly="true" value="{$_REQUEST['treessname']}">
+			</p>
+			<p>
+				<label>IP地址：</label>
+				<input type="text" size="28" name="ip" maxlength="30" class="textInput readonly" readonly="true" value="{$_REQUEST['IP']}">
+			</p>
+			<p>
+				<label>路径：</label>
+				<input type="text" size="28" name="path"  class="required textInput" readonly="true" value="<?php echo str_replace("*", "/", $_REQUEST['path']); ?>">
+			</p>
+			<p>
+				<label>端口：</label>
+				<input type="text" size="28" name="port" maxlength="30" class="textInput " readonly="true" value="{$_REQUEST['port']}">
+			</p>
+			<if condition="($_REQUEST['flag'] neq 1)">
+			<p>
+				<label>权重：</label>
+				<input type="text" size="28" name="weight" maxlength="30" class="textInput digits" min='1' max="100" value="{$_REQUEST['weight']}">
+			</p>
+			</if>
+			<p style="width:500px;">
+				<label>Group组：</label>
+				<?php
+					$_REQUEST['consumergroupid'] = 	($_REQUEST['consumergroupid'] == '默认组' || $_REQUEST['consumergroupid'] == '无' )?'':$_REQUEST['consumergroupid'];
+					$_REQUEST['providergrouid'] = 	($_REQUEST['providergrouid'] == '默认组' || $_REQUEST['providergrouid'] == '无' )?'':$_REQUEST['providergrouid'];
+				 ?>
+				<if condition="($_REQUEST['flag'] eq 1)">
+				<input type="radio" name="flag" value="1" checked />客户端
+				<input type="text" size="28" name="providergrouid" maxlength="30" class="textInput" value="{$_REQUEST['consumergroupid']}">
+				<elseif condition="($_REQUEST['flag'] eq 2)"/>
+				<input type="radio" name="flag" value="2" checked />服务端
+				<input type="text" size="28" name="providergrouid" maxlength="30" class="textInput" value="{$_REQUEST['providergrouid']}">
+				<else />
+				<input type="text" size="28" name="providergrouid" maxlength="30" class="textInput" value="{$_REQUEST['providergrouid']}">
+				<input type="radio" name="flag" value="1" />客户端
+				<input type="radio" name="flag" value="2" checked />服务端
+				<input type="radio" name="flag" value="3"  />两者
+				</if>
+				
+			</p>
+			
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+
+		</ul>
+	</div>
+</form>
+</div>
+
+<script type="text/javascript">
+
+$("input[name='flag']").click(function(){
+	var flag = $(this).val();
+	var providergrouid = "{$_REQUEST['providergrouid']}";
+	var consumergroupid = "{$_REQUEST['consumergroupid']}";
+	if(flag == 1){
+		$("input[name='providergrouid']").val(consumergroupid);
+	}else{
+		$("input[name='providergrouid']").val(providergrouid);
+	}
+});
+
+function editDialogAjaxDone(json){
+    DWZ.ajaxDone(json);
+    if (json.statusCode == DWZ.statusCode.ok) {
+        if (json.navTabId) {
+            $("#Service_list").loadUrl(json.forwardUrl);
+        }
+        $.pdialog.closeCurrent();
+    }
+}
+</script>
+  

@@ -1,0 +1,49 @@
+<div class="accordion" fillspace="sidebar" id="sysMenu">
+		<?php if(!empty($menu)): ?>
+			<?php foreach($menu as $mk=>$mv): ?>
+			<div class="accordionHeader">
+					<h2><div class="side_menu_icon_2"><?php echo $mv['name']; ?></div></h2>
+			</div>
+			<?php if(!empty($mv['children'])): ?>
+				<div class="accordionContent">
+					<ul class="tree leftmenu treeFolder">
+						<?php foreach($mv['children'] as $mvk=>$mvv): ?>
+							<li>
+								<a 
+									<?php if(!empty($mvv['children'])): ?>
+										class="tree_menu" 
+									<?php else: ?>
+									 target="navTab" rel="<?php echo $mvv['id'] ?>" 
+									 <?php endif; ?> 
+								
+								<?php if($mvv['name'] == '服务治理'){ ?> 
+									<?php if($_SESSION['WEB_ENVIRONMENT'] == 3){?>
+										href="http://172.20.6.136:85/containerui/index.do" 
+										<?php }elseif($_SESSION['WEB_ENVIRONMENT'] == 4 || $_SESSION['WEB_ENVIRONMENT'] == 5){?>
+										 href="http://172.17.4.203:8080/containerui/index.do"
+										  <?php }elseif($_SESSION['WEB_ENVIRONMENT'] == 2){?>
+										  href="http://10.128.133.113/containerui/index.do"
+										   <?php }else{ ?>href="http://172.17.4.203:8080/containerui/index.do"
+									<?php } ?> 
+									<?php }else{ ?>
+										 href="/index.php/<?php echo getUrl($mvv['url']);?>"
+								<?php }?>>
+								<?php echo $mvv['name']; ?>
+								</a>
+								<?php if(!empty($mvv['children'])): ?>
+									<ul style="display: none;">
+										<?php foreach($mvv['children'] as $mvvk=>$mvvv): ?>
+												<li><a href="/index.php/<?php echo getUrl($mvvv['url']);?>" target="navTab" rel="<?php echo $mvvv['id'];?>"> <?php echo $mvvv['name'];?></a></li>
+										<?php endforeach; ?>
+									</ul>
+								<?php endif; ?>
+							</li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+			<?php endif; ?>
+		<?php endforeach; ?>
+		<?php else: ?>
+		没有可以显示的菜单
+		<?php endif; ?>
+</div>

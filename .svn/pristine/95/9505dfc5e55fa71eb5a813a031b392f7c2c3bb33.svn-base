@@ -1,0 +1,56 @@
+<div class="dialog">
+	<div class="dialogHeader" onselectstart="return false;" oncopy="return false;" onpaste="return false;" oncut="return false;">
+		<div class="dialogHeader_r">
+			<div class="dialogHeader_c">
+				<a class="close" href="#close">close</a>
+				<a class="maximize" href="#maximize">maximize</a>
+				<a class="restore" href="#restore">restore</a>
+				<a class="minimize" href="#minimize">minimize</a>
+				<h1>修改用户组</h1>
+			</div>
+		</div>
+	</div>
+	<div class="dialogContent layoutBox unitBox" style="height: 355px;">
+		<div class="pageContent" style="width: 636px;">
+			<form method="post" action="" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+				<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+					<p>
+						<label>用户组名称：</label>
+						<input type="text" size="28" name="" class="textInput">
+					</p>
+					<p>
+						<label>用户组状态：</label>
+						<div class="combox">
+							<div id="combox_reason" class="select">
+								<a href="javascript:" class="" name="reason" value="0001">启用</a>
+								<select class="" name="" id="reason">
+									<option value="0001">启用</option>
+									<option value="0002">停用</option>
+								</select>
+							</div>
+						</div>
+					</p>
+					<p class="merterms">
+						<label>备注：</label>
+						<input type="text" size="28" name="" class="textInput">
+					</p>
+				</div>
+				<div class="formBar">
+					<ul>
+						<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+						<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+					</ul>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="dialogFooter"><div class="dialogFooter_r"><div class="dialogFooter_c"></div></div></div>
+	<div class="resizable_h_l" tar="nw"></div>
+	<div class="resizable_h_r" tar="ne"></div>
+	<div class="resizable_h_c" tar="n"></div>
+	<div class="resizable_c_l" tar="w" style="height:300px;"></div>
+	<div class="resizable_c_r" tar="e" style="height:300px;"></div>
+	<div class="resizable_f_l" tar="sw"></div>
+	<div class="resizable_f_r" tar="se"></div>
+	<div class="resizable_f_c" tar="s"></div>
+</div>

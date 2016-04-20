@@ -1,0 +1,47 @@
+<div class="pageContent">
+	<form method="post" action="/index.php/Service/Configure/edit_d" class="pageForm required-validate" onsubmit="return validateCallback(this, configAddAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58">
+		
+			<div class="config_fm_item">
+				<span class="config_fm_label">实例名：</span>
+				<input type="text" name="kindName" id="kindName" class="textInput required add_name" />
+				<input type="hidden" name="kindId" value="" id="kindId"/>
+			</div>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	function get_kindid(){
+		var nodes = config_tree_which.getSelectedNodes();
+		return nodes[0].id;
+	}
+	$(document).ready(function(){
+		  
+		 $("#kindId").val(get_kindid());
+		 var nodes = config_tree_which.getSelectedNodes();
+		 var nodeName = nodes[0].name.replace(/ \(.*\)/gi, "");;
+		 $("#kindName").val(nodeName);
+	});
+});
+function configAddAjaxDone(json){
+	var name=$('.add_name').val();
+	if(name==''){
+		alert('服务名不能为空');
+		return false;
+	}
+	DWZ.ajaxDone(json);
+	if(json.statusCode == '200')
+	{
+		renameTreeNode(name);
+		$.pdialog.closeCurrent();
+	}
+}
+</script>

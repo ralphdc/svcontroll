@@ -1,0 +1,165 @@
+<div class="accordion" fillspace="sidebar">
+	<?php if($_SESSION['login_count'] != 'jialian'){?>
+	<div class="accordionHeader">
+		<h2><div class="side_menu_icon_2">服务管制</div></h2>
+	</div>
+	<div class="accordionContent">
+		<ul class="tree leftmenu treeFolder">
+			<li>
+				<a class="tree_menu" href="javascript:void(null);">配置中心</a>
+				<ul style="display: none;">
+					<li><a href="__MODULE__/Configure" target="navTab" rel="D60601">配置</a></li>
+					<!-- <li><a href="__MODULE__/Configure/index1" target="navTab" rel="L60601">配置1</a></li> -->
+					<li><a href="__MODULE__/Retrive" target="navTab" rel="D60623">配置节点恢复</a></li>
+				</ul>
+			</li>
+			
+			<li>
+				<a class="tree_menu" href="javascript:void(null);">仓库中心</a>
+				<ul style="display: none;">
+					<li><a href="__MODULE__/Repertory" target="navTab" rel="D60602">仓库中心</a></li>
+					<li><a href="__MODULE__/Batchprocess/index/from/2" target="navTab" rel="D60622">批量处理</a></li>
+					
+				</ul>
+			</li>
+			
+			
+			<li>
+				<a class="tree_menu" href="javascript:void(null);">作业中心</a>
+				<ul style="display: none;">
+					<li><a href="__MODULE__/Scheduling" target="navTab" rel="D60604">作业调度</a></li>
+				</ul>
+			</li>
+			
+			<li>
+				<a class="tree_menu" href="javascript:void(null);">转账通道</a>
+				<ul style="display: none;">
+					<li><a href="__MODULE__/Ukey" target="navTab" rel="D60620">转账通道</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div class="accordionHeader">
+		<h2><div class="side_menu_icon_2">监控管理</div></h2>
+	</div>
+	<div class="accordionContent">
+		<ul class="tree leftmenu treeFolder">
+			<li>
+				<a class="tree_menu" href="javascript:void(null);">服务监控中心</a>
+				<ul style="display: none;">
+					<li><a href="__MODULE__/Sermonitor" target="navTab" rel="D60605">服务监控</a></li>
+				</ul>
+			</li>
+			<li>
+			<a class="tree_menu" href="javascript:void(null);">质量监控</a>
+			<ul style="display: none;">
+
+				<li><a href="__MODULE__/../../index.php/Admin/Channel" target="navTab" rel="D60703">渠道切换</a></li>
+			</ul>
+				
+
+			</li>
+			<li>
+				<a class="tree_menu" href="javascript:void(null);">第三方工具中心</a>
+				<ul style="display: none;">
+					<li><a href="__MODULE__/Download" target="navTab" rel="D60706">下载管理</a></li>
+					<li><a href="http://10.128.133.212/cacti/" target="_blank">Cacti连接</a></li>
+					<li><a href="http://10.128.133.213/nagios/" target="_blank">Naigos连接</a></li>
+				</ul>
+			</li>
+			<li>
+				<a class="tree_menu" href="javascript:void(null);">监控配置中心</a>
+				<ul style="display: none;">
+					<li><a href="__MODULE__/Operatmember" target="navTab" rel="D60606">运维成员管理</a></li>
+					<li><a href="__MODULE__/Agentresource" target="navTab" rel="D60607">代理资源映射</a></li>
+					<li><a href="__MODULE__/Addmonelement" target="navTab" rel="D60610">监控元素</a></li>
+					<li><a href="__MODULE__/Moniconfig" target="navTab" rel="D60612">元素资源类型</a></li>
+					<li><a href="__MODULE__/Historyquery" target="navTab" rel="D60608">历史查询</a></li>
+					<li><a href="__MODULE__/Realmonitor" target="navTab" rel="D60609">实时监控</a></li>
+					<li><a href="__MODULE__/Channelswitch" target="navTab" rel="D60613">渠道</a></li>
+					<li><a href="__MODULE__/Monitorfilter" target="navTab" rel="D60611">监控过滤</a></li>
+					<li><a href="__MODULE__/../../index.php/Admin/SysMonitor/showIp" target="navTab" rel="D60614">切换设置</a></li>
+					
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<div class="accordionHeader">
+		<h2><div class="side_menu_icon_2">主机管理</div></h2>
+	</div>
+	<div class="accordionContent">
+		<ul class="tree leftmenu treeFolder">
+			<li>
+				<a class="tree_menu" href="javascript:void(null);">主机管理</a>
+				<ul style="display: none;">
+					<li><a href="__MODULE__/Deployment" target="navTab" rel="D60603">初始化机器</a></li>
+					<li><a href="__MODULE__/passmanage" target="navTab" rel="D60620">密码管理</a></li>					
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+		<div class="accordionHeader">
+		<h2><div class="side_menu_icon_2">资产管理</div></h2>
+	</div>
+	<div class="accordionContent">
+		<ul class="tree leftmenu treeFolder">
+			<li>
+				<a class="tree_menu" href="javascript:void(null);">资源中心</a>
+				<ul style="display: none;">
+					<li><a href="__MODULE__/Areamanage" target="navTab" rel="D60615">机房管理</a></li>
+					<li><a href="__MODULE__/Cabinet" target="navTab" rel="D60618">机柜管理</a></li>					
+					<li><a href="__MODULE__/Mechinetype" target="navTab" rel="D60614" title="机器类型">机器类型/型号管理</a></li>
+					<li><a href="__MODULE__/Operatesystem" target="navTab" rel="D60617">操作系统</a></li>
+					<li><a href="__MODULE__/Servermanage" target="navTab" rel="D60613">服务器管理</a></li>
+				</ul>
+			</li>
+			<li>
+				<a class="tree_menu" href="javascript:void(null);">非计算资源中心</a>
+				<ul style="display: none;">
+					<li><a href="__MODULE__/DeviceInfo" target="navTab" rel="D60629">资产</a></li>
+				</ul>
+				
+			</li>
+		</ul>
+	</div>
+	
+	<div class="accordionHeader">
+		<h2><div class="side_menu_icon_2">服务治理</div></h2>
+	</div>
+	<div class="accordionContent">
+		<ul class="tree leftmenu treeFolder">
+		<li><a href="__MODULE__/../../index.php/Admin/SetSystem" target="navTab" rel="D707">设置T1T2系统</a></li>
+		<?php if($_SESSION['WEB_ENVIRONMENT'] == 3){?> <!--测试镜像-->
+			<li><a href="http://172.20.6.136:85/containerui/index.do" target="_blank" rel="D701">服务治理</a></li>
+			<?php }elseif($_SESSION['WEB_ENVIRONMENT'] == 4 || $_SESSION['WEB_ENVIRONMENT'] == 5){ ?><!--开发，测试环境 -->
+			<li><a href="http://172.17.4.203:8080/containerui/index.do" target="_blank" rel="D701">服务治理</a></li>
+			<?php }elseif($_SESSION['WEB_ENVIRONMENT'] == 2){ ?><!--正式环境-->
+			<li><a href="http://10.128.133.113/containerui/index.do" target="_blank" rel="D701">服务治理</a></li>
+			<?php }else{?>
+			<li><a href="http://172.17.4.203:8080/containerui/index.do" target="_blank" rel="D701">服务治理</a></li>
+		<?php }?>
+			
+			<li><a href="__MODULE__/../../index.php/Admin/SysMonitor" target="navTab" rel="D702">流水质量监控</a></li>
+
+			<li><a href="__MODULE__/../../index.php/Admin/IceWeight" target="navTab" rel="D703">ICE权重</a></li>
+			<li><a href="__MODULE__/../../index.php/Admin/WeightService" target="navTab" rel="D704">权重服务</a></li>
+			<li><a href="__MODULE__/../../index.php/Admin/Serqualitymon" target="navTab" rel="D705">服务质量监控</a></li>
+			<li><a href="__MODULE__/../../index.php/Admin/Hostqualitymon" target="navTab" rel="D706">主机质量监控</a></li>
+			
+			
+		</ul>
+	</div>
+	<?php }else{ ?>
+	<div class="accordionHeader">
+		<h2><div class="side_menu_icon_2">服务治理</div></h2>
+	</div>
+	<div class="accordionContent">
+		<ul class="tree leftmenu treeFolder">
+		<li><a href="__MODULE__/../../index.php/Admin/SysMonitor" target="navTab" rel="D702">流水质量监控</a></li>
+		</ul>
+	</div>
+	<?php }?>
+</div>
+

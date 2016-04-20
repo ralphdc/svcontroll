@@ -1,0 +1,123 @@
+<?php if (!defined('THINK_PATH')) exit();?><style type="text/css">
+	<?php if($data['templateType'] == 1): ?> 
+		.pageContent .v3{display:none}
+		.pageContent .authpwd{display:none}
+		.pageContent .encrypwd{display:none}
+	<?php else: ?>
+		.pageContent .v1{display:none}
+		<?php
+ if(empty($data['authProtocol'])): ?>
+		.pageContent .authpwd{display:none}
+		<?php endif; ?>
+			 
+	    <?php
+ if(empty($data['encryProtocol'])): ?>
+		.pageContent .authpwd{display:none}
+		<?php endif; ?>
+			 
+	<?php endif; ?>
+
+	
+
+</style>
+<div class="pageContent">
+		<form method="post" action="/index.php/Service/Snmp/edit" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+			<div class="pageFormContent" layoutH="70">
+				<input type="hidden"  value="<?php echo ($data["templateId"]); ?>" name="templateId" />
+				<p>
+					<label style="width:120px;">模板类型：</label>
+					<select name="templateType" class="combox" onchange="switchVersion(this)">
+						<option value="1" <?php if($data['templateType'] == 1): ?> selected="selected" <?php endif; ?>>V1/V2</option>
+						<option value="3" <?php if($data['templateType'] == 3): ?> selected="selected" <?php endif; ?>>V3</option>
+					</select>
+				</p>
+				<p>
+					<label style="width:120px;">模板名称：</label>
+					<input size="20" value="<?php echo ($data["templateName"]); ?>"  name="templateName" class="required" type="text" />
+				</p>
+				<p class="v1">
+					<label style="width:120px;">读团体字：</label>
+					<input type="text" value="<?php echo ($data["communityRead"]); ?>"  name="communityRead"   placeholder="如没有请留空 " />
+				</p>
+				<p class="v1">
+					<label style="width:120px;">写团体字：</label>
+					<input type="text" value="<?php echo ($data["communityWrite"]); ?>"  name="communityWrite"  placeholder="如没有请留空" />
+				</p>
+				<p class="v3">
+					<label style="width:120px;">用户名称：</label>
+					<input size="20" value="<?php echo ($data["userName"]); ?>"  name="userName" class="" type="text" />
+				</p>
+				<p class="v3">
+					<label style="width:120px;">上下文名称：</label>
+					<input type="text" value="<?php echo ($data["contextName"]); ?>"  name="contextName"  placeholder="如没有请留空" />
+				</p>
+				<p class="v3">
+					<label style="width:120px;">认证协议：</label>
+					<select name="authProtocol" class="combox" onchange="getAuthPwd(this,'authpwd')">
+						<option value="">请选择</option>
+						<option value="MD5" <?php if($data['authProtocol'] == 'MD5'): ?> selected="selected" <?php endif; ?> >MD5</option>
+						<option value="SHA" <?php if($data['authProtocol'] == 'SHA'): ?> selected="selected" <?php endif; ?> >SHA</option>
+					</select>
+				</p>
+				<p class="authpwd">
+					<label style="width:120px;">认证密码：</label>
+					<input type="text" name="authPassword" value="<?php echo ($data['authPassword']); ?>" />
+				</p>
+				<p class="v3">
+					<label style="width:120px;">加密协议：</label>
+					<select name="encryProtocol" class="combox" onchange="getAuthPwd(this,'encrypwd')">
+						<option value="">请选择</option>
+						<option value="DES" <?php if($data['encryProtocol'] == 'DES'): ?> selected="selected" <?php endif; ?> >DES</option>
+						<option value="AES" <?php if($data['encryProtocol'] == 'AES'): ?> selected="selected" <?php endif; ?> >AES</option>
+					</select>
+				</p>
+				<p class="encrypwd">
+					<label style="width:120px;">加密密码：</label>
+					<input type="text" name="encryPassword" value="<?php echo ($data['encryPassword']); ?>" />
+				</p>
+				<p>
+					<label style="width:120px;">端口：</label>
+					<input type="text" value="<?php echo ($data["port"]); ?>"  name="port" class="required" />
+				</p>
+				<p>
+					<label style="width:120px;">超时时间：</label>
+					<input type="text" value="<?php echo ($data["timeout"]); ?>"  name="timeout" class="required" />
+				</p>
+				<p>
+					<label style="width:120px;">重试次数：</label>
+					<input type="text" value="<?php echo ($data["retrys"]); ?>"  name="retrys" class="required" />
+				</p>
+				<!-- 
+				<p>
+					<label style="width:120px;">状态：</label>
+					<select name="enabled" class="combox">
+						<option value="1">启用</option>
+					</select>
+				</p>
+				 -->
+				
+			</div>
+			<div class="formBar">
+					<ul>
+						<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+						<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+					</ul>
+			</div>
+		</form>
+</div>
+
+<script type="text/javascript">
+	function switchVersion(obj)
+	{
+		var version = $(obj).val();
+		if(version ==1){
+			$(".v1").show();
+			$("input[name=userName]").attr('class',''); //用户名不必填写；
+			$(".v3").hide();
+		}else{
+			$(".v1").hide();
+			$("input[name=userName]").attr('class','required');
+			$(".v3").show();
+		}
+	}
+</script>

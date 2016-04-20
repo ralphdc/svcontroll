@@ -1,0 +1,50 @@
+<include file="Public:pagerForm" />
+<div class="pageHeader">
+	<form rel ="pagerForm" method="post"  onsubmit="return navTabSearch(this);" action="__URL__">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+			<label>类型：</label>
+			<select name="node" onchange="return navTabSearch(this);">
+				<option value=''>请选择节点</option>
+				<?php if(is_array($chainnode) && !empty($chainnode)){
+					
+						foreach ($chainnode as $tkey=>$tval)
+						{
+							if($tkey == $_REQUEST['node'])
+								$selected = 'selected';
+							echo '<option value='.$tkey.' '.$selected.'>'.$tval.'</option>';
+								$selected ='';
+						}	
+				}?>
+				</select>
+			</li>
+		</ul>
+		<!-- <div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div> -->
+	</div>
+	</form>
+</div>
+
+
+<div class="pageContent">
+	<if condition="($showdata eq 1) ">
+	<iframe width="1000px" height="440px" frameborder="0" marginwidth="0" marginheight="0" src="index.php?s=/Log/ChainCount/showDateStatics/node/{$_REQUEST['node']}" name="frame" id="frame">
+	</iframe>
+	<div style="font-size:15px;" >点击对应日期查看对应的当天耗时最大五条和最小五条</div>
+	<table height="80px" width="90%" border="1px" >
+	<tbody>
+	<volist id="vo" name="dateArr">
+	<th><a target="navTab" rel="L30804" href="/index.php/?s=/Log/ChainCount/maxMin/node/{$_REQUEST['node']}/date/{$vo}" style="font-size:14px;">{$vo}</a></th>
+	</volist>
+	</tbody>
+	</table>
+	<else />
+		暂无数据
+	</if>
+	
+</div>
+

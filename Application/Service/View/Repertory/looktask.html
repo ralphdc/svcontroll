@@ -1,0 +1,36 @@
+<include file="Public:pagerFormLog" />
+
+<div class="pageContent">
+	<table class="table" width="100%" layoutH="60">
+		<thead>
+		<tr>
+			<th>序号</th>
+			<th>服务</th>
+			<th>发生时间</th>
+			<th>查看调用链</th>
+		</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr target="sid_user" rel="{$vo['cid']}">
+				<td>
+					<?php
+						$listnums = $numPerPage * ($currentPage-1) + $key+1;
+						echo $listnums;
+					?>
+				</td>
+				<td>{$vo['srv']}</td>
+				<td>{$vo['logtime']}</td>
+				<td><a rel="L30602" target="navTab" href="/index.php?s=/Log/CallChain/index/chainId/{$vo['cid']}/fid/{$vo['fid']}/type/{$vo['type']}"><?php if($vo['type'] == 1) echo '基础服务链' ;else echo '查看调用链';?></a></td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	<div class="formBar">
+		<ul>
+			<li><div><input type="submit" value="确认生成批量任务" class="ui_btn_green" style="float:right"  id="createtask" /></div></li>
+		</ul>
+	</div>
+</div>
+
+

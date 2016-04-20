@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>主机告警级别统计饼图</title>
+
+		<script type="text/javascript" src="__PUBLIC__/dwz/js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+$(function () {
+	 $('#container').highcharts({
+	        chart: {
+	            type: 'pie',
+	            options3d: {
+					enabled: true,
+	                alpha: 45,
+	                beta: 0
+	            }
+	        },
+	        title: {
+	            text: '主机告警级别统计饼图'
+	        },
+	        tooltip: {
+	            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+	        },
+	        plotOptions: {
+	            pie: {
+	                allowPointSelect: true,
+	                cursor: 'pointer',
+	                depth: 35,
+	                dataLabels: {
+	                    enabled: true,
+	                    format: '{point.name}'
+	                }
+	            }
+	        },
+	        series: [{
+	            type: 'pie',
+	            name: '占比',
+	            data: [
+	                   {$data}
+	            ]
+	        }]
+	    });
+	});
+		</script>
+	</head>
+	<body>
+<script src="__PUBLIC__/Highcharts/js/highcharts.js"></script>
+<script src="__PUBLIC__/Highcharts/js/highcharts-3d.js"></script>
+<script src="__PUBLIC__/Highcharts/js/modules/exporting.js"></script>
+<div>
+<div id="container" style="height: 400px"></div>
+</div>
+</body>
+</html>

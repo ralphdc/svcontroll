@@ -1,0 +1,31 @@
+<div class="pageContent">
+	<form method="post" action='/index.php/Service/Repertory/updatecoverResource' class="pageForm required-validate" onsubmit="return validateCallback(this,docoverAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58">
+			<p>
+				<label>是否覆盖：</label>
+				<select name="replace" id="replace">
+					<option value="2" <?php if($replace == 2){ echo 'selected';}?>>否</option>
+					<option value="1" <?php if($replace == 1){ echo 'selected';}?>>是</option>		
+				</select>
+				
+				<input type="hidden" value="{$hidedata['svrid']}" name="svrid">
+				<input type="hidden" value="{$hidedata['svrname']}" name="svrname">
+			</p>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+<script>
+	function docoverAjaxDone(json){
+		DWZ.ajaxDone(json);
+		if(json.statusCode == '200')
+		{
+			$.pdialog.closeCurrent();
+		}
+	}
+</script>

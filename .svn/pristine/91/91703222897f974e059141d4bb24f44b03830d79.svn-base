@@ -1,0 +1,22 @@
+<form id="pagerForm" onsubmit="" action="__URL__/getGrantUser" method="post">
+		<input type="hidden" name="pageNum" value="1"/>
+		<input type="hidden" name="authorizerId"  value="$_POST['authorizerId']"/>
+</form>
+<table class="list" width="450">
+	<thead>
+		<tr>
+			<th>用户名</th>
+			<th>生效时间</th>
+			<th>产品范围</th>
+		</tr>
+	</thead>
+	<tbody id="showGrantUsers">
+		<volist id="vo" name="users">
+		<tr>
+		<td>{$vo['handlerName']}</td>
+		<td>{$vo['begindate']}</td>
+		<td>{$vo['productName']}</td>
+		</tr>
+		</volist>
+	</tbody>
+</table>

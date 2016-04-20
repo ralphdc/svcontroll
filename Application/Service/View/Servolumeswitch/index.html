@@ -1,0 +1,80 @@
+<include file="Public:pagerFormLog" />
+
+<!-- <div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__URL__" method="post">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+			<label>机房名称：</label>
+			<input type="text" value="{$_REQUEST['arName']}" id="arName" name="arName" class="textInput">
+			</li>
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div> -->
+
+<div class="pageContent">
+	<div class="panelBar" style="height:29px;">
+		<ul class="toolBar"> 
+			<li><a posttype="string" title="确实要批量关闭选中服务吗？" rel="ids" target="selectedTodo" class="delete" href="__URL__/restartShutdown/id/{sid_user}/opmtype/2"><span>批量关闭</span></a></li>
+			<li class="line">line</li>
+			<li><a posttype="string" title="确实要批量重启选中服务吗？" rel="ids" target="selectedTodo" class="add" href="__URL__/restartShutdown/id/{sid_user}/opmtype/6"><span>批量重启</span></a></li>
+			<li class="line">line</li>
+			<li><a title="历史记录" rel="D60620" target="navTab" class="edit" href="/index.php/Service/Schedhistroy?&isbatch=1"><span>查看历史记录</span></a></li>
+		</ul>
+	</div>
+
+	<table class="table" width="100%" layoutH="76">
+		<thead>
+		<tr>
+			<th class="center" style="width: 43px; cursor: default;"><div title="" class="gridCol"><input type="checkbox" class="checkboxCtrl" group="ids"></div></th>
+			<th>服务名</th>
+			<th>服务版本</th>
+			<th>IP地址</th>
+			<th>部署路径</th>
+			<th>端口号</th>
+			<th>进程号</th>
+			<th>是否优雅退出</th>
+		</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list" key="k">
+			<tr class="prel" target="sid_user" rel="{$vo['name']}|{$vo['ver']}|{$vo['ip']}|{$vo['path']}|{$vo['pid']}|2">
+				<td class="center" style="width: 43px;"><div><input class="crel" type="checkbox" value="{$vo['name']}|{$vo['ver']}|{$vo['ip']}|{$vo['path']}|{$vo['pid']}|2" name="ids"></div></td>
+				<td>{$vo['name']}</td>
+				<td>{$vo['ver']}</td>
+				<td>{$vo['ip']}</td>
+				<td>{$vo['path']}</td>
+				<td>{$vo['port']}</td>
+				<td>{$vo['pid']}</td>
+				<td><input type="radio" value="1" name="youy{$k}" onclick="changeValue(this);">是<input type="radio" value="2" name="youy{$k}" checked onclick="changeValue(this);">否</td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	
+</div>
+<script>
+function changeValue(Obj)
+{
+	var jqObj = $(Obj);
+	var value = jqObj.val();
+	var inputObj = jqObj.parent().parent().parent().find(".center");
+	var inputval = inputObj.find('div>div>input').val();
+	tempinputval=inputval.substr(0,inputval.length-1)+value;
+	inputObj.find('div>div>input').val(tempinputval);
+	//alert(inputObj.find('div>div>input').val());
+
+	var trObj = jqObj.parent().parent().parent();
+	var trval = trObj.attr("rel");
+	temptrval=trval.substr(0,trval.length-1)+value;
+	trObj.attr("rel",temptrval);
+	//alert(trObj.attr("rel"));
+  
+}
+</script>

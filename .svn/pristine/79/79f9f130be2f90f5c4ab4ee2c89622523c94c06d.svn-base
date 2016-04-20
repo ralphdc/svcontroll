@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>邮件管理平台</title>
+
+<!--link href="__PUBLIC__/dwz/themes/default/style.css" rel="stylesheet" type="text/css" /-->
+<link href="__PUBLIC__/dwz/themes/css/style.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/dwz/themes/css/core.css" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+<link href="__PUBLIC__/dwz/themes/css/ieHack.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<style type="text/css">
+
+
+</style>
+<script>
+/*ThinkPHP常量*/
+var _APP_="__APP__";
+var _PUBLIC_="__PUBLIC__";
+/*本地域名正则表达式*/
+//var localTest=/^http?:\/\/<?php echo str_replace(".","\.",$_SERVER['HTTP_HOST']) ?>\//i;
+var localTest=/^http?:\/\/[^\/]*?(sinaapp\.com)\//i;
+</script>
+<script src="__PUBLIC__/dwz/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/dwz/js/jquery.cookie.js" type="text/javascript"></script>
+<script src="__PUBLIC__/dwz/js/jquery.validate.js" type="text/javascript"></script>
+<script src="__PUBLIC__/dwz/js/jquery.bgiframe.js" type="text/javascript"></script>
+<script src="__PUBLIC__/xheditor/xheditor-1.2.1.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/xheditor/xheditor_lang/zh-cn.js" type="text/javascript"></script>
+<script src="__PUBLIC__/dwz/js/dwz.min.js" type="text/javascript"></script>
+<script src="__PUBLIC__/dwz/js/dwz.regional.zh.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+
+
+function fleshVerify(){
+	//重载验证码
+	$('#verifyImg').attr("src", '__MODULE__/Public/verify/'+new Date().getTime());
+}
+function dialogAjaxMenu(json){
+	dialogAjaxDone(json);
+	if (json.statusCode == DWZ.statusCode.ok){
+			//扩展
+			var menuTag=$("#navMenu .selected").attr('menu');
+			$("#sidebar").loadUrl("__MODULE__/Public/menu/menu/"+menuTag);
+	}
+}
+
+function navTabAjaxMenu(json){
+	navTabAjaxDone(json);
+	if (json.statusCode == DWZ.statusCode.ok){
+		//扩展
+		var menuTag=$("#navMenu .selected").attr('menu');
+		$("#sidebar").loadUrl("__MODULE__/Public/menu/menu/"+menuTag);
+	}
+}
+
+
+function navTabAjaxGroupMenu(json){
+	navTabAjaxDone(json);
+	if (json.statusCode == DWZ.statusCode.ok){
+		//扩展
+		var menuTag=$("#navMenu .selected").attr('menu');
+		$("#sidebar").loadUrl("__MODULE__/Public/menu/menu/"+menuTag);
+	}
+}
+
+
+/*function navTabAjax(json){
+	navTabAjaxDone(json);
+	if (json.statusCode == DWZ.statusCode.ok){
+		$("#navMenu").loadUrl("__MODULE__/Public/nav");
+	}
+}
+*/
+$(function(){
+	DWZ.init("__PUBLIC__/dwz/dwz.frag.xml", {
+		loginUrl:"__MODULE__/Public/login_dialog", loginTitle:"登录",	// 弹出登录对话框
+		statusCode:{ok:1,error:0},
+		//statusCode:{ok:200, error:300, timeout:301}, //【可选】
+		pageInfo:{pageNum:"pageNum", numPerPage:"numPerPage", orderField:"_order", orderDirection:"_sort"}, //【可选】
+		debug:false,	// 调试模式 【true|false】
+		callback:function(){
+			initEnv();
+			$("#themeList").theme({themeBase:"__PUBLIC__/dwz/themes"});
+		}
+	});
+	
+	$('#menu_tab li').click(function(){
+		var cur=$('#menu_tab .cur').index('#menu_tab li');
+		$('#side_menu_set .menu_list').eq(cur).append($('#sidebar .accordion'));
+		var i=$(this).index();
+		$(this).addClass('cur').siblings().removeClass('cur');
+		$('#sidebar').append($('#side_menu_set .menu_list:eq('+i+') .accordion'));
+		$(window).resize();
+		$('#sidebar .accordionHeader').unbind('click');
+		$('#sidebar .accordionHeader').click(function(){
+			$(this).next().stop(true,true).slideToggle(300).siblings('.accordionContent').stop(true,true).slideUp(300);
+		});
+	}).first().click();
+	
+	$(window).resize(function(){
+		var side_h=$(window).height() - $("#header").height(),
+			len=$('#sidebar .accordionHeader').length,
+			con_h=side_h-len*41-33;
+		$('#sidebar .accordionContent').height(con_h+'px');
+	}).resize();
+	
+});
+
+
+</script>
+</head>
+
+<body scroll="no">
+	<div id="layout">
+		<div id="header">
+			<div class="headerNav">
+				<span id="headerlist">
+					<span><a id="logout" href="__MODULE__/Public/logout/">退出</a></span>
+					<!--span><a id="chgpwd" target="dialog" width="421" height="256" href="__MODULE__/Public/password/">修改密码</a></span-->
+					<span><a id="userinfo" href='#'><?php echo $_SESSION[C('USER_AUTH_KEY')]; ?></a></span>
+				</span>
+				<a href="http://www.xinguodu.com" class="top_tit">邮箱邮件管理平台</a>
+				<div id="headersystem">
+				</div>
+			</div>
+			
+
+			
+		</div>
+
+		<div id="leftside">
+			<div id="leftshadow" ></div>
+			<div id="sidebar_s">
+				<div class="collapse">
+					<div class="toggleCollapse"><div></div></div>
+				</div>
+			</div>
+			
+			<div id="sidebar">
+				<div class="toggleCollapse"><h2>主菜单</h2></div>
+				<div class="menu_list"  id="menu2"><include file="Public:Emailmenu" /></div>
+			</div>
+			
+		
+		</div>
+
+<div id="container">
+		<div id="navTab" class="tabsPage">
+			<div class="tabsPageHeader">
+				<div class="tabsPageHeaderContent"><!-- 显示左右控制时添加 class="tabsPageHeaderMargin" -->
+					<ul class="navTab-tab">
+						<li tabid="main" class="main"><a href="javascript:;"><span><span class="home_icon"> 首页</span></span></a></li>
+					</ul>
+				</div>
+				<div class="tabsLeft">left</div><!-- 禁用只需要添加一个样式 class="tabsLeft tabsLeftDisabled" -->
+				<div class="tabsRight">right</div><!-- 禁用只需要添加一个样式 class="tabsRight tabsRightDisabled" -->
+				<div class="tabsMore">more</div>
+			</div>
+			<ul class="tabsMoreList">
+				<li><a href="javascript:;">首页</a></li>
+			</ul>
+			<div class="navTab-panel tabsPageContent layoutBox">
+				<div class="page unitBox">
+					<div class="accountInfo"><!--
+						<div class="alertInfo">
+							<h2><a href="#" target="_blank"><b>【使用手册】</b> TMS终端管理系统使用手册(PDF)</a></h2>
+						</div>-->
+						<div class='right'><span>今天是：<?php echo date('Y年 m月 d日')?></span></div>
+						<p><span>您好！欢迎使用运维综合服务平台</span></p>
+					</div>
+					<div class="pageFormContent" layoutH="40" style='padding:0 5px'>
+						<div class='welcome'>欢迎使用</div>
+						<div style='margin-top:120px; padding:0 50px'>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+	</div>
+
+	</div>
+	
+	<div id="footer">Copyright © 2013 <a href="http://www.xinguodu.com" target="blank">新国都技术股份有限公司</a> Tel：0755-98319989</div>
+
+</body>
+</html>

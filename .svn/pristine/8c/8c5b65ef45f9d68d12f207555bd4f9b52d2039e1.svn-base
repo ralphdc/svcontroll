@@ -1,0 +1,181 @@
+<?php
+/**
+ * 服务管制--监控配置中心--渠道切换
+ * @author zengguangqiu
+ *
+ */
+class ChannelswitchController extends CommonController {
+	var $navTab = 'D60613';
+	var $type = array('1'=>'主线','0'=>'备线');
+	
+// 框架首页
+	public function index() {
+		C ( 'SHOW_RUN_TIME', false ); // 运行时间显示
+		C ( 'SHOW_PAGE_TRACE', false );
+		$pageNum =empty($_REQUEST['numPerPage']) ? C('PAGE_LISTROWS') : $_REQUEST['numPerPage'];
+		$this->assign ( 'numPerPage', $pageNum ); //每页显示多少条
+		$this->assign ( 'currentPage', !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1);
+		$Channelswitch = new ChannelswitchModel($_POST,$_GET);
+	 	$result = $Channelswitch->findByPost($_POST,$_GET);
+		$count = $Channelswitch->countByPost($_POST,$_GET); 
+		$this->assign ( 'totalCount', $count );
+		$this->assign ( 'list', $result );
+		$this->assign ( 'type', $this->type );
+		//dump($result);
+		$this->assign ( 'map', array('elemId'=>'','name'=>'') );
+		cookie('_currentUrl_', __SELF__);
+		$this->display();
+	}
+	public function add(){
+		if($_POST){
+			$request = array();
+			foreach($_POST as $k =>$v){
+				$request[$k] = $v;
+	
+			}
+			//组织要保存的数据
+			$post['data']['srvId'] = trim($_POST['channels_id']);
+			$post['data']['srvName'] = trim($_POST['channels_name']);
+			$post['data']['name'] = trim($_POST['name']);
+			$post['data']['elemId'] = trim($_POST['channele_id']);
+			$post['data']['line'] = $_POST['line'];
+			$post['data']['ip'] = trim($_POST['ip']);
+			$post['data']['port'] = trim($_POST['port']);
+			$post['form_act'] = 'create';
+			//调用java接口进行数据的操作
+			$Channelswitch = new ChannelswitchModel($_POST,$_GET);
+			$result = $Channelswitch->postSave($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+
+		$this->assign ( 'type', $this->type );
+		$this->display();
+	}
+	
+	function update()
+	{
+		if($_POST){
+			$request = array();
+			foreach($_POST as $k =>$v){
+				$request[$k] = $v;
+	
+			}
+			//组织要保存的数据
+			$post['data']['id'] = intval($_POST['id']);
+			$post['data']['srvId'] = trim($_POST['channels_id']);
+			$post['data']['srvName'] = trim($_POST['channels_name']);
+			$post['data']['name'] = trim($_POST['name']);
+			$post['data']['elemId'] = trim($_POST['channele_id']);
+			$post['data']['ip'] = trim($_POST['ip']);
+			$post['data']['port'] = trim($_POST['port']);
+			$post['form_act'] = 'update';
+			//调用java接口进行数据的操作
+			$Channelswitch = new ChannelswitchModel($_POST,$_GET);
+			$result = $Channelswitch->postSave($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+		$id = $_REQUEST ['id'];
+		$Channelswitch = new ChannelswitchModel($_POST,$_GET);
+		$vo = $Channelswitch->getRowInfo($id);
+		$this->assign('row', $vo);
+		$this->display();
+	
+	
+	}
+	
+	function edit() {
+		$id =$_GET['id'];
+		$ip = trim($_GET['ip']); 
+		$port = trim($_GET['port']); 
+		$Channelswitch = new ChannelswitchModel();
+		$url = 'http://'.$ip.':'.$port.'/status';
+		//$url = 'http://172.20.4.15:42000/status';
+		$resArr = $Channelswitch->phpCrulRequest($url);
+		if($resArr['statusList'] && count($resArr))
+		{
+			//组织要保存的数据
+			$post['data']['id'] = intval($id);
+			$post['data']['ip'] = $ip;
+			$post['data']['port'] = $port;
+			$post['data']['line'] =$resArr['statusList']['usingBakeHost']? 0:1 ;
+			$post['form_act'] = 'update';
+			//调用java接口进行数据的操作
+			$Channelswitch = new ChannelswitchModel($_POST,$_GET);
+			$result = $Channelswitch->postSave($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+				echo json_encode($ret);	return;
+			}	
+		}else{
+				$msg = '刷新线路失败!';
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+				echo json_encode($ret);	return;
+			}
+	}
+	
+	/**
+	 * 删除
+	 * @see CommonController::foreverdelete()
+	 */
+	function foreverdelete()
+	{
+		$ids =$_POST['ids'];
+		$Channelswitch = new ChannelswitchModel();
+		$result = $Channelswitch->deleteAll($ids);
+		if($result['errorCode'] == 0){
+			$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}else{
+			$msg = $result['errorMessage'];
+			$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}
+	}
+	/**
+	 * 删除单个
+	 */
+	function delete()
+	{
+		$id =$_GET['id'];
+		$Channelswitch = new ChannelswitchModel();
+		$result = $Channelswitch->delete($id);
+		if($result['errorCode'] == 0){
+			$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}else{
+			$msg = $result['errorMessage'];
+			$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}
+	}
+
+}

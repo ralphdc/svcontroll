@@ -1,0 +1,63 @@
+<include file="Public:pagerFormLog" />
+
+<div class="pageContent">
+	<table class="table" width="100%" layoutH="70">
+		<thead>
+		<tr>
+			<th width="60">序号</th>
+			<th>服务名</th>
+			<th>计划类型</th>
+			<th>配置文件</th>
+			<th>部署IP</th>
+			<th>部署路径</th>
+			<th>部署用户</th>
+			<th>用户组</th>
+		</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr target="sid_user" rel="{$vo['arId']}">
+				<td>
+					<?php
+						$listnums = $numPerPage * ($currentPage-1) + $key+1;
+						echo $listnums;
+					?>
+				</td>
+				<td>{$vo['servicename']}</td>
+				<td>
+					<?php echo $opttype[ $vo['opttype'] ] ?>
+				</td>
+				<td>{$vo['config_instance_name']}</td>
+				<td>{$vo['ipv']}</td>
+				<td>{$vo['path']}</td>
+				<td>{$vo['owner']}</td>
+				<td>{$vo['group']}</td>
+				
+				
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<?php
+					$numPerPageArr = array(20,50,100,200);
+					foreach($numPerPageArr as $val)
+					{
+						if($val == $numPerPage)
+							$selected = 'selected';
+						echo '<option value="'.$val.'" '.$selected.'>'.$val.'</option>';
+							$selected = '';
+					}
+				?>
+			</select>
+			<span>条，共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+	</div>
+
+
+</div>

@@ -1,0 +1,382 @@
+<div id="showDetailWindow">
+<div style="width:20%;float:left;">
+<div class="pageContent sortDrag" selector="h1" layoutH="42">
+	
+	<div class="panel collapse" defH="150">
+		<h1>主机基本信息</h1>
+		<div>
+			<p>
+				<label>机器名：</label>
+				{$list['host']['hostName']}
+			</p>
+			<p><label>IP地址：</label>
+				{$list['host']['ipv']}
+			</p>
+			<p><label>OS：</label>
+				{$list['host']['os']}
+			</p>
+			<p><label>DISK：</label>
+				{$list['host']['disk']}
+			</p>
+			<p><label>内存：</label>
+				{$list['host']['memory']}
+			</p>
+		</div>
+	</div>
+	<volist id="vo" name="list['indicators']">
+	<div class="panel collapse" minH="100" defH="130">
+		<h1>{$vo['serviceName']} 错误数：{$vo['errors']}</h1>
+		<div>
+			
+
+			<?php foreach($vo['indicators'] as $key =>$value){ 
+			?>
+			<p>
+			<label><?php echo $value['key'];?>:</label>
+				<?php echo $value['value'];?>
+			</p>
+			<?php } ?>
+			
+		</div>
+	</div>
+	</volist>
+</div>
+</div>
+
+<div style="width:80%;float:left;">
+<div class="pageContent sortDrag" selector="h1" layoutH="42">
+	<div class="item_list_filter"  style="padding-left:20px">
+	<form class="pagerForm" action="__URL__/showDetailWindow" method="post" onsubmit="return divSearch(this, 'showQualityDetail');">
+			<span>时间（起）：</span>
+			<input maxDate="<?php echo date('Y-m-d'); ?>"  type="text" value="<?php if($_REQUEST['beginTime']) echo  date("Y-m-d H:i:s",strtotime($_REQUEST['beginTime']));else echo date('Y-m-d H:i:s',strtotime("-1 day")); ?>"  name="beginTime"  datefmt="yyyy-MM-dd HH:mm:ss" class="date textInput">
+			<span>时间（终）：</span>
+			<input maxDate="<?php echo date('Y-m-d'); ?>"  type="text" value="<?php if($_REQUEST['endTime']) echo date("Y-m-d H:i:s",strtotime($_REQUEST['endTime']));else echo date('Y-m-d H:i:s'); ?>" name="endTime"  datefmt="yyyy-MM-dd HH:mm:ss" class="date textInput">
+			<input type="submit" value="查询" class="ui_btn_green" />
+	</form>
+	</div>
+	<div class="panel collapse" minH="100" defH="300">
+		<h1>主机资源信息</h1>
+		<div id="HostResourceNotework{$_GET['id']}" >	</div>
+		<div id="HostResourceMemory{$_GET['id']}" >	</div>
+		<div id="HostResourceCPU{$_GET['id']}" >	</div>
+		<div id="HostResourceDisk{$_GET['id']}" >	</div>
+	</div>
+</div>
+</div>
+</div>
+
+<style type="text/css">
+.panel label{
+	font-weight:bold;
+}
+.panel p{
+	padding-bottom:10px;
+}
+</style>
+
+<script type="text/javascript">
+	$(function () {
+        $("#HostResourceNotework{$_GET['id']}").highcharts({
+            title: {
+                text: '网络信息',
+                x: -20 //center
+            },
+			subtitle: {
+                text: 'NOTEWORK',
+                x: -20
+            },
+			chart:{
+				width:800,
+				height:250,
+				type:'spline',
+				events: {                                                         
+                    load: function() {                                                        
+                       
+                    }                                                               
+                }   
+			
+			},
+			plotOptions: {
+				  series: {
+						marker: {
+							enabled: false
+					}
+				},
+			},
+            
+            xAxis: {
+				type: 'datetime',
+				categories: {$timeNet},
+				labels: {
+                    rotation: -30,
+					step:3,
+                    align: 'right',
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                },
+				dateTimeLabelFormats: {
+					day: '%e of %b'
+				}
+               
+            },
+            yAxis: {
+                title: {
+                    text: 'bytes'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: 'bytes'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: 'eth0 in',
+                data: {$eth0In},
+            },{
+                name: 'eth0 out',
+                data: {$eth0Out},
+            },{
+                name: 'lo in',
+                data: {$loIn},
+            },{
+                name: 'lo out',
+                data: {$loOut},
+            }]
+        });
+		//内存信息
+		$("#HostResourceMemory{$_GET['id']}").highcharts({
+            title: {
+                text: '内存信息',
+                x: -20 //center
+            },
+			subtitle: {
+                text: 'memory',
+                x: -20
+            },
+			chart:{
+				width:800,
+				height:250,
+				type:'spline',
+				events: {                                                           
+                    load: function() {
+					
+                    }                                                               
+                }   
+			
+			},
+            xAxis: {
+                type: 'datetime',
+                tickPixelInterval: 150,
+				categories: {$timeMem},
+				labels: {
+                    rotation: -30,
+                    align: 'right',
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            },
+            yAxis: {
+                title: {
+                    text: 'bytes'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: 'bytes'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: '总交换内存',
+                data: {$totalSwap}
+            },{
+                name: '可用交换内存',
+                data: {$availSwap}
+            },{
+                name: '总实际内存',
+                data: {$totalReal}
+            },{
+                name: '实际可用内存',
+                data: {$availReal}
+            },{
+                name: '总可用内存',
+                data: {$totalFree}
+            }]
+        });
+		
+		
+		$("#HostResourceCPU{$_GET['id']}").highcharts({
+            title: {
+                text: 'CPU信息',
+                x: -40//center
+            },
+			subtitle: {
+                text: '负载及系统利用率',
+                x: -40
+            },
+			chart:{
+				width:800,
+				height:250,
+				type:'spline',
+				events: {                                                           
+                    load: function() {                                                        
+                        // set up the updating of the chart each second             
+                          
+                    }                                                               
+                }   
+			},
+           
+            xAxis: {
+				type: 'datetime',
+				dateTimeLabelFormats: {
+					day: '%e of %b'
+				},
+                categories: {$time},
+				labels: {
+                    rotation: -30,
+                    align: 'right',
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            },
+            yAxis: [{
+                title: {
+                    text: '负载'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+				},
+				{ //第二个Y轴，序号为1
+					title: {
+						text: '占比',
+						style: {
+							color: '#4572A7'
+						}
+					},
+					labels: {
+						style: {
+							color: '#4572A7'
+						}
+					},
+					opposite: true
+				}
+			],
+            tooltip: {
+                valueSuffix: '负载'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: '1分钟负载',
+                data: {$load1}
+            },{
+                name: '5分钟负载',
+                data: {$load5}
+            },{
+                name: '15分钟负载',
+                data: {$load15}
+            },{
+                name: '用户占比',
+				yAxis: 1,
+                data: {$userpercent}
+            },{
+                name: '系统占比',
+				yAxis: 1,
+                data: {$sysPercent}
+            },{
+                name: '空闲占比',
+				yAxis: 1,
+                data: {$idlePercent}
+            }]
+        });
+		
+		$("#HostResourceDisk{$_GET['id']}").highcharts({
+            title: {
+                text: '磁盘信息',
+                x: -20 //center
+            },
+			
+			chart:{
+				width:800,
+				height:250,
+				type:'spline',
+				events: {                                                           
+                    load: function() {                                                
+                    }                                                               
+                }   
+			
+			},
+           
+            xAxis: {
+                categories: {$disktime},
+				labels: {
+                    rotation: -30,
+                    align: 'right',
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            },
+            yAxis:  {
+                title: {
+                    text: '负载'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+			},
+            tooltip: {
+                 valueSuffix: '容量'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 1
+            },
+            series: [{
+                name: '总容量',
+                data: {$total}
+            },{
+                name: '可用容量',
+                data: {$free}
+            },{
+                name: '已用容量',
+                data: {$used}
+            }]
+        });  
+    });
+</script>

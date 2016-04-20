@@ -1,0 +1,52 @@
+<div class="pageContent">
+<form method="post" action="__URL__/add" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>通道编号：</label>
+				<input class="required digits" type="text" id="ukId" name="ukId" maxlength="50" size="30" value="<?php echo $row['ukId'];?>"/>
+			</p>
+			<p>
+				<label>通道名称：</label>
+				<input class="required" type="text" id="ukName" name="ukName" maxlength="50" size="30" value="<?php echo $row['ukName'];?>"/>
+			</p>
+			<p>
+				<label>开始时间：</label>
+				<input size="30" type="text" value="<?php echo $row['ukStart'];?>" id="ukStart" name="ukStart" readonly="1" datefmt="yyyy-MM-dd" class="required date textInput readonly">
+			</p>
+			<p>
+				<label>结束时间：</label>
+				<input size="30" type="text" value="<?php echo $row['ukEnd'];?>" id="ukEnd" name="ukEnd" readonly="1" datefmt="yyyy-MM-dd" class="required date textInput readonly">
+			</p>
+			<p>
+				<label>UKEY到期:</label>
+				<select name="ukAlarm">
+				<?php if(is_array($ukAlarm) && !empty($ukAlarm)){
+					
+						foreach ($ukAlarm as $tkey=>$tval)
+						{
+							if($tkey == $row['ukAlarm'])
+								$selected = 'selected';
+							echo '<option value='.$tkey.' '.$selected.'>'.$tval.'</option>';
+								$selected ='';
+						}
+				}?>
+				</select>
+			</p>
+			<p>
+			<label>提前</label>
+			<input type="text" id="ukAhead" name="ukAhead" maxlength="50" size="10" value="{$row['ukAhead']|default='30'}"/>
+			<span style="line-height:20px;">天预警</span>
+			</p>
+			<p>
+				<label>备注：</label>
+				<input type="text" id="ukRemark" name="ukRemark" maxlength="50" size="30" value="<?php echo $row['ukRemark'];?>"/>
+			</p>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>

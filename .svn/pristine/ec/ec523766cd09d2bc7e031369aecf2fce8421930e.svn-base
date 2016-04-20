@@ -1,0 +1,22 @@
+<div class="pageContent">
+<form method="post" action="__URL__/edit" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>系统名字：</label>
+				<input class="required" type="text" id="system" name="system" size="30" value="<?php echo $row['system'];?>"/>
+				<input type="hidden" name="id" id="id" value="<?php echo $row['sysid'];?>"/>
+			</p>
+			<p>
+				<label>系统描述：</label>
+				<input class="required" type="text" id="remark" name="remark" size="30" value="<?php echo $row['remark'];?>"/>
+			</p>
+			
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>

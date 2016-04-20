@@ -1,0 +1,39 @@
+<div class="pageContent">
+		<table class="list"  layoutH="72">
+			<thead>
+			<tr>
+				<th width="100">序号</th>
+				<th width="100">订阅服务</th>
+				<th width="100">IP地址</th>
+				<th width="100">备注</th>
+			</tr>
+			</thead>
+			<tbody>
+	
+			
+			<volist id="vo" name="list">
+				<tr target="sid_node" rel="{$vo['SID']}">
+					<td>{$vo['MERNO']}</td>
+					<td>{$vo['TERMNO']}</td>
+					<td>{$vo['TMKINDEX']}</td>
+					<td>{$vo['TMKLEN']|getbits}</td>
+				</tr>
+			</volist>
+			
+			</tbody>
+		</table>
+		<div class="panelBar">
+			<div class="pages">
+				<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<option value="5" <eq name="numPerPage" value="5">selected=selected</eq>>5</option>
+				<option value="10" <eq name="numPerPage" value="10">selected=selected</eq>>10</option>
+				<option value="16" <eq name="numPerPage" value="16">selected=selected</eq>>16</option>
+				<option value="20" <eq name="numPerPage" value="20">selected=selected</eq>>20</option>
+			</select>
+				<span>共{$totalCount}条</span>
+
+			</div>
+			<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+		</div>
+		</div>

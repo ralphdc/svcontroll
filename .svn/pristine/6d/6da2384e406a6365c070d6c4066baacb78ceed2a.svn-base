@@ -1,0 +1,107 @@
+<?php
+//权重服务
+class WeightServiceController extends CommonController {
+	public $navTabId = "D704";
+	public function index() {
+		//$vo = array(array('id'=>1,'menuName'=>'组','value'=>'1','subMenuList'=>array(array("id"=>2,'menuName'=>'资金组','value'=>2),array("id"=>3,'menuName'=>'交易组','value'=>3),array("id"=>4,'menuName'=>'TMS组','value'=>4),array("id"=>5,'menuName'=>'MPAY组','value'=>5))));
+		$model = CM("WeightService");
+		$result = $model->sendJavaData('weightTree','');
+		if($result['errorCode'] == 0){
+			$weightTree = $result['data'];
+		}
+		$this->assign("menu",$weightTree);
+		$this->display();
+	}
+	
+	public function showService(){
+		$model = CM("WeightService");
+		$result = $model->sendJavaData('weightConproGet',$_REQUEST);
+		if($result['errorCode'] == 0){
+			$conproGet = $result['data'];
+		}
+		$this->assign("lists",$conproGet);
+		cookie('_currentUrl_', __SELF__);
+		$this->display();
+	}
+	
+	public function edit(){
+		$this->display();
+	}
+	
+	public function conprobyinstanceGet(){
+		$model = CM("WeightService");
+		$path = $_REQUEST['path'];
+		$_REQUEST['path'] = str_replace("*", "/", $_REQUEST['path']);
+		$result = $model->sendJavaData('conprobyinstanceGet',$_REQUEST);
+		if($result['errorCode'] == 0){
+			$conproGet = $result['data'];
+		}
+		$this->assign("lists",$conproGet);
+		$this->display();
+	}
+	public function update(){
+		$model = CM("WeightService");
+		//更正选择带回修改的索引名称；
+		if(!empty($_REQUEST['prt_groupName'])){
+		    $_REQUEST['providergrouid'] = $_REQUEST['prt_groupName'];
+		    unset($_REQUEST['prt_groupName']);
+		}
+		$ret = $model->sendJavaData('weightConproUpdate',$_REQUEST);
+		if ($ret['errorCode'] == 0) { //保存成功
+			$ret = array("statusCode"=>"1","message"=>'设置成功',"navTabId"=>$this->navTabId,
+					"forwardUrl"=>cookie('_currentUrl_'),"callbackType"=>"");
+			echo json_encode($ret);return;
+			//$this->success('修改成功!',cookie('_currentUrl_'));
+		}else{
+			//失败提示
+			$this->error('修改失败!'.$ret['errorMessage']);
+		}
+	}
+	
+	public function delete(){
+		$model = CM("WeightService");
+		$path = $_REQUEST['path'];
+		$_REQUEST['path'] = str_replace("*", "/", $_REQUEST['path']);
+		$ret = $model->sendJavaData('weightConproDelete',$_REQUEST);
+		if ($ret['errorCode'] == 0) { //保存成功
+			$ret = array("statusCode"=>"1","message"=>'删除成功',"navTabId"=>$this->navTabId,
+					"forwardUrl"=>cookie('_currentUrl_'),"callbackType"=>"");
+			echo json_encode($ret);return;
+		}else{
+			//失败提示
+			$this->error('删除失败!'.$ret['errorMessage']);
+		}
+	}
+	
+	//20151116 弹出Group选择窗口；
+	public function groupSelect()
+	{
+	    
+	    $pageNum =empty($_REQUEST['numPerPage']) ? C('PAGE_LISTROWS') : $_REQUEST['numPerPage'];
+	    $this->assign ( 'numPerPage', $pageNum ); //每页显示多少条
+	    $this->assign ( 'currentPage', !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1);
+	    
+	    $model = CM("IceGroupService");
+	    $_REQUEST['pageSize'] = $pageNum;
+	    $_REQUEST['pageNo'] = !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1;
+	    $_REQUEST['submitor'] = 'admin';
+	    
+	    $result = $model->sendJavaData('ice_group_info',$_REQUEST);
+	   
+	    
+	    if($result['errorCode'] == 0){
+	        $weightList = $result['data'];
+	        $count = $result['total'];
+	        $this->assign ( 'totalCount', $count);
+	    }
+	    $this->assign("list",$weightList);
+	    $this->display();
+	}
+	
+	//2015-11-18 创建ICE数据库组；
+	public function iceDbGroupCreate()
+	{
+	    $this->display();
+	}
+	
+}

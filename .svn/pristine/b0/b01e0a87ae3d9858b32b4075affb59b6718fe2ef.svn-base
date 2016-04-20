@@ -1,0 +1,221 @@
+<link href="__PUBLIC__/dwz/themes/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/dwz/js/jquery.ztree.all-3.5.js" type="text/javascript"></script>
+<script src="__PUBLIC__/dwz/js/jquery.ztree.exhide-3.5.min.js" type="text/javascript"></script>
+<include file="Public:pagerFormLog" />
+
+<div class="head_search">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="__URL__" method="post">
+	<table>
+		<tr>
+			<td>
+				<label>筛选工具类服务：</label>
+				<select name="istool" id="istool" onchange="return navTabSearch(this);">
+					<option value="" <?php if($_REQUEST['istool'] == '') echo 'selected'; ?> >全部</option>
+					<option value="1" <?php if($_REQUEST['istool'] == '1') echo 'selected'; ?> >工具服务</option>
+					<option value="2" <?php if($_REQUEST['istool'] == '2') echo 'selected'; ?> >非工具服务</option>
+				</select>
+			</td>
+			<td>
+				<label>IP地址：</label><input type="text" name="ip" id="ip" class="textInput" value="{$_REQUEST['ip']}" />
+			</td>
+			<td>
+				<label>服务名称：</label><input type="text" name="serviceName" id="serviceName" class="textInput" value="{$_REQUEST['serviceName']}" />
+			</td>	
+			<td>
+				<button type="submit" class="btn_search">查询</button>
+			</td>
+		</tr>
+	</table>
+	</form>
+</div>
+
+<div layouth="35">
+	<div id="sermonitor_side" class="js_drag_width" layouth="35">
+		<ul id="sermonitor_server_tree" class="ztree"></ul>
+		<div class="side_tree_item" data-size="a">
+		<!-- 	<a href="javascript:;" class="side_tree_btn">收起</a> -->
+			<ul id="sermonitor_server_tree" class="ztree"></ul>
+		</div>
+		<a href="javascript:;" id="serverstate"><input class="ui_btn_green" type="button" value="刷新未通过服务管制发布的服务"></a>
+		 <div id="servertree" class="side_tree_item" data-size="a" style="border-top:solid 1px #ddd;">
+			
+			
+		</div>
+	</div>
+	<div id="sermonitor_content" layouth="36">
+		<div class="tree_sel_tip">请选左边树进行操作！</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+var setting = {
+	view: {
+		dblClickExpand: false,
+		selectedMulti: false,
+		nameIsHTML:true
+	},
+	data: {
+		simpleData: {
+			enable: true
+		}
+	},
+	edit: {
+		enable: false,
+		showAddBtn: false,
+		showRemoveBtn: false,
+		showRenameBtn: false
+	}
+};
+
+var sermonitor_server_nodes=[{$config_nodes}];
+/*
+	sermonitor_host_nodes=[
+	{'name':"主机",'open':true,'children':[
+		{'name':'应用服务','open':true,'url':'/index.php/Service/Sermonitor/detail_c','target':'ajax'},
+		{'name':'DB','open':true,'url':'/index.php/Service/Sermonitor/detail_c','target':'ajax','children':[
+			{'name':'HP   172.17.0.3'},
+			{'name':'DEL   172.17.0.4'}
+		]}
+	]}
+	];
+*/
+var sermonitor_server_tree,sermonitor_host_tree;
+$(function(){
+	$.fn.zTree.init($("#sermonitor_server_tree"), setting, sermonitor_server_nodes);
+	//$.fn.zTree.init($("#sermonitor_host_tree"), setting, sermonitor_host_nodes);
+	sermonitor_server_tree = $.fn.zTree.getZTreeObj("sermonitor_server_tree");
+	//sermonitor_host_tree = $.fn.zTree.getZTreeObj("sermonitor_host_tree");
+	
+	$('#sermonitor_side a').attr('rel','sermonitor_content');
+	updateType();
+	$("#sermonitor_server_tree_1_a").attr('rel','D9000').attr('title','批量开关服务');
+/* 	$('.head_search .btn_search').click(function(){
+		var area=$(this).parents('.head_search'),
+			which=$('input[name="config_search_which"]:checked',area).val(),
+			key=$('input[name="config_search_key"]',area).val();
+		if(which==1){
+			var tree_earch='sermonitor_server_tree';
+			tree_which_search = 'sermonitor_server_tree';
+		}else{
+			var tree_earch='sermonitor_host_tree';
+			tree_which_search = 'sermonitor_host_tree';
+		}
+		$.post('/index.php/Service/Configure/getSearchInfo',{type:which,key:key},function(data){
+			if(data)
+			{
+				var search_nodes=eval(data);
+				resetSearchTree(tree_earch,search_nodes);
+			}
+		})
+	}); */
+	
+	$('#sermonitor_side .side_tree_btn').click(function(){
+		var con=$(this).parent('.side_tree_item'),
+			con_other=con.siblings('.side_tree_item'),
+			tree=$(this).siblings('.ztree');
+		
+		if($(this).hasClass('status_close')){
+			$(this).removeClass('status_close').text('收起');
+			$('.side_tree_name',con).remove();
+			if(con_other.data('size')=='a'){
+				con.data('size','a');
+			}else if(con_other.data('size')=='b'){
+				con.data('size','a');
+				con_other.data('size','a');
+			}else{
+				con.data('size','b');
+			}
+		}else{
+			$(this).addClass('status_close').text('展开');
+			con.data('size','c');
+			if(con_other.data('size')=='a'){
+				con_other.data('size','b')
+			}
+			if(tree.attr('id')=='sermonitor_server_tree'){
+				con.prepend('<div class="side_tree_name">服务</div>');
+			}else{
+				con.prepend('<div class="side_tree_name">主机</div>');
+			}
+		}
+		$(window).resize();
+	});
+	
+	$(window).resize(function(){
+		var h=$('#sermonitor_side').height();
+		$('#sermonitor_side .side_tree_item').each(function(){
+			var type=$(this).data('size');
+			if(type=='a'){
+				$(this).height((h/2-1)+'px');
+			}else if(type=='b'){
+				$(this).height((h-39)+'px');
+			}else if(type=='c'){
+				$(this).height('38px');
+			}
+		});
+	}).resize();
+	
+	$('.js_drag_width').each(function(){
+		if($('.mouse_area',this).length!=0){
+			return;
+		}
+		var area=$(this),
+			handle=$('<div class="mouse_area" style="position:absolute;top:0;right:0;width:5px;height:100%;cursor:e-resize;"></div>')
+		$(this).css('position','relative').append(handle);
+		var drag_move=false,
+			s_x,
+			s_w;
+		handle.mousedown(function(event){
+			drag_move=true;
+			s_x=event.pageX;
+			s_w=area.width();
+			$('body').bind('selectstart',function(){return false;}).addClass('unselect');
+		});
+		$(document).mousemove(function(event){
+			if(drag_move){
+				var e_x=event.pageX,
+					dist=e_x-s_x,
+					e_w=s_w+dist;
+				if(e_w<100){
+					e_w=100
+				}else if(e_w>800){
+					e_w=800;
+				}
+				console.log(e_w);
+				area.width(e_w+'px');
+			}
+		}).mouseup(function(){
+			drag_move=false;
+			$('body').unbind('selectstart').removeClass('unselect');
+		});
+	});
+	
+	$('#serverstate').click(function(){
+		$.get('/index.php/Service/Sermonitor/getServiceInfo',{},function(data){
+			$('#servertree').html(data).initUI();
+		})
+	})
+	$('#serverstate').click();
+});
+
+
+function changeparentnums(nodes,tree_which){
+	var nodechild = nodes;
+	if(nodechild && nodechild.length > 0){
+		for (var i=0, l=nodechild.length; i<l; i++) {
+			var num = nodechild[i].children ? nodechild[i].children.length : 0;
+			if(num > 0){
+				if(nodechild[i].isParent){
+					nodechild[i].name = nodechild[i].name.replace(/ \(.*\)/gi, "") + " (<font color='red'>" + num + "</font>)";
+					tree_which.updateNode(nodechild[i]);
+					changeparentnums(nodechild[i].children,tree_which);
+				}
+			}
+		}
+	}
+}
+function updateType() {
+	changeparentnums(sermonitor_server_tree.getNodes(),sermonitor_server_tree);
+	//changeparentnums(sermonitor_host_tree.getNodes(),sermonitor_host_tree);
+}
+</script>
+

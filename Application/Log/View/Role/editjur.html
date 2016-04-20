@@ -1,0 +1,419 @@
+
+<div class="pageContent">
+	<div class="pageFormContent" layouth="58">
+		
+		<div class="header_info">
+			<div class="header_info_tit">角色信息</div>
+			<div class="header_info_text">
+				<span class="header_info_prop ml20">角色名称：</span>
+				<span class="header_info_val">{$roleinfo['roleName']}</span>
+				<span class="header_info_prop ml20">所属产品：</span>
+				<span class="header_info_val">{$roleinfo['productName']}</span>
+				<input type="hidden" name="roleID" id="roleID" value="{$roleinfo['id']}" >
+			</div>
+		</div>
+		
+		<div class="tabs">
+			<div class="tabsHeader">
+				<div class="tabsHeaderContent">
+					<ul id="roletype">
+						<li id="1"><a href="javascript:;"><span>菜单和动作</span></a></li>
+						<li id="2"><a href="javascript:;"><span>页面元素</span></a></li>
+						<li id="3"><a href="javascript:;"><span>工作流</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="tabsContent">
+				<div>
+					<div class="pageHeader">
+						<!-- <form rel="pagerForm" onsubmit="return divSearch(this,'');" action="" method="post"> >
+							<div class="searchBar">
+								<table class="searchContent">
+									<tr>
+										<td><label class="header_label">菜单名称：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<input type="hidden" name="pageNum" value="1" />
+							<input type="hidden" name="numPerPage" value="20" />
+							<input type="hidden" name="orderField" value="termid" />
+							<input type="hidden" name="orderDirection" value="desc" />
+						< </form> -->
+					</div>
+					<div class="pageHeader">
+						<!-- <form rel="pagerForm" onsubmit="return divSearch(this,'');" action="" method="post"> >
+							<div class="searchBar">
+								<table class="searchContent">
+									<tr>
+										<td><label class="header_label">动作名称：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<input type="hidden" name="pageNum" value="1" />
+							<input type="hidden" name="numPerPage" value="20" />
+							<input type="hidden" name="orderField" value="termid" />
+							<input type="hidden" name="orderDirection" value="desc" />
+						<</form> -->
+					</div>
+					<table class="ui_info_plate" layouth="260">
+						<tr>
+							<td class="plate_item" width="250">
+								<div class="ui_info_tit">选择菜单：</div>
+								<div class="ui_info_con" layouth="325">
+									<ul class="tree treeFolder treeCheck expand"  oncheck="" id="menulistjur">
+										<volist id="item" name="menu" >
+											<li><a href="javascript:;" id="root" class="treenode" target="id"  tname="0" tvalue="{$item['id']}" rel2="{$item['menuType']}" rel3="0" >{$item['menuName']}</a>
+											<notempty name="item['subMenuList']">
+											<ul>
+												<volist id="subItem" name="item['subMenuList']" >
+												<li><a class="treenode" href="javascript:;" target="id" tname="0"  tvalue="{$subItem['id']}"  rel2="{$subItem['menuType']}" rel3="{$item['id']}" >{$subItem['menuName']}</a>
+													<notempty name="subItem['subMenuList']">
+													<ul>
+													<volist id="ssubItem" name="subItem['subMenuList']" >
+													<li><a class="treenode" href="javascript:;" target="id" tname="son3" tvalue="{$ssubItem['id']}" fathertvalue="{$subItem['id']}"  grantfathertvalue="{$item['id']}" rel2="{$ssubItem['menuType']}" rel3="{$item['id']}"  >{$ssubItem['menuName']}</a></li>
+													</volist>
+													</ul>
+													</notempty>
+												</li>
+												</volist>
+											</ul>
+											</notempty>
+											</li>
+										</volist>
+										
+									</ul>
+								</div>
+							</td>
+							<td class="plate_item vam">
+								<!--div class="ui_icon_rel"></div-->
+								<button id="tomenu" type="button" class="ui_btn_add">==></button>
+							</td>
+							<td class="plate_item" width="300">
+								<div class="ui_info_tit">选择菜单下的动作：</div>
+								<div class="ui_info_con" layouth="325" id="initMenuact">
+									<ul class="tree treeCheck collapse" id="actofmenu">
+										
+									</ul>
+									
+								</div>
+							</td>
+							
+						</tr>
+					</table>
+				</div>
+				<div>
+					<div class="pageHeader">
+						<!-- <form rel="pagerForm" onsubmit="return divSearch(this,'');" action="" method="post"> -->
+							<div class="searchBar">
+								<table class="searchContent">
+									<tr>
+										<td><label class="header_label">元素编号：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td><label class="header_label">元素名称：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<input type="hidden" name="pageNum" value="1" />
+							<input type="hidden" name="numPerPage" value="20" />
+						<!-- </form> -->
+					</div>
+					<table class="ui_info_plate" layouth="216">
+						<tr>
+							<td class="plate_item" width="200">
+								<div class="tableList bd_side" layouth="267">
+									<table class="list" width="100%" id="table1" >
+										<thead>
+											<tr>
+												<th><input type="checkbox" group="role_id_a" class="checkboxCtrl" /></th>
+												<th>元素名称</th>
+												<th>元素编码</th>
+											</tr>
+										</thead>
+										<tbody>
+										<volist id="vo" name="elements">
+											<tr target="elementid" rel="{$vo['id']}" id="{$vo['id']}">
+												<td class="first"><input name="role_id_a" value="{$vo['id']}" type="checkbox" /></td>
+												<td>{$vo['elementName']}</td>
+												<td>{$vo['elementCode']}</td>
+											</tr>
+										</volist>
+										</tbody>
+									</table>
+								</div>
+								<div class="panelBar">
+									<div class="pages">
+										<span>共{$totalnum}条</span>
+									</div>
+									<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+								</div>
+							</td>
+							<td class="plate_item vam">
+								<div class="buttonContent"><button id="selectelement" type="button">==></button></div>
+							</td>
+							<td class="plate_item" width="200">
+								<div class="ui_info_tit">已选元素列表：</div>
+								<div class="tableList bd_side" layouth="298">
+									<table class="list" width="100%" id="table2">
+										<thead>
+											<tr>
+											<th>元素名称</th>
+											<th>元素描述</th>
+											</tr>
+										</thead>
+										<tbody id="selectedelement">
+											
+										</tbody>
+									</table>
+								</div>
+								<div class="panelBar">
+									<div class="pages">
+										<span>共{$totalCount}条</span>
+									</div>
+									<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div>
+					<div class="pageHeader">
+						<!-- <form rel="pagerForm" onsubmit="return divSearch(this,'');" action="" method="post"> -->
+							<div class="searchBar">
+								<table class="searchContent">
+									<tr>
+										<td><label class="header_label">任务编号：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td><label class="header_label">任务名称：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td>
+											<label class="header_label">所属产品：</label>
+											<select name="" id="" class="combox">
+												<option value="1">MPAY产品</option>
+												<option value="2">TMS产品</option>
+												<option value="3">卡产品</option>
+											</select>
+										</td>
+										<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<input type="hidden" name="pageNum" value="1" />
+							<input type="hidden" name="numPerPage" value="20" />
+							<input type="hidden" name="orderField" value="termid" />
+							<input type="hidden" name="orderDirection" value="desc" />
+						<!-- </form> -->
+					</div>
+					<table class="ui_info_plate" layouth="216">
+						<tr>
+							<td class="plate_item" width="200">
+								<div class="ui_info_con" layouth="255">
+									<ul class="tree treeCheck collapse">
+										<li>
+											<a href="javascript:;" tname="" tvalue="">用户管理</a>
+											<ul>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户录入</a></li>
+												<li><a href="javascript:;" tname="" tvalue="">用户修改</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="javascript:;" tname="" tvalue="">角色管理</a>
+											<ul>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户录入</a></li>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户修改</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</td>
+							<td class="plate_item vam">
+								<div class="ui_icon_rel"></div>
+							</td>
+							<td class="plate_item" width="300">
+								<div class="ui_info_tit">已选工作流流程：</div>
+								<div class="tableList bd_side" layouth="298">
+									<table class="list" width="100%">
+										<thead>
+											<tr>
+												<th>流程名称</th>
+												<th>任务编号</th>
+												<th>任务名称</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>001</td>
+												<td>001</td>
+												<td>001</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="panelBar">
+									<div class="pages">
+										<span>共{$totalCount}条</span>
+									</div>
+									<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="save">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><a href="/Competence/dwztp321/Admin/Role" target="navTab" rel="L103" class="btn_page_link">权限资源管理</a></div></div></li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+
+	$("#selectelement").click(function(){
+		var selected=$('#table1 tbody tr').has('input:checked').clone();
+		selected.each(function(){
+			$('td:first',this).remove();
+			$('tr',this).removeClass();
+		});
+
+		$('#selectedelement').empty();
+		$('#selectedelement').append(selected);
+	});
+
+	
+	$("#save").click(function(){
+		var id=$("#roletype li:.selected").attr("id");
+		if(id == 1){
+			menu_act_save();
+		}
+		if(id == 2){
+			elementsave();
+		}
+		if( id ==3){
+			alert(3);
+		}
+	});
+	
+	function elementsave(){
+		var ids ="";
+		$('#selectedelement tr').each(function(){
+			ids += $(this).attr('rel') + ",";
+			
+		})
+		
+		//alert(ids);
+		var roleID = $("#roleID").val();
+		$.ajax({ 
+			url: "__URL__/saveElement", 
+			data: "ids="+ids+"&roleID="+roleID,
+			type:'POST',
+			success: function(msg){
+				if(msg == 1){
+					alertMsg.correct('您的数据提交成功！');
+				}else{
+					alertMsg.error('没有提交成功！');
+				}
+			}
+		});
+	}
+	
+	function menu_act_save(){
+		var menuids = $("#root").attr('tvalue') +',';
+		var html = $("#menulistjur .checked :input[name='son3']").parent().siblings('a').each(function(){
+			menuids  += $(this).attr("tvalue") +","+$(this).attr("fathertvalue")+","+$(this).attr("grantfathertvalue")+',';
+		});
+		
+		var actids="";//actbox
+		var html2 = $("#actofmenu .checked :input[name='actbox']").parent().siblings('a').each(function(){
+		  actids += $(this).attr("rel") +",";
+		});
+		//alert(actids);return ;
+		var roleId = $("#roleID").val();
+		$.ajax({ 
+			url: "__URL__/saveMenuAct", 
+			data: "menuids="+menuids+"&actids="+actids+"&roleId="+roleId,
+			type:'POST',
+			success: function(msg){
+				if(msg == 1){
+					alertMsg.correct('您的数据提交成功！');
+				}else{
+					alertMsg.error('没有提交成功！');
+				}
+			}
+	});
+	}
+		$("#tomenu").click(function(){
+			var ids = "";
+			var html = $("#menulistjur .checked :input[name='son3']").parent().siblings("a").each(function(){
+			   ids += $(this).attr("tvalue") +","+$(this).attr("fathertvalue")+","+$(this).attr("grantfathertvalue")+',';
+			});
+
+			
+			//alert(ids);
+			//return;
+			$.ajax({ 
+				url: "__URL__/getActofMenu", 
+				data: "ids="+ids,
+				type:'POST',
+				success: function(msg){
+					$("#actofmenu").html("");
+					var data = eval("("+msg+")");
+					var len = data.length;
+					var html = "";
+					
+					for(var i=0;i<len;i++){
+						html += '<li><a href="javascript:;" class="treenode"  rel="'+data[i].id+'" rel2="'+data[i].menuType+'" >'+data[i].menuName+'</a>';
+						var subItem = data[i].subMenuList;
+						if(subItem != ""){
+							var len2 = subItem.length;
+							html += '<ul>';
+							for(var j=0;j<len2;j++){
+								html += '<li ><a  class="treenode" href="javascript:;"  rel="'+subItem[j].id+'" rel2="'+subItem[j].menuType+'" >'+subItem[j].menuName+'</a>';
+								var ssubItem = subItem[j].subMenuList;
+								if(ssubItem !=''){
+									var len3 = ssubItem.length;
+									html +='<ul>';
+									for(var p=0;p<len3;p++){
+										html += '<li ><a class="treenode" href="javascript:;"  rel="'+ssubItem[p].id+'" rel2="'+ssubItem[p].menuType+'" >'+ssubItem[p].menuName+'</a>';
+										var actionlist = ssubItem[p].actionList;
+										if(actionlist != ''){
+											var len4 = actionlist.length;
+											html +='<ul>';
+											for(var q=0;q<len4;q++){
+												html +='<li ><a class="treenode" href="javascript:;"  rel="'+actionlist[q].actId+'" rel2="'+actionlist[q].actCode+'" tname="actbox" >'+actionlist[q].actName+'</a></li>';
+											}
+											html +='</ul>';
+										}
+										html +='</li>';
+									
+									}
+									html += '</ul>';
+								}
+								html += '</li>';
+							}
+							html +='</ul>';
+						}
+						html +='</li>';
+						
+					}
+					$("#actofmenu").html(html);
+					initUI("#initMenuact");
+				}
+			});
+
+		});
+
+							
+	/*								
+	$("#actofmenu").click(function(){
+	
+	});
+*/
+</script>

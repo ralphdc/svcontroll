@@ -1,0 +1,38 @@
+<div class="pageContent">
+<form method="post" action="__URL__/setrecord" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+		<input type="hidden" value="1" name="form_act" />
+		<table class="table" width="100%" layoutH="138">
+		<thead>
+		<tr>
+			<th class="center" style="width: 43px; cursor: default;"><div title="" class="gridCol"><input type="checkbox" class="checkboxCtrl" group="items[]"></div></th>
+			<th>字段</th>
+		</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr>
+				<?php 
+					$checked = '';
+					if(in_array($key,$list_params))
+					{
+						$checked = 'checked';
+					}
+				 ?>
+				<td class="center" style="width: 43px;"><div><input <?php echo $checked;?> type="checkbox" value="{$key}" name="items[]"></div></td>
+				<td>{$vo}</td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>
+
+

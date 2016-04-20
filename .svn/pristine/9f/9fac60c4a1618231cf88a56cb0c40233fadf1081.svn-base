@@ -1,0 +1,61 @@
+
+<include file="Public:pagerForm" />
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return divSearch(this,'user_group_list');" action="" method="post">
+		<div class="searchBar">
+			<table class="searchContent">
+				<tr>
+					<td><label>上级参数ID：</label><input type="text" name="" id="" class="textInput" /></td>
+					<td><label>上级参数名称：</label><input type="text" name="" id="" class="textInput" /></td>	
+					<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<input type="hidden" name="pageNum" value="1" />
+		<input type="hidden" name="numPerPage" value="20" />
+		<input type="hidden" name="orderField" value="termid" />
+		<input type="hidden" name="orderDirection" value="desc" />
+	</form>
+</div>
+
+<div class="panelBar">
+	<ul class="toolBar">
+		<li><a href="__URL__/info_add" class="add" target="dialog" mask="true" rel="" title="下级参数添加" width="600" height="400"><span>添加</span></a></li>
+		<li class="line">line</li>
+		<li class=""><a href="__URL__/info_delete/id/{productId}" class="delete" target="selectedTodo" rel="ids" title="确定要删除吗？" posttype="string"><span>删除</span></a></li>
+		<li class="line">line</li>
+		<li class=""><a href="__URL__/info_edit/id/{productId}" class="edit" target="dialog" mask="true" rel="" title="修改" width="600" height="400" warn="请选择一条数据"><span>修改</span></a></li>
+	</ul>
+</div>
+
+<div class="tableList" layouth="118">
+	<table class="list" width="100%">
+		<thead>
+			<tr>
+				<th width="30"><input type="checkbox" group="product_id" class="checkboxCtrl" /></th>
+				<th width="90">参数编号</th>
+				<th width="">参数名称</th>
+				<th width="">新增用户</th>
+				<th width="">新增时间</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr target="productId" rel="1">
+				<td><input  type="checkbox" name="product_id" id="" value="{$vo['groupId']}" ></td>					
+				<td>001</td>
+				<td>sdfsdf</td>
+				<td>dfgergrg</td>
+				<td>dfgergrg</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="panelBar">
+	<div class="pages">
+		<span>共{$totalCount}条</span>
+	</div>
+	<div class="pagination" rel="user_group_list" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+</div>

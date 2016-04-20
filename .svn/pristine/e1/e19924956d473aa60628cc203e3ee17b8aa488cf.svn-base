@@ -1,0 +1,32 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/index" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+		<table>
+		<tr>
+			<td>
+			<label style="width:130px">app日志保存路径：</label>
+			<input type="text" size="28" class="required textInput" name="appPath" id="appPath" value="{$vo['appPath']}">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<label style="width:130px">系统日志保存路径：</label>
+			<input type="text" size="28" class="required textInput" name="sysPath" id="sysPath" value="{$vo['sysPath']}">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<label style="width:130px">数据库错误日志文件：</label>
+			<input type="text" size="28" class="required textInput" name="sqlPath" id="sqlPath" value="{$vo['sqlPath']}">
+			</td>
+		</tr>
+		</table>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,84 @@
+<form id="pagerForm" action="/index.php/Service/Historyquery/search" method="post">
+	<input type="hidden" name="pageNum" value="1"/>
+	<input type="hidden" name="numPerPage" value="{$_REQUEST.numPerPage}"/>
+	<input type="hidden" name="_order" value="{$_REQUEST._order}"/>
+	<input type="hidden" name="_sort" value="{$_REQUEST._sort}"/>
+	<volist name="map" id="m">
+    <input type="hidden" name="{$key}" value="{$_REQUEST[$key]}"/>
+    </volist>
+    </volist>
+</form>
+<div class="pageHeader">
+	<div class="item_list_filter"  style="padding-left:20px">
+		<form rel="pagerForm" action="/index.php/Service/Historyquery/search" method="post" onsubmit="return divSearch(this, 'hQuery_content');">
+	<div class="searchBar">
+		<table class="searchContent">
+			<span class="">IP地址：</span>
+			<input type="hidden" size="15" name="id" id="" class="textInput"  value="{$_REQUEST[id]}"/>	
+			<input type="text" size="15" name="ip" id="" class="textInput"  value="{$_REQUEST[ip]}"/>			
+			<span class="">服务名称：</span>
+			<input type="text" size="15" name="serviceName" id="" class="textInput"  value="{$_REQUEST[serviceName]}"/>
+			<span class="">元素ID：</span>
+			<input type="text" size="15" name="elemId" id="" class="textInput" value="{$_REQUEST[elemId]}"/>
+			<span class="">报警时间：</span>
+			<input size="20" type="text" value="{$_REQUEST['start']}" id="start" name="start" readonly="true" datefmt="yyyy-MM-dd HH:mm:ss" class="date textInput">
+			<span class="">至：</span>
+			<input size="20" type="text" value="{$_REQUEST['end']}" id="end" name="end" readonly="true" datefmt="yyyy-MM-dd HH:mm:ss" class="date textInput">							
+			<input type="submit" value="查询" class="ui_btn_green" />
+		</table>
+	</div>
+		</form>
+	</div>
+</div>
+
+<div class="pageContent">
+	<div id="hQuery_list">
+		<div class="tableList" layouth="83">
+			<table class="list tac" width="100%">
+				<thead>
+					<tr>
+						<th>序号</th>
+						<th>seqID</th>
+						<th>IP地址</th>
+						<th>服务</th>
+						<th>元素名称</th>
+						<th>元素ID</th>
+						<th>状态</th>
+						<th>邮件通知</th>
+						<th>手机通知</th>
+						<th>备注</th>
+						<th>报警时间</th>
+					</tr>
+				</thead>
+				<tbody>
+					<volist id="vo" name="list">
+						<tr target="script_id" rel="{$vo['id']}">
+							<td>
+								<?php
+									$listnums = $numPerPage * ($currentPage-1) + $key+1;
+									echo $listnums;
+								?>
+							</td>
+							<td>{$vo['id']}</td>
+							<td>{$vo['ip']}</td>
+							<td>{$vo['serviceName']}</td>
+							<td>{$vo['elemName']}</td>
+							<td>{$vo['elemId']}</td>
+							<td>{$status[$vo['isNotified']]}</td>
+							<td>{$vo['email']}</td>
+							<td>{$vo['mobile']}</td>	
+							<td>{$vo['remark']}</td>
+							<td>{$vo['warnTime']}</td>								
+						</tr>
+					</volist>					
+				</tbody>
+			</table>
+		</div>
+		<div class="panelBar">
+			<div class="pages">
+				<span>共{$totalCount}条</span>
+			</div>
+			<div class="pagination" rel="hQuery_content" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="5" currentPage="{$currentPage}"></div>
+		</div>
+	</div>
+</div>

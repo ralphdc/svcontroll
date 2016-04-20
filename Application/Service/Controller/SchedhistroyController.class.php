@@ -1,0 +1,279 @@
+<?php
+/**
+ * 服务管制-作业中心-作业调度
+ * @author zengguangqiu
+ *
+ */
+class SchedhistroyController extends CommonController {
+    //var $navTab = 'D60620';
+	var $navTab = '2c948cfb51ec5db00151ec97e9dd002d';
+	var $jump='2c948cfb51ec5db00151ec67723f000f';  // 原值是D60605
+	var $status = array('1'=>'启动','3'=>'新增','4'=>'迭代','5'=>'部署');
+	var	$distype = array('1'=>'实时','2'=>'定时');
+	var	$resultArr = array('1'=>'未完成','2'=>'已完成');
+	var	$iselegant = array('2'=>'否','1'=>'是');
+	
+// 框架首页
+	public function index() 
+	{
+		C ( 'SHOW_RUN_TIME', false ); // 运行时间显示
+		C ( 'SHOW_PAGE_TRACE', false );
+		if($_GET['pnid']> 0)
+		{
+			$_POST['pnid'] = $_GET['pnid'];
+			$_REQUEST['pnid'] = $_GET['pnid'];
+		}
+		if($_GET['deleteflag']> 0)
+		{
+			$_POST['deleteflag'] = $_GET['deleteflag'];
+			$_REQUEST['deleteflag'] = $_GET['deleteflag'];
+		}
+		
+		if($_GET['isbatch']> 0)
+		{
+			$_POST['isbatch'] = $_GET['isbatch'];
+			$_REQUEST['isbatch'] = $_GET['isbatch'];
+		}
+		$pageNum =empty($_REQUEST['numPerPage']) ? C('PAGE_LISTROWS') : $_REQUEST['numPerPage'];
+		$this->assign ( 'numPerPage', $pageNum ); //每页显示多少条
+		$this->assign ( 'currentPage', !empty($_REQUEST[C('VAR_PAGE')])?$_REQUEST[C('VAR_PAGE')]:1);
+		$Schedhistroy = new SchedhistroyModel($_POST,$_GET);
+		$result = $Schedhistroy->findByPost($_POST,$_GET);
+		$count = $Schedhistroy->countByPost($_POST,$_GET);
+		$this->assign ( 'totalCount', $count );
+		$this->assign ( 'list', $result );
+		$this->status['2'] = '关闭';
+		$this->status['6'] = '重启';
+		$this->assign ( 'status', $this->status );
+		$this->assign ( 'distype', $this->distype );
+		$this->assign ( 'resultArr', $this->resultArr );
+		$this->assign('deletflag',$_REQUEST['deleteflag']);
+		//dump($result);
+		$this->assign ( 'map', array('isbatch'=>'','pnid'=>'','deleteflag'=>'','servicename'=>'','ipv'=>'','type'=>'','person'=>'','result'=>'','startTime'=>'','endTime'=>''));
+		cookie('_currentUrl_', __SELF__);
+		$this->display();
+	}
+	/**
+	 * 作业计划操作
+	 */
+	public function program() {
+		//修改调度计划
+		if($_POST){
+			$request = array();
+			foreach($_POST as $k =>$v){
+				$request[$k] = $v;
+		
+			}
+			/* //如果是迭代就通知C++服务
+			if($_POST['distype'] == 4)
+			{
+				//从传递过来的参数中取出服务名和版本号
+				$service_name_version = $_POST['disServicename'];
+				$service_name = substr($service_name_version,0,strrpos($service_name_version,'_'));
+				$version = substr($service_name_version,strrpos($service_name_version,'_')+1);
+				//websocket通知C++服务
+				$ip = $_POST['disIpv'];
+				$newIp= sprintf('%-15s', $ip);
+				$time = date("YmdHis");
+				$str = '01'.$newIp.$this->rep_str($service_name, '0', 2).$service_name.$this->rep_str($version, '0', 2).$version.$time;
+				$post_str = array('pBuffer'=>$str,'iLen'=>strlen($str));
+				$Channelswitch = new ChannelswitchModel($_POST,$_GET);
+				$ret = $Channelswitch->requestBySoap('DealNotice',$post_str);
+			} */
+			//组织要保存的数据
+			$post['data']['instanceid'] = $_POST['instanceid'];
+			$post['data']['opmtype'] = $_POST['opmtype'];
+			$post['data']['distype'] = $_POST['distype'];
+			$post['data']['owner'] = $_POST['owner'];
+			$post['data']['group'] = $_POST['group'];
+			$post['data']['cron'] = trim($_POST['cron']);
+			$post['data']['config'] = $_POST['editconfig_id'];
+			$post['data']['person'] = $_SESSION['cUserNo'];
+			$post['data']['times'] = trim($_POST['times']);
+			$post['data']['pnid'] = $_POST['pnid'];
+			$post['form_act'] = 'create';
+			//调用java接口进行数据的操作
+			$Schedhistroy = new SchedhistroyModel($_POST,$_GET);
+			$result = $Schedhistroy->postSave($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->navTab,//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+		
+		//根据传递过来的调度计划的ID获取对应的一行的数据
+		$dispatchid = $_GET['dispatchid']- 0 ;
+		$Schedhistroy = new SchedhistroyModel($_POST,$_GET);
+		$rowInfo  = $Schedhistroy->getRowInfo($dispatchid);
+		$this->assign('rowInfo',$rowInfo);
+		$status = $this->status;
+		unset($status['2'],$status['5']);
+		$this->assign ( 'status', $status );
+		$this->assign ( 'distype', $this->distype );
+		$this->assign ( 'resultArr', $this->resultArr );
+		$this->display();
+	}
+	/**
+	 * 关闭服务（对应的进程）
+	 */
+	function shutdownser()
+	{
+		if($_POST){
+			$request = array();
+			foreach($_POST as $k =>$v){
+				$request[$k] = $v;
+			}
+			//websocket通知C++服务
+			/* $ip = $_POST['ipv'];
+			$service_name = trim($_POST['servicename']);
+			$version = trim($_POST['version']);
+			$newIp= sprintf('%-15s', $ip);
+			$time = date("YmdHis");
+			$str = '01'.$newIp.$this->rep_str($service_name, '0', 2).$service_name.$this->rep_str($version, '0', 2).$version.$time;
+			$post_str = array('pBuffer'=>$str,'iLen'=>strlen($str));
+			$Channelswitch = new ChannelswitchModel($_POST,$_GET);
+			$ret = $Channelswitch->requestBySoap('DealNotice',$post_str); */
+			
+			//组织要保存的数据
+			$post['data']['version'] = trim($_POST['version']);
+			$post['data']['ipv'] = trim($_POST['ipv']);
+			$post['data']['path'] = trim($_POST['path']);
+			$post['data']['serviceid'] = trim($_POST['serviceid']);
+			$post['data']['servicename'] = trim($_POST['servicename']);
+			$post['data']['opmtype'] = trim($_POST['opmtype']);
+			$post['data']['distype'] = trim($_POST['distype']);
+			$post['data']['cron'] = trim($_POST['cron']);
+			$post['data']['person'] = $_SESSION['cUserNo'];
+			$post['data']['processpid'] = $_POST['processnum'];
+			$post['data']['iselegant'] = $_POST['iselegant'];
+			$post['data']['times'] = 1;
+			$post['form_act'] = 'shutdowm';
+			//调用java接口进行数据的操作
+			$Schedhistroy = new SchedhistroyModel($_POST,$_GET);
+			$result = $Schedhistroy->postSave($post);
+			if($result['errorCode'] == 0){
+				$ret = array("statusCode"=>"1","message"=>'操作成功。',"navTabId"=>$this->jump,
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}else{
+				$msg = $result['errorMessage'];
+				$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+						"rel"=>"","forwardUrl"=>"","callbackType"=>"closeCurrent");
+				echo json_encode($ret);	return;
+			}
+		}
+		
+		//根据传递过来的调度计划的ID获取对应的一行的数据
+		$this->assign('rowInfo',$_GET);
+		$this->assign ( 'distype', $this->distype );
+		$this->assign ( 'resultArr', $this->resultArr );
+		$this->assign ( 'iselegant', $this->iselegant );
+		$this->display();
+	}
+	/**
+	 * 查看单个服务对应的机器上的配置文件
+	 */
+	public function Seeconfige()
+	{
+		$instanceid = $_GET['instanceid']- 0 ;
+		$Schedhistroy = new SchedhistroyModel($_POST,$_GET);
+		$configInfo  = $Schedhistroy->getconfigcontent($instanceid);
+		$this->assign('configInfo',$configInfo);
+		$this->display();
+	}
+	
+	/**
+	 * 查看单个服务对应的机器上的配置文件
+	 */
+	public function Seemoniconfigure()
+	{
+		$post['data']['ipv'] = $_GET['ipv'] ;
+		$post['data']['version'] = $_GET['version'] ;
+		$post['data']['servicename'] = $_GET['servicename'] ;
+		$post['data']['path'] = $_GET['path'] ;
+		$post['data']['serviceid'] = $_GET['serviceid'] ;
+		$Schedhistroy = new SchedhistroyModel($_POST,$_GET);
+		$configInfo  = $Schedhistroy->getmoniconfigcontent($post);
+		$this->assign('configInfo',$configInfo);
+		$this->display();
+	}
+	/**
+	 * 查看单个服务对应的机器上的配置文件
+	 */
+	public function Seelog()
+	{
+		//根据传递过来的调度计划的ID获取对应的一行的数据
+		$dispatchid = $_GET['dispatchid'];
+		$Schedhistroy = new SchedhistroyModel($_POST,$_GET);
+		$logcontent  = $Schedhistroy->getlogcontent($dispatchid);
+		//dump($logcontent);
+		$this->assign('logcontent',$logcontent);
+// 		$status = $this->status;
+// 		unset($status['2']);
+// 		$this->assign ( 'status', $status );
+// 		$this->assign ( 'distype', $this->distype );
+// 		$this->assign ( 'resultArr', $this->resultArr );
+		$this->display();
+	}
+	
+	/**
+	 * 查看单个服务对应的机器上的快照
+	 */
+	public function Seepic()
+	{
+		//根据传递过来的调度计划的ID获取对应的一行的数据
+		$dispatchid = $_GET['id'];
+		$Schedhistroy = new SchedhistroyModel($_POST,$_GET);
+		$piccontent  = $Schedhistroy->getpiccontent($dispatchid);
+		//dump($logcontent);
+		$this->assign('piccontent',$piccontent);
+		// 		$status = $this->status;
+		// 		unset($status['2']);
+		// 		$this->assign ( 'status', $status );
+		// 		$this->assign ( 'distype', $this->distype );
+		// 		$this->assign ( 'resultArr', $this->resultArr );
+		$this->display();
+	}
+	
+	public function offlineser()
+	{
+		$ip = trim($_GET['ip']);
+		$service_name = trim($_GET['name']);
+		$path = trim($_GET['path']);
+		//websocket通知C++服务
+		$newIp= sprintf('%-15s', $ip);
+		$time = date("YmdHis");
+		$str = '01'.$newIp.$this->rep_str($service_name, '0', 2).$service_name.$this->rep_str($path, '0', 4).$path.$time;
+		$post_str = array('pBuffer'=>$str,'iLen'=>strlen($str));
+		$Channelswitch = new ChannelswitchModel($_POST,$_GET);
+		$ret = $Channelswitch->requestBySoap('DealNotice',$post_str);
+		if($ret){
+			$ret = array("statusCode"=>"1","message"=>'操作成功。',//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}else{
+			$msg = '操作失败！';
+			$ret = array("statusCode"=>"0","message"=>$msg,"navTabId"=>'',//$this->navTab
+					"rel"=>"","forwardUrl"=>"");
+			echo json_encode($ret);	return;
+		}
+	}
+	
+	
+	/*
+	 * 20160113单个服务重启功能；
+	 */
+	
+	public function serviceRestart()
+	{
+	    $this->assign('rowInfo',$_GET);
+	    $this->assign ( 'iselegant', $this->iselegant );
+	    $this->display();
+	}
+}

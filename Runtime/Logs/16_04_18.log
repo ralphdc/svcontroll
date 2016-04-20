@@ -1,0 +1,1475 @@
+[ 2016-04-18T16:55:10+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => json={"templateType":"3","templateName":"FGH","communityRead":"","communityWrite":"","userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"","encryProtocol":"AES","encryPassword":"","port":"161","timeout":"5","retrys":"3","enabled":1}
+    [length] => 256
+    [path] => /monitor/snmp/templatecreate
+)
+
+[ 2016-04-18T16:55:10+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templatecreate
+[ 2016-04-18T16:55:10+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => json={"templateType":"3","templateName":"FGH","communityRead":"","communityWrite":"","userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"","encryProtocol":"AES","encryPassword":"","port":"161","timeout":"5","retrys":"3","enabled":1}
+        )
+
+)
+
+[ 2016-04-18T16:55:10+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is
+[ 2016-04-18T16:55:10+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+NOTIC: [2] file_get_contents(http://172.17.6.180:8888/monitor/snmp/templatecreate): failed to open stream: HTTP request failed! HTTP/1.1 503 Service Unavailable
+ E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:01:11+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => json={"templateType":"3","templateName":"FGH","communityRead":"","communityWrite":"","userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":"161","timeout":"5","retrys":"3","enabled":1}
+    [length] => 264
+    [path] => /monitor/snmp/templatecreate
+)
+
+[ 2016-04-18T17:01:12+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templatecreate
+[ 2016-04-18T17:01:12+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => json={"templateType":"3","templateName":"FGH","communityRead":"","communityWrite":"","userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":"161","timeout":"5","retrys":"3","enabled":1}
+        )
+
+)
+
+[ 2016-04-18T17:01:12+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":"","pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:01:12+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:01:12+08:00 ] 127.0.0.1 /index.php/Service/Snmp
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => json={"pageNum":"1","numPerPage":"","_order":"","_sort":"","templateName":"","templateType":""}&pageNo=1&pageSize=20
+    [length] => 116
+    [path] => /monitor/snmp/templatelistget
+)
+
+[ 2016-04-18T17:01:12+08:00 ] 127.0.0.1 /index.php/Service/Snmp
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templatelistget
+[ 2016-04-18T17:01:12+08:00 ] 127.0.0.1 /index.php/Service/Snmp
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => json={"pageNum":"1","numPerPage":"","_order":"","_sort":"","templateName":"","templateType":""}&pageNo=1&pageSize=20
+        )
+
+)
+
+[ 2016-04-18T17:01:12+08:00 ] 127.0.0.1 /index.php/Service/Snmp
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"templateId":1,"templateName":"1","templateType":1,"communityRead":"public","communityWrite":"public","userName":"li","contextName":"","authProtocol":"MD5","authPassword":null,"encryProtocol":"DES","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":17,"templateName":"KLNM_009000001","templateType":1,"communityRead":"public","communityWrite":"sde","userName":"","contextName":"","authProtocol":"","authPassword":null,"encryProtocol":"","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":19,"templateName":"V1_001","templateType":1,"communityRead":"public","communityWrite":null,"userName":null,"contextName":null,"authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":20,"templateName":"YUI_89","templateType":1,"communityRead":"public","communityWrite":null,"userName":null,"contextName":null,"authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":21,"templateName":"V3_0089","templateType":3,"communityRead":null,"communityWrite":null,"userName":"Admin","contextName":"Admin-one_context","authProtocol":"MD5","authPassword":null,"encryProtocol":"AES","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":22,"templateName":"FGH","templateType":3,"communityRead":null,"communityWrite":null,"userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":161,"timeout":5,"retrys":3,"enabled":true}],"pageNo":1,"pageSize":20,"totalPage":1,"total":6}
+[ 2016-04-18T17:01:12+08:00 ] 127.0.0.1 /index.php/Service/Snmp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 16 行.
+NOTIC: [8] Undefined index: snmpPerPage E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 22 行.
+NOTIC: [8] Undefined index: smnpPerPage E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 29 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+NOTIC: [2] Missing argument 1 for SnmpModel::countByPost(), called in E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php on line 27 and defined E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 80 行.
+NOTIC: [2] Missing argument 2 for SnmpModel::countByPost(), called in E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php on line 27 and defined E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: map E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 14 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-18T17:16:20+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/19?_=1460970980926
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=19
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:16:20+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/19?_=1460970980926
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:16:20+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/19?_=1460970980926
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=19
+        )
+
+)
+
+[ 2016-04-18T17:16:20+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/19?_=1460970980926
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":19,"templateName":"V1_001","templateType":1,"communityRead":"public","communityWrite":null,"userName":null,"contextName":null,"authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:16:21+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/19?_=1460970980926
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:17:50+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971070643
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=21
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:17:50+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971070643
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:17:50+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971070643
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=21
+        )
+
+)
+
+[ 2016-04-18T17:17:50+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971070643
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":21,"templateName":"V3_0089","templateType":3,"communityRead":null,"communityWrite":null,"userName":"Admin","contextName":"Admin-one_context","authProtocol":"MD5","authPassword":null,"encryProtocol":"AES","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:17:50+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971070643
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:17:57+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971077707
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=22
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:17:57+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971077707
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:17:57+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971077707
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=22
+        )
+
+)
+
+[ 2016-04-18T17:17:57+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971077707
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":22,"templateName":"FGH","templateType":3,"communityRead":null,"communityWrite":null,"userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":161,"timeout":5,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:17:57+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971077707
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:18:08+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/20?_=1460971088004
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=20
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:18:08+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/20?_=1460971088004
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:18:08+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/20?_=1460971088004
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=20
+        )
+
+)
+
+[ 2016-04-18T17:18:08+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/20?_=1460971088004
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":20,"templateName":"YUI_89","templateType":1,"communityRead":"public","communityWrite":null,"userName":null,"contextName":null,"authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:18:08+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/20?_=1460971088004
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:18:14+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971094710
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=22
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:18:14+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971094710
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:18:14+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971094710
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=22
+        )
+
+)
+
+[ 2016-04-18T17:18:14+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971094710
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":22,"templateName":"FGH","templateType":3,"communityRead":null,"communityWrite":null,"userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":161,"timeout":5,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:18:14+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971094710
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:18:23+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971103320
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=22
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:18:23+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971103320
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:18:23+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971103320
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=22
+        )
+
+)
+
+[ 2016-04-18T17:18:23+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971103320
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":22,"templateName":"FGH","templateType":3,"communityRead":null,"communityWrite":null,"userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":161,"timeout":5,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:18:23+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971103320
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:19:05+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971145715
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=21
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:19:05+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971145715
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:19:05+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971145715
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=21
+        )
+
+)
+
+[ 2016-04-18T17:19:05+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971145715
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":21,"templateName":"V3_0089","templateType":3,"communityRead":null,"communityWrite":null,"userName":"Admin","contextName":"Admin-one_context","authProtocol":"MD5","authPassword":null,"encryProtocol":"AES","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:19:05+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971145715
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:19:15+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971155443
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=22
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:19:15+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971155443
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:19:15+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971155443
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=22
+        )
+
+)
+
+[ 2016-04-18T17:19:15+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971155443
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":22,"templateName":"FGH","templateType":3,"communityRead":null,"communityWrite":null,"userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":161,"timeout":5,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:19:15+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971155443
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:19:40+08:00 ] 127.0.0.1 /index.php/Service/Snmp?_=1460971180718
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => json=&pageNo=1&pageSize=20
+    [length] => 26
+    [path] => /monitor/snmp/templatelistget
+)
+
+[ 2016-04-18T17:19:40+08:00 ] 127.0.0.1 /index.php/Service/Snmp?_=1460971180718
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templatelistget
+[ 2016-04-18T17:19:40+08:00 ] 127.0.0.1 /index.php/Service/Snmp?_=1460971180718
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => json=&pageNo=1&pageSize=20
+        )
+
+)
+
+[ 2016-04-18T17:19:40+08:00 ] 127.0.0.1 /index.php/Service/Snmp?_=1460971180718
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"templateId":1,"templateName":"1","templateType":1,"communityRead":"public","communityWrite":"public","userName":"li","contextName":"","authProtocol":"MD5","authPassword":null,"encryProtocol":"DES","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":17,"templateName":"KLNM_009000001","templateType":1,"communityRead":"public","communityWrite":"sde","userName":"","contextName":"","authProtocol":"","authPassword":null,"encryProtocol":"","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":19,"templateName":"V1_001","templateType":1,"communityRead":"public","communityWrite":null,"userName":null,"contextName":null,"authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":20,"templateName":"YUI_89","templateType":1,"communityRead":"public","communityWrite":null,"userName":null,"contextName":null,"authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":21,"templateName":"V3_0089","templateType":3,"communityRead":null,"communityWrite":null,"userName":"Admin","contextName":"Admin-one_context","authProtocol":"MD5","authPassword":null,"encryProtocol":"AES","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":22,"templateName":"FGH","templateType":3,"communityRead":null,"communityWrite":null,"userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":161,"timeout":5,"retrys":3,"enabled":true}],"pageNo":1,"pageSize":20,"totalPage":1,"total":6}
+[ 2016-04-18T17:19:40+08:00 ] 127.0.0.1 /index.php/Service/Snmp?_=1460971180718
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 16 行.
+NOTIC: [8] Undefined index: snmpPerPage E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 22 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 23 行.
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 24 行.
+NOTIC: [8] Undefined index: smnpPerPage E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 29 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+NOTIC: [2] Missing argument 1 for SnmpModel::countByPost(), called in E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php on line 27 and defined E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 80 行.
+NOTIC: [2] Missing argument 2 for SnmpModel::countByPost(), called in E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php on line 27 and defined E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 8 行.
+NOTIC: [8] Undefined index: _order E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 10 行.
+NOTIC: [8] Undefined index: _sort E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 12 行.
+NOTIC: [8] Undefined variable: map E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 14 行.
+NOTIC: [8] Undefined index: templateName E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 26 行.
+NOTIC: [8] Undefined index: templateType E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 32 行.
+NOTIC: [8] Undefined index: templateType E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:19:40+08:00 ] 127.0.0.1 /index.php/Service/Common/setMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:19:41+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/19?_=1460971181973
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=19
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:19:41+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/19?_=1460971181973
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:19:41+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/19?_=1460971181973
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=19
+        )
+
+)
+
+[ 2016-04-18T17:19:41+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/19?_=1460971181973
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":19,"templateName":"V1_001","templateType":1,"communityRead":"public","communityWrite":null,"userName":null,"contextName":null,"authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:19:42+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/19?_=1460971181973
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-18T17:20:11+08:00 ] 127.0.0.1 /index.php/Service/Snmp?_=1460971211540
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => json=&pageNo=1&pageSize=20
+    [length] => 26
+    [path] => /monitor/snmp/templatelistget
+)
+
+[ 2016-04-18T17:20:11+08:00 ] 127.0.0.1 /index.php/Service/Snmp?_=1460971211540
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templatelistget
+[ 2016-04-18T17:20:11+08:00 ] 127.0.0.1 /index.php/Service/Snmp?_=1460971211540
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => json=&pageNo=1&pageSize=20
+        )
+
+)
+
+[ 2016-04-18T17:20:11+08:00 ] 127.0.0.1 /index.php/Service/Snmp?_=1460971211540
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"templateId":1,"templateName":"1","templateType":1,"communityRead":"public","communityWrite":"public","userName":"li","contextName":"","authProtocol":"MD5","authPassword":null,"encryProtocol":"DES","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":17,"templateName":"KLNM_009000001","templateType":1,"communityRead":"public","communityWrite":"sde","userName":"","contextName":"","authProtocol":"","authPassword":null,"encryProtocol":"","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":19,"templateName":"V1_001","templateType":1,"communityRead":"public","communityWrite":null,"userName":null,"contextName":null,"authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":20,"templateName":"YUI_89","templateType":1,"communityRead":"public","communityWrite":null,"userName":null,"contextName":null,"authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":21,"templateName":"V3_0089","templateType":3,"communityRead":null,"communityWrite":null,"userName":"Admin","contextName":"Admin-one_context","authProtocol":"MD5","authPassword":null,"encryProtocol":"AES","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":22,"templateName":"FGH","templateType":3,"communityRead":null,"communityWrite":null,"userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":161,"timeout":5,"retrys":3,"enabled":true}],"pageNo":1,"pageSize":20,"totalPage":1,"total":6}
+[ 2016-04-18T17:20:11+08:00 ] 127.0.0.1 /index.php/Service/Snmp?_=1460971211540
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 16 行.
+NOTIC: [8] Undefined index: snmpPerPage E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 22 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 23 行.
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 24 行.
+NOTIC: [8] Undefined index: smnpPerPage E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 29 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+NOTIC: [2] Missing argument 1 for SnmpModel::countByPost(), called in E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php on line 27 and defined E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 80 行.
+NOTIC: [2] Missing argument 2 for SnmpModel::countByPost(), called in E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php on line 27 and defined E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: numPerPage E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 8 行.
+NOTIC: [8] Undefined index: _order E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 10 行.
+NOTIC: [8] Undefined index: _sort E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 12 行.
+NOTIC: [8] Undefined variable: map E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 14 行.
+NOTIC: [8] Undefined index: templateName E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 26 行.
+NOTIC: [8] Undefined index: templateType E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 32 行.
+NOTIC: [8] Undefined index: templateType E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 33 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:20:11+08:00 ] 127.0.0.1 /index.php/Service/Common/setMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:20:13+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971213216
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=22
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:20:13+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971213216
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:20:13+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971213216
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=22
+        )
+
+)
+
+[ 2016-04-18T17:20:13+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971213216
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":22,"templateName":"FGH","templateType":3,"communityRead":null,"communityWrite":null,"userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":161,"timeout":5,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:20:13+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971213216
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.030000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-18T17:21:30+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971290204
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=22
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:21:30+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971290204
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:21:30+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971290204
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=22
+        )
+
+)
+
+[ 2016-04-18T17:21:30+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971290204
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":22,"templateName":"FGH","templateType":3,"communityRead":null,"communityWrite":null,"userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":161,"timeout":5,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:21:30+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971290204
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:21:44+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971304666
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=22
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:21:44+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971304666
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:21:44+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971304666
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=22
+        )
+
+)
+
+[ 2016-04-18T17:21:44+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971304666
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":22,"templateName":"FGH","templateType":3,"communityRead":null,"communityWrite":null,"userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":161,"timeout":5,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:21:44+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971304666
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.068000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.068000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:21:53+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971313601
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=21
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:21:53+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971313601
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:21:53+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971313601
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=21
+        )
+
+)
+
+[ 2016-04-18T17:21:53+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971313601
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":21,"templateName":"V3_0089","templateType":3,"communityRead":null,"communityWrite":null,"userName":"Admin","contextName":"Admin-one_context","authProtocol":"MD5","authPassword":null,"encryProtocol":"AES","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:21:53+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971313601
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-18T17:21:57+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/20?_=1460971317798
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=20
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:21:57+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/20?_=1460971317798
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:21:57+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/20?_=1460971317798
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=20
+        )
+
+)
+
+[ 2016-04-18T17:21:57+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/20?_=1460971317798
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":20,"templateName":"YUI_89","templateType":1,"communityRead":"public","communityWrite":null,"userName":null,"contextName":null,"authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:21:57+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/20?_=1460971317798
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:22:01+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971321080
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=22
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:22:01+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971321080
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:22:01+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971321080
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=22
+        )
+
+)
+
+[ 2016-04-18T17:22:01+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971321080
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":22,"templateName":"FGH","templateType":3,"communityRead":null,"communityWrite":null,"userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":161,"timeout":5,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:22:01+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971321080
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-18T17:22:04+08:00 ] 127.0.0.1 /index.php/Service/Snmp/list?_=1460971324827
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.001000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-18T17:22:24+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => json={"templateType":"3","templateName":"NorthEarth","communityRead":"","communityWrite":"","userName":"adminx","contextName":"ttxx","authProtocol":"","authPassword":"","encryProtocol":"","encryPassword":"","port":"161","timeout":"5","retrys":"3","enabled":1}
+    [length] => 259
+    [path] => /monitor/snmp/templatecreate
+)
+
+[ 2016-04-18T17:22:24+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templatecreate
+[ 2016-04-18T17:22:24+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => json={"templateType":"3","templateName":"NorthEarth","communityRead":"","communityWrite":"","userName":"adminx","contextName":"ttxx","authProtocol":"","authPassword":"","encryProtocol":"","encryPassword":"","port":"161","timeout":"5","retrys":"3","enabled":1}
+        )
+
+)
+
+[ 2016-04-18T17:22:24+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":"","pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:22:24+08:00 ] 127.0.0.1 /index.php/Service/Snmp/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-18T17:22:24+08:00 ] 127.0.0.1 /index.php/Service/Snmp
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => json={"pageNum":"1","numPerPage":"","_order":"","_sort":"","templateName":"","templateType":""}&pageNo=1&pageSize=20
+    [length] => 116
+    [path] => /monitor/snmp/templatelistget
+)
+
+[ 2016-04-18T17:22:24+08:00 ] 127.0.0.1 /index.php/Service/Snmp
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templatelistget
+[ 2016-04-18T17:22:24+08:00 ] 127.0.0.1 /index.php/Service/Snmp
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => json={"pageNum":"1","numPerPage":"","_order":"","_sort":"","templateName":"","templateType":""}&pageNo=1&pageSize=20
+        )
+
+)
+
+[ 2016-04-18T17:22:24+08:00 ] 127.0.0.1 /index.php/Service/Snmp
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":[{"templateId":1,"templateName":"1","templateType":1,"communityRead":"public","communityWrite":"public","userName":"li","contextName":"","authProtocol":"MD5","authPassword":null,"encryProtocol":"DES","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":17,"templateName":"KLNM_009000001","templateType":1,"communityRead":"public","communityWrite":"sde","userName":"","contextName":"","authProtocol":"","authPassword":null,"encryProtocol":"","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":19,"templateName":"V1_001","templateType":1,"communityRead":"public","communityWrite":null,"userName":null,"contextName":null,"authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":20,"templateName":"YUI_89","templateType":1,"communityRead":"public","communityWrite":null,"userName":null,"contextName":null,"authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":21,"templateName":"V3_0089","templateType":3,"communityRead":null,"communityWrite":null,"userName":"Admin","contextName":"Admin-one_context","authProtocol":"MD5","authPassword":null,"encryProtocol":"AES","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},{"templateId":22,"templateName":"FGH","templateType":3,"communityRead":null,"communityWrite":null,"userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":161,"timeout":5,"retrys":3,"enabled":true},{"templateId":23,"templateName":"NorthEarth","templateType":3,"communityRead":null,"communityWrite":null,"userName":"adminx","contextName":"ttxx","authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5,"retrys":3,"enabled":true}],"pageNo":1,"pageSize":20,"totalPage":1,"total":7}
+[ 2016-04-18T17:22:24+08:00 ] 127.0.0.1 /index.php/Service/Snmp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] Undefined index: pageNum E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 16 行.
+NOTIC: [8] Undefined index: snmpPerPage E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 22 行.
+NOTIC: [8] Undefined index: smnpPerPage E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 29 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+NOTIC: [2] Missing argument 1 for SnmpModel::countByPost(), called in E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php on line 27 and defined E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 80 行.
+NOTIC: [2] Missing argument 2 for SnmpModel::countByPost(), called in E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php on line 27 and defined E:\www\Sermanage\Application\Service\Model\SnmpModel.class.php 第 80 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: map E:\www\Sermanage\Runtime\Cache\Service\294e6999264b78215e91c362b4e06f48.php 第 14 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:22:27+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971346976
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=23
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:22:27+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971346976
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:22:27+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971346976
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=23
+        )
+
+)
+
+[ 2016-04-18T17:22:27+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971346976
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":23,"templateName":"NorthEarth","templateType":3,"communityRead":null,"communityWrite":null,"userName":"adminx","contextName":"ttxx","authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:22:27+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971346976
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:27:03+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971623160
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=23
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:27:03+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971623160
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:27:03+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971623160
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=23
+        )
+
+)
+
+[ 2016-04-18T17:27:03+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971623160
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":23,"templateName":"NorthEarth","templateType":3,"communityRead":null,"communityWrite":null,"userName":"adminx","contextName":"ttxx","authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:27:03+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971623160
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:27:31+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971651756
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=22
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:27:31+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971651756
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:27:31+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971651756
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=22
+        )
+
+)
+
+[ 2016-04-18T17:27:31+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971651756
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":22,"templateName":"FGH","templateType":3,"communityRead":null,"communityWrite":null,"userName":"admin","contextName":"ddd","authProtocol":"MD5","authPassword":"wedf","encryProtocol":"AES","encryPassword":"fd45","port":161,"timeout":5,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:27:31+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/22?_=1460971651756
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-18T17:27:36+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971656808
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=21
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:27:36+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971656808
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:27:36+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971656808
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=21
+        )
+
+)
+
+[ 2016-04-18T17:27:36+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971656808
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":21,"templateName":"V3_0089","templateType":3,"communityRead":null,"communityWrite":null,"userName":"Admin","contextName":"Admin-one_context","authProtocol":"MD5","authPassword":null,"encryProtocol":"AES","encryPassword":null,"port":161,"timeout":5000,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:27:36+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/21?_=1460971656808
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:28:03+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971683609
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=23
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:28:03+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971683609
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:28:03+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971683609
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=23
+        )
+
+)
+
+[ 2016-04-18T17:28:03+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971683609
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":23,"templateName":"NorthEarth","templateType":3,"communityRead":null,"communityWrite":null,"userName":"adminx","contextName":"ttxx","authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:28:03+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971683609
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.010000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.010000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:28:20+08:00 ] 127.0.0.1 /index.php/Service/Snmp/list?_=1460971699995
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-18T17:28:26+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971706633
+ERR: ////////////////////////////// 传入的发送参数是： Array
+(
+    [content] => templateId=23
+    [length] => 9
+    [path] => /monitor/snmp/templateget
+)
+
+[ 2016-04-18T17:28:26+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971706633
+ERR: //////////////////////////////request_by_other_v2 Request-Url ishttp://172.17.6.180:8888/monitor/snmp/templateget
+[ 2016-04-18T17:28:26+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971706633
+ERR: //////////////////////////////request_by_other_v2 context data isArray
+(
+    [http] => Array
+        (
+            [method] => POST
+            [timeout] => 600
+            [header] => 8
+            [content] => templateId=23
+        )
+
+)
+
+[ 2016-04-18T17:28:26+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971706633
+ERR: //////////////////////////////request_by_other_v2 file_get_contents data is{"errorCode":0,"errorMessage":"SUCCESS","data":{"templateId":23,"templateName":"NorthEarth","templateType":3,"communityRead":null,"communityWrite":null,"userName":"adminx","contextName":"ttxx","authProtocol":null,"authPassword":null,"encryProtocol":null,"encryPassword":null,"port":161,"timeout":5,"retrys":3,"enabled":true},"pageNo":0,"pageSize":0,"totalPage":0,"total":0}
+[ 2016-04-18T17:28:26+08:00 ] 127.0.0.1 /index.php/Service/Snmp/edit/id/23?_=1460971706633
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of SnmpController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [2048] Declaration of SnmpController::edit() should be compatible with CommonController::edit($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 3 行.
+NOTIC: [8] file_get_contents(): Content-type not specified assuming application/x-www-form-urlencoded E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 517 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: templateId E:\www\Sermanage\Application\Service\Controller\SnmpController.class.php 第 67 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-04-18T17:47:17+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+
+[ 2016-04-18T17:47:19+08:00 ] 127.0.0.1 /index.php/Service/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

@@ -1,0 +1,65 @@
+
+<include file="Public:pagerForm" />
+
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" action="" method="post">
+		<div class="searchBar">
+			<table class="searchContent">
+				<tr>
+					<td><label>参数编码：</label><input type="text" name="paramCode" id="paramCode" class="textInput" value="{$_POST['paramCode']}"/></td>
+					<td><label>参数名称：</label><input type="text" name="paramName" id="paramName" class="textInput" value="{$_POST['paramName']}"/></td>	
+					<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
+</div>
+
+<div class="panelBar">
+	<ul class="toolBar">
+		<li><a href="__URL__/add" class="add" target="dialog" mask="true" rel="" title="添加" width="600" height="400"><span>添加</span></a></li>
+		<li class="line">line</li>
+		<li class=""><a href="__URL__/delete/id/{pid}" class="delete" target="ajaxTodo" rel="id" title="确定要删除吗？" posttype="string"><span>删除</span></a></li>
+		<li class="line">line</li>
+		<li class=""><a href="__URL__/edit/id/{pid}" class="edit" target="dialog" mask="true" rel="" title="修改" width="600" height="400" warn="请选择一条数据"><span>修改</span></a></li>
+		<li class="line">line</li>
+		<li class=""><a href="__URL__/info/id/{pid}" class="edit" target="navTab" rel="paramInfo" warn="请选择一条数据"><span>提示明细</span></a></li>
+	</ul>
+</div>
+
+<div class="tableList" layouth="118">
+	<table class="list" width="100%">
+		<thead>
+			<tr>
+				<th width="30"><input type="checkbox" group="product_id" class="checkboxCtrl" /></th>
+				<th width="90">参数编号</th>
+				<th>参数名称</th>
+				<th>参数值</th>
+				<th>上级参数ID</th>
+				<th>新增用户</th>
+				<th>新增时间</th>
+			</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="params" >
+			<tr target="pid" rel="{$vo['id']}">
+				<td><input  type="checkbox" name="paramid" id="" value="{$vo['id']}" ></td>					
+				<td>{$vo['paramCode']}</td>
+				<td>{$vo['paramName']}</td>
+				<td>{$vo['paramValue']}</td>
+				<td>{$vo['upParamid']}</td>
+				<td>{$vo['createBy']}</td>
+				<td>{$vo['createTime']}</td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+</div>
+
+<div class="panelBar">
+	<div class="pages">
+		<span>共{$totalCount}条</span>
+	</div>
+	<div class="pagination"  targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="{$pageNumShown}" currentPage="{$currentPage}"></div>
+</div>

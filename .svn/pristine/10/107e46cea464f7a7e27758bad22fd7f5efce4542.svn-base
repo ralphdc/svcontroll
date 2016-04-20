@@ -1,0 +1,110 @@
+
+<div class="pageContent">
+
+	<div class="pageFormContent" layouth="58">
+	
+		<div class="head_search">
+			<table>
+				<tr>
+					<td>
+						<label>配置实例名：</label><input type="text" name="repertory_config_search_key" id="" class="textInput" />
+					</td>	
+					<td>
+						<button type="submit" class="btn_search">查询</button>
+						<button type="submit" class="btn_search_cancel">取消查询</button>
+					</td>
+				</tr>
+			</table>
+		</div>	
+		<div class="side_tree repertory_config_sel_left">
+			<ul id="repertory_config_sel_tree" class="ztree" layouth="68"></ul>
+		</div>
+		
+		<div class="repertory_config_sel_right" id="repertory_config_content">
+			<div id="showInstancecontent">
+			
+			</div>		
+		</div>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li id="xzdh"><div class="buttonActive"><div class="buttonContent"><button class="repertory_config_sel_confirm">确定</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+var settingA = {
+	view: {
+		dblClickExpand: false,
+		selectedMulti: false,
+		nameIsHTML:true
+	},
+	data: {
+		simpleData: {
+			enable: true
+		}
+	},
+	edit: {
+		enable: false,
+		showAddBtn: false,
+		showRemoveBtn: false,
+		showRenameBtn: false
+	}
+};
+
+var repertory_config_nodes=[
+	{$repertory_config_tree}
+	];
+
+var repertory_config_sel_tree;
+$(function(){
+	$.fn.zTree.init($("#repertory_config_sel_tree"), settingA, repertory_config_nodes);
+	repertory_config_sel_tree = $.fn.zTree.getZTreeObj("repertory_config_sel_tree");
+	$('.repertory_config_sel_left a').attr('rel','showInstancecontent');
+	
+	// 确认
+	$('.repertory_config_sel_confirm').click(function(){
+		$.pdialog.close('select_info_win');
+	});
+	
+});
+
+
+
+$('#xzdh').unbind('click').click(function(){
+	if(repertory_config_sel_tree.getSelectedNodes()[0].level!=2) return false;
+	sel_id=repertory_config_sel_tree.getSelectedNodes()[0].id;
+	sel_name=repertory_config_sel_tree.getSelectedNodes()[0].name;
+	$.bringBack({id:sel_id, name:sel_name});
+	
+});
+
+$('.head_search .btn_search').click(function(){
+	var area=$(this).parents('.head_search'),
+		key=$('input[name="repertory_config_search_key"]',area).val();
+
+	var tree_earch='repertory_config_sel_tree';
+		tree_which_search = 'repertory_config_sel_tree';
+
+	$.post('/index.php/Service/Repertory/getSearchInfo',{type:2,key:key},function(data){
+		if(data)
+		{
+			var search_nodes=eval(data);
+			resetSearchTree(tree_earch,search_nodes);
+		}
+	})
+});
+
+function resetSearchTree(treewhich,search_nodes) {
+
+	$.fn.zTree.init($("#repertory_config_sel_tree"), settingA, search_nodes);
+	initUI($('#repertory_config_sel_tree'));
+
+	repertory_config_sel_tree = $.fn.zTree.getZTreeObj("repertory_config_sel_tree");
+	$('.repertory_config_sel_left a').attr('rel','showInstancecontent');
+}
+
+</script>

@@ -1,0 +1,24 @@
+<div class="pageContent">
+		<table class="list" width="100%" layoutH="40">
+			<thead>
+			<tr>
+				<th width="100">appId</th>
+				<th width="100">服务IP</th>
+				<th width="100">状态</th>
+				<th width="100">描述</th>
+			</tr>
+			</thead>
+			<tbody id="subscribeList">
+			<volist name="list" id="vo" >
+				<tr target="serverId" rel="">
+					<td>{$vo['appId']}</td>
+					<td>{$vo['serverIp']}</td>
+					<td>{$vo['status']}</td>
+					<td>{$vo['desc']}</td>
+				</tr>
+			</volist>
+			
+			</tbody>
+		</table>
+
+	</div>

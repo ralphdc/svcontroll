@@ -1,0 +1,143 @@
+<div class="pageContent">
+	<form id ="formact" method="post" action="__URL__/add" class="pageForm required-validate" onsubmit="" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58">
+			<p style="clear:both;width: 100%;height: auto;">
+				<label>产品名称：</label>
+				<span class="info" id="productName">{$_COOKIE['productName']}</span>
+				<!--select name="productId" id="productId" class="combox">
+					<volist id="vo" name="products">
+						<option value="{$vo['id']}">{$vo['productName']}</option>
+					</volist>
+				</select-->
+
+			</p>
+			<input type="hidden" name="menuid" id="menuid" class="textInput" value="" />
+			<!--div class="divider"></div-->
+			<table class="ui_info_plate">
+				<tr>
+					<td class="plate_item pl0" width="250">
+						<div class="ui_info_tit">菜单列表：</div>
+						<div class="ui_info_con" layouth="162">
+							<ul class="tree treeCheck collapse" oncheck="menuCheck;">
+							
+							<volist id="item" name="menu" >
+								<li><a href="javascript:;" class="treenode" target="id" tvalue="{$item['id']}" rel="" >{$item['menuName']}</a>
+								<notempty name="item['subMenuList']">
+								<ul>
+									<volist id="subItem" name="item['subMenuList']" >
+									<li ><a class="treenode" href="javascript:;" target="id" tvalue="{$subItem['id']}" rel="">{$subItem['menuName']}</a>
+										<notempty name="subItem['subMenuList']">
+										<ul>
+										<volist id="ssubItem" name="subItem['subMenuList']" >
+										<li><a class="treenode" href="javascript:;" target="id" tvalue="{$ssubItem['id']}" fathertvalue="{$subItem['id']}" grandfathertvalue="{$item['id']}" rel="" name="son3">{$ssubItem['menuName']}</a></li>
+										</volist>
+										</ul>
+										</notempty>
+									</li>
+									</volist>
+								</ul>
+								</notempty>
+								</li>
+							</volist>
+								
+							</ul>
+						</div>
+					</td>
+					<td class="plate_item vam">
+						<div class="ui_icon_rel"></div>
+					</td>
+					<td class="plate_item" width="900">
+						<div class="bd1 p10" layouth="126">
+							<div class="act_item bd1 p10 mb10 clearfix">
+								<label>动作名称：</label>
+								<input type="text" name="actName[]" id="actName" class="textInput" />
+								<label>动作编码：</label>
+								<input type="text" name="actCode[]" id="actCode" class="textInput" />
+								<label>动作备注：</label>
+								<input type="text" name="remark[]" id="remark" class="textInput" />
+								<a href="javascript:;" class="btn_add btn green ml30">+</a>
+								<a href="javascript:;" class="btn_del btn red ml10">-</a>
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="button" id="addaction">确定</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+$(function(){
+	function evenAdd(btn){
+		btn.click(function(){
+			var item=$(this).parent('.act_item'),
+				html=$('<div class="act_item bd1 p10 mb10 clearfix"><label>动作名称：</label><input type="text" name="actName[]" id="" class="textInput" /><label>动作编码：</label><input type="text" name="actCode[]" id="" class="textInput" /><label>动作备注：</label><input type="text" name="remark[]" id="" class="textInput" /><a href="javascript:;" class="btn_add btn green ml30">+</a><a href="javascript:;" class="btn_del btn red ml10">-</a></div>');
+			item.after(html);
+			evenAdd($('.btn_add',html));
+			evenDel($('.btn_del',html));
+		});
+	}
+	function evenDel(btn){
+		btn.click(function(){
+			var item=$(this).parent('.act_item');
+			item.remove();
+		});
+	}
+	
+	evenAdd($('.btn_add'));
+	evenDel($('.btn_del'));
+	
+	$(".unchecked").click(function(){
+			alert("aaa");
+		});
+	$('input[name="aaa"]').parent().click(function(){
+
+	});
+
+	$(":input[type='checkbok']").click(function(){
+		var menuid = this . siblings('a').attr('value');
+		alert(menudi);
+	});
+	
+});
+/*var ckbox=$(this).siblings('.ckbox');
+	if(ckbox.hasClass('checked')){
+		var checked=0;
+	}else{
+		var checked=1;
+	}
+	var val=$('input',ckbox).val();
+	alert(checked+' - '+val);*/
+function menuCheck(a){
+	console.log(a);
+}
+
+$("#addaction").click(function(){
+	var menuid = '';
+	var count = 0;
+	var html = $(".checked").siblings("a[name='son3']").each(function(i){
+		menuid = $(this).attr('tvalue') ;//+","+$(this).attr('fathertvalue') +","+$(this).attr('grandfathertvalue')
+		count++;
+		
+	});
+
+	$(":input[name='menuid']").val(menuid);
+	 if(count == 0){
+		alertMsg.error("请选择三级子菜单");
+	 }else if(count > 1){
+		alertMsg.error("只能选择一个三级子菜单");
+	 }else{
+		var obj = $("#formact");
+		validateCallback(obj, dialogAjaxDone);
+	 }
+
+});
+
+
+</script>

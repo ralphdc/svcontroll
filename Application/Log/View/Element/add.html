@@ -1,0 +1,54 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/add" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58">
+			<p style="clear:both;width: 100%;height: auto;">
+				<label>产品名称：</label>
+				<span class="info" id="productName">{$_COOKIE['productName']}</span>
+			</p>
+			<p>
+				<label>元素名称：</label>
+				<input type="text" name="elementName" id="elementName" class="textInput" />
+			</p>
+			<p>
+				<label>元素编码：</label>
+				<input type="text" name="elementCode" id="elementCode" class="textInput" />
+			</p>
+			<p>
+				<label>备注信息：</label>
+				<textarea name="" class="editor textInput" cols="40" rows="3" maxlength="100" name="remark"></textarea>
+			</p>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">确定</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+$(function(){
+
+	function evenAdd(btn){
+		btn.click(function(){
+			var item=$(this).parent('.act_item'),
+				html=$('<div class="act_item bd1 p10 mb10 clearfix"><label>动作编号：</label><input type="text" name="" id="" class="textInput" /><label>动作名称：</label><input type="text" name="" id="" class="textInput" /><label>动作备注：</label><input type="text" name="" id="" class="textInput" /><a href="javascript:;" class="btn_add btn green ml30">+</a><a href="javascript:;" class="btn_del btn red ml10">-</a></div>');
+			item.after(html);
+			evenAdd($('.btn_add',html));
+			evenDel($('.btn_del',html));
+		});
+	}
+	function evenDel(btn){
+		btn.click(function(){
+			var item=$(this).parent('.act_item');
+			item.remove();
+		});
+	}
+	
+	evenAdd($('.btn_add'));
+	evenDel($('.btn_del'));
+	
+	//$("#productName").html($.cookie("productName"));
+});
+</script>

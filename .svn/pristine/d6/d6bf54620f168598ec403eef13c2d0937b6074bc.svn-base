@@ -1,0 +1,111 @@
+<div class="pageContent">
+<form method="post" action="__URL__/edit" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>机房名称：</label>
+			    <select name="areaid" id="areaid" onchange="showCabit(this.value)" style="width:100px">
+				<?php if(is_array($AreamanageInfo) && !empty($AreamanageInfo)){
+				
+						foreach ($AreamanageInfo as $key=>$val)
+						{
+							if($val['arId'] == $row['areaid'])
+								$selected = 'selected';
+							echo '<option value='.$val['arId'].' '.$selected.'>'.$val['arName'].'</option>';
+								$selected = '';
+						}
+				}?>
+				</select>
+				<input type="hidden" name="id" id="id" value="<?php echo $row['assetid'];?>" />
+			</p>
+			<p>
+				<label>机柜名称：</label>
+			    <select name="cabinetid" id="cabinetid" style="width:100px">
+			    {$CabitDom}
+				</select>
+			</p>
+			
+			<p>
+				<label>设备编号：</label>
+				<input  type="text" id="deviceNumber" name="deviceNumber" maxlength="15" size="30" value="<?php echo $row['deviceNumber'];?>"/>
+			</p>
+			
+			<p>
+				<label>品牌：</label>
+				<input  type="text" id="brand" name="brand" maxlength="15" size="30" value="<?php echo $row['brand'];?>"/>
+			</p>
+			
+			<p>
+				<label>型号：</label>
+				<input  type="text" id="model" name="model" maxlength="50" size="30" value="<?php echo $row['model'];?>"/>
+			</p>
+			<p>
+				<label>资产编号：</label>
+				<input  type="text" id="assetNumber" name="assetNumber" maxlength="50" size="30" value="<?php echo $row['assetNumber'];?>"/>
+			</p>
+			<p>
+				<label>CPU信息：</label>
+				<input  type="text" id="cpuinfo" name="cpuinfo" maxlength="50" size="30" value="<?php echo $row['cpuinfo'];?>"/>
+			</p>
+			<p>
+				<label>内存信息：</label>
+				<input  type="text" id="memoryinfo" name="memoryinfo" maxlength="50" size="30" value="<?php echo $row['memoryinfo'];?>"/>
+			</p>
+			<p>
+				<label>硬盘信息：</label>
+				<input  type="text" id="diskinfo" name="diskinfo" maxlength="50" size="30" value="<?php echo $row['diskinfo'];?>"/>
+			</p>
+			<p>
+				<label>服务编码：</label>
+				<input  type="text" id="serviceNumber" name="serviceNumber" maxlength="50" size="30" value="<?php echo $row['serviceNumber'];?>"/>
+			</p>
+			<p>
+				<label>责任人：</label>
+				<input  type="text" id="dutyman" name="dutyman" maxlength="50" size="30" value="<?php echo $row['dutyman'];?>"/>
+			</p>
+			<p>
+				<label>业务地址：</label>
+				<input  type="text" id="businessAddress" name="businessAddress" maxlength="50" size="30" value="<?php echo $row['businessAddress'];?>"/>
+			</p>
+			<p>
+				<label style="width:84px;">带外管理地址：</label>
+				<input  type="text" id="managementAddress" name="managementAddress" maxlength="50" size="30" value="<?php echo $row['managementAddress'];?>"/>
+			</p>
+			<p style="height:auto;">
+				<label>备注：</label>
+				<textarea rows="10" cols="30" id="remark" name="remark">{$row['remark']}</textarea>
+			</p>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>
+
+<script>
+	
+	function showCabit(val)
+	{
+		if(val == 0)
+		{
+			alertMsg.error('请选择机房');
+			return;
+		}
+		$.post('/index.php/Service/Servermanage/getCabitelist',{roomid:val},function(data){
+			$('#cabinetid').html(data);
+		})
+		
+	}
+	
+	
+	$(function(){
+		//$('#areaid').change();
+		var options = $("#cabinetid option").size();
+		var getValue = $("#cabinetid").val();
+		if(options == 1 && getValue == 0){
+			$('#areaid').change();
+		}
+	})
+</script>

@@ -1,0 +1,103 @@
+<div class="pageContent">
+	<div class="searchBar">
+		<p>
+			<label>输入相对路径：</label>
+			<input type="text" size="25" class="required textInput" name="filePath" id="filePath" value="" />
+			  <select name="fileType" id="fileType" >
+				<option value="replace">过滤</option>
+				<option value="pluge">一致</option>
+			  </select>
+			<input type="button" style="margin-left:50px;" value="增加" class="ui_btn_green" id="addfile">
+		</p>
+	</div>
+</div>
+<div class="pageContent" style="margin-top:5px;">
+		<table class="table" width="100%" layoutH="138">
+		<thead>
+		<tr>
+			<th width="30%">相对路径</th>
+			<th width="30%">类型</th>
+			<th width="40%">操作</th>
+		</tr>
+		</thead>
+		<tbody id='fileContent'>
+		<volist id="vo" name="replacelist">
+		<tr>
+			<td>{$vo}</td>
+			<td>过滤</td>
+			<td><input type="button" onclick="delfile(this)" class="ui_btn_green" target="ajaxTodo" title="确实要删除吗？" value="删除" /></td>
+		</tr>
+		</volist>
+		<volist id="vo" name="plugelist">
+		<tr>
+			<td>{$vo}</td>
+			<td>一致</td>
+			<td><input type="button" onclick="delfile(this)" class="ui_btn_green" target="ajaxTodo" title="确实要删除吗？" value="删除" /></td>
+		</tr>
+		</volist>
+		</tbody>
+		</table>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit" id="saveFile">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+</div>
+<script>
+$("#addfile").click(function(){
+	var fileName = $("#filePath").val();
+	var fileTypetext = $("#fileType").find("option:selected").text();
+	var fileTypeval = $("#fileType").val();
+	var pos = fileName.indexOf(',');
+	if( pos>0 ){
+		alertMsg.error('路径不能包含逗号！');return;
+	}
+	if(fileName !=''){
+		var html = '<tr><td width="30%">'+fileName+'</td><td width="30%">'+fileTypetext+'<input type="hidden" value="'+fileTypeval+'"/></td><td width="40%"><div><input type="button" onclick="delfile(this)" class="ui_btn_green" target="ajaxTodo" title="确实要删除吗？" value="删除" /></div></td></tr>'
+		$("#fileContent").append(html);
+		$("#filePath").val('');
+	}else{
+		alertMsg.error('请输入相对路径！');
+	}
+});
+
+function delfile(object){
+	var tr = $(object).parent().parent().parent();  
+    tr.remove();  
+}
+
+$("#saveFile").click(function(){
+	var svrid = {$Think.get.svrid};
+	var svrname = "{$Think.get.svrname}";
+	var replaceFile = '';
+	var plugeFile = '';
+	$('tr','#fileContent').map(function(){
+		var fileName = $('td:first',this).text();
+		var fileType = $('input',this).val();
+		
+		if(fileType == 'replace'){
+			replaceFile += fileName +',';
+		}else{
+			plugeFile  += fileName +',';
+		}
+	});
+	
+	$.ajax({ 
+		async: false, 
+		type : "POST",
+		data:{svrid:svrid,svrname:svrname,replace:replaceFile,pluge:plugeFile},
+		url : "__URL__/updateFilterPluge", 
+		dataType : 'json', 
+		success : function(data) { 
+			if(data.statusCode == 1){
+				alertMsg.correct(data.message);
+				$.pdialog.close('tree_filtle_win');
+			}else{
+				alertMsg.error(data.message);
+			}
+		} 
+	}); 
+
+})
+</script>

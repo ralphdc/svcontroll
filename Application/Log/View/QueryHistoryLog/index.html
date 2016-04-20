@@ -1,0 +1,160 @@
+<include file="Public:pagerFormLog" />
+
+<div class="pageHeader" style="height:26px">
+	<form rel ="pagerForm" method="post"  onsubmit="return navTabSearch(this);" action="__URL__">
+	<div class="searchBar">
+		<ul class="searchContent">
+			<li>
+				<label>IP地址</label>
+				
+				<input size="10" type="text" value="{$_REQUEST['ip']}" id="ip" name="ip" class="textInput">
+			</li>
+			<li>
+				<label>服务</label>
+				
+				<input size="10" type="text" value="{$_REQUEST['service']}" id="service" name="service" class="textInput">
+			</li>
+			<!-- <li>
+				<label>信息</label>
+				
+				<input size="10" type="text" value="{$_REQUEST['msg']}" id="msg" name="msg" class="textInput">
+			</li> -->
+			<li>
+				<label>级别</label>
+				<select class="combox" name="level">
+				<foreach name="level" item="vo" >
+					<if condition=" $key eq $_REQUEST['level'] ">
+						<option value="{$key}" selected>{$vo}</option>
+					<else />
+						<option value="{$key}">{$vo}</option>
+					</if>
+				</foreach>
+				</select>
+			</li>
+			<li>
+				<label>时间（起）：</label>
+				<input maxDate="<?php echo date('Y-m-d'); ?>" size="10" type="text" value="{$_REQUEST['startTime']}" id="startTime" name="startTime" readonly="1" datefmt="yyyy-MM-dd" class="date textInput readonly">
+			</li>
+			<li>
+				<label>时间（终）：</label>
+				<input maxDate="<?php echo date('Y-m-d'); ?>" size="10" type="text" value="{$_REQUEST['endTime']}" id="endTime" name="endTime" readonly="1" datefmt="yyyy-MM-dd" class="date textInput readonly">
+			</li>
+			<!-- <li><label>内存(%)>=</label><input size="5" type="text" value="{$_REQUEST['memory']}" id="memory" name="memory" class="textInput"></li>
+			<li><label>cpu(%)>=</label><input size="5" type="text" value="{$_REQUEST['cpu']}" id="cpu" name="cpu" class="textInput"></li> -->
+			
+			<volist id="scl" name="searchlist">
+				<li><label>{$scl}：</label><input type="text" value="{$_REQUEST['{$key}']}" id="{$key}" name="{$key}" class="textInput"></li>
+			</volist>
+			
+		</ul>
+		<div class="subBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div></li>
+			</ul>
+		</div>
+	</div>
+	</form>
+</div>
+
+<div class="pageContent">
+<div class="panelBar" style="height:27px;">
+		<ul class="toolBar">
+			<li><a class="edit" height="560" width="508" href="__URL__/setrecord" title="设置历史查询显示的字段" target="dialog" mask="true"><span>设置显示字段</span></a></li>
+			<li class="line">line</li>
+			<li><a class="add" height="526" width="507" href="__URL__/addsearch" title="增加查询条件" target="dialog" mask="true"><span>增加查询条件</span></a></li>
+			<li class="line">line</li>
+			<li><a class="edit" href="__URL__/exportexcell/param/{$_REQUEST|json_encode|base64_encode}" title="导出Excell"><span>导出成Excell表格</span></a></li>
+		</ul>
+	</div>
+<?php
+	if($showContent == 2)
+	{
+		echo '<div style="text-align:center"><h1>当日总日志条数：<font color="red">'.$totalCount.'</font></h1></div>';
+	}else
+	{
+?>
+	
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+		<tr>
+		<volist id="sl" name="showlist">
+			<if condition="$key eq 'id'">
+				<th width="60px">{$sl}</th>
+			<elseif condition="$key eq 'msg'"/>
+				<th width="60px">{$sl}</th>
+			<elseif condition="$key eq 'logTime'"/>
+				<th width="60px" orderField="logTime" <if condition="$_REQUEST._order eq 'logTime'">class="{$_REQUEST._sort}"</if> >{$sl}</th>
+			<else />
+				<th>{$sl}</th>
+			</if>
+		</volist>
+		</tr>
+		</thead>
+		<tbody>
+		
+		<?php
+			foreach($list as $key => $vo)
+			{
+		?>
+			<tr target="sid_user" rel="<?php echo $vo['id'];?>">
+				<?php
+					foreach($showlist as $listkey=>$listval)
+					{
+						if($listkey!='chainId')
+						{
+							if($listkey == 'id')
+							{
+								$lineNum = $numPerPage*($currentPage-1)+$key+1;
+				?>
+								<td><?php echo $lineNum;?></td>
+				<?php		
+							}elseif($listkey == 'msg')
+							{
+				?>
+							<td style="width:100px"><a height="563" width="524" mask="true" rel="see_info_win" title="查看信息" target="dialog" href="__URL__/showinfo/id/{$vo['id']}/type/{$vo['format']}"><?php echo substr($vo[$listkey],0,100);?></a></td>
+				<?php		
+							}else
+							{
+				?>
+								<td><a href="javascript:void(0);" title="<?php echo $vo[$listkey];?>"><?php echo $vo[$listkey];?></a></td>
+				<?php
+							}
+						}else
+						{
+				?>
+							<td><a rel="L30602" target="navTab" href="/index.php?s=/Log/CallChain/index/chainId/<?php echo $vo['chainId'] ;?>/startTime/{$_REQUEST['startTime']}/endTime/{$_REQUEST['endTime']}">查看调用链</a></td>
+				<?php
+						}
+					}
+				?>
+			</tr>
+		<?php
+			}
+		?>
+		</tbody>
+	</table>
+
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
+				<?php
+					$numPerPageArr = array(20,50,100,200);
+					foreach($numPerPageArr as $val)
+					{
+						if($val == $numPerPage)
+							$selected = 'selected';
+						echo '<option value="'.$val.'" '.$selected.'>'.$val.'</option>';
+							$selected = '';
+					}
+				?>
+			</select>
+			<span>条，共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="0" currentPage="{$currentPage}"></div>
+	</div>
+<?php
+	}
+?>
+
+</div>

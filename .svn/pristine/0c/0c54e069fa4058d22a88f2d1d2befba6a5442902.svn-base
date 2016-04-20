@@ -1,0 +1,31 @@
+<style type="text/css">
+	.service-show-detail{display:none; width:290px; padding:10px; border:1px #63b025 solid;}
+</style>
+<div class="pageContent">
+<table class="table" width="100%" layoutH="50">
+	<tr>
+		<td>告警元素</td>
+		<td>告警信息</td>
+		<td>告警时间</td>
+		<td>备注</td>
+	</tr>
+	<volist id="vo" name="sinfo">
+	<tr>
+		<td>{$vo['element']}</td>
+		<td>{$vo['info']}</td>
+		<td>{$vo['time']}</td>
+		<td class="service-detail">{$vo['remark']}<div class="service-show-detail">{$vo['remark']}</div></td>
+	</tr>
+	</volist>
+</table>
+</div>
+
+<script type="text/javascript">
+	$(".service-detail").hover(function(e){
+		var mx = e.pageX;
+		var my = e.pageY;
+		$(".service-show-detail").css({'position':'absolute','top':my,'left':mx}).show();
+	},function(){
+		$(".service-show-detail").hide();
+	})
+</script>

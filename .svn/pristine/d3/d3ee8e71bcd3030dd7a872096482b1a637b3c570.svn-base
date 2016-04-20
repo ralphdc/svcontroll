@@ -1,0 +1,72 @@
+
+<!--div class="accordion" fillSpace="sideBar">
+	<div class="accordionContent">
+		<ul class="tree leftmenu treeFolder">
+			<volist id="item" name="menu" >
+				<li><a  class="accordionHeader" href="__MODULE__/{$item['menuUrl']}" target="navTab" rel="{$item['menuUrl']}">{$item['menuName']}</a>
+				<notempty name="item['sub']">
+				<ul>
+				<volist id="subItem" name="item['sub']" >
+				<li class="nonesub" ><a class="tree_menu" href="__MODULE__/{$subItem['menuUrl']}" target="navTab" rel="{$subItem['menuUrl']}" >{$subItem['menuName']}</a></li>
+				</volist>
+				</ul>
+				</notempty>
+				</li>
+			</volist>
+		</ul>
+
+	</div>
+</div--> 
+
+<div class="accordion" fillspace="sidebar">
+	<div class="accordionHeader">
+		<h2><div class="side_menu_icon_2">日志系统</div></h2>
+	</div>
+	<div class="accordionContent">
+		<ul class="tree leftmenu treeFolder">
+			<li>
+				<a class="tree_menu" href="javascript:void(null);">实时监控</a>
+				<ul style="display: none;">
+					<li><a href="__MODULE__/RealTimeDetection" target="navTab" rel="L30501">实时监控总数</a></li>
+					<li><a href="__MODULE__/LatestWarningLog" target="navTab" rel="L30502">最新告警日志</a></li>
+				</ul>
+			</li>
+			<li>
+				<a class="tree_menu" href="javascript:void(null);">日志查询</a>
+				<ul style="display: none;">
+					<!-- <li><a href="__MODULE__/QueryHistoryLog" target="navTab" rel="L30601">日志历史查询</a></li> 
+					<li><a href="__MODULE__/CallChain" target="navTab" rel="L30602">调用链</a></li>-->
+					<li><a href="__MODULE__/CallChain/index/type/1" target="navTab" rel="L30602" title="基础服务链">基础服务调用链</a></li>
+					<li><a href="__MODULE__/CallChain/index/type/2" target="navTab" rel="L30604" title="交易调用链">交易调用链</a></li>
+					<li><a href="__MODULE__/CallChain/index/type/3" target="navTab" rel="L30605" title="交易调用节点">交易调用节点</a></li>
+					<li><a href="__MODULE__/CallChain/index/type/4" target="navTab" rel="L30606" title="资金调用链">资金调用链</a></li>
+					<li><a href="__MODULE__/CallChain/index/type/5" target="navTab" rel="L30607" title="会员操作日志">会员操作日志</a></li>
+					<!-- <li><a href="__MODULE__/BusinessView" target="navTab" rel="L30603">业务视图</a></li> -->
+				</ul>
+			</li>
+			<li>
+				<a class="tree_menu" href="javascript:void(null);">日志统计</a>
+				<ul style="display: none;">
+					<li><a href="__MODULE__/HostEventStat" target="navTab" rel="L30701">主机事件统计</a></li>
+					<li><a href="__MODULE__/AlarmDateStat" target="navTab" rel="L30702">按日期统计</a></li>
+					<li><a href="__MODULE__/ChainCount" target="navTab" rel="L30803">节点耗时统计</a></li>
+				</ul>
+			</li>
+			
+			<li>
+				<a class="tree_menu" href="javascript:void(null);">日志设置</a>
+				<ul style="display: none;">
+					<li><a href="__MODULE__/AnalysisRule" target="navTab" rel="L30801">节点管理</a></li>
+					<!-- <li><a href="__MODULE__/CollectSet" mask="true" target="dialog" title="收集器配置">收集器配置</a></li> -->
+					<li><a href="__MODULE__/CraftSet" target="navTab" rel="L30802">分析器配置</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	
+	
+	
+	
+	
+</div>

@@ -1,0 +1,27 @@
+<div class="pageContent">
+<form method="post" action="__URL__/edit" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label>机柜名称：</label>
+				<input class="required" type="text" id="name" name="name" maxlength="50" size="30" value="<?php echo $row['name'];?>"/>
+				<input type="hidden" name="id" id="id" value="<?php echo $row['id'];?>" />
+			</p>
+			<p>
+				<label>机柜描述：</label>
+				<input class="required" type="text" id="remark" name="remark" maxlength="50" size="30" value="<?php echo $row['remark'];?>"/>
+			</p>
+			<p>
+				<label>添加机房：</label>
+				<input type="hidden" name="prtv.id" value="<?php echo $row['areaid'];?>">
+				<input size="30" readonly class="readonly required textInput" type="text" name="prtv.name" value="<?php echo $row['areaname'];?>" lookupGroup="prtv">
+				<a class="btnLook" href="/index.php/Service/Searchroom" mask="true" lookupGroup="prtv" width="886" height="603">查找：</a>
+			</p>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>

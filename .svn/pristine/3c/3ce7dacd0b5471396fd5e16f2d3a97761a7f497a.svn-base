@@ -1,0 +1,34 @@
+<div layoutH='72' style="overflow:auto;height:550px;" >
+<table class="list"  style="margin-top:0px;width:100%" layoutH="90" >
+			<thead>
+			<tr>
+				<th width="100">服务id</th>
+				<th width="10">协议类型</th>
+				<th width="100">IP</th>
+				<th width="10">端口</th>
+				<th width="130">扩展条件</th>
+				<th width="80">负载均衡类型</th>
+				<th width="100">服务名称</th>
+				
+			</tr>
+			</thead>
+			<tbody>
+			<?php if($error){?>
+			 <td colspan='7'><?php echo $error;?></td>
+			<?php }?>
+			<volist id="vo" name="list">
+				<tr target="appId" rel="{$vo['appId']}">
+					<td>{$vo['serviceId']}</td>
+					<td>{$vo['protocolType']}</td>
+					<td>{$vo['serverIp']}</td>
+					<td>{$vo['serverPort']}</td>
+					<td><textarea name="textarea"  cols="20" rows="5">{$vo['expandCondition']}</textarea></td>
+					<td>{$vo['loadBalanceType']}</td>
+					<td><textarea name="textarea"  cols="15" rows="5">{$vo['serviceName']}</textarea></td>
+						
+				</tr>
+			</volist>
+			
+			</tbody>
+</table>
+</div>

@@ -1,0 +1,34 @@
+<div class="pageContent">
+	<form id="addList" class="pageForm required-validate">
+		<table class="table" targetType="dialog" layoutH="112" width="100%">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>时间</th>
+					<th>状态</th>
+					<th>返回结果</th>
+					<th>IP</th>
+				</tr>
+			</thead>
+			<tbody>	
+			<?php $ralph_order=0; ?>
+			<volist id="vo" name="sinfo">
+				<tr>
+					<?php $ralph_order++;?>
+					<td><?php echo $ralph_order;?></td>
+					<td>{$vo['timestamp']}</td>
+					<td><if condition="$vo['state'] eq 'start'">开启<else/>关闭</if></td>
+					<td><if condition="$vo['errorCode'] eq '00'">成功<else/>失败</if></td>
+					<td>{$vo['ip']}</td>
+				</tr>
+			</volist>
+			</tbody>
+		</table>
+		</div>
+		<div class="formBar">
+		<ul>
+		<li><div class="button"><div class="buttonContent"><button type="button" class="close">关闭</button></div></div></li>
+		</ul>
+		</div>
+	</form>
+</div>

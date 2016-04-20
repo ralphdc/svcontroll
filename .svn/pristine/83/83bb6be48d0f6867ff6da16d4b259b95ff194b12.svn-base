@@ -1,0 +1,14 @@
+<div class="pageContent">
+	<div class="pageFormContent">
+		<div style="height: 634px; overflow: auto;" layouth="58">
+			{$row['sda_info']}<br/><br/>
+			<hr>
+			{$row['partition_info']}<br/><br/>
+			<hr>
+			{$row['cpu_info']}<br/><br/>
+			<hr>
+			{$row['memory_info']}<br/><br/>
+			<hr>
+		</div>
+	</div>
+</div>

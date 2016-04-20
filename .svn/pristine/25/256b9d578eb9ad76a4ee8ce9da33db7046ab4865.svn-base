@@ -1,0 +1,36 @@
+<div class="pageContent">
+<form method="post" action="__URL__/setshowcolum" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+	<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+		<input type="hidden" value="1" name="from" />
+		<table class="table" targetType="dialog" layoutH="112" width="60%">
+		<thead>
+			<tr>
+				<th width="30"><input type="checkbox" class="checkboxCtrl" group="showColum[]" /></th>
+				<th width="60">显示字段</th>
+			</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="showColums">
+			<tr target="sid_user" rel="{$key}">
+				<?php 
+						$checked = '';
+						if(is_array($tempolumArr) && in_array($key,$tempolumArr))
+						{
+							$checked = 'checked';
+						}
+				?>
+				<td><div><input type="checkbox" value="{$key}" name="showColum[]" {$checked} ></div></td>
+				<td>{$vo}</td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+		</ul>
+	</div>
+</form>
+</div>

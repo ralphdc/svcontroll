@@ -1,0 +1,279 @@
+<link href="__PUBLIC__/dwz/themes/css/zTreeStyle/zTreeStyle.css" rel="stylesheet" type="text/css" />
+<script src="__PUBLIC__/dwz/js/jquery.ztree.all-3.5.js" type="text/javascript"></script>
+<script src="__PUBLIC__/dwz/js/jquery.ztree.exhide-3.5.min.js" type="text/javascript"></script>
+
+<div layouth="45">
+	<div class="side_tree js_drag_width config_side_tree" layouth="50">
+		<div class="" data-size="a">
+			<ul id="config_tree_group_manage" class="ztree"></ul>
+		</div>
+	</div>
+	<div id="config_content_operate" layouth="50">
+		<h1>请点选左边树进行操作！</h1>
+
+	</div>
+</div>
+<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit" onclick="noticeSubmit()">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+</div>
+<script type="text/javascript">
+	var operate_setting = {
+			view: {
+				dblClickExpand: false,
+				selectedMulti: false,
+				nameIsHTML:true
+			},
+			data: {
+				key: {
+					title:"gdes"
+				},
+				simpleData: {
+					enable: true
+				}
+			},
+			edit: {
+				enable: false,
+				showAddBtn: false,
+				showRemoveBtn: false,
+				showRenameBtn: false
+			},
+			callback: {
+				onRightClick: zTreeOnRightClick,
+				onClick: zTreeOnClick
+			}
+	}
+	
+	var operate_nodes = [{$operate_tree}];
+	
+	$(function(){
+		$.fn.zTree.init($("#config_tree_group_manage"),operate_setting,operate_nodes);
+		operate_tree = $.fn.zTree.getZTreeObj("config_tree_group_manage");
+		//计算父节点下子节点数目；
+		updateType();
+		$('.config_side_tree a').attr('rel','config_content_operate');
+		//$('.config_side_tree a').attr('title','服务管制-监控配置中心-运维成员管理');
+		operate_tree.expandAll(false);
+		
+	})
+	
+	function changeparentnums(nodes,tree_which){
+		var nodechild = nodes;
+		if(nodechild && nodechild.length > 0){
+			for (var i=0, l=nodechild.length; i<l; i++) {
+				var num = nodechild[i].children ? nodechild[i].children.length : 0;
+				if(num > 0)
+				{
+					if(nodechild[i].isParent)
+					{
+						nodechild[i].name = nodechild[i].name.replace(/ \(.*\)/gi, "") + " (<font color='red'>" + num + "</font>)";
+						tree_which.updateNode(nodechild[i]);
+						changeparentnums(nodechild[i].children,tree_which);
+					}
+				}
+			}
+		}
+	}
+function updateType() {
+	changeparentnums(operate_tree.getNodes(),operate_tree);
+}
+
+function zTreeOnClick(event, treeId, treeNode){
+	console.log(treeNode);
+	if(treeNode.level == 2){
+		var nodeParent = treeNode.getParentNode();
+		var gpid = nodeParent.gid;
+		var oid = treeNode.operatorId;
+		var nt = treeNode.noticeType;
+		var nm = treeNode.operatorName;
+		$("#config_content_operate").loadUrl('__URL__/showNoticeWay?noticetype='+nt+'&gid='+gpid+'&oid='+oid+'&oname='+nm);
+	}
+}
+
+function zTreeOnRightClick(event, treeId, treeNode){
+	//console.log(treeNode.type);
+	
+	
+	operate_tree.selectNode(treeNode);
+	var x = event.clientX;
+	var y = event.clientY;
+	var node_type = treeNode.type;
+	var menu='<ul class="context_menu" style="left:'+(x+2)+'px;top:'+(y+2)+'px;">';
+	//根据节点显示菜单；
+	if(treeNode.level==0){
+		menu+='<li class="m_add" data-type="a">增加组</li>';
+	}else if(treeNode.level==1){
+		menu+='<li class="m_add" data-type="b">增加成员</li><li class="m_edit" data-type="b">更新组名</li><li class="m_del" data-type="b">删除组</li>';
+	}else{
+		menu+='<li class="m_del" data-type="c">删除成员</li>';
+	}
+	
+	menu+='</ul>';
+	menu=$(menu);
+	$('body').append(menu);
+	$('body').bind("mousedown", onBodyMouseDown);
+	menu.contextmenu(function(e){
+		return false;
+	});
+	
+	//处理菜单事件；
+	$('.m_add').click(function(){
+		var type=$(this).data('type');
+		var nodes = operate_tree.getSelectedNodes();
+		hideRMenu();
+		if(type=='a'){
+			$.pdialog.open('/index.php/Service/Operatmember/createGroup','tree_edit_win','创建新组',{'width':'400','height':'200','mask':true});
+		}else if(type=='b'){
+			var gid = treeNode.gid;
+			$.pdialog.open('/index.php/Service/Operatmember/getUnaddedStaff?id='+nodes[0].gid,'tree_edit_win','新增成员',{'width':'680','height':'500','mask':true});
+		}else if(type=='c'){
+			//$.pdialog.open('/index.php/Service/Configure/add_c?id='+nodes[0].id,'tree_edit_win','添加',{'width':'800','height':'600','mask':true});
+		}else if(type=='d'){
+			//$.pdialog.open('/index.php/Service/Configure/add_d','tree_edit_win','添加组合实例',{'width':'410','height':'253','mask':true});
+		}
+	});
+	
+	//处理菜单事件；
+	$('.m_edit').click(function(){
+		var type=$(this).data('type');
+		var nodes = operate_tree.getSelectedNodes();
+		hideRMenu();
+		if(type=='b' && nodes[0].level == 1){
+			var gid = nodes[0].gid;
+			var gname = nodes[0].gname;
+			var gdes = nodes[0].gdes
+			$.pdialog.open('/index.php/Service/Operatmember/createGroup?gpid='+gid+'&action=edit&gnames='+gname+'&gdes='+gdes,'tree_edit_win','编辑群组名称',{'width':'400','height':'200','mask':true});
+		}
+	});
+	
+	$('.m_del',menu).click(function(){
+		hideRMenu();
+		var nodes = operate_tree.getSelectedNodes();
+		if(nodes && nodes.length>0 && !(nodes[0].children && nodes[0].children.length > 0))
+		{
+			var msg = '确定删除吗？';
+			alertMsg.confirm(msg,{okCall:function(){
+				removeTreeNode(operate_tree);
+			}});
+			return false;
+		}else
+		{
+			removeTreeNode(operate_tree);
+		}
+	});
+}
+
+function onBodyMouseDown(event){
+	if (!$(event.target).is('.context_menu') && $(event.target).closest('.context_menu').length==0) {
+		$('.context_menu').remove();
+	}
+}
+
+function hideRMenu() {
+	$('.context_menu').remove();
+	$("body").unbind("mousedown", onBodyMouseDown);
+}
+
+function updateNodeNotice(treeObj,ntype){
+	var getNodes = treeObj.getSelectedNodes();
+	if(getNodes[0].level == 2){
+		getNodes[0].noticeType = ntype;
+		treeObj.updateNode(getNodes[0]);
+	}
+}
+
+function addTreeNode(tree_which,jsono) {
+	hideRMenu();
+	name=name||'新增';
+	var newNode = {};
+	if (tree_which.getSelectedNodes()[0]) {
+		//如果是根节点；
+		if(tree_which.getSelectedNodes()[0].level==0){
+			newNode.name = jsono.gname;
+			newNode.gid = jsono.gid;
+			newNode.type='rnd';
+			newNode.gname = jsono.gname;
+			newNode.checked = tree_which.getSelectedNodes()[0].checked;
+			var new_node=tree_which.addNodes(tree_which.getSelectedNodes()[0], newNode);
+		//如果是一级子节点；
+		}else if(tree_which.getSelectedNodes()[0].level==1){
+			var gid = tree_which.getSelectedNodes()[0].gid;
+			var sinfo = jQuery.parseJSON(jsono.staffInfo);
+			$.each(sinfo,function(index,data){
+				//console.log(data);
+				newNode.name = data.operatorName;
+				newNode.type = 'cnd';
+				newNode.operatorId = data.operatorId;
+				newNode.operatorName = data.operatorName;
+				newNode.noticeType = data.noticeType;
+				//newNode.url='/index.php/Service/Operatemember/showNoticeWay?noticetype='+data.noticeType+'&gid='+gid+'&oid='+data.operatorId+'&oname='+data.operatorName; 
+				
+				newNode.checked = tree_which.getSelectedNodes()[0].checked;
+				var new_node=tree_which.addNodes(tree_which.getSelectedNodes()[0], newNode);
+			})
+		}
+	}else{
+		var new_node=tree_which.addNodes(null, newNode);
+	}
+	initUI($('.config_side_tree'));
+	$('.config_side_tree a').attr('rel','config_content_operate');
+	updateType();
+}
+
+function editTreeNode(treeObj,node_new_name,node_new_des){
+	var nodes = treeObj.getSelectedNodes();
+	if(nodes[0].level == 1){
+		nodes[0].name = node_new_name;
+		nodes[0].gname = node_new_name;
+		nodes[0].gdes = node_new_des;
+		treeObj.updateNode(nodes[0]);
+	}
+}
+function removeTreeNode(tree_which) {
+	var nodes = tree_which.getSelectedNodes();
+	if (nodes && nodes.length>0) {
+		//如果删除的是组；
+		if(nodes[0].level == 1){
+			$.post('/index.php/Service/Operatmember/deleteGroup',{id: nodes[0].gid},function(data){
+				if(data.statusCode=="200") {
+					tree_which.removeNode(nodes[0]);
+					var parentnode = nodes[0].getParentNode();
+					if(parentnode.children.length == 0)
+					{
+						parentnode.name = parentnode.name.replace(/ \(.*\)/gi, "");
+						tree_which.updateNode(parentnode);
+					}
+					alertMsg.correct("操作成功!");
+					updateType();
+				}else{
+					alertMsg.error(data.message)
+				}
+			}, "json");
+		}else if(nodes[0].level == 2){ 
+			var parent_node = nodes[0].getParentNode();
+			
+			$.post('/index.php/Service/Operatmember/deleteStaff',{gid: parent_node.gid,oid:nodes[0].operatorId},function(data){
+					if(data.statusCode=="200") {
+						tree_which.removeNode(nodes[0]);
+						var parentnode = nodes[0].getParentNode();
+						if(parentnode.children.length == 0)
+						{
+							parentnode.name = parentnode.name.replace(/ \(.*\)/gi, "");
+							tree_which.updateNode(parentnode);
+						}
+						alertMsg.correct("操作成功!");
+						updateType();
+					}else{
+						alertMsg.error(data.message)
+					}
+			}, "json");
+		}
+	}
+}
+
+function noticeSubmit(){
+	$("#config_content_operate").find("form").submit();
+}
+</script>

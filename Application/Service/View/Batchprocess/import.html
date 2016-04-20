@@ -1,0 +1,33 @@
+<div class="pageContent">
+	<div class="pageFormContent" layouth="58">
+		<textarea style="width: 985px; height: 600px;" name="svnlink" id="svnurl1"></textarea>
+	</div>
+	<div class="formBar">
+		<ul>
+			<li><div><input type="submit" value="导入" class="ui_btn_green" style="float:right"  id="svnbtn1" /></div></li>
+		</ul>
+	</div>
+</div>
+<script>
+//svn import
+$('#svnbtn1').click(function(){
+	$.post('/index.php/Service/Repertory/importsvn'
+			,{svnurl:$("#svnurl1").val()}
+			,function(data){
+				if(data.statusCode=='1'){
+					alertMsg.correct(data.message);
+					 if (data.navTabId) {
+				            navTab.reload(data.forwardUrl, {
+				                navTabId: data.navTabId
+				            });
+				            $.pdialog.closeCurrent();
+					 }
+					
+				}else{
+					alertMsg.error(data.message);
+				}
+			}
+			,"json"
+	)
+})
+</script>

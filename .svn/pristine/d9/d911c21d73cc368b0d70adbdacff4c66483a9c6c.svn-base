@@ -1,0 +1,9 @@
+<div class="pageContent">
+	<div class="pageFormContent">
+		<if condition="$type eq 1 ">
+		<iframe width="1370px" height="696px" frameborder="0" marginwidth="0" marginheight="0" src="/index.php?s=/Log/Jsonedit/index/id/{$id}/type/{$ltype}" name="frame" id="frame">
+		<else />
+		<div style="height: 634px; overflow: auto;" layouth="58">{$info}</div>
+		</if>
+	</div>
+</div>

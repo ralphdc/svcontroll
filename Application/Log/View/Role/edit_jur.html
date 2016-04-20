@@ -1,0 +1,323 @@
+
+<div class="pageContent">
+	<div class="pageFormContent" layouth="58">
+		
+		<div class="header_info">
+			<div class="header_info_tit">角色信息</div>
+			<div class="header_info_text">
+				<span class="header_info_prop">角色编号：</span>
+				<span class="header_info_val">001</span>
+				<span class="header_info_prop ml20">角色名称：</span>
+				<span class="header_info_val">sdfg</span>
+				<span class="header_info_prop ml20">所属产品：</span>
+				<span class="header_info_val">sdfg</span>
+			</div>
+		</div>
+		
+		<div class="tabs">
+			<div class="tabsHeader">
+				<div class="tabsHeaderContent">
+					<ul>
+						<li><a href="javascript:;"><span>菜单和动作</span></a></li>
+						<li><a href="javascript:;"><span>页面元素</span></a></li>
+						<li><a href="javascript:;"><span>工作流</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="tabsContent">
+				<div>
+					<div class="pageHeader">
+						<!-- <form rel="pagerForm" onsubmit="return divSearch(this,'');" action="" method="post"> -->
+							<div class="searchBar">
+								<table class="searchContent">
+									<tr>
+										<td><label class="header_label">菜单编号：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td><label class="header_label">菜单名称：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<input type="hidden" name="pageNum" value="1" />
+							<input type="hidden" name="numPerPage" value="20" />
+							<input type="hidden" name="orderField" value="termid" />
+							<input type="hidden" name="orderDirection" value="desc" />
+						<!-- </form> -->
+					</div>
+					<div class="pageHeader">
+						<!-- <form rel="pagerForm" onsubmit="return divSearch(this,'');" action="" method="post"> -->
+							<div class="searchBar">
+								<table class="searchContent">
+									<tr>
+										<td><label class="header_label">动作编号：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td><label class="header_label">动作名称：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<input type="hidden" name="pageNum" value="1" />
+							<input type="hidden" name="numPerPage" value="20" />
+							<input type="hidden" name="orderField" value="termid" />
+							<input type="hidden" name="orderDirection" value="desc" />
+						<!-- </form> -->
+					</div>
+					<table class="ui_info_plate" layouth="260">
+						<tr>
+							<td class="plate_item" width="200">
+								<div class="ui_info_tit">菜单列表：</div>
+								<div class="ui_info_con" layouth="325">
+									<ul class="tree treeCheck collapse">
+										<li>
+											<a href="javascript:;" tname="" tvalue="">用户管理</a>
+											<ul>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户录入</a></li>
+												<li><a href="javascript:;" tname="" tvalue="">用户修改</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="javascript:;" tname="" tvalue="">角色管理</a>
+											<ul>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户录入</a></li>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户修改</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</td>
+							<td class="plate_item vam">
+								<div class="ui_icon_rel"></div>
+							</td>
+							<td class="plate_item" width="200">
+								<div class="ui_info_tit">当前勾选菜单下的动作列表：</div>
+								<div class="ui_info_con" layouth="325">
+									<ul class="tree treeCheck collapse">
+										<li>
+											<a href="javascript:;" tname="" tvalue="">用户管理</a>
+											<ul>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户录入</a></li>
+												<li><a href="javascript:;" tname="" tvalue="">用户修改</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="javascript:;" tname="" tvalue="">角色管理</a>
+											<ul>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户录入</a></li>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户修改</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</td>
+							<td class="plate_item vam">
+								<div class="ui_icon_rel"></div>
+							</td>
+							<td class="plate_item" width="200">
+								<div class="ui_info_tit">所选菜单及动作列表：</div>
+								<div class="tableList" layouth="335">
+									<table class="list" width="100%">
+										<thead>
+											<tr>
+												<th>菜单名称</th>
+												<th>动作名称</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>001</td>
+												<td>001</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="panelBar">
+									<div class="pages">
+										<span>共{$totalCount}条</span>
+									</div>
+									<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div>
+					<div class="pageHeader">
+						<!-- <form rel="pagerForm" onsubmit="return divSearch(this,'');" action="" method="post"> -->
+							<div class="searchBar">
+								<table class="searchContent">
+									<tr>
+										<td><label class="header_label">元素编号：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td><label class="header_label">元素名称：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<input type="hidden" name="pageNum" value="1" />
+							<input type="hidden" name="numPerPage" value="20" />
+							<input type="hidden" name="orderField" value="termid" />
+							<input type="hidden" name="orderDirection" value="desc" />
+						<!-- </form> -->
+					</div>
+					<table class="ui_info_plate" layouth="216">
+						<tr>
+							<td class="plate_item" width="200">
+								<div class="tableList bd_side" layouth="267">
+									<table class="list" width="100%">
+										<thead>
+											<tr>
+												<th><input type="checkbox" group="role_id_a" class="checkboxCtrl" /></th>
+												<th>元素编号</th>
+												<th>元素名称</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input name="role_id_a" value="" type="checkbox" /></td>
+												<td>001</td>
+												<td>sadsads</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="panelBar">
+									<div class="pages">
+										<span>共{$totalCount}条</span>
+									</div>
+									<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+								</div>
+							</td>
+							<td class="plate_item vam">
+								<div class="ui_icon_rel"></div>
+							</td>
+							<td class="plate_item" width="200">
+								<div class="ui_info_tit">已选元素列表：</div>
+								<div class="tableList bd_side" layouth="298">
+									<table class="list" width="100%">
+										<thead>
+											<tr>
+												<th>元素编号</th>
+												<th>元素名称</th>
+												<th>元素描述</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>001</td>
+												<td>001</td>
+												<td>001</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="panelBar">
+									<div class="pages">
+										<span>共{$totalCount}条</span>
+									</div>
+									<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div>
+					<div class="pageHeader">
+						<!-- <form rel="pagerForm" onsubmit="return divSearch(this,'');" action="" method="post"> -->
+							<div class="searchBar">
+								<table class="searchContent">
+									<tr>
+										<td><label class="header_label">任务编号：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td><label class="header_label">任务名称：</label><input type="text" name="" id="" class="textInput" /></td>
+										<td>
+											<label class="header_label">所属产品：</label>
+											<select name="" id="" class="combox">
+												<option value="1">MPAY产品</option>
+												<option value="2">TMS产品</option>
+												<option value="3">卡产品</option>
+											</select>
+										</td>
+										<td><div class="buttonActive"><div class="buttonContent"><button type="submit">查询</button></div></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<input type="hidden" name="pageNum" value="1" />
+							<input type="hidden" name="numPerPage" value="20" />
+							<input type="hidden" name="orderField" value="termid" />
+							<input type="hidden" name="orderDirection" value="desc" />
+						<!-- </form> -->
+					</div>
+					<table class="ui_info_plate" layouth="216">
+						<tr>
+							<td class="plate_item" width="200">
+								<div class="ui_info_con" layouth="255">
+									<ul class="tree treeCheck collapse">
+										<li>
+											<a href="javascript:;" tname="" tvalue="">用户管理</a>
+											<ul>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户录入</a></li>
+												<li><a href="javascript:;" tname="" tvalue="">用户修改</a></li>
+											</ul>
+										</li>
+										<li>
+											<a href="javascript:;" tname="" tvalue="">角色管理</a>
+											<ul>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户录入</a></li>
+												<li><a href="javascript:;" tname="" tvalue="" checked="true">用户修改</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</td>
+							<td class="plate_item vam">
+								<div class="ui_icon_rel"></div>
+							</td>
+							<td class="plate_item" width="300">
+								<div class="ui_info_tit">已选工作流流程：</div>
+								<div class="tableList bd_side" layouth="298">
+									<table class="list" width="100%">
+										<thead>
+											<tr>
+												<th>流程名称</th>
+												<th>任务编号</th>
+												<th>任务名称</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>001</td>
+												<td>001</td>
+												<td>001</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="panelBar">
+									<div class="pages">
+										<span>共{$totalCount}条</span>
+									</div>
+									<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="formBar">
+		<ul>
+			<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			<li><div class="button"><div class="buttonContent"><a href="/Competence/dwztp321/Admin/Role" target="navTab" rel="L103" class="btn_page_link">权限资源管理</a></div></div></li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+$(function(){
+	$('.pageContent .btn_page_link').click(function(){
+		$('.pageContent .close:first').click();
+	});
+});
+</script>

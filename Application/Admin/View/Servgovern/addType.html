@@ -1,0 +1,22 @@
+<div class="pageContent" style="width: 420px;float:left;">
+	<form method="post" action="__URL__/insert/method/addtype" class="pageForm required-validate" onsubmit="return validateCallback(this, dialogAjaxDone)" novalidate="novalidate">
+		<div class="pageFormContent" layouth="58" style="height: 297px; overflow: auto;">
+			<p>
+				<label style="width:100px;">服务类型：</label>
+				<input type="text" size="28" name="serverType" maxlength="30" class="required textInput lettersonly" ><span style="margin-top:5px;float:left;width:70px;color:#999999">请填写英文</span>
+			</p>
+			<p>
+				<label style="width:100px;">服务类型名称：</label>
+				<input type="text" size="28" name="typeName" maxlength="30" class="required textInput" >
+				<input type="hidden" size="28" name="groupId" class="textInput" value="{$_REQUEST['id']}">
+			</p>
+			
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">添加</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,33 @@
+<div class="pageContent">
+	<form method="post" action='/index.php/Service/Batchprocess/edit' class="pageForm required-validate" onsubmit="return validateCallback(this,deconfigEditAjaxDone)" novalidate="novalidate">
+		<input type="hidden" id="mwId" name="mwId" value="{$mwId}" />
+		<div class="pageFormContent" layouth="58">
+			<p>
+				<label>任务名：</label>
+				<input type="text" size="40" class="required textInput" name="taskname" id="taskname" value="{$taskname}" />
+				<input type="hidden" name="taskId" value="{$taskId}" />
+			</p>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+<script>
+	function deconfigEditAjaxDone(json){
+		var name=$('#taskname').val();
+		if(name==''){
+			alert('任务名不能为空');
+			return false;
+		}
+		DWZ.ajaxDone(json);
+		if(json.statusCode == '200')
+		{
+			renameTreeNode(name);
+			$.pdialog.closeCurrent();
+		}
+	}
+</script>

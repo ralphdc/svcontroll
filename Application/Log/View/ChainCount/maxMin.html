@@ -1,0 +1,32 @@
+<include file="Public:pagerFormLog" />
+<div class="pageContent">
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+		<tr>
+			<th>序号</th>
+			<th>调用链ID</th>
+			<th>耗时</th>
+			<th>日期</th>
+			<th>查看调用链</th>
+		</tr>
+		</thead>
+		<tbody>
+		<volist id="vo" name="list">
+			<tr target="sid_user" rel="{$vo['cid']}">
+				<td>
+					<?php
+						$listnums = $numPerPage * ($currentPage-1) + $key+1;
+						echo $listnums;
+					?>
+				</td>
+				<td>{$vo['cid']}</td>
+				<td>{$vo['avg']}</td>
+				<td>{$vo['date']}</td>
+				<td><a rel="L30605" target="navTab" title="交易调用节点" href="/index.php?s=/Log/CallChain/index/chainId/{$vo['cid']}/date/{$vo['date']}/type/3">查看交易调用链</a></td>
+			</tr>
+		</volist>
+		</tbody>
+	</table>
+
+
+</div>
