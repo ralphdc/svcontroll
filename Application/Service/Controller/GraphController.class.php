@@ -1,4 +1,6 @@
 <?php
+
+date_default_timezone_set("PRC");
 use Think\Cache\Driver\Redis;
 class GraphController extends CommonController{
     
@@ -649,17 +651,27 @@ class GraphController extends CommonController{
         
         //服务进程；
         $infoModel = new MonitorServiceModel();
-        $sv = $infoModel->getProcessInfo('172.17.3.86');
-        if(isset($sv['errorCode']) && $sv['errorCode'] == 0){
-            $this->assign('process',$sv['data']['servProInfoMap']);
+        $ps = $infoModel->getProcessInfo('172.17.3.86');
+        if(isset($ps['errorCode']) && $ps['errorCode'] == 0){
+            $this->assign('process',$ps['data']['servProInfoMap']);
         }
         //tcp链接；
-        $sv = $infoModel->getTcpBasicInfo('172.17.3.86');
-        if(isset($sv['errorCode']) && $sv['errorCode'] == 0){
-            $this->assign('tcp',$sv['data']);
+        $tcp = $infoModel->getTcpBasicInfo('172.17.3.86');
+        if(isset($tcp['errorCode']) && $tcp['errorCode'] == 0){
+            $this->assign('tcp',$tcp['data']);
         }
-        
-        
+        //CPU历史数据；
+        $cpu = $infoModel->getCPUHistory('172.17.3.86',60*10);
+        if(isset($cpu['errorCode']) && $cpu['errorCode'] == 0){
+            if(count($cpu['data']) > 0){
+                foreach ($cpu['data'] as $ck=>$cv){
+                    $xdata[] = date("i:s",ceil($cv['time']/1000));
+                    $ydata[] = $cv['avgUsage'];
+                }
+                $this->assign('xdata',implode(",",$xdata));
+                $this->assign('ydata',implode(",",$ydata));
+            }
+        }
         
         $this->display('detail');
     }

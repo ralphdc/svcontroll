@@ -148,10 +148,8 @@
 				</div>
 			</div>
 			<div class="tabsContent info" style="height:300px; width:300px">
-				<div class="basic" id="cpu" style="height:290px; width:300px">
-				</div>
-				<div class="basic" id="cpu_axis" style="height:290px; width:100%; padding-top:10px;">
-				</div>
+				<div class="basic" id="cpu" style="height:290px; width:300px"></div>
+				<div class="basic" id="cpu_axis" style="height:290px; width:100%; padding-top:10px;"></div>
 			</div>
 		</div>
 		<div class="tabs t-con-2" currentIndex="0" eventType="click">
@@ -219,7 +217,11 @@
 								<span>TCP链接</span>
 							</a>
 						</li>
-						
+						<li onclick="CPUHistory()">
+							<a href="javascript:;">
+								<span>CPU历史数据</span>
+							</a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -325,6 +327,10 @@
 						</tbody>
 					</table>
 				</div>
+				<!-- CPUHistory -->
+				<div class="process-content pageContent cpu_history_box" id="cpu_history_box" style="height:300px;">
+					
+				</div>
 			</div>
 			<div class="tabsFooter">
 				<div class="tabsFooterContent"></div>
@@ -345,6 +351,8 @@ $(document).ready(function(){
 	 $(".t-con-2").css('margin-left',real).width(box_con_width);
 	 $(".t-con-3").css('margin-left',real).width(box_con_width);
 	 
+	 //修改切换条高度；	 
+	 $(".tabsHeaderContent").find("span").css({'padding-top':'10px','padding-bottom':'10px'});
 	 
 	 //定义全局对象，存储上一次的获取信息；
 	 var monitorRes 	= {};
@@ -425,6 +433,7 @@ $(document).ready(function(){
 	    ]  
 	}
 	 
+	 //磁盘配置项；
 	 var disk_axis_option = {
 			    title : {
 			        //text: 'CPU占用比'                   
@@ -464,6 +473,52 @@ $(document).ready(function(){
 			          }
 			    ]  
 			}
+	 
+	 
+	var bar_option = {
+			    title: {
+			        text: '99',
+			    },
+			    tooltip: {
+			        trigger: 'axis',
+			        formatter: "{a}: {c}%" ,
+			    },
+			    legend: {
+			        data:['9','9']
+			    },
+			    toolbox: {
+			        show: true,
+			    },
+			    //X轴；
+			    xAxis:  {
+			        type: 'category',
+			        boundaryGap: false,
+			        axisLabel: {
+			            interval: 10
+			        },
+			        data: []
+			    },
+			    //Y轴；
+			    yAxis: {
+			        type: 'value',
+			        axisLabel: {
+			            formatter: '{value} %'
+			        },
+			        min:0,
+		            max:100
+			    },
+			    series: [
+			        {
+			            name:'tt',
+			            type:'line',
+			            detail: {formatter:'{value}%'},
+			            data:[],
+			        }
+			    ]
+			};
+		
+
+	 
 	 
 	$.ajaxSettings.global = false;						
 	window.flashCPU = function(){
@@ -781,9 +836,24 @@ $(document).ready(function(){
 		// }
 	 }
 	 
-	 
-      //修改切换条高度；	 
-	 $(".tabsHeaderContent").find("span").css({'padding-top':'10px','padding-bottom':'10px'})
+	 window.CPUHistory = function()
+	 {
+		
+		 
+		 
+		 var xdata = "<?php echo ($xdata); ?>" ? "<?php echo ($xdata); ?>" : "";
+		 var ydata = "<?php echo ($ydata); ?>" ? "<?php echo ($ydata); ?>" : '';
+		 var xdataArr = xdata.split(",");
+		 var ydataArr = ydata.split(",");
+		 var cpu_bar_option = bar_option;
+		 cpu_bar_option.xAxis.data = xdataArr;
+		 cpu_bar_option.series[0].data = ydataArr;
+		 cpu_bar_option.title.text = "时间格式：分/秒";
+		 cpu_bar_option.series[0].name = "CPU平均使用率";
+		 var CPUHChart = echarts.init(document.getElementById('cpu_history_box'));
+		 CPUHChart.setOption(cpu_bar_option);
+		 
+	 }
 })
 
 </script>

@@ -1,0 +1,819 @@
+[ 2016-04-20T16:42:35+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.046799s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.031199s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.031199s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+
+[ 2016-04-20T16:42:38+08:00 ] 127.0.0.1 /index.php/Service/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.021000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.021000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006000s ]
+
+[ 2016-04-20T16:59:46+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+
+[ 2016-04-20T16:59:48+08:00 ] 127.0.0.1 /index.php/Service/Public/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015600s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: \\\\\\\\\\\\\\\\输入的用户名和密码分别是：用户名：admin,密码：123456
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service url is http://172.17.3.97:8080/kms/login/ajaxsubmit.do
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service params is Array
+(
+    [name] => admin
+    [password] => 123456
+)
+
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service method is POST
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service request is POST /kms/login/ajaxsubmit.do?name=admin&password=123456 HTTP/1.1
+Host: 172.17.3.97
+Connection:close
+
+
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: ////////////////////////////// login_do_service response is HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Set-Cookie: JSESSIONID=ECF4EB215C1FD7BF2BA11B013D32C578; Path=/kms/; HttpOnly
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 20 Apr 2016 09:02:30 GMT
+Connection: close
+
+5a
+{"JSESSIONID":"ECF4EB215C1FD7BF2BA11B013D32C578","STATE":0,"userName":"admin","OPERATE":3}
+0
+
+
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: \\\\\\\\\\\\\\\\登录信息返回的JSON：{"JSESSIONID":"ECF4EB215C1FD7BF2BA11B013D32C578","STATE":0,"userName":"admin","OPERATE":3}
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+ERR: \\\\\\\\\\\\\\\\登录信息解析后的结果是：Array
+(
+    [JSESSIONID] => ECF4EB215C1FD7BF2BA11B013D32C578
+    [STATE] => 0
+    [userName] => admin
+    [OPERATE] => 3
+)
+
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Public/validateLogin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: cookie E:\www\Sermanage\Application\Service\Model\CommunicationModel.class.php 第 470 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service url is http://172.17.3.97:8080/kms/actiontree/myMenus.do
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service params is Array
+(
+    [domain] => SERVICE_MANAGE
+)
+
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service method is POST
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service request is POST /kms/actiontree/myMenus.do?domain=SERVICE_MANAGE HTTP/1.1
+Host: 172.17.3.97
+Cookie:JSESSIONID=ECF4EB215C1FD7BF2BA11B013D32C578
+Connection:close
+
+
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: ////////////////////////////// login_do_service response is HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: text/html;charset=UTF-8
+Transfer-Encoding: chunked
+Date: Wed, 20 Apr 2016 09:02:30 GMT
+Connection: close
+
+175e
+[{"id":"2c948cfb51ebb03c0151ebb3ece6000a","name":"服务管制","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebb5bf60000f","name":"配置中心","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebb73feb0011","name":"配置","url":"Service/Configure","icon":"","children":[]},{"id":"2c948cfb51ebb03c0151ebb84a6c0013","name":"配置节点恢复","url":"Service/Retrive","icon":"","children":[]}]},{"id":"2c948cfb51ebb03c0151ebb8e4840014","name":"仓库中心","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebb9ea470016","name":"仓库中心","url":"Service/Repertory","icon":"","children":[]},{"id":"2c948cfb51ebb03c0151ebbaba760018","name":"批量处理","url":"Service/Batchprocess/index/from/2","icon":"","children":[]}]},{"id":"2c948cfb51ebb03c0151ebbb44c40019","name":"作业中心","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebbbfe1f001b","name":"作业调度","url":"Service/Scheduling","icon":"","children":[]}]},{"id":"2c948cfb51ebb03c0151ebbc7b5c001c","name":"转账通道","url":null,"icon":"","children":[{"id":"2c948cfb51ebb03c0151ebbd5347001e","name":"转账通道","url":"Service/Ukey","icon":"","children":[]}]}]},{"id":"2c948cfb51ebb03c0151ebb48c15000b","name":"监控管理","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec65a5fc000a","name":"服务监控中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec67723f000f","name":"服务监控","url":"Service/Sermonitor","icon":"","children":[]}]},{"id":"2c948cfb51ec5db00151ec65fbf8000b","name":"质量监控","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec68273b0011","name":"渠道切换","url":"Admin/Channel","icon":"","children":[]}]},{"id":"2c948cfb51ec5db00151ec665e33000c","name":"第三方工具中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec68aa560013","name":"下载管理","url":"Service/Download","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec8e100e0015","name":"Cacti连接","url":"http://10.128.133.212/cacti/","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec8e93310017","name":"Naigos连接","url":"http://10.128.133.213/nagios/","icon":"","children":[]}]},{"id":"2c948cfb51ec5db00151ec66a58f000d","name":"监控配置中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec8f67fc0019","name":"运维成员管理","url":"Service/Operatmember","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9042b1001b","name":"代理资源映射","url":"Service/Agentresource","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec90fa0d001d","name":"监控元素","url":"Service/Addmonelement","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec91f28e001f","name":"元素资源类型","url":"Service/Moniconfig","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec929fae0021","name":"历史查询","url":"Service/Historyquery","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9344b30023","name":"实时监控","url":"Service/Realmonitor","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec93fc8c0025","name":"渠道","url":"Service/Channelswitch","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec94aa210027","name":"监控过滤","url":"Service/Monitorfilter","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9640660029","name":"切换设置","url":"Admin/SysMonitor/showIp","icon":"","children":[]}]},{"id":"2c9183e1532c1050015372f511d30003","name":"拓扑镜像","url":null,"icon":"","children":[{"id":"2c9183e1532c1050015372f741e60005","name":"物理图管理","url":"Service/Graph?from=graphNav","icon":"","children":[]},{"id":"2c9183e1532c1050015372f8083f0007","name":"逻辑图管理","url":"Service/Graphlogic?from=graphlgNav","icon":"","children":[]},{"id":"2c9183e1532c1050015372f8af300009","name":"产品图标管理","url":"Service/Proicon","icon":"","children":[]}]}]},{"id":"2c948cfb51ebb03c0151ebb4c96f000c","name":"主机管理","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec975f99002b","name":"初始化机器","url":"Service/Deployment","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec97e9dd002d","name":"密码管理","url":"Service/passmanage","icon":"","children":[]}]},{"id":"2c948cfb51ebb03c0151ebb502c8000d","name":"资产管理","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec985607002e","name":"资源中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec993e620031","name":"机房管理","url":"Service/Areamanage","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec99d3710033","name":"机柜管理","url":"Service/Cabinet","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9a6dfb0035","name":"机器类型/型号管理","url":"Service/Mechinetype","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9b06fe0037","name":"操作系统","url":"Service/Operatesystem","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9b7d650039","name":"服务器管理","url":"Service/Servermanage","icon":"","children":[]},{"id":"2c9183e1532c105001537308eef90056","name":"设备类型","url":"Service/DeviceType","icon":"","children":[]}]},{"id":"2c948cfb51ec5db00151ec989f66002f","name":"非计算资源中心","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec9c2a49003b","name":"资产","url":"Service/DeviceInfo","icon":"","children":[]}]}]},{"id":"2c948cfb51ebb03c0151ebb549e1000e","name":"服务治理","url":null,"icon":"","children":[{"id":"2c948cfb51ec5db00151ec9ccdd8003d","name":"设置T1T2系统","url":"Admin/SetSystem","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9da7f5003f","name":"服务治理","url":"http://172.17.4.203:8080/containerui/index.do","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9e37b10041","name":"流水质量监控","url":"Admin/SysMonitor","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9ea69e0043","name":"Ice权重","url":"Admin/IceWeight","icon":"","children":[]},{"id":"2c948cfb51ec5db00151ec9f41b20045","name":"权重服务","url":"Admin/WeightService","icon":"","children":[]}]}]
+0
+
+
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+ERR: \\\\\\\\\\\\\\\\获取菜单解析后的结果是：Array
+(
+    [0] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb3ece6000a
+            [name] => 服务管制
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ebb03c0151ebb5bf60000f
+                            [name] => 配置中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebb73feb0011
+                                            [name] => 配置
+                                            [url] => Service/Configure
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebb84a6c0013
+                                            [name] => 配置节点恢复
+                                            [url] => Service/Retrive
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ebb03c0151ebb8e4840014
+                            [name] => 仓库中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebb9ea470016
+                                            [name] => 仓库中心
+                                            [url] => Service/Repertory
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebbaba760018
+                                            [name] => 批量处理
+                                            [url] => Service/Batchprocess/index/from/2
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [id] => 2c948cfb51ebb03c0151ebbb44c40019
+                            [name] => 作业中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebbbfe1f001b
+                                            [name] => 作业调度
+                                            [url] => Service/Scheduling
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [id] => 2c948cfb51ebb03c0151ebbc7b5c001c
+                            [name] => 转账通道
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ebb03c0151ebbd5347001e
+                                            [name] => 转账通道
+                                            [url] => Service/Ukey
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [1] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb48c15000b
+            [name] => 监控管理
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec65a5fc000a
+                            [name] => 服务监控中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec67723f000f
+                                            [name] => 服务监控
+                                            [url] => Service/Sermonitor
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec65fbf8000b
+                            [name] => 质量监控
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec68273b0011
+                                            [name] => 渠道切换
+                                            [url] => Admin/Channel
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec665e33000c
+                            [name] => 第三方工具中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec68aa560013
+                                            [name] => 下载管理
+                                            [url] => Service/Download
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec8e100e0015
+                                            [name] => Cacti连接
+                                            [url] => http://10.128.133.212/cacti/
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec8e93310017
+                                            [name] => Naigos连接
+                                            [url] => http://10.128.133.213/nagios/
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec66a58f000d
+                            [name] => 监控配置中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec8f67fc0019
+                                            [name] => 运维成员管理
+                                            [url] => Service/Operatmember
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9042b1001b
+                                            [name] => 代理资源映射
+                                            [url] => Service/Agentresource
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec90fa0d001d
+                                            [name] => 监控元素
+                                            [url] => Service/Addmonelement
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [3] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec91f28e001f
+                                            [name] => 元素资源类型
+                                            [url] => Service/Moniconfig
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [4] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec929fae0021
+                                            [name] => 历史查询
+                                            [url] => Service/Historyquery
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [5] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9344b30023
+                                            [name] => 实时监控
+                                            [url] => Service/Realmonitor
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [6] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec93fc8c0025
+                                            [name] => 渠道
+                                            [url] => Service/Channelswitch
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [7] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec94aa210027
+                                            [name] => 监控过滤
+                                            [url] => Service/Monitorfilter
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [8] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9640660029
+                                            [name] => 切换设置
+                                            [url] => Admin/SysMonitor/showIp
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [id] => 2c9183e1532c1050015372f511d30003
+                            [name] => 拓扑镜像
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c9183e1532c1050015372f741e60005
+                                            [name] => 物理图管理
+                                            [url] => Service/Graph?from=graphNav
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c9183e1532c1050015372f8083f0007
+                                            [name] => 逻辑图管理
+                                            [url] => Service/Graphlogic?from=graphlgNav
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [id] => 2c9183e1532c1050015372f8af300009
+                                            [name] => 产品图标管理
+                                            [url] => Service/Proicon
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [2] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb4c96f000c
+            [name] => 主机管理
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec975f99002b
+                            [name] => 初始化机器
+                            [url] => Service/Deployment
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec97e9dd002d
+                            [name] => 密码管理
+                            [url] => Service/passmanage
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [3] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb502c8000d
+            [name] => 资产管理
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec985607002e
+                            [name] => 资源中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec993e620031
+                                            [name] => 机房管理
+                                            [url] => Service/Areamanage
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [1] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec99d3710033
+                                            [name] => 机柜管理
+                                            [url] => Service/Cabinet
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [2] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9a6dfb0035
+                                            [name] => 机器类型/型号管理
+                                            [url] => Service/Mechinetype
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [3] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9b06fe0037
+                                            [name] => 操作系统
+                                            [url] => Service/Operatesystem
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [4] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9b7d650039
+                                            [name] => 服务器管理
+                                            [url] => Service/Servermanage
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                    [5] => Array
+                                        (
+                                            [id] => 2c9183e1532c105001537308eef90056
+                                            [name] => 设备类型
+                                            [url] => Service/DeviceType
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec989f66002f
+                            [name] => 非计算资源中心
+                            [url] => 
+                            [icon] => 
+                            [children] => Array
+                                (
+                                    [0] => Array
+                                        (
+                                            [id] => 2c948cfb51ec5db00151ec9c2a49003b
+                                            [name] => 资产
+                                            [url] => Service/DeviceInfo
+                                            [icon] => 
+                                            [children] => Array
+                                                (
+                                                )
+
+                                        )
+
+                                )
+
+                        )
+
+                )
+
+        )
+
+    [4] => Array
+        (
+            [id] => 2c948cfb51ebb03c0151ebb549e1000e
+            [name] => 服务治理
+            [url] => 
+            [icon] => 
+            [children] => Array
+                (
+                    [0] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9ccdd8003d
+                            [name] => 设置T1T2系统
+                            [url] => Admin/SetSystem
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9da7f5003f
+                            [name] => 服务治理
+                            [url] => http://172.17.4.203:8080/containerui/index.do
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9e37b10041
+                            [name] => 流水质量监控
+                            [url] => Admin/SysMonitor
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [3] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9ea69e0043
+                            [name] => Ice权重
+                            [url] => Admin/IceWeight
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                    [4] => Array
+                        (
+                            [id] => 2c948cfb51ec5db00151ec9f41b20045
+                            [name] => 权重服务
+                            [url] => Admin/WeightService
+                            [icon] => 
+                            [children] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+
+[ 2016-04-20T17:00:01+08:00 ] 127.0.0.1 /index.php/Service/Index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of IndexController::index() should be compatible with CommonController::index($dwz_db_name = '') E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 3 行.
+NOTIC: [8] Undefined index: ServiceLoginMenu E:\www\Sermanage\Application\Service\Controller\IndexController.class.php 第 18 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: volist E:\www\Sermanage\Runtime\Cache\Service\573a565d88655dd6d35e2fd9412a37b4.php 第 154 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.093599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.093599s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-04-20T17:00:03+08:00 ] 127.0.0.1 /index.php/Service/Common/setMenu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
