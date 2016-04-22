@@ -80,4 +80,36 @@ class MonitorServiceController extends CommonController{
             echo json_encode($ret); return;
         }
     }
+    
+    function renewCPU()
+    {
+        if($_POST['ips']){
+            $infoModel = new MonitorServiceModel();
+            $sv = $infoModel->getCPUHistory($_POST['ips'],60*3);
+            if(isset($sv['errorCode']) && $sv['errorCode'] == 0){
+                if(count($sv['data']) > 0){
+                    foreach ($sv['data'] as $ck=>$cv){
+                        $xdata[] = date("i:s",ceil($cv['time']/1000));
+                        $ydata[] = $cv['avgUsage'];
+                    }
+                    $ret = array(
+                        "statusCode"=>"1",
+                        "message"=> "SUCCESS",
+                        "xdata"=>$xdata,
+                        "ydata"=>$ydata,
+                        "rel"=>"",
+                        "forwardUrl"=>"",
+                        "callbackType"=>""
+                    );
+                }else{
+                    $ret = array("statusCode"=>"0","message"=> "接口没有返回数据","data"=>"",
+                        "rel"=>"","forwardUrl"=>"","callbackType"=>"");
+                }
+            }else{
+                $ret = array("statusCode"=>"0","message"=> $sv['errorMessage'],"data"=>"",
+                    "rel"=>"","forwardUrl"=>"","callbackType"=>"");
+            }
+            echo json_encode($ret); return;
+        }
+    }
 }

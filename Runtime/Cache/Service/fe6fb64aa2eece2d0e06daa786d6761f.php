@@ -200,19 +200,19 @@
 	<div style="width:100%; clear:both;">
 	<div class="tabs" currentIndex="0" eventType="click">
 			<div class="tabsHeader">
-				<div class="tabsHeaderContent">
+				<div class="tabsHeaderContent" id="toggleDuty">
 					<ul>
-						<li>
+						<li onclick="clearDuty()">
 							<a href="javascript:;">
 								<span>告警信息</span>
 							</a>
 						</li>
-						<li>
+						<li onclick="clearDuty()">
 							<a href="javascript:;">
 								<span>服务进程</span>
 							</a>
 						</li>
-						<li>
+						<li onclick="clearDuty()">
 							<a href="javascript:;">
 								<span>TCP链接</span>
 							</a>
@@ -363,6 +363,8 @@ $(document).ready(function(){
 	//磁盘仪表盘；
 	 var DISKcharts 	= null;
 	 
+	//CPU历史数据；
+	var CPUHChart		= null;
 	 
 	//CPU柱状图；
 	 var cpu_axis_Chart = null;
@@ -374,6 +376,17 @@ $(document).ready(function(){
 	 //定义保存磁盘路径的全局变量；
 	 var global_disk_path = null;
 	 
+	 
+	 var dialog = $("body").data("nodeWindow");
+	 dialog.find("a.close").click(function(){
+		if(CPUHistoryArray.length > 0){
+			for(var history_Index=0; history_Index	<	CPUHistoryArray.length; history_Index++ ){
+				window.clearInterval(CPUHistoryArray[history_Index]);
+			}
+		 }
+	 })
+		
+		
 	 var option = {
 			 tooltip : {
 			        trigger: 'axis',
@@ -494,7 +507,7 @@ $(document).ready(function(){
 			        type: 'category',
 			        boundaryGap: false,
 			        axisLabel: {
-			            interval: 10
+			           // interval: 10
 			        },
 			        data: []
 			    },
@@ -505,7 +518,7 @@ $(document).ready(function(){
 			            formatter: '{value} %'
 			        },
 			        min:0,
-		            max:100
+		            max:60
 			    },
 			    series: [
 			        {
@@ -836,6 +849,14 @@ $(document).ready(function(){
 		// }
 	 }
 	 
+	 window.clearDuty = function()
+	 {
+		 if(CPUHistoryArray.length > 0){
+			for(var history_Index=0; history_Index	<	CPUHistoryArray.length; history_Index++ ){
+				window.clearInterval(CPUHistoryArray[history_Index]);
+			}
+		 }
+	 }
 	 window.CPUHistory = function()
 	 {
 		
@@ -850,9 +871,57 @@ $(document).ready(function(){
 		 cpu_bar_option.series[0].data = ydataArr;
 		 cpu_bar_option.title.text = "时间格式：分/秒";
 		 cpu_bar_option.series[0].name = "CPU平均使用率";
-		 var CPUHChart = echarts.init(document.getElementById('cpu_history_box'));
+		 CPUHChart = echarts.init(document.getElementById('cpu_history_box'));
 		 CPUHChart.setOption(cpu_bar_option);
 		 
+		 if(CPUHistoryArray.length > 0){
+			for(var history_Index=0; history_Index	<	CPUHistoryArray.length; history_Index++ ){
+				window.clearInterval(CPUHistoryArray[history_Index]);
+			}
+		 }
+		 var requestCPUHistory = window.setInterval("reflashCPU()",2000);
+		 CPUHistoryArray.push(requestCPUHistory);
+	 }
+	 
+	 window.reflashCPU = function()
+	 {
+		 var ips = $(".ip").text();
+		 $.ajax({
+			 url:'/index.php/Service/MonitorService/renewCPU',
+			 cache:false,
+			 dataType:'json',
+			 global:false,
+			 type:'POST',
+			 data:{"ips":"172.17.3.86"},
+			 success:function(data){
+				 if(data.statusCode == 1){
+					 var xdata = data.xdata;
+					 var ydata = data.ydata;
+					 var options = CPUHChart.getOption();
+					 var o_x_data = options.xAxis.data;
+					 var o_y_data = options.series[0].data;
+					 console.log(o_x_data);
+					 console.log(o_y_data);
+					 console.log("=====================");
+					 for(var i=0; i < xdata.length; i++){
+						 o_x_data.shift();
+						 o_x_data.push(xdata[i]);
+						 o_y_data.shift();
+						 o_y_data.push(ydata[i]);
+					 }
+					 options.xAxis.data = o_x_data;
+					 options.series[0].data = o_y_data;
+					 console.log(o_x_data);
+					 console.log(o_y_data);
+					 CPUHChart.setOption(options);
+					 console.log("***********************");
+					 console.log(options);
+				 }else{
+					 alertMsg.error(data.message);
+					 return false;
+				 }
+			 }
+		 })
 	 }
 })
 
